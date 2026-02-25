@@ -10,7 +10,7 @@ Disallow: /*?q=
 Disallow: /*?search=
 
 # Sitemap
-Sitemap: https://theglam.kr/sitemap.xml
+Sitemap: https://www.theglam.kr/sitemap.xml
 
 # AI Bot Management
 User-agent: GPTBot
