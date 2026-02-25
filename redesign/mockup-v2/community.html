@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>커뮤니티 피드 | THE GLAM</title>
+  <meta name="description" content="성형 경험을 나누는 커뮤니티 피드 - 미녀는 괴로워">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .bottom-nav-item.active { color: var(--primary); }
+    .bottom-nav-item.active .nav-icon { filter: none; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../mockup/index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <div class="container">
+
+      <div style="padding: 16px 0 8px;">
+        <h1 style="font-size: 1.3rem; font-weight: 800; margin: 0 0 4px;">커뮤니티 🌸</h1>
+        <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0;">성형 경험을 나눠요 — 익명으로 솔직하게</p>
+      </div>
+
+      <div class="medical-disclaimer">
+        <span class="disc-icon">⚠️</span>본 커뮤니티의 모든 게시글은 개인 경험담으로, 의료적 조언이나 진단을 대체하지 않습니다. 시술 결과는 개인에 따라 다를 수 있으며, 반드시 전문 의료인과 상담하시기 바랍니다.
+      </div>
+
+      <div class="filter-tabs-primary" id="proc-filter">
+        <button type="button" class="filter-tab active" data-filter="all">전체</button>
+        <button type="button" class="filter-tab" data-filter="눈">눈</button>
+        <button type="button" class="filter-tab" data-filter="코">코</button>
+        <button type="button" class="filter-tab" data-filter="얼굴윤곽">얼굴윤곽</button>
+        <button type="button" class="filter-tab" data-filter="피부">피부</button>
+        <button type="button" class="filter-tab" data-filter="바디">바디</button>
+        <button type="button" class="filter-tab" data-filter="리프팅">리프팅</button>
+        <button type="button" class="filter-tab" data-filter="필러/보톡스">필러/보톡스</button>
+      </div>
+
+      <div class="sort-bar">
+        <span class="result-count">게시글 <strong id="post-count">8</strong>개</span>
+        <div class="sort-options">
+          <button type="button" class="sort-btn active">최신순</button>
+          <button type="button" class="sort-btn">인기순</button>
+          <button type="button" class="sort-btn">조회순</button>
+        </div>
+      </div>
+
+      <div class="feed-grid" id="feed-grid"></div>
+
+      <div class="feed-grid" style="margin-top: 12px; opacity: 0.4; pointer-events: none;">
+        <div class="skeleton-card">
+          <div class="skeleton skeleton-image"></div>
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-text short"></div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton skeleton-image"></div>
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-text short"></div>
+        </div>
+      </div>
+      <p style="text-align:center; font-size:0.8rem; color:var(--text-muted); margin:8px 0 24px;">스크롤하면 더 많은 후기를 볼 수 있어요</p>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="./terms.html">이용약관</a>
+        <a href="./privacy.html">개인정보처리방침</a>
+        <a href="#">의료광고심의</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼의 모든 후기 및 정보는 개인 경험담으로, 의료적 조언이나 진단을 대체하지 않습니다. 시술 결과는 개인에 따라 다를 수 있으며, 반드시 자격을 갖춘 의료 전문가와 상담하시기 바랍니다. (의료법 제56조)</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA BAR -->
+  <div class="floating-cta">
+    <a href="./community.html" class="floating-cta-btn">💬 커뮤니티 참여하기</a>
+  </div>
+
+  <!-- BOTTOM NAV (모바일 전용) -->
+  <nav class="bottom-nav">
+    <a href="../mockup/index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="./community.html" class="bottom-nav-item active">
+      <span class="nav-icon">💬</span>
+      <span>커뮤니티</span>
+    </a>
+    <a href="../mockup/articles.html" class="bottom-nav-item">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="../mockup/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="../mockup/consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+
+  <script src="./shared-data.js"></script>
+  <script>
+    function renderPosts(posts) {
+      const grid = document.getElementById('feed-grid');
+      document.getElementById('post-count').textContent = posts.length;
+      grid.innerHTML = posts.map(post => `
+    <article class="post-card" onclick="location.href='./community-post.html?id=${post.id}'">
+      <div class="card-header">
+        <div class="avatar" style="width:32px;height:32px;font-size:1rem;flex-shrink:0;">${post.author.split(' ')[2] || '🌸'}</div>
+        <div class="user-meta">
+          <span class="username">${post.author}</span>
+          <span class="post-date">${post.date}</span>
+        </div>
+        ${post.verified ? '<span class="verified-dot" title="인증후기"></span>' : ''}
+      </div>
+      <div class="procedure-tags">
+        <span class="tag--proc-primary">#${post.procedure}</span>
+        <span class="tag--proc-clinic">${post.category}</span>
+      </div>
+      <div class="card-image-wrap">
+        <div class="img-placeholder">
+          <span style="font-size:1.5rem;">📷</span>
+          <span>이미지 ${post.imageCount}장</span>
+          <span style="font-size:0.65rem;color:var(--danger);">※ 시술 결과는 개인에 따라 다를 수 있습니다</span>
+        </div>
+        <span class="image-count">📷 ${post.imageCount}</span>
+      </div>
+      <div class="card-body">
+        <p class="post-excerpt">${post.excerpt}</p>
+      </div>
+      <div class="card-actions">
+        <button type="button" class="action-btn">
+          <span>🤍</span><span class="count">${post.likes.toLocaleString()}</span>
+        </button>
+        <button type="button" class="action-btn">
+          <span>💬</span><span class="count">${post.comments}</span>
+        </button>
+        <button type="button" class="action-btn save-btn">🔖</button>
+      </div>
+    </article>
+  `).join('');
+    }
+
+    const DATA = typeof window !== 'undefined' ? window.GLAM_DATA : {};
+    const posts = DATA.COMMUNITY_POSTS || [];
+    renderPosts(posts);
+
+    document.querySelectorAll('.filter-tab').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-tab').forEach(b => {
+          b.classList.remove('active');
+        });
+        this.classList.add('active');
+        const filter = this.dataset.filter;
+        const filtered = filter === 'all' ? posts : posts.filter(p => p.category === filter);
+        renderPosts(filtered);
+      });
+    });
+
+    document.querySelectorAll('.sort-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.sort-btn').forEach(b => {
+          b.classList.remove('active');
+        });
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
