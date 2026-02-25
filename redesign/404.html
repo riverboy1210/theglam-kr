@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>페이지를 찾을 수 없습니다 | 미녀는 괴로워 THE GLAM</title>
+  <meta name="description" content="요청하신 페이지가 존재하지 않습니다. 성형 정보, 리얼 후기, 병원 비교는 미녀는 괴로워에서.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://theglam.kr/404.html">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+      background: #FAFAFA;
+      color: #1A1A2E;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .error-container {
+      width: min(640px, 100%);
+      text-align: center;
+    }
+    .error-code {
+      font-size: 7rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #FF6B9D 0%, #8B5CF6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .error-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1A1A2E;
+    }
+    .error-desc {
+      font-size: 0.95rem;
+      color: #6B7280;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+    .search-box {
+      display: flex;
+      gap: 8px;
+      max-width: 420px;
+      margin: 0 auto 32px;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 12px 16px;
+      border: 2px solid #E5E7EB;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-box input:focus {
+      border-color: #FF6B9D;
+    }
+    .search-box button {
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #FF6B9D, #E8568A);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .search-box button:hover { opacity: 0.85; }
+    .popular-section {
+      margin-bottom: 32px;
+    }
+    .popular-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #9CA3AF;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    .popular-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+    .popular-links a {
+      display: inline-block;
+      padding: 8px 16px;
+      background: #fff;
+      border: 1px solid #E5E7EB;
+      border-radius: 999px;
+      color: #374151;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .popular-links a:hover {
+      border-color: #FF6B9D;
+      color: #FF6B9D;
+      background: #FFE0EC;
+    }
+    .home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 14px 28px;
+      background: linear-gradient(135deg, #FF6B9D, #8B5CF6);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 14px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: opacity 0.2s;
+      box-shadow: 0 4px 14px rgba(255, 107, 157, 0.3);
+    }
+    .home-btn:hover { opacity: 0.85; }
+    .brand {
+      margin-top: 48px;
+      font-size: 0.8rem;
+      color: #D1D5DB;
+      font-weight: 500;
+    }
+    @media (max-width: 480px) {
+      .error-code { font-size: 5rem; }
+      .error-title { font-size: 1.25rem; }
+      .search-box { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <div class="error-code">404</div>
+    <h1 class="error-title">요청하신 페이지가 없습니다</h1>
+    <p class="error-desc">주소가 변경되었거나 삭제되었을 수 있습니다.<br>아래에서 원하는 정보를 검색하거나 인기 페이지를 방문해 보세요.</p>
+
+    <form class="search-box" onsubmit="handleSearch(event)">
+      <input type="text" id="search-input" placeholder="성형 정보 검색 (예: 코 성형, 리프팅, 가슴 성형)" aria-label="검색어 입력">
+      <button type="submit">검색</button>
+    </form>
+
+    <div class="popular-section">
+      <div class="popular-title">인기 콘텐츠</div>
+      <div class="popular-links">
+        <a href="./mockup/index.html">홈</a>
+        <a href="./mockup/articles.html">성형 정보 블로그</a>
+        <a href="./mockup/reviews.html">리얼 후기</a>
+        <a href="./mockup/hospitals.html">병원 찾기</a>
+        <a href="./mockup-v2/community.html">글램바비</a>
+        <a href="./mockup/consultation.html">무료 상담</a>
+      </div>
+    </div>
+
+    <a href="./mockup/index.html" class="home-btn">
+      &#8592; 홈으로 돌아가기
+    </a>
+
+    <div class="brand">미녀는 괴로워 &#183; THE GLAM</div>
+  </div>
+
+  <script>
+    function handleSearch(e) {
+      e.preventDefault();
+      var q = document.getElementById('search-input').value.trim();
+      if (q) {
+        window.location.href = './mockup/articles.html?q=' + encodeURIComponent(q);
+      }
+    }
+  </script>
+</body>
+</html>
