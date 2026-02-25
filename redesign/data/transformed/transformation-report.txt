@@ -1,0 +1,55 @@
+THE GLAM Content Transformation Report
+==================================================
+Generated: 2026-02-25T06:54:53.341Z
+
+SUMMARY
+--------------------------------------------------
+Total articles transformed: 383
+Average quality score: 99/100
+Total FAQs generated: 2247
+Total URL redirects: 383
+
+CONTENT TYPE DISTRIBUTION
+--------------------------------------------------
+  PRICE             40 (10.4%)
+  SAFETY            40 (10.4%)
+  RECOVERY         126 (32.9%)
+  CLINIC_CHOICE    177 (46.2%)
+
+QUALITY DISTRIBUTION
+--------------------------------------------------
+  Excellent (80-100): 378
+  Good (60-79):       5
+  Fair (40-59):       0
+  Poor (0-39):        0
+
+LEGAL COMPLIANCE CHECK
+--------------------------------------------------
+  All articles have disclaimer: YES (type-specific)
+  All articles have neutral CTAs: YES (babitalk + gangnamunni)
+  All articles have direct action CTA: YES (phone + email)
+  No verbatim review copies: N/A (structural transform only)
+  No fabricated testimonials: YES (no testimonials added)
+  No medical guarantees: YES (disclaimers added)
+
+URL REDIRECT MAP
+--------------------------------------------------
+  Format: /blog/{slug} -> /articles/{slug} (301)
+  Total redirects: 383
+  Export: redesign/data/transformed/redirects.json
+
+OUTPUT FILES
+--------------------------------------------------
+  articles-transformed.json: 1417.0 KB
+  redirects.json: redirect map for next.config.js
+  transformation-report.txt: this file
+
+SAMPLE ARTICLE (first)
+--------------------------------------------------
+  Title: 복근조각 수술과 유지 | 미녀는 괴로워
+  Type: RECOVERY (회복 관리)
+  Hook: 회복 기간 동안 적절한 관리가 결과를 좌우합니다.
+  Checklist items: 4
+  FAQ count: 6
+  Quality score: 100
+  Redirect: /blog/abdominal-etching-surgery-maintenance -> /articles/abdominal-etching-surgery-maintenance
