@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>“보톡스 1위?”, “강남 보톡스 할인” 속에서 진짜 좋은 선택을 찾는 20‧30대 여성 가이드 | 미녀는 괴로워</title>
+  <meta name="description" content="네이버 파워링크는 검색 결과 상단에 노출되는 키워드 기반 광고예요. 병원들이 “사각턱 보톡스”, “이마주름 보톡스” 같은 정보 전달식 문구를 쓰는 이유는 의료광고 규정이 비교·과장·치료경험담 광고 등을 엄격히 제한하기 때문이에요. 그래서 우리는 **문구(톤)보다 숫자(브랜드·용량·총액)**로 비교해야 해요. (네이버 광고주센터, Admedical)">
+  <link rel="canonical" href="https://theglam.kr/articles/botox-choice-guide">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .article-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .article-header {
+      margin-bottom: 20px;
+    }
+
+    .article-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .article-title {
+      margin: 0;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .author-profile {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-content p {
+      margin: 0 0 14px;
+      color: #2d3347;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .price-table thead {
+      background: #fff1f7;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-tag {
+      color: #d9336c;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .info-box {
+      background: var(--bg-pink);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #7d2046;
+    }
+
+    .checklist-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip-header {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0 10px;
+    }
+
+    .before-after-item {
+      flex: 1;
+      display: block;
+      min-height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .before-after-item p {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+    }
+
+    .article-disclaimer {
+      margin-top: 22px;
+      font-size: 0.76rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      padding: 14px;
+    }
+
+    .hospital-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 6px 0 12px;
+    }
+
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .related-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-item .img-placeholder {
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .related-item p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .article-cta-area {
+      text-align: center;
+      padding: 32px;
+      background: var(--bg-gray);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .article-cta-area p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .crosscheck-links {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      justify-content: center;
+    }
+
+    .crosscheck-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .comments-section {
+      margin-top: 22px;
+    }
+
+    .comments-section h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-item .avatar {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      font-size: 0.84rem;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+    }
+
+    .comment-head strong {
+      color: var(--text);
+    }
+
+    .comment-head span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #2d3347;
+    }
+
+    .comment-like {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    @media (min-width: 1024px) {
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .article-title {
+        font-size: 1.45rem;
+      }
+
+      .before-after {
+        flex-direction: column;
+      }
+
+      .article-cta-area {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../mockup/index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-layout">
+        <article class="article-main">
+          <div class="article-header">
+            <div class="article-meta-top">
+              <span class="badge" style="background:#10B981;color:#fff;">비용 비교</span>
+              <span class="article-date">2025-08-24</span>
+            </div>
+            <h1 class="article-title">“보톡스 1위?”, “강남 보톡스 할인” 속에서 진짜 좋은 선택을 찾는 20‧30대 여성 가이드</h1>
+            <div class="author-profile">
+              <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#FFE0EC;display:flex;align-items:center;justify-content:center;">👩</div>
+              <div><strong>박지훈 에디터</strong></div>
+            </div>
+          </div>
+
+          
+          <div class="article-hero-image" style="margin: 0 0 18px;">
+            <img src="../images/68aa6c75be666e7f539717df_68aa6af0d985d3409832ee42_68aa67eacdfcfa9595a2b392_68a2d872fff9efe619984fe1_%5B%EB%B3%B5%EC%82%AC%EB%B3%B8%5D%20740%20466%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EC%84%B8%EB%B6%80%EC%A0%95%EB%B3%B4%20%EC%8D%B8%EB%84%A4%EC%9D%BC%2049.png" alt="“보톡스 1위?”, “강남 보톡스 할인” 속에서 진짜 좋은 선택을 찾는 20‧30대 여성 가이드" style="width:100%;border-radius:12px;">
+          </div>
+
+          <div class="article-content">
+            <h1>네이버 파워링크 성형·보톡스 광고, 똑똑하게 고르는 법</h1><h3>“보톡스 1위?”, “강남 보톡스 할인” 속에서 진짜 좋은 선택을 찾는 20‧30대 여성 가이드</h3><p><br/>네이버 <strong>파워링크</strong>는 검색 결과 상단에 노출되는 <strong>키워드 기반 광고</strong>예요. 병원들이 “사각턱 보톡스”, “이마주름 보톡스” 같은 <strong>정보 전달식 문구</strong>를 쓰는 이유는 <strong>의료광고 규정</strong>이 비교·과장·치료경험담 광고 등을 엄격히 제한하기 때문이에요. 그래서 우리는 **문구(톤)보다 숫자(브랜드·용량·총액)**로 비교해야 해요. (<a href="https://ads.naver.com/sa?utm_source=chatgpt.com">네이버 광고주센터</a>, <a href="https://www.admedical.org/guide/regulations.do?utm_source=chatgpt.com">Admedical</a>)</p><p><strong>요약(3줄 컷)</strong></p><ul role="list"><li>파워링크는 <strong>검색 상단·제휴 지면</strong>에 노출되는 <strong>CPC(클릭당 과금)</strong> 광고. 상단이라고 <strong>품질 보장</strong>은 아님. (<a href="https://ads.naver.com/sa?utm_source=chatgpt.com">네이버 광고주센터</a>)</li><li>한국 <strong>의료법</strong>은 <strong>비교광고/거짓·과장/치료경험담/수술 장면 노출</strong> 등을 금지 → 문구는 대체로 <strong>중립·정보형</strong>. (<a href="https://www.admedical.org/guide/regulations.do?utm_source=chatgpt.com">Admedical</a>)</li><li>소비자는 <strong>브랜드·단위(U/cc/샷)·포함 항목</strong>을 <strong>숫자</strong>로 확인하고 <strong>총액</strong>으로 비교하면 실수가 줄어요. (처방의약품 직접광고 금지 상식도 기억!) (<a href="https://iclg.com/practice-areas/pharmaceutical-advertising-laws-and-regulations/korea?utm_source=chatgpt.com">ICLG 비즈니스 리포트</a>)</li></ul><h2>1) 파워링크, 꼭 알아야 할 기본</h2><ul role="list"><li><strong>무대</strong>: 네이버 통합검색 상단 <strong>파워링크 영역</strong>과 일부 <strong>제휴 매체</strong>까지 노출. <strong>키워드 일치도·이용자 의도</strong>로 광고가 선별돼요. (<a href="https://ads.naver.com/help/faq/166?utm_source=chatgpt.com">네이버 광고주센터</a>)</li><li><strong>과금</strong>: <strong>CPC 방식</strong>(클릭 시 비용). <strong>노출=실력</strong>이 아니라 <strong>입찰·운영</strong>에 좌우될 수 있어요. (<a href="https://ads.naver.com/sa?utm_source=chatgpt.com">네이버 광고주센터</a>)</li><li><strong>문구가 점잖은 이유</strong>: 한국 <strong>의료광고 규정</strong>은<ul role="list"><li><strong>비교·우월 표현(“1위”, “최고”) 금지</strong>,</li><li><strong>치료경험담 유도</strong> 금지,</li><li><strong>수술 장면 노출</strong> 금지 등을 명시. 그래서 “사각턱 보톡스–각진 턱선 개선”처럼 <strong>설명형 카피</strong>가 많아요. (<a href="https://www.admedical.org/guide/regulations.do?utm_source=chatgpt.com">Admedical</a>)</li></ul></li></ul><p><strong>상식+</strong> 미용에 쓰이는 <strong>보툴리눔 톡신</strong>은 <strong>처방의약품</strong>이라 <strong>제약사가 대중에게 직접 광고(DTC)</strong> 하는 건 금지. 병원은 <strong>시술 서비스</strong>로 안내하지만 <strong>제품 과장</strong>은 규제 대상이에요. (<a href="https://iclg.com/practice-areas/pharmaceutical-advertising-laws-and-regulations/korea?utm_source=chatgpt.com">ICLG 비즈니스 리포트</a>)</p><h2>2) 광고 전쟁 속 “좋은 선택”의 기준 (핵심 7)</h2><ol role="list"><li><strong>브랜드 실명</strong>: 보톡스(국산/수입), 필러(제조사·제품명) <strong>실명 표기</strong> 요구.</li><li><strong>정량(숫자) 공개</strong>: 보톡스 <strong>U(단위)</strong>, 필러 <strong>cc</strong>, HIFU <strong>샷/라인</strong>, 실리프팅 <strong>줄 수·재질</strong>을 <strong>숫자</strong>로 받기.</li><li><strong>총액 공식</strong>으로 비교</li></ol><p><strong>총액 = 기본가 + (추가 용량/단위 × 단가) + (소모품/마취) + VAT − (쿠폰·포인트)</strong><br/>체험가(하프/소량)만 보지 말고 <strong>권장 스펙 반영 총액</strong>을 함께 요청.</p><ol role="list"><li><strong>포함/제외 항목</strong>: VAT·마취·소모품·리터치·사후내원 <strong>포함 여부</strong> 확인.</li><li><strong>의사·지점 명시</strong>: 같은 병원이라도 <strong>집도의/지점</strong>에 따라 결과·응대가 달라요.</li><li><strong>후기 품질</strong>: <strong>영수증 인증·경과 사진·수치 기재</strong> 후기 우선, 낮은 평점 후기도 반드시 확인.</li><li><strong>법·안전 상식</strong>: 과장·비교·경험담 중심 광고는 <strong>의료법 금지</strong> 항목. “자연스럽게” 같은 감성 문구보다 <strong>근거 숫자</strong>를 보세요. (<a href="https://www.admedical.org/guide/regulations.do?utm_source=chatgpt.com">Admedical</a>)</li></ol><h2>3) 검색 → 비교 → 예약, 10분 루틴(복붙)</h2><ul role="list"><li> <strong>키워드 2~3개</strong>로 파워링크 결과 스크랩: 예) “사각턱 보톡스 50U”, “강남 보톡스 할인”, “이마주름 보톡스 전문의”.</li><li> 각 병원 <strong>상세 페이지</strong>에서 <strong>브랜드·단위·포함 항목</strong> 유무 체크. (없으면 문의 폼/톡으로 바로 요청)</li><li> <strong>동일 조건 총액</strong> 견적 요청: “보톡스 <strong>브랜드/기본U/추가U 단가 + VAT·마취 포함 총액</strong> 알려주세요.”</li><li> <strong>집도의/지점</strong> 고정 요청: “후기에서 본 <strong>OO원장/OO지점</strong> 기준으로 동일 조건 문의합니다.”</li><li> <strong>후기 3개만</strong>: 영수증 인증·경과 사진·수치 기재가 있는 후기만 추려 <strong>장단점</strong> 메모.</li><li> <strong>달력 역산</strong>: 보톡스는 <strong>2~7일 시작, 2주 안정</strong> → 촬영·행사 <strong>2주 뒤</strong>로 예약. (<a href="https://www.admedical.org/guide/regulations.do?utm_source=chatgpt.com">Admedical</a>)</li></ul><h2>4) 파워링크 문구, 이렇게 해석하면 쉬워요</h2><ul role="list"><li>“<strong>전문의 상담</strong>”: 과장 대신 <strong>자격 강조</strong> 톤. <strong>담당 전문의 이름·경력</strong>을 물어 실제 배정 확인.</li><li>“<strong>사각턱 보톡스</strong>”: <strong>양측 기준 U</strong>를 숫자로 확인(예: 기본 50U? 80U?). <strong>추가U 단가</strong>도 함께.</li><li>“<strong>강남 보톡스 할인</strong>”: 체험가(소량)일 확률↑. <strong>권장U 반영 총액</strong>을 같이 요청해야 낭패 없음.</li><li>“<strong>자연스러운 개선</strong>”: 감성 카피일 뿐. <strong>브랜드·정량·리터치</strong>가 계획에 있나가 본질.</li></ul><h2>5) 위험 신호(레드 플래그)</h2><ul role="list"><li><strong>‘1위, 최고, 보장’</strong> 등 <strong>우월·보장 표현</strong>에 기대는 광고(의료법 취지와 상충). (<a href="https://www.admedical.org/guide/regulations.do?utm_source=chatgpt.com">Admedical</a>)</li><li><strong>브랜드·단위 비공개</strong>, 견적서에 <strong>숫자</strong>가 없는 경우.</li><li>후기 강요/대가 제안 등 <strong>비윤리적 요청</strong>(바로 신고·차단).</li><li>수술 장면 직노출, 극단적 전후 비교 사진 위주 홍보. (<a href="https://www.admedical.org/guide/regulations.do?utm_source=chatgpt.com">Admedical</a>)</li></ul><h2>6) 부위별 초간단 팁(보톡스 중심)</h2><ul role="list"><li><strong>이마/미간/눈가</strong>: 표정주름. <strong>미세 단위</strong>로 시작→2주 후 조정.</li><li><strong>사각턱(저작근)</strong>: 옆선 개선. 초기에 <strong>사탕볼</strong> 체감 가능→대개 2주 내 완화(개인차).</li><li><strong>유지기간</strong>: 대체로 <strong>3~4개월</strong> 설명이 일반적. (근육 세기·표정 습관·용량에 좌우)</li></ul><h2>7) 자주 묻는 질문</h2><p><strong>Q. 상단 노출=잘하는 병원?</strong><br/>A. 아니에요. 파워링크는 <strong>광고 슬롯</strong>이므로 <strong>브랜드·정량·총액</strong>으로 객관 비교하세요. (<a href="https://ads.naver.com/sa?utm_source=chatgpt.com">네이버 광고주센터</a>)</p><p><strong>Q. 광고에 제품명이 없는데요?</strong><br/>A. 의료광고 규정·플랫폼 정책 때문에 <strong>설명형</strong> 문구가 많아요. <strong>브랜드 실명·정량</strong>을 요구하면 됩니다. (<a href="https://www.admedical.org/guide/regulations.do?utm_source=chatgpt.com">Admedical</a>)</p><p><strong>Q. 제약사 보톡스 광고랑 병원 보톡스 광고가 다른가요?</strong><br/>A. 네. <strong>처방의약품 DTC 광고 금지</strong> 원칙 때문에 제약사는 대중 광고가 제한돼요. 병원은 <strong>시술 서비스</strong>를 광고하지만 <strong>제품 과장</strong>은 규제 대상입니다. (<a href="https://iclg.com/practice-areas/pharmaceutical-advertising-laws-and-regulations/korea?utm_source=chatgpt.com">ICLG 비즈니스 리포트</a>)</p><h2>마지막 한 줄(언니 팁)</h2><p><strong>문구보다 숫자. 상단보다 조건.</strong><br/>네이버 파워링크에서 <strong>브랜드·단위(U/cc/샷)·포함 항목·총액</strong>을 <strong>숫자</strong>로 받아 비교하세요. 의료광고 규정의 취지를 이해하고(비교·경험담·과장 금지), <strong>중립 문구 뒤의 실제 조건</strong>을 똑바로 보면, <strong>티는 덜·지출은 슬림·후회는 최소</strong>의 선택을 할 수 있어요. (<a href="https://www.admedical.org/guide/regulations.do?utm_source=chatgpt.com">Admedical</a>, <a href="https://ads.naver.com/sa?utm_source=chatgpt.com">네이버 광고주센터</a>, <a href="https://iclg.com/practice-areas/pharmaceutical-advertising-laws-and-regulations/korea?utm_source=chatgpt.com">ICLG 비즈니스 리포트</a>)</p><p><strong>참고</strong>:</p><ul role="list"><li>네이버 검색광고(파워링크) 소개/노출지면·CPC 구조. (<a href="https://ads.naver.com/sa?utm_source=chatgpt.com">네이버 광고주센터</a>)</li><li>의료광고 법령(비교·경험담·수술장면 금지 등). (<a href="https://www.admedical.org/guide/regulations.do?utm_source=chatgpt.com">Admedical</a>)</li><li>처방의약품 대중광고 금지(한국). (<a href="https://iclg.com/practice-areas/pharmaceutical-advertising-laws-and-regulations/korea?utm_source=chatgpt.com">ICLG 비즈니스 리포트</a>)</li></ul><p>‍</p>
+          </div>
+
+          
+          <div class="info-box checklist-box">
+            <h3>✅ 체크리스트</h3>
+            <ul class="checklist">
+              <li>이벤트 적용 기간/대상</li><li>마취/검사/약/사후관리 포함 여부</li><li>추가 시술 전환 가능성</li><li>환불/일정 변경 규정</li>
+            </ul>
+          </div>
+
+          
+          <section class="faq-section" style="margin-top:24px;">
+            <h2>자주 묻는 질문</h2>
+            <details><summary>네이버 파워링크 성형·보톡스 광고, 똑똑하게 고르는 법은/는 무엇인가요?</summary><p>본문의 '네이버 파워링크 성형·보톡스 광고, 똑똑하게 고르는 법' 섹션을 참고하세요.</p></details><details><summary>“보톡스 1위?”, “강남 보톡스 할인” 속에서 진짜 좋은 선택을 찾는 20‧30대 여성 가이드은/는 무엇인가요?</summary><p>본문의 '“보톡스 1위?”, “강남 보톡스 할인” 속에서 진짜 좋은 선택을 찾는 20‧30대 여성 가이드' 섹션을 참고하세요.</p></details><details><summary>1) 파워링크, 꼭 알아야 할 기본은/는 무엇인가요?</summary><p>본문의 '1) 파워링크, 꼭 알아야 할 기본' 섹션을 참고하세요.</p></details><details><summary>이벤트가와 최종 결제가가 다른 이유는?</summary><p>마취비, 검사비, 사후관리비 등이 별도 청구될 수 있습니다.</p></details><details><summary>비용을 비교할 때 가장 중요한 항목은?</summary><p>포함 항목을 통일한 기준으로 총비용을 비교하는 것이 정확합니다.</p></details><details><summary>환불 규정은 어떻게 확인하나요?</summary><p>상담 시 계약서의 환불 조항을 반드시 확인하세요.</p></details>
+          </section>
+
+          <p class="article-disclaimer">본 콘텐츠는 일반적인 비용 정보를 제공하며, 실제 비용은 병원·시술 범위·개인 상태에 따라 달라질 수 있습니다.</p>
+        </article>
+
+        <aside class="article-sidebar">
+          <section class="card sidebar-card">
+            <span class="badge" style="background:#ffe7ef;color:#d9336c;">상담 안내</span>
+            <h3 style="margin:8px 0 4px;">THE GLAM · 미녀는 괴로워</h3>
+            <div class="hospital-meta">
+              <span>hello@theglam.kr</span>
+              <span>02-333-3539</span>
+            </div>
+            <a href="../mockup/consultation.html" class="btn-primary" style="width:100%;">무료상담</a>
+          </section>
+        </aside>
+      </div>
+
+      <div class="article-cta-area">
+        <p>이 시술에 관심이 있으신가요?</p>
+        <a href="../mockup/consultation.html" class="btn-primary">💬 무료 상담 받아보기</a>
+        <div class="crosscheck-links">
+          <span>다른 플랫폼에서도 확인하기: </span><a href="https://www.babitalk.com/" target="_blank" rel="noopener">바비톡 원문 확인 ↗</a><a href="https://www.gangnamunni.com/" target="_blank" rel="noopener">강남언니 원문 확인 ↗</a><a href="tel:0233333539" target="_blank" rel="noopener">전화 상담 ↗</a><a href="mailto:hello@theglam.kr" target="_blank" rel="noopener">이메일 문의 ↗</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="../mockup-v2/terms.html">이용약관</a>
+        <a href="../mockup-v2/privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="../mockup/consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="../mockup/index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="../mockup/articles.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="../mockup/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="../mockup/hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="../mockup/consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+</body>
+</html>

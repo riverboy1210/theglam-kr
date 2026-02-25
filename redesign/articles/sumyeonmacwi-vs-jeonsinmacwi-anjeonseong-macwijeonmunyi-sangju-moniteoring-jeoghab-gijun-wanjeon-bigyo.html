@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수면마취 vs 전신마취 안전성 | 마취전문의 상주·모니터링·적합 기준 완전 비교 | 미녀는 괴로워</title>
+  <meta name="description" content="병원이 잘 안 말해주는 마취 안전 핵심. 수면마취·전신마취 장단점, 어떤 수술에 어떤 마취가 맞는지, 마취전문의 상주·EtCO₂·BIS·회복실·응급 프로토콜까지 체크리스트로 투명 정리.">
+  <link rel="canonical" href="https://theglam.kr/articles/sumyeonmacwi-vs-jeonsinmacwi-anjeonseong-macwijeonmunyi-sangju-moniteoring-jeoghab-gijun-wanjeon-bigyo">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .article-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .article-header {
+      margin-bottom: 20px;
+    }
+
+    .article-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .article-title {
+      margin: 0;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .author-profile {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-content p {
+      margin: 0 0 14px;
+      color: #2d3347;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .price-table thead {
+      background: #fff1f7;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-tag {
+      color: #d9336c;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .info-box {
+      background: var(--bg-pink);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #7d2046;
+    }
+
+    .checklist-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip-header {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0 10px;
+    }
+
+    .before-after-item {
+      flex: 1;
+      display: block;
+      min-height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .before-after-item p {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+    }
+
+    .article-disclaimer {
+      margin-top: 22px;
+      font-size: 0.76rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      padding: 14px;
+    }
+
+    .hospital-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 6px 0 12px;
+    }
+
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .related-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-item .img-placeholder {
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .related-item p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .article-cta-area {
+      text-align: center;
+      padding: 32px;
+      background: var(--bg-gray);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .article-cta-area p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .crosscheck-links {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      justify-content: center;
+    }
+
+    .crosscheck-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .comments-section {
+      margin-top: 22px;
+    }
+
+    .comments-section h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-item .avatar {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      font-size: 0.84rem;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+    }
+
+    .comment-head strong {
+      color: var(--text);
+    }
+
+    .comment-head span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #2d3347;
+    }
+
+    .comment-like {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    @media (min-width: 1024px) {
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .article-title {
+        font-size: 1.45rem;
+      }
+
+      .before-after {
+        flex-direction: column;
+      }
+
+      .article-cta-area {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../mockup/index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-layout">
+        <article class="article-main">
+          <div class="article-header">
+            <div class="article-meta-top">
+              <span class="badge" style="background:#EF4444;color:#fff;">안전 정보</span>
+              <span class="article-date">2025-08-28</span>
+            </div>
+            <h1 class="article-title">수면마취 vs 전신마취 안전성 | 마취전문의 상주·모니터링·적합 기준 완전 비교</h1>
+            <div class="author-profile">
+              <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#FFE0EC;display:flex;align-items:center;justify-content:center;">👩</div>
+              <div><strong>김서연 에디터</strong></div>
+            </div>
+          </div>
+
+          
+          <div class="article-hero-image" style="margin: 0 0 18px;">
+            <img src="https://cdn.prod.website-files.com/68993c805b6ff04a733e5d25/68b00671945b36d765c1af1d_%5B%EB%B3%B5%EC%82%AC%EB%B3%B8%5D%2001.%EA%B8%80%EC%9D%84%20%EC%9C%84%ED%95%B4%20%EC%82%AC%EC%A7%84%20%EB%B0%94%EA%BE%BC%20%EC%98%88%EC%8B%9C%EB%93%A4%20(10).png" alt="수면마취 vs 전신마취 안전성 | 마취전문의 상주·모니터링·적합 기준 완전 비교" style="width:100%;border-radius:12px;">
+          </div>
+
+          <div class="article-content">
+            <h1>수면마취 vs 전신마취 안전성, 병원이 잘 안 알려주는 핵심</h1><p>광고성 문구보다 중요한 건 <strong>마취 안전 시스템</strong>입니다. 특히 <strong>전문의 마취의 상주(상근) 여부</strong>가 실제 안전성에 큰 차이를 만듭니다. 이 글은 20~30대 여성 독자가 <strong>수면마취(진정)와 전신마취</strong>의 차이, 장단점, 적합 상황을 이해하고, <strong>마취전문의 상주·1:1 관리</strong>를 중심으로 병원을 선택할 수 있도록 정리한 정보 가이드예요.</p><h2>⭐ 핵심 포인트 요약</h2><ul role="list"><li><strong>수면마취(진정)</strong>: 의식은 흐리지만 <strong>자발 호흡 유지</strong>가 전제. 짧고 통증·자극이 적은 시술에 적합. 회복 빠름. 단, <strong>호흡 저하</strong> 위험이 있어 <strong>전문의의 실시간 모니터링</strong>이 중요.</li><li><strong>전신마취</strong>: 의식·통증·반사 소실 + <strong>기도 확보(튜브 또는 라링지얼 마스크)</strong>. 수술 시간이 길거나 출혈·통증·자극이 큰 수술에 적합. 안전하지만 회복이 더 필요할 수 있음.</li><li><strong>안전의 핵심</strong>: 약제 종류보다 <strong>마취전문의 상주/1:1 관리, 캡노그래피(EtCO₂)·BIS 모니터, 회복실(PACU) 인력, 응급 프로토콜</strong>.</li><li><strong>플랫폼 체크</strong>: 강남언니·바비톡 등 일부 병원 페이지에서 <strong>“마취전문의 상주”를 스펙/옵션</strong>으로 표기하거나 **추가 비용(패키지 업셀)**으로 노출하는 경우가 있어요. 표기만 믿지 말고 실제 운영을 확인하세요.</li><li><strong>롱테일 키워드</strong>: 수면마취 부작용, 전신마취 위험성, 마취전문의 상주, 캡노그래피 모니터링, BIS 모니터, ASA 등급, 수면무호흡증 마취</li></ul><h2>🔎 마취 기본: 헷갈리는 용어 정리</h2><ul role="list"><li><strong>수면마취(진정·sedation)</strong>: 주로 <strong>프로포폴</strong>(필요 시 미다졸람·진통제 병용). 반응은 가능할 수 있고 호흡은 스스로 하되, <strong>호흡 얕아짐/무호흡</strong>이 생기면 즉시 대응해야 해요.</li><li><strong>전신마취(general)</strong>: 의식·통증·반사 소실. <strong>기도 확보(튜브/라링지얼 마스크)</strong> + 흡입마취제 또는 **정맥마취(TIVA)**로 유지.</li><li><strong>필수 모니터</strong>: 심전도(ECG), 혈압(NIBP), 산소포화도(SpO₂), <strong>호기말 이산화탄소(EtCO₂)</strong>, 필요 시 <strong>BIS</strong>(깊이 모니터).</li><li><strong>환자 상태 분류</strong>: <strong>ASA 등급</strong>(전신상태 평가)으로 마취 위험도를 가늠.</li></ul><h2>⚖ 수면마취 vs 전신마취 장단점 비교</h2><p>구분수면마취(진정)전신마취의식/호흡의식 흐림, <strong>자발 호흡 유지 전제</strong>의식·반사 소실, <strong>기도 확보</strong>적합 시술짧은 시간·자극/통증 적은 시술긴 시간·출혈/통증/자극 큰 수술회복대체로 빠름상대적으로 더 필요부작용 경향호흡저하·저혈압·무호흡인후통·오심구토·오한 등안전핵심<strong>전문의 상주·캡노그래피기도 관리·심도/통증/순환 관리</strong>비용상대적으로 낮거나 유사인력·장비로 비용 증가 가능</p><p><strong>포인트</strong>: 어떤 마취가 “더 안전”이 아니라, <strong>내 상태·수술 특성에 맞는 선택 + 전문의 상주 시스템</strong>이 안전을 만듭니다.</p><h2>👩 어떤 경우 어떤 마취가 적합할까?</h2><ul role="list"><li><strong>수면마취 추천 경향</strong>: 눈 성형(간단), 간단한 지방/실/쁘띠, 짧은 피부·레이저 시술(통증·자극이 낮고 수술 시간이 짧은 경우).</li><li><strong>전신마취 추천 경향</strong>: 코 성형(기도·출혈 이슈), 지방흡입/체형·가슴/복부/윤곽 등 <strong>긴 시간·자극·출혈</strong>이 동반되거나 <strong>체위 변화</strong>가 큰 수술.</li><li><strong>환자 요인</strong>: <strong>수면무호흡증·비만(BMI↑)·역류성 식도염(GERD)·천식/심장질환</strong>·강한 불안/공포는 <strong>전신마취</strong> 또는 감시 강화가 유리할 수 있어요.</li><li><strong>체험 팁(일반화)</strong>: “수면은 금방 깼지만 숨이 가빴다”는 후기가 간혹 있고, 전신은 “목이 따갑고 하루 피곤했지만 큰 수술엔 편했다”는 평이 있어요(개인차 큼).</li></ul><h2>🧑‍⚕️ 마취전문의 상주 체크리스트</h2><ul role="list"><li><strong>상주·상근 여부</strong>: “필요 시 호출”이 아니라 <strong>수술 내내 상주</strong>하는지. 동시에 <strong>여러 방</strong>을 한 명이 커버하지 않는지(1:1 원칙).</li><li><strong>전담 인력</strong>: <strong>마취전문의 + 마취전담 간호사</strong> 동시 배치인지, 단독 간호사 감시만으로 운영하지 않는지.</li><li><strong>모니터링</strong>: ECG, <strong>SpO₂ + EtCO₂(캡노그래피)</strong>, 혈압, 체온, 필요 시 <strong>BIS</strong>. 수면마취에서도 <strong>EtCO₂ 필수</strong>인지 확인.</li><li><strong>기도·응급 장비</strong>: 라링지얼 마스크·튜브·비디오후두경, 산소·흡인, <strong>제세동기(AED)</strong>, 응급약(아나필락시스/부정맥/저혈압/경련).</li><li><strong>회복실(PACU)</strong>: 전담 인력·산소·흡인·모니터 구비, <strong>회복 기준(퇴실 스코어)</strong> 적용.</li><li><strong>사전평가</strong>: ASA 등급·<strong>STOP-Bang(수면무호흡증)</strong>·약물·알레르기·과거 마취 이슈(예: 악성고열증) 확인.</li><li><strong>NPO(금식)</strong>: 고형 6–8시간, 맑은 액체 2시간 등 <strong>표준 금식 지침</strong>을 고지·점검하는지.</li><li><strong>문서화/투명성</strong>: 마취 동의서·모니터 기록·약물·사건 대응 로그를 <strong>기록·보관</strong>하는지.</li><li><strong>플랫폼 표기 주의</strong>: 강남언니·바비톡에서 “마취전문의 상주/안전마취 패키지”가 **옵션(업셀)**으로 표기되기도 해요. <strong>추가비용만</strong> 보지 말고 실제 <strong>상주·1:1·모니터 기준</strong>을 확인하세요.</li></ul><h2>🧪 수술 당일 프로세스</h2><ol role="list"><li><strong>사전평가</strong>: 병력·약물·알레르기·임신 가능성·수면무호흡증 스크리닝, ASA 등급 산정.</li><li><strong>금식/NPO</strong> 확인 → 정맥라인 확보 → 기본 모니터 연결.</li><li><strong>수면마취</strong>: 산소 보충 + 프로포폴 중심 진정, <strong>EtCO₂로 호흡 감시</strong>, 필요 시 기도 보조.</li><li><strong>전신마취</strong>: 산소화 → 유도(정맥/흡입) → <strong>기도 확보</strong> → 유지(TIVA/흡입) → 회복·발관.</li><li><strong>회복실(PACU)</strong>: 오심·통증·호흡·순환 안정 확인 → 퇴실 기준 충족 시 귀가.</li></ol><h2>😣 부작용/위험과 관리</h2><ul role="list"><li><strong>수면마취</strong>: 호흡저하·무호흡·저혈압, 드물게 역류흡인. 적절한 <strong>캡노그래피·기도 보조</strong>로 위험을 낮춤.</li><li><strong>전신마취</strong>: 인후통·오심/구토·오한, 드물게 치아·입술 손상, 아주 드물게 심각 합병증.</li><li><strong>공통 위험요인</strong>: 수면무호흡증, 비만, 흡연/음주, 호흡기/심혈관 질환, 빈혈, 임신, 과거 마취 이상반응.</li><li><strong>예방</strong>: <strong>전문의 상주·표준 모니터·응급장비·회복실·프로토콜</strong> + 금식 준수 + 약물·보충제 사전 신고.</li></ul><h2>💰 비용이 달라지는 이유</h2><ul role="list"><li><strong>마취 유형·시간</strong>(수면 vs 전신, 유지 시간)</li><li><strong>전문의 상주·1:1</strong> 인건비, <strong>모니터링/기도 장비</strong> 사용</li><li><strong>회복실 운영</strong>(PACU 인력·설비), <strong>검사/약제</strong>(오심예방·진통·역전제)</li><li><strong>플랫폼/병원 정책</strong>: “안전마취 패키지(전문의 상주·EtCO₂·BIS)”를 <strong>별도 유료 옵션</strong>으로 두는 곳도 있어요. 구성과 포함 항목을 꼼꼼히 비교하세요.</li></ul><h2>🏠 회복 &amp; 자가관리</h2><ul role="list"><li><strong>당일 운전 금지</strong>, 보호자 동행 권장(특히 전신마취).</li><li>수분 섭취, 과음/과식 피하기, 오심·어지럼 시 휴식.</li><li><strong>경고 신호</strong>: 호흡곤란, 지속 구토·탈수, 흉통/심한 어지럼, 발열·심한 출혈 → 즉시 병원 연락.</li></ul><h2>🏥 병원·의료진 선택 체크리스트</h2><ul role="list"><li>□ <strong>마취전문의 상주/상근</strong> 여부, <strong>수술 내내 1:1</strong> 감시</li><li>□ <strong>EtCO₂(캡노그래피)</strong>, SpO₂, ECG, NIBP, <strong>BIS</strong> 구비</li><li>□ <strong>회복실(PACU)</strong> 인력·설비·퇴실 기준</li><li>□ <strong>응급 프로토콜</strong>(기도·알레르기·부정맥·심정지)·제세동기 구비</li><li>□ <strong>사전평가</strong>(ASA·STOP-Bang·임신/약물/알레르기) 실시</li><li>□ <strong>금식 지침</strong> 고지·준수 확인</li><li>□ <strong>문서화</strong>(마취 기록·약제·사건 대응)·투명 공개</li><li>□ 플랫폼 표기의 <strong>옵션/업셀</strong>이 실제 상주·장비 기준과 <strong>일치하는지</strong> 확인</li></ul><h2>💬 후기 톤(일반화)</h2><ul role="list"><li><strong>수면마취</strong>: “금방 깼고 멀미 거의 없었어요. 다만 순간 숨이 가쁜 느낌이 있어 겁났는데, 옆에서 의료진이 계속 말 걸어줘서 안심됐어요.”</li><li><strong>전신마취</strong>: “수술은 편했지만 깬 뒤 목이 따갑고 하루 종일 피곤했어요. 다음 날부터는 괜찮았고 오심약 미리 줘서 토하지는 않았어요.”<br/>※ 개인차가 큽니다. <strong>마취전문의 상주 + 표준 모니터링</strong>이 핵심.</li></ul><h2>❓ FAQ</h2><p><strong>Q1. 수면마취가 더 안전한가요, 전신마취가 더 안전한가요?</strong><br/>A. 절대치가 아니라 <strong>내 상태·수술 특성</strong>에 맞춘 선택 + <strong>전문의 상주/표준 모니터</strong>가 안전을 좌우합니다.</p><p><strong>Q2. 프로포폴은 위험한가요?</strong><br/>A. 적정 용량·모니터링·기도 대응이 갖춰지면 안전하게 사용됩니다. 문제는 <strong>감시 부실</strong>이에요. <strong>EtCO₂ 감시</strong>를 확인하세요.</p><p><strong>Q3. 금식은 왜 중요하죠?</strong><br/>A. 역류흡인 예방을 위해서예요. <strong>고형 6–8시간, 맑은 액체 2시간</strong>이 보통 권장됩니다(개인별 지침 따르기).</p><p><strong>Q4. 수면무호흡증이 있는데 어떤 마취가 좋나요?</strong><br/>A. 위험이 높아 <strong>전문의 상주 + 기도 관리</strong>가 더 안전합니다. 전신마취 또는 강화 진정 관리가 논의될 수 있어요.</p><p><strong>Q5. 플랫폼에 ‘마취 안전 패키지’가 있던데 믿어도 되나요?</strong><br/>A. <strong>구성(전문의 상주·EtCO₂·BIS·회복실)과 실제 운영</strong>이 일치하는지 병원에서 재확인하세요. <strong>옵션 업셀</strong>일 수 있어요.</p><h2>✅ 핵심 요약 &amp; 실행 가이드</h2><ul role="list"><li><strong>마취는 가격보다 시스템</strong>: <strong>전문의 상주·1:1 감시·EtCO₂·BIS·PACU·응급 프로토콜</strong>이 있나 확인하세요.</li><li><strong>나에게 맞는 마취</strong>: 수술 시간/자극, 기저질환(수면무호흡증·비만·GERD 등), 불안 정도를 솔직히 공유.</li><li><strong>상담 준비물</strong>: 병력·약물/보충제·알레르기·과거 마취 기록·최근 검사.<br/><strong>다음 스텝</strong>: 상담 예약 시 “<strong>전문의 상주 여부/1:1 감시/캡노그래피 사용/회복실 운영</strong>을 문서로 확인”해 달라고 요청하세요. 이 네 가지가 갖춰진 곳이 <strong>진짜 안전 마취</strong>입니다.</li></ul><p>‍</p>
+          </div>
+
+          
+          <div class="info-box checklist-box">
+            <h3>✅ 체크리스트</h3>
+            <ul class="checklist">
+              <li>고열/출혈/통증 악화 신호</li><li>호흡 불편/급격한 붓기</li><li>야간 연락 경로/응급실 동선</li><li>의료진 상담 전 질문</li>
+            </ul>
+          </div>
+
+          
+          <section class="faq-section" style="margin-top:24px;">
+            <h2>자주 묻는 질문</h2>
+            <details><summary>수면마취 vs 전신마취 안전성, 병원이 잘 안 알려주는 핵심은/는 무엇인가요?</summary><p>본문의 '수면마취 vs 전신마취 안전성, 병원이 잘 안 알려주는 핵심' 섹션을 참고하세요.</p></details><details><summary>⭐ 핵심 포인트 요약은/는 무엇인가요?</summary><p>본문의 '⭐ 핵심 포인트 요약' 섹션을 참고하세요.</p></details><details><summary>🔎 마취 기본: 헷갈리는 용어 정리은/는 무엇인가요?</summary><p>본문의 '🔎 마취 기본: 헷갈리는 용어 정리' 섹션을 참고하세요.</p></details><details><summary>시술 후 정상 반응과 위험 신호의 차이는?</summary><p>고열, 급격한 붓기, 호흡 불편 등은 즉시 의료진 상담이 필요합니다.</p></details><details><summary>야간에 응급 상황이 발생하면?</summary><p>병원 야간 연락처를 사전에 확인하고, 응급실 동선을 미리 파악하세요.</p></details><details><summary>부작용을 줄이려면 어떻게 해야 하나요?</summary><p>의료진의 사전/사후 안내를 철저히 준수하는 것이 가장 중요합니다.</p></details>
+          </section>
+
+          <p class="article-disclaimer">개인차가 크며, 이상 증상 판단은 의료진 안내를 우선하세요.</p>
+        </article>
+
+        <aside class="article-sidebar">
+          <section class="card sidebar-card">
+            <span class="badge" style="background:#ffe7ef;color:#d9336c;">상담 안내</span>
+            <h3 style="margin:8px 0 4px;">THE GLAM · 미녀는 괴로워</h3>
+            <div class="hospital-meta">
+              <span>hello@theglam.kr</span>
+              <span>02-333-3539</span>
+            </div>
+            <a href="../mockup/consultation.html" class="btn-primary" style="width:100%;">무료상담</a>
+          </section>
+        </aside>
+      </div>
+
+      <div class="article-cta-area">
+        <p>이 시술에 관심이 있으신가요?</p>
+        <a href="../mockup/consultation.html" class="btn-primary">💬 무료 상담 받아보기</a>
+        <div class="crosscheck-links">
+          <span>다른 플랫폼에서도 확인하기: </span><a href="https://www.babitalk.com/" target="_blank" rel="noopener">바비톡 원문 확인 ↗</a><a href="https://www.gangnamunni.com/" target="_blank" rel="noopener">강남언니 원문 확인 ↗</a><a href="tel:0233333539" target="_blank" rel="noopener">전화 상담 ↗</a><a href="mailto:hello@theglam.kr" target="_blank" rel="noopener">이메일 문의 ↗</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="../mockup-v2/terms.html">이용약관</a>
+        <a href="../mockup-v2/privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="../mockup/consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="../mockup/index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="../mockup/articles.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="../mockup/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="../mockup/hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="../mockup/consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+</body>
+</html>

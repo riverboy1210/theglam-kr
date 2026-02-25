@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마취과 상주 확인 문항 | 미녀는 괴로워</title>
+  <meta name="description" content="집도의 외 마취과 전문의 상주, 감시 장비, 기도 관리 능력 등 안전 질문 리스트를 제공합니다.">
+  <link rel="canonical" href="https://theglam.kr/articles/anesthesiologist-on-site-verification-questions">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .article-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .article-header {
+      margin-bottom: 20px;
+    }
+
+    .article-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .article-title {
+      margin: 0;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .author-profile {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-content p {
+      margin: 0 0 14px;
+      color: #2d3347;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .price-table thead {
+      background: #fff1f7;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-tag {
+      color: #d9336c;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .info-box {
+      background: var(--bg-pink);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #7d2046;
+    }
+
+    .checklist-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip-header {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0 10px;
+    }
+
+    .before-after-item {
+      flex: 1;
+      display: block;
+      min-height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .before-after-item p {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+    }
+
+    .article-disclaimer {
+      margin-top: 22px;
+      font-size: 0.76rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      padding: 14px;
+    }
+
+    .hospital-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 6px 0 12px;
+    }
+
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .related-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-item .img-placeholder {
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .related-item p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .article-cta-area {
+      text-align: center;
+      padding: 32px;
+      background: var(--bg-gray);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .article-cta-area p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .crosscheck-links {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      justify-content: center;
+    }
+
+    .crosscheck-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .comments-section {
+      margin-top: 22px;
+    }
+
+    .comments-section h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-item .avatar {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      font-size: 0.84rem;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+    }
+
+    .comment-head strong {
+      color: var(--text);
+    }
+
+    .comment-head span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #2d3347;
+    }
+
+    .comment-like {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    @media (min-width: 1024px) {
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .article-title {
+        font-size: 1.45rem;
+      }
+
+      .before-after {
+        flex-direction: column;
+      }
+
+      .article-cta-area {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../mockup/index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-layout">
+        <article class="article-main">
+          <div class="article-header">
+            <div class="article-meta-top">
+              <span class="badge" style="background:#3B82F6;color:#fff;">회복 관리</span>
+              <span class="article-date">2025-09-09</span>
+            </div>
+            <h1 class="article-title">마취과 상주 확인 문항</h1>
+            <div class="author-profile">
+              <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#FFE0EC;display:flex;align-items:center;justify-content:center;">👩</div>
+              <div><strong>김서연 에디터</strong></div>
+            </div>
+          </div>
+
+          
+          <div class="article-hero-image" style="margin: 0 0 18px;">
+            <img src="../images/68bfc69cbca510ffe2d1764f_uc.jpeg" alt="마취과 상주 확인 문항" style="width:100%;border-radius:12px;">
+          </div>
+
+          <div class="article-content">
+            <h2>마취과 상주 확인 문항에 대한 이해</h2><p>마취과 상주 확인 문항은 수술 전 마취 안전성을 평가하고, 의사소통을 원활하게 하여 환자의 안전과 효과를 극대화하기 위한 필수 과정입니다. 이와 관련된 롱테일 키워드는 마취 안전, 수술 서류, 건강 상태 평가, 의사 상담, 적절한 마취 방법, 수술 전 점검 등이 있습니다.</p><h2>상주 확인이 필요한 순간</h2><p>수술 전 마취과 상주 확인은 여러 상황에서 필요할 수 있습니다.</p><ul role="list">  <li>환자의 기존 건강 이력이 복잡한 경우</li>  <li>특정한 마취 방법이 요구되는 시술 시</li>  <li>수술 기간이나 방법이 특별히 예민한 경우</li></ul><h2>상주 확인 전 점검사항</h2><p>상주 확인이 이루어지기 전에 환자가 점검해야 할 사항은 다음과 같습니다.</p><ul role="list">  <li>과거 수술 이력 및 건강 상태 점검</li>  <li>복용 중인 약물 정보 제출</li>  <li>생활 습관 및 알레르기 여부 확인</li></ul><h2>마취과 상주 확인 프로세스</h2><h3>사전 단계</h3><p>마취과 상주 확인의 첫 단계는 환자의 기존 건강 상태를 평가하는 것입니다. 이를 위해 적절한 검사와 상담이 필요합니다.</p><ul role="list">  <li>건강 상태에 대한 질문지 작성</li>  <li>의사와의 면담을 통한 기대치 조율</li>  <li>필요한 검사(예: 혈액 검사) 진행</li></ul><h3>상주 확인 단계</h3><p>환자가 수술 하루 전이나 수술 당일 마취과 상주 확인을 통해 다음 사항을 주요 체크합니다.</p><ol role="list">  <li>마취 방법 및 절차 검토</li>  <li>환자의 상태에 적합한 마취 안전성 확인</li>  <li>수술 후 관리 계획 소개</li></ol><h3>사후 관리</h3><p>마취과 상주 확인 이후, 환자는 다음과 같은 사후 관리를 통해 안전하게 회복할 수 있습니다.</p><ul role="list">  <li>통증 관리 및 이상 반응 모니터링</li>  <li>회복 기록지 작성 및 주기적인 점검</li>  <li>의사의 지시에 따른 프로세스 진행</li></ul><h2>마취과 상주 확인의 장단점</h2><p>마취과 상주 확인은 환자의 안전과 성공적인 결과를 목표로 하지만, 몇 가지 고려사항이 있습니다.</p><p>  장점단점  환자의 건강 상태를 철저히 체크추가 체크로 인한 시간 소요  마취 안전성을 높임비용 증가 가능성</p><h2>핵심 요약 &amp; 실행 가이드(CTA)</h2><ul role="list">  <li><strong>요약:</strong> 상주 확인 과정의 필요성, 검토 항목 및 esperado outcomes.</li>  <li><strong>체크리스트:</strong> 상담 전 확인할 사항 5~7문항(건강 이력, 약물 목록, 마취 방법, 수술 일정, 회복 계획 등).</li>  <li><strong>CTA:</strong> 상주 확인 전 필요한 서류 및 질문지를 준비해 주세요.</li></ul><p>이 글은 일반 정보 제공 목적이며, 개인의 병력, 체형, 검사 결과에 따라 권고는 달라질 수 있습니다. 최종 결정은 전문 의료진 상담 후 진행하세요. 업데이트: 2023-10-04</p>
+          </div>
+
+          
+          <div class="info-box checklist-box">
+            <h3>✅ 체크리스트</h3>
+            <ul class="checklist">
+              <li>Day 1: 휴식/냉찜질/연락체계</li><li>Day 3~7: 부기관리/세안 기준</li><li>Day 14: 일상 복귀 점검</li><li>Day 30: 최종 안정 체크</li>
+            </ul>
+          </div>
+
+          
+          <section class="faq-section" style="margin-top:24px;">
+            <h2>자주 묻는 질문</h2>
+            <details><summary>마취과 상주 확인 문항에 대한 이해은/는 무엇인가요?</summary><p>본문의 '마취과 상주 확인 문항에 대한 이해' 섹션을 참고하세요.</p></details><details><summary>상주 확인이 필요한 순간은/는 무엇인가요?</summary><p>본문의 '상주 확인이 필요한 순간' 섹션을 참고하세요.</p></details><details><summary>상주 확인 전 점검사항은/는 무엇인가요?</summary><p>본문의 '상주 확인 전 점검사항' 섹션을 참고하세요.</p></details><details><summary>시술 후 언제부터 운동이 가능한가요?</summary><p>일반적으로 4~6주 후부터 가벼운 운동이 가능하지만, 담당 의료진과 상의하세요.</p></details><details><summary>붓기가 오래 가면 문제가 있는 건가요?</summary><p>2주 이상 붓기가 줄지 않으면 병원에 문의하세요.</p></details><details><summary>회복 중 음주/흡연은 언제부터?</summary><p>최소 2~4주간 금주/금연을 권장하며, 구체적 시기는 담당의와 상의하세요.</p></details>
+          </section>
+
+          <p class="article-disclaimer">회복 기간은 개인에 따라 다를 수 있으며, 구체적인 사항은 담당 의료진과 상의하세요.</p>
+        </article>
+
+        <aside class="article-sidebar">
+          <section class="card sidebar-card">
+            <span class="badge" style="background:#ffe7ef;color:#d9336c;">상담 안내</span>
+            <h3 style="margin:8px 0 4px;">THE GLAM · 미녀는 괴로워</h3>
+            <div class="hospital-meta">
+              <span>hello@theglam.kr</span>
+              <span>02-333-3539</span>
+            </div>
+            <a href="../mockup/consultation.html" class="btn-primary" style="width:100%;">무료상담</a>
+          </section>
+        </aside>
+      </div>
+
+      <div class="article-cta-area">
+        <p>이 시술에 관심이 있으신가요?</p>
+        <a href="../mockup/consultation.html" class="btn-primary">💬 무료 상담 받아보기</a>
+        <div class="crosscheck-links">
+          <span>다른 플랫폼에서도 확인하기: </span><a href="https://www.babitalk.com/" target="_blank" rel="noopener">바비톡 원문 확인 ↗</a><a href="https://www.gangnamunni.com/" target="_blank" rel="noopener">강남언니 원문 확인 ↗</a><a href="tel:0233333539" target="_blank" rel="noopener">전화 상담 ↗</a><a href="mailto:hello@theglam.kr" target="_blank" rel="noopener">이메일 문의 ↗</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="../mockup-v2/terms.html">이용약관</a>
+        <a href="../mockup-v2/privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="../mockup/consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="../mockup/index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="../mockup/articles.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="../mockup/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="../mockup/hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="../mockup/consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>재수술 병원 선택 기준 체크리스트 | 미녀는 괴로워</title>
+  <meta name="description" content="전문의 경력, 마취과 상주, 응급체계, 사진·영상 판독, 견적 투명성 등 핵심 체크 포인트입니다.">
+  <link rel="canonical" href="https://theglam.kr/articles/revision-surgery-clinic-selection-checklist">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .article-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .article-header {
+      margin-bottom: 20px;
+    }
+
+    .article-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .article-title {
+      margin: 0;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .author-profile {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-content p {
+      margin: 0 0 14px;
+      color: #2d3347;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .price-table thead {
+      background: #fff1f7;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-tag {
+      color: #d9336c;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .info-box {
+      background: var(--bg-pink);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #7d2046;
+    }
+
+    .checklist-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip-header {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0 10px;
+    }
+
+    .before-after-item {
+      flex: 1;
+      display: block;
+      min-height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .before-after-item p {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+    }
+
+    .article-disclaimer {
+      margin-top: 22px;
+      font-size: 0.76rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      padding: 14px;
+    }
+
+    .hospital-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 6px 0 12px;
+    }
+
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .related-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-item .img-placeholder {
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .related-item p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .article-cta-area {
+      text-align: center;
+      padding: 32px;
+      background: var(--bg-gray);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .article-cta-area p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .crosscheck-links {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      justify-content: center;
+    }
+
+    .crosscheck-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .comments-section {
+      margin-top: 22px;
+    }
+
+    .comments-section h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-item .avatar {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      font-size: 0.84rem;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+    }
+
+    .comment-head strong {
+      color: var(--text);
+    }
+
+    .comment-head span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #2d3347;
+    }
+
+    .comment-like {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    @media (min-width: 1024px) {
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .article-title {
+        font-size: 1.45rem;
+      }
+
+      .before-after {
+        flex-direction: column;
+      }
+
+      .article-cta-area {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../mockup/index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-layout">
+        <article class="article-main">
+          <div class="article-header">
+            <div class="article-meta-top">
+              <span class="badge" style="background:#8B5CF6;color:#fff;">병원 선택</span>
+              <span class="article-date">2025-09-09</span>
+            </div>
+            <h1 class="article-title">재수술 병원 선택 기준 체크리스트</h1>
+            <div class="author-profile">
+              <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#FFE0EC;display:flex;align-items:center;justify-content:center;">👩</div>
+              <div><strong>김서연 에디터</strong></div>
+            </div>
+          </div>
+
+          
+          <div class="article-hero-image" style="margin: 0 0 18px;">
+            <img src="../../external/cdn.prod.website-files.com/68993c805b6ff04a733e5d25/68bfc69b859c1c36894d28c8_uc.jpeg" alt="재수술 병원 선택 기준 체크리스트" style="width:100%;border-radius:12px;">
+          </div>
+
+          <div class="article-content">
+            <h2>재수술 병원 선택 기준 체크리스트에 대한 이해</h2><p>재수술은 초기 수술 후 발생한 여러 문제를 해결하기 위한 중요한 과정입니다. 재수술 병원 선택 시 고려해야 할 기준은 다양합니다. 여기에서는 구형구축 재수술을 중심으로 필요한 체크리스트와 함께 각 항목에 대한 설명을 제공합니다.</p><h2>재수술이 필요한 순간</h2><p>재수술이 필요한 이유는 여러 가지가 있으며, 이를 이해하는 것이 중요합니다. 대표적인 상황은 다음과 같습니다.</p><ul role="list">  <li>케이스 1: 보형물의 위치 이상이나 회전</li>  <li>케이스 2: 구형구축으로 인한 비대칭 또는 불만족</li>  <li>케이스 3: 감염 또는 염증 발생</li></ul><h2>재수술 전 확인사항</h2><p>재수술 결정을 내리기 전에는 반드시 확인해야 할 사항들이 있습니다. 이는 성공적인 수술과 회복을 위한 필수적인 과정입니다.</p><ul role="list">  <li>원인 파악(영상 판독, 문진 및 과거 수술 이력 확인)</li>  <li>중증도 및 등급 평가(구형구축 정도 파악)</li>  <li>건강 상태·복용약·생활 일정 고려</li></ul><h2>재수술 병원 선택 프로세스</h2><h3>사전 단계</h3><p>재수술을 위한 사전 과정으로는 철저한 검사가 필요합니다. 초음파나 MRI 등의 영상 검사를 통해 문제를 더욱 명확히 해야 합니다.</p><ul role="list">  <li>검사 및 사진 표준화 진행</li>  <li>마취 및 안전 상담을 통해 리스크 최소화</li>  <li>유형에 따라 평면 변경, 포켓 재건, ADM 고려</li></ul><h3>수술 단계</h3><p>실제 수술 단계에서는 신중한 접근이 필요합니다. 아래의 단계들이 핵심입니다.</p><ol role="list">  <li>마취 실시</li>  <li>원인 교정(예: 캡슐 절제, 포켓 재건 및 보형물 교체)</li>  <li>봉합, 지지 및 배액 판단</li></ol><h3>사후 관리</h3><p>수술 후 관리 또한 매우 중요합니다. 회복기간에 따라 적절한 조치를 계획해야 합니다.</p><ul role="list">  <li>1주 내 부기 및 통증 관리</li>  <li>2~6주 내 적절한 활동 복귀</li>  <li>흉터 관리, 보정 브라 착용 및 추적 진료 필요</li></ul><h2>재수술 병원 선택의 장단점</h2><p>재수술의 장점과 단점을 균형 있게 파악하는 것이 중요합니다. 다음은 주요 장점과 단점입니다.</p><p>  장점단점  미용 및 기능 개선출혈 및 감염 등의 수술 리스크  자연스러운 형태 및 촉감다운타임과 추가 비용 발생 가능성</p><h2>핵심 요약 &amp; 실행 가이드(CTA)</h2><ul role="list">  <li><strong>요약:</strong> 재수술의 필요성과 판단 기준, 수술 과정 및 장단점 파악이 필요합니다.</li>  <li><strong>체크리스트:</strong> 상담 전 확인해야 할 5~7문항(영상 판독, 원인 및 대안 확인, 마취 및 안전 평가, 회복 및 일정 점검, 비용 항목별 내역 조사 등).</li>  <li><strong>CTA:</strong> 자가 점검표 및 상담 전 질문지를 준비하는 것이 좋습니다.</li></ul><p>이 글은 일반 정보 제공 목적이며, 개인의 병력 및 체형, 검사 결과에 따라 권고는 달라질 수 있습니다. 최종 결정은 전문 의료진 상담 후 진행하세요. 업데이트: 2023-10-06</p>
+          </div>
+
+          
+          <div class="info-box checklist-box">
+            <h3>✅ 체크리스트</h3>
+            <ul class="checklist">
+              <li>대안 시술 설명 유무</li><li>리스크/회복 기준 설명</li><li>추가 비용 트리거</li><li>사후관리 프로토콜</li>
+            </ul>
+          </div>
+
+          
+          <section class="faq-section" style="margin-top:24px;">
+            <h2>자주 묻는 질문</h2>
+            <details><summary>재수술 병원 선택 기준 체크리스트에 대한 이해은/는 무엇인가요?</summary><p>본문의 '재수술 병원 선택 기준 체크리스트에 대한 이해' 섹션을 참고하세요.</p></details><details><summary>재수술이 필요한 순간은/는 무엇인가요?</summary><p>본문의 '재수술이 필요한 순간' 섹션을 참고하세요.</p></details><details><summary>재수술 전 확인사항은/는 무엇인가요?</summary><p>본문의 '재수술 전 확인사항' 섹션을 참고하세요.</p></details><details><summary>병원 후기의 신뢰도를 어떻게 판단하나요?</summary><p>지나치게 긍정적이거나 구체성이 없는 후기는 주의가 필요합니다.</p></details><details><summary>상담 시 반드시 물어봐야 할 질문은?</summary><p>시술 방법, 리스크, 회복 기간, 총비용, 사후관리 범위를 확인하세요.</p></details><details><summary>여러 병원을 비교할 때 기준은?</summary><p>동일한 항목(비용, 방법, 경력, 관리)으로 통일하여 비교하세요.</p></details>
+          </section>
+
+          <p class="article-disclaimer">본 내용은 외부 공개 후기의 공통 패턴을 재정리한 요약 정보이며, 원문은 각 플랫폼에서 직접 확인하세요.</p>
+        </article>
+
+        <aside class="article-sidebar">
+          <section class="card sidebar-card">
+            <span class="badge" style="background:#ffe7ef;color:#d9336c;">상담 안내</span>
+            <h3 style="margin:8px 0 4px;">THE GLAM · 미녀는 괴로워</h3>
+            <div class="hospital-meta">
+              <span>hello@theglam.kr</span>
+              <span>02-333-3539</span>
+            </div>
+            <a href="../mockup/consultation.html" class="btn-primary" style="width:100%;">무료상담</a>
+          </section>
+        </aside>
+      </div>
+
+      <div class="article-cta-area">
+        <p>이 시술에 관심이 있으신가요?</p>
+        <a href="../mockup/consultation.html" class="btn-primary">💬 무료 상담 받아보기</a>
+        <div class="crosscheck-links">
+          <span>다른 플랫폼에서도 확인하기: </span><a href="https://www.babitalk.com/" target="_blank" rel="noopener">바비톡 원문 확인 ↗</a><a href="https://www.gangnamunni.com/" target="_blank" rel="noopener">강남언니 원문 확인 ↗</a><a href="tel:0233333539" target="_blank" rel="noopener">전화 상담 ↗</a><a href="mailto:hello@theglam.kr" target="_blank" rel="noopener">이메일 문의 ↗</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="../mockup-v2/terms.html">이용약관</a>
+        <a href="../mockup-v2/privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="../mockup/consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="../mockup/index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="../mockup/articles.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="../mockup/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="../mockup/hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="../mockup/consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+</body>
+</html>

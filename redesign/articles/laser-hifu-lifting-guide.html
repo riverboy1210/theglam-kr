@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>레이저/HIFU 리프팅 간단하게 알아보자 | 미녀는 괴로워</title>
+  <meta name="description" content="라인은 또렷하게, 지출은 슬림하게. 체험가에 혹하기 전 총액을 확인하고, **장비 세대·팁·샷(라인)**을 동일 조건으로 비교하세요. 쿠폰·포인트·후기 보너스까지 챙기면, “그때 더 아낄 수 있었는데…” 대신 “진짜 알뜰했다!”가 남습니다.">
+  <link rel="canonical" href="https://theglam.kr/articles/laser-hifu-lifting-guide">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .article-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .article-header {
+      margin-bottom: 20px;
+    }
+
+    .article-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .article-title {
+      margin: 0;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .author-profile {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-content p {
+      margin: 0 0 14px;
+      color: #2d3347;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .price-table thead {
+      background: #fff1f7;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-tag {
+      color: #d9336c;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .info-box {
+      background: var(--bg-pink);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #7d2046;
+    }
+
+    .checklist-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip-header {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0 10px;
+    }
+
+    .before-after-item {
+      flex: 1;
+      display: block;
+      min-height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .before-after-item p {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+    }
+
+    .article-disclaimer {
+      margin-top: 22px;
+      font-size: 0.76rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      padding: 14px;
+    }
+
+    .hospital-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 6px 0 12px;
+    }
+
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .related-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-item .img-placeholder {
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .related-item p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .article-cta-area {
+      text-align: center;
+      padding: 32px;
+      background: var(--bg-gray);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .article-cta-area p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .crosscheck-links {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      justify-content: center;
+    }
+
+    .crosscheck-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .comments-section {
+      margin-top: 22px;
+    }
+
+    .comments-section h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-item .avatar {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      font-size: 0.84rem;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+    }
+
+    .comment-head strong {
+      color: var(--text);
+    }
+
+    .comment-head span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #2d3347;
+    }
+
+    .comment-like {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    @media (min-width: 1024px) {
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .article-title {
+        font-size: 1.45rem;
+      }
+
+      .before-after {
+        flex-direction: column;
+      }
+
+      .article-cta-area {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../mockup/index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-layout">
+        <article class="article-main">
+          <div class="article-header">
+            <div class="article-meta-top">
+              <span class="badge" style="background:#8B5CF6;color:#fff;">병원 선택</span>
+              <span class="article-date">2025-08-24</span>
+            </div>
+            <h1 class="article-title">레이저/HIFU 리프팅 간단하게 알아보자</h1>
+            <div class="author-profile">
+              <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#FFE0EC;display:flex;align-items:center;justify-content:center;">👩</div>
+              <div><strong>이다혜 에디터</strong></div>
+            </div>
+          </div>
+
+          
+          <div class="article-hero-image" style="margin: 0 0 18px;">
+            <img src="../images/68aa6c81a4e7a637e53881e2_68aa6af8e34446dfcaf047b9_68aa67f457918ff9b2fe052d_68a1c8f0af68326b3a2feb93_%5B%EB%B3%B5%EC%82%AC%EB%B3%B8%5D%20740%20466%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EC%84%B8%EB%B6%80%EC%A0%95%EB%B3%B4%20%EC%8D%B8%EB%84%A4%EC%9D%BC%2026.png" alt="레이저/HIFU 리프팅 간단하게 알아보자" style="width:100%;border-radius:12px;">
+          </div>
+
+          <div class="article-content">
+            <h1>레이저/HIFU 리프팅</h1><h3>— 20‧30대 여성을 위한 “비수술로 탄력 올리고, 지출은 낮추는” 쉬운 가이드</h3><p>전문용어는 최소로, <strong>바로 써먹는 정보</strong>만 담았어요. 레이저/HIFU 리프팅은 칼 없이 <strong>열에너지</strong>(레이저·초음파)로 피부 속 콜라겐을 자극해 <strong>탄력·윤곽을 정돈</strong>하는 방법이에요. <em>회사·학교에 들키지 않고</em> 깔끔하게 관리하고 싶은 분들이 특히 많이 찾습니다.</p><h2>한눈에 보는 핵심 7</h2><ol role="list"><li><strong>HIFU(고강도 초음파)</strong>: 피부 깊은 층(최대 ~4.5mm, SMAS)을 <strong>점으로 콕 집어</strong> 조여서 <strong>턱선·심부볼</strong> 정리에 유리.</li><li><strong>레이저 타이트닝</strong>: 주로 <strong>얕은~중간 층</strong>(피부결·모공·잔주름) <strong>탄력·결 개선</strong>에 강함. 리프팅이 “확”은 아니어도 <strong>피부질 개선</strong> 체감↑.</li><li><strong>효과 타이밍</strong>: 시술 직후 <strong>당김 느낌</strong> + 2~3개월 동안 <strong>콜라겐 리모델링</strong>으로 서서히 추가 개선.</li><li><strong>다운타임</strong>: HIFU는 대개 <strong>짧고 은근한 통증/땅김</strong>, 레이저는 기기 따라 <strong>홍조·미세각질</strong> 정도. “주말 관리”로 충분한 편.</li><li><strong>장비 ‘세대’가 관건</strong>: (예) <strong>슈링크 유니버스/울쎄라</strong>(HIFU), <strong>써마지 FLX/포토나·프락셀 계열</strong>(레이저)처럼 <em>세대·팁</em>이 가격/결과에 영향.</li><li><strong>번들 설계</strong>: HIFU(윤곽) + 레이저(결·광채) <strong>콤보</strong>가 인기. 체감은 좋지만, <strong>단품 합계 vs 번들 가격</strong>은 꼭 비교!</li><li><strong>가격은 ‘총액’ 기준</strong>: <strong>샷/라인/팁 교체비</strong> + <strong>소모품·VAT</strong> 포함한 <strong>실지출 총액</strong>으로만 비교하세요.</li></ol><h2>나에게 맞나? (초간단 셀프 체크)</h2><ul role="list"><li><strong>HIFU가 어울려요</strong>: 턱선·심부볼·팔자 근처 <strong>처짐 윤곽</strong>이 신경 쓰임 / 비교적 <strong>짧은 회복</strong> 원함 / “확 올리는” 느낌을 선호.</li><li><strong>레이저가 어울려요</strong>: <strong>피부결·모공·잔주름·톤</strong>을 다듬고 싶음 / 파운데이션 <strong>밀림·요철</strong>이 고민 / 자연스런 “탱탱함”을 원함.</li><li><strong>둘 다 고려</strong>: 면접·웨딩·프로필 촬영 등 특정 날짜에 <strong>라인+결</strong>을 동시에 올리고 싶음.</li></ul><h2>HIFU/레이저, 쉬운 분류표</h2><ul role="list"><li><strong>HIFU(초음파)</strong>:<ul role="list"><li>타깃: <strong>깊은 층(3.0/4.5mm)</strong> / 윤곽·리프팅</li><li>느낌: 따끔·뜨끈(부위/세기 따라)</li><li>예시: 슈링크(유니버스), 울쎄라, 더블로, 울트라포머 등</li><li>주기: 6~12개월 간격(개인차)</li></ul></li><li><strong>레이저(광에너지)</strong>:<ul role="list"><li>타깃: <strong>얕은~중간 층(결·잔주름·모공)</strong></li><li>느낌: 열감·홍조 / 기기에 따라 미세각질</li><li>예시: 써마지 FLX(※ RF 계열이지만 흔히 ‘레이저 리프팅’과 함께 언급), 포토나4D, 프락셀/1540/1927, NIR 등</li><li>주기: 1~3개월 간격 누적 또는 분기별 유지(기기·강도 따라)</li></ul></li></ul><p>용어 한 줄: <strong>샷/라인</strong>은 에너지를 쏜 횟수(또는 라인)예요. 기기마다 단위가 달라서 <strong>동일 조건</strong>으로만 비교해야 정확합니다.</p><p>‍</p><h2>시술 전/후, 현실 루틴</h2><ul role="list"><li><strong>전날~당일</strong>: 음주·격한 운동은 쉬고, <strong>수분 크림</strong> 듬뿍. <strong>메이크업 최소</strong>로 방문(클렌징 시간↓).</li><li><strong>당일 복귀 팁</strong>: 홍조 대비 <strong>쿨링 마스크</strong> 챙기고, <strong>모자·마스크</strong>로 티를 줄여요.</li><li><strong>초기(1~3일)</strong>: 뜨거운 사우나·찜질은 잠시 보류. HIFU 땅김이 있으면 <strong>가벼운 진통제</strong> 안내에 따르기.</li><li><strong>1~2주</strong>: 레이저 후 <strong>각질·건조</strong>가 생기면 <strong>보습·자차</strong>가 전부. <strong>문지르기 금지</strong>.</li><li><strong>효과 타임라인</strong>: 즉시 당김 → <strong>2~3개월</strong>에 콜라겐 개선 <strong>피크</strong>(중요 일정은 <strong>2~3달 전</strong> 관리 권장).</li></ul><h2>부작용·주의 신호(알아두면 든든)</h2><ul role="list"><li><strong>일반적</strong>: 일시적 홍조·붓기·따가움·땅김, 레이저 후 미세각질 → 보습·쿨링으로 대개 호전.</li><li><strong>병원 연락 필요</strong>: <strong>강한 통증/화상 의심</strong>, <strong>한쪽만 과한 부기/감각 이상</strong>, <strong>지속적 열감</strong>.</li><li><strong>예방법</strong>: 자외선 차단 철저, <strong>고열·문지르기</strong> 금지, 안내한 <strong>재생/보습 루틴</strong> 성실히.</li></ul><p>‍</p><h2>예약 플로우(절약형 5단계)</h2><ol role="list"><li><strong>관심 카드 3개 스샷</strong>(가격·포함·기간 보이게).</li><li><strong>후기 3개</strong>(나와 생활 비슷: 직장/운동/옷핏)만 골라 <strong>경과</strong> 위주로 읽기.</li><li>병원에 <strong>동일 조건 총액</strong> 요청(부위·샷/라인·에너지·팁 <strong>동일 전제</strong>).</li><li><strong>쿠폰·포인트·당일 혜택</strong> 합산 → <strong>실지출 최소</strong>인 곳 선택.</li><li>시술 후 <strong>후기 루틴</strong>(즉시/1~2주/1달) 올려 <strong>포인트 회수</strong>!</li></ol><p><strong>상담 때 쓰는 한 줄</strong></p><ul role="list"><li>“이 카드 <strong>그대로</strong> 하면 <strong>총액</strong>이 얼마인가요?”</li><li>“<strong>장비 세대/팁·샷 에너지</strong>는 어떻게 설정하나요?”</li><li>“<strong>당일 혜택</strong>, 다음 방문에도 유효한가요?”</li><li>“<strong>환불·변경</strong> 규정 캡처 가능할까요?”</li></ul><h2>FAQ (짧고 정확하게)</h2><p><strong>Q. HIFU랑 레이저, 뭐가 더 세요?</strong><br/>A. 방향이 달라요. <strong>HIFU=윤곽·깊은 층</strong>, <strong>레이저=결·잔주름·빛 반사</strong>. 원하는 결과에 맞춰 고르거나 조합해요.</p><p><strong>Q. 초저가 HIFU/레이저 괜찮나요?</strong><br/>A. 가능하지만 보통 <strong>최소 샷/특정 부위</strong> 기준이에요. <strong>동일 조건</strong>(부위·샷/라인·에너지·팁)으로만 비교하세요.</p><p><strong>Q. 몇 달 간격이 좋아요?</strong><br/>A. HIFU는 보통 <strong>6–12개월</strong>, 레이저는 <strong>1–3개월 누적→분기 유지</strong>가 흔해요(기기·강도·피부상태 따라 조정).</p><h2>마지막 한 줄</h2><p><strong>라인은 또렷하게, 지출은 슬림하게.</strong> 체험가에 혹하기 전 <strong>총액</strong>을 확인하고, 장비 세대·팁·샷(라인)을 <strong>동일 조건</strong>으로 비교하세요. <strong>쿠폰·포인트·후기 보너스</strong>까지 챙기면, “그때 더 아낄 수 있었는데…” 대신 “진짜 알뜰했다!”가 남습니다.</p><p>‍</p>
+          </div>
+
+          
+          <div class="info-box checklist-box">
+            <h3>✅ 체크리스트</h3>
+            <ul class="checklist">
+              <li>대안 시술 설명 유무</li><li>리스크/회복 기준 설명</li><li>추가 비용 트리거</li><li>사후관리 프로토콜</li>
+            </ul>
+          </div>
+
+          
+          <section class="faq-section" style="margin-top:24px;">
+            <h2>자주 묻는 질문</h2>
+            <details><summary>레이저/HIFU 리프팅은/는 무엇인가요?</summary><p>본문의 '레이저/HIFU 리프팅' 섹션을 참고하세요.</p></details><details><summary>— 20‧30대 여성을 위한 “비수술로 탄력 올리고, 지출은 낮추는” 쉬운 가이드은/는 무엇인가요?</summary><p>본문의 '— 20‧30대 여성을 위한 “비수술로 탄력 올리고, 지출은 낮추는” 쉬운 가이드' 섹션을 참고하세요.</p></details><details><summary>한눈에 보는 핵심 7은/는 무엇인가요?</summary><p>본문의 '한눈에 보는 핵심 7' 섹션을 참고하세요.</p></details><details><summary>병원 후기의 신뢰도를 어떻게 판단하나요?</summary><p>지나치게 긍정적이거나 구체성이 없는 후기는 주의가 필요합니다.</p></details><details><summary>상담 시 반드시 물어봐야 할 질문은?</summary><p>시술 방법, 리스크, 회복 기간, 총비용, 사후관리 범위를 확인하세요.</p></details><details><summary>여러 병원을 비교할 때 기준은?</summary><p>동일한 항목(비용, 방법, 경력, 관리)으로 통일하여 비교하세요.</p></details>
+          </section>
+
+          <p class="article-disclaimer">본 내용은 외부 공개 후기의 공통 패턴을 재정리한 요약 정보이며, 원문은 각 플랫폼에서 직접 확인하세요.</p>
+        </article>
+
+        <aside class="article-sidebar">
+          <section class="card sidebar-card">
+            <span class="badge" style="background:#ffe7ef;color:#d9336c;">상담 안내</span>
+            <h3 style="margin:8px 0 4px;">THE GLAM · 미녀는 괴로워</h3>
+            <div class="hospital-meta">
+              <span>hello@theglam.kr</span>
+              <span>02-333-3539</span>
+            </div>
+            <a href="../mockup/consultation.html" class="btn-primary" style="width:100%;">무료상담</a>
+          </section>
+        </aside>
+      </div>
+
+      <div class="article-cta-area">
+        <p>이 시술에 관심이 있으신가요?</p>
+        <a href="../mockup/consultation.html" class="btn-primary">💬 무료 상담 받아보기</a>
+        <div class="crosscheck-links">
+          <span>다른 플랫폼에서도 확인하기: </span><a href="https://www.babitalk.com/" target="_blank" rel="noopener">바비톡 원문 확인 ↗</a><a href="https://www.gangnamunni.com/" target="_blank" rel="noopener">강남언니 원문 확인 ↗</a><a href="tel:0233333539" target="_blank" rel="noopener">전화 상담 ↗</a><a href="mailto:hello@theglam.kr" target="_blank" rel="noopener">이메일 문의 ↗</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="../mockup-v2/terms.html">이용약관</a>
+        <a href="../mockup-v2/privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="../mockup/consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="../mockup/index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="../mockup/articles.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="../mockup/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="../mockup/hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="../mockup/consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+</body>
+</html>

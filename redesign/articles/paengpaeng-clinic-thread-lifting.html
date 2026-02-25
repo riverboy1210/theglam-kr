@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>팽팽클리닉(팽팽의원) – ‘실리프팅 맛집’으로 통하는 리프팅 특화 클리닉 | 미녀는 괴로워</title>
+  <meta name="description" content="실리프팅 특화로 알려진 팽팽클리닉을 예로, 실 선택·줄 수·설계·가격(총액)·다운타임·후기 점검법까지 한 번에 정리한 초실전 안내서.">
+  <link rel="canonical" href="https://theglam.kr/articles/paengpaeng-clinic-thread-lifting">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .article-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .article-header {
+      margin-bottom: 20px;
+    }
+
+    .article-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .article-title {
+      margin: 0;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .author-profile {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-content p {
+      margin: 0 0 14px;
+      color: #2d3347;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .price-table thead {
+      background: #fff1f7;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-tag {
+      color: #d9336c;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .info-box {
+      background: var(--bg-pink);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #7d2046;
+    }
+
+    .checklist-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip-header {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0 10px;
+    }
+
+    .before-after-item {
+      flex: 1;
+      display: block;
+      min-height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .before-after-item p {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+    }
+
+    .article-disclaimer {
+      margin-top: 22px;
+      font-size: 0.76rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      padding: 14px;
+    }
+
+    .hospital-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 6px 0 12px;
+    }
+
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .related-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-item .img-placeholder {
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .related-item p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .article-cta-area {
+      text-align: center;
+      padding: 32px;
+      background: var(--bg-gray);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .article-cta-area p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .crosscheck-links {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      justify-content: center;
+    }
+
+    .crosscheck-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .comments-section {
+      margin-top: 22px;
+    }
+
+    .comments-section h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-item .avatar {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      font-size: 0.84rem;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+    }
+
+    .comment-head strong {
+      color: var(--text);
+    }
+
+    .comment-head span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #2d3347;
+    }
+
+    .comment-like {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    @media (min-width: 1024px) {
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .article-title {
+        font-size: 1.45rem;
+      }
+
+      .before-after {
+        flex-direction: column;
+      }
+
+      .article-cta-area {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../mockup/index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-layout">
+        <article class="article-main">
+          <div class="article-header">
+            <div class="article-meta-top">
+              <span class="badge" style="background:#10B981;color:#fff;">비용 비교</span>
+              <span class="article-date">2025-08-24</span>
+            </div>
+            <h1 class="article-title">팽팽클리닉(팽팽의원) – ‘실리프팅 맛집’으로 통하는 리프팅 특화 클리닉</h1>
+            <div class="author-profile">
+              <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#FFE0EC;display:flex;align-items:center;justify-content:center;">👩</div>
+              <div><strong>이한울 에디터</strong></div>
+            </div>
+          </div>
+
+          
+          <div class="article-hero-image" style="margin: 0 0 18px;">
+            <img src="../images/68aa6c9343190a1925459d1e_68aa6b06e5a3e61d5492db97_68aa6801fc6971e1a687d90b_68a2971204ce983f5aa93eee_%5B%EB%B3%B5%EC%82%AC%EB%B3%B8%5D%20740%20466%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EC%84%B8%EB%B6%80%EC%A0%95%EB%B3%B4%20%EC%8D%B8%EB%84%A4%EC%9D%BC%2033.png" alt="팽팽클리닉(팽팽의원) – ‘실리프팅 맛집’으로 통하는 리프팅 특화 클리닉" style="width:100%;border-radius:12px;">
+          </div>
+
+          <div class="article-content">
+            <h1>팽팽클리닉(팽팽의원) – ‘실리프팅 맛집’으로 통하는 리프팅 특화 클리닉</h1><h3>20‧30대 여성을 위한 “티는 덜, 라인은 더” 정보형 가이드</h3><p><br/>실리프팅 특화로 알려진 팽팽클리닉을 예로, 실 선택·줄 수·설계·가격(총액)·다운타임·후기 점검법까지 한 번에 정리한 초실전 안내서.</p><p><strong>요약(3줄로 끝내기)</strong></p><ul role="list"><li>‘실리프팅 맛집’ 같은 <strong>전문화 포지션</strong>은 장점이지만, 최종 선택은 **실 종류/줄 수/벡터(방향)**가 내 얼굴에 맞는지가 관건.</li><li><strong>체험가=입구가</strong>, **총액(부가세·소모품·추가 줄)**이 진짜 가격. 이벤트는 <strong>동일 조건 총액</strong>으로만 비교.</li><li>아래 <strong>체크리스트·질문 리스트</strong>만 따라가면, <strong>티는 덜</strong>, <strong>지출은 슬림</strong>, <strong>후회는 최소</strong>로 만들 수 있어요.</li></ul><h2>한눈에 보는 핵심 7</h2><ol role="list"><li><strong>전문화의 의미</strong>: 실리프팅에 집중하는 곳은 <strong>프로토콜·손기술·재료 운용</strong>이 체계적인 경우가 많아요. 대신 “우리만의 실/기법” 홍보는 <strong>참고 자료</strong>로만 받아들이고, 내 얼굴 기준으로 재확인하기.</li><li><strong>효과 포인트</strong>: <strong>리프팅(당김)</strong> + <strong>콜라겐 보강</strong>의 이중 효과. 팔자·심부볼·턱선 정리, <strong>자연스러운 V라인</strong>에 유리.</li><li><strong>다운타임</strong>: 초반 <strong>멍·땅김·당김 통증</strong>은 흔한 범주. 1~2주 내 일상 복귀가 일반적이나 개인차가 커요.</li><li><strong>자연스러움의 핵심</strong>: <strong>걸어주는 층/방향(벡터)</strong>, <strong>좌우 밸런스</strong>, <strong>과교정 금지</strong>. “당긴 티”를 줄이는 진짜 포인트.</li><li><strong>실·줄 수가 결과를 좌우</strong>: 재질(PDO/PLLA/PCL), 형태(코그/모노), <strong>줄 수</strong>와 <strong>혼합 구성</strong>이 유지감·질감·비용을 좌우.</li><li><strong>콤보 설계 주의</strong>: 실 + HIFU(슈링크·울쎄라 등) 번들이 체감효과는 좋지만 <strong>단품 합계 vs 번들가</strong> 반드시 비교.</li><li><strong>가격은 총액 기준</strong>: 이벤트 체험가는 <strong>최소 조건</strong>일 때가 많아요. <strong>추가 줄·소모품·마취·VAT</strong>까지 포함한 <strong>실지출</strong>로 판단.</li></ol><h2>나에게 맞나? (초간단 셀프 체크)</h2><ul role="list"><li><strong>잘 맞는 경우</strong><ul role="list"><li>“수술은 아직 부담”이지만 <strong>티 덜 나게 라인 정돈</strong>이 목표.</li><li><strong>짧은 회복</strong>으로 직장·학교에 조용히 복귀하고 싶다.</li><li>팔자·심부볼·이중턱 등 <strong>국소 처짐</strong>이 신경 쓰인다.</li></ul></li><li><strong>다시 생각할 경우</strong><ul role="list"><li><strong>광범위한 처짐/목선 문제</strong>라면 절개 거상 상담이 더 합리적일 수 있어요.</li><li>최근 <strong>필러 대량 시술/피부염·감염</strong> 등은 우선 점검.</li><li>사진 보정급 변화는 기대치 조정 필요—실리프팅은 <strong>정돈</strong>에 가까워요.</li></ul></li></ul><h2>실(THREAD)·설계, 아주 쉽게</h2><ul role="list"><li><strong>재질</strong><ul role="list"><li><strong>PDO</strong>: 보편·담백한 당김, 가격 접근성 좋음</li><li><strong>PLLA/콘 타입(실루엣 소프트 등)</strong>: <strong>볼륨 보완 + 당김</strong></li><li><strong>PCL</strong>: 상대적 <strong>유지감 강조</strong>, 가격대↑</li></ul></li><li><strong>형태</strong><ul role="list"><li><strong>코그/바브</strong>: 돌기가 있어 <strong>리프팅(당김)</strong> 중심</li><li><strong>모노/스무스</strong>: 가는 실 여러 개로 <strong>탄력 보강</strong></li></ul></li><li><strong>설계 공식 = 실 종류 + 줄 수 + 벡터(층/방향)</strong></li></ul><p>대부분 <strong>당기는 실 + 보강 실</strong>을 <strong>혼합</strong>합니다. ‘맛집’이라면 이 혼합 설계의 **근거(왜 그 실? 왜 그 줄?)**를 분명히 설명해줄 거예요.</p><p>‍</p><h2>부작용·주의 신호(알아두면 든든)</h2><ul role="list"><li><strong>흔한 범주</strong>: 멍·땅김·딤플(패임)·당김 통증 → 대개 <strong>시간+가벼운 케어</strong>로 호전.</li><li><strong>즉시 연락</strong>: 한쪽만 심한 비대칭, <strong>강한 통증·열감·고름</strong>, <strong>눈·입 움직임 이상</strong>.</li><li><strong>딤플 대처</strong>: 억지 마사지 금지. <strong>경과 관찰 + 병원 안내</strong>가 우선.</li></ul><p>‍</p><p><strong>상담 때 쓰는 한 줄</strong></p><ul role="list"><li>“제 얼굴에 <strong>최소 효과 줄</strong>과 <strong>권장 줄</strong>이 각각 몇 줄인가요? <strong>근거</strong>도 알려주세요.”</li><li>“<strong>실 브랜드/재질</strong>(PDO·PLLA·PCL)과 <strong>혼합 설계 이유</strong>가 뭔가요?”</li><li>“<strong>딤플/땅김</strong> 관리는 어떻게? <strong>추적 내원</strong> 포함인가요?”</li><li>“이 이벤트 <strong>그대로</strong> 진행할 때 <strong>총액</strong>(부가세·소모품 포함)이 얼마인가요?”</li><li>“<strong>환불·변경 규정</strong>과 <strong>유효기간</strong> 캡처 가능할까요?”</li></ul><h2>FAQ (짧고 정확하게)</h2><p><strong>Q. ‘실리프팅 맛집’이면 더 안전한가요?</strong><br/>A. 전문화는 장점이지만, <strong>담당의 숙련도·설계 근거·사후관리</strong>가 핵심입니다. 홍보 문구보다 <strong>동일 조건 총액 + 후기 일치성</strong>을 보세요.</p><p><strong>Q. 어떤 실이 가장 오래가요?</strong><br/>A. <strong>재질·형태·줄 수·피부 두께·생활습관</strong>이 함께 결정합니다. “무조건 오래간다”보다 <strong>내 얼굴에 맞는 혼합 설계</strong>가 현실적이에요.</p><p><strong>Q. HIFU와 같이 받으면 더 좋나요?</strong><br/>A. <strong>라인(실) + 결/탄력(HIFU)</strong> 조합은 체감효과↑. 다만 비용이 오르니 <strong>단품 합계 vs 번들가</strong>를 꼭 계산하세요.</p><h2>마지막 한 줄</h2><p><strong>전문화는 플러스, 결정은 내 얼굴 기준.</strong> 팽팽클리닉처럼 ‘실리프팅 특화’ 병원을 보더라도, <strong>실·줄 수·벡터의 근거</strong>와 <strong>총액</strong>을 숫자로 확인하고, <strong>후기와 조건이 일치</strong>하는지 점검하세요. 그러면 <strong>티는 덜</strong>, <strong>라인은 더</strong>, <strong>지출은 슬림</strong>하게 선택할 수 있습니다.</p><p>‍</p>
+          </div>
+
+          
+          <div class="info-box checklist-box">
+            <h3>✅ 체크리스트</h3>
+            <ul class="checklist">
+              <li>이벤트 적용 기간/대상</li><li>마취/검사/약/사후관리 포함 여부</li><li>추가 시술 전환 가능성</li><li>환불/일정 변경 규정</li>
+            </ul>
+          </div>
+
+          
+          <section class="faq-section" style="margin-top:24px;">
+            <h2>자주 묻는 질문</h2>
+            <details><summary>팽팽클리닉(팽팽의원) – ‘실리프팅 맛집’으로 통하는 리프팅 특화 클리닉은/는 무엇인가요?</summary><p>본문의 '팽팽클리닉(팽팽의원) – ‘실리프팅 맛집’으로 통하는 리프팅 특화 클리닉' 섹션을 참고하세요.</p></details><details><summary>20‧30대 여성을 위한 “티는 덜, 라인은 더” 정보형 가이드은/는 무엇인가요?</summary><p>본문의 '20‧30대 여성을 위한 “티는 덜, 라인은 더” 정보형 가이드' 섹션을 참고하세요.</p></details><details><summary>한눈에 보는 핵심 7은/는 무엇인가요?</summary><p>본문의 '한눈에 보는 핵심 7' 섹션을 참고하세요.</p></details><details><summary>이벤트가와 최종 결제가가 다른 이유는?</summary><p>마취비, 검사비, 사후관리비 등이 별도 청구될 수 있습니다.</p></details><details><summary>비용을 비교할 때 가장 중요한 항목은?</summary><p>포함 항목을 통일한 기준으로 총비용을 비교하는 것이 정확합니다.</p></details><details><summary>환불 규정은 어떻게 확인하나요?</summary><p>상담 시 계약서의 환불 조항을 반드시 확인하세요.</p></details>
+          </section>
+
+          <p class="article-disclaimer">본 콘텐츠는 일반적인 비용 정보를 제공하며, 실제 비용은 병원·시술 범위·개인 상태에 따라 달라질 수 있습니다.</p>
+        </article>
+
+        <aside class="article-sidebar">
+          <section class="card sidebar-card">
+            <span class="badge" style="background:#ffe7ef;color:#d9336c;">상담 안내</span>
+            <h3 style="margin:8px 0 4px;">THE GLAM · 미녀는 괴로워</h3>
+            <div class="hospital-meta">
+              <span>hello@theglam.kr</span>
+              <span>02-333-3539</span>
+            </div>
+            <a href="../mockup/consultation.html" class="btn-primary" style="width:100%;">무료상담</a>
+          </section>
+        </aside>
+      </div>
+
+      <div class="article-cta-area">
+        <p>이 시술에 관심이 있으신가요?</p>
+        <a href="../mockup/consultation.html" class="btn-primary">💬 무료 상담 받아보기</a>
+        <div class="crosscheck-links">
+          <span>다른 플랫폼에서도 확인하기: </span><a href="https://www.babitalk.com/" target="_blank" rel="noopener">바비톡 원문 확인 ↗</a><a href="https://www.gangnamunni.com/" target="_blank" rel="noopener">강남언니 원문 확인 ↗</a><a href="tel:0233333539" target="_blank" rel="noopener">전화 상담 ↗</a><a href="mailto:hello@theglam.kr" target="_blank" rel="noopener">이메일 문의 ↗</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="../mockup-v2/terms.html">이용약관</a>
+        <a href="../mockup-v2/privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="../mockup/consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="../mockup/index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="../mockup/articles.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="../mockup/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="../mockup/hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="../mockup/consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+</body>
+</html>

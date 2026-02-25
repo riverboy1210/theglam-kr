@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>숙소·동반자 가이드 | 미녀는 괴로워</title>
+  <meta name="description" content="수술 후 동반자 역할, 숙소 동선·침구·엘리베이터 여부 등 회복 친화 조건을 안내합니다.">
+  <link rel="canonical" href="https://theglam.kr/articles/lodging-and-companion-guide">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .article-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .article-header {
+      margin-bottom: 20px;
+    }
+
+    .article-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .article-title {
+      margin: 0;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .author-profile {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-content p {
+      margin: 0 0 14px;
+      color: #2d3347;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .price-table thead {
+      background: #fff1f7;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-tag {
+      color: #d9336c;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .info-box {
+      background: var(--bg-pink);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #7d2046;
+    }
+
+    .checklist-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip-header {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0 10px;
+    }
+
+    .before-after-item {
+      flex: 1;
+      display: block;
+      min-height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .before-after-item p {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+    }
+
+    .article-disclaimer {
+      margin-top: 22px;
+      font-size: 0.76rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      padding: 14px;
+    }
+
+    .hospital-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 6px 0 12px;
+    }
+
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .related-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-item .img-placeholder {
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .related-item p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .article-cta-area {
+      text-align: center;
+      padding: 32px;
+      background: var(--bg-gray);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .article-cta-area p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .crosscheck-links {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      justify-content: center;
+    }
+
+    .crosscheck-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .comments-section {
+      margin-top: 22px;
+    }
+
+    .comments-section h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-item .avatar {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      font-size: 0.84rem;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+    }
+
+    .comment-head strong {
+      color: var(--text);
+    }
+
+    .comment-head span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #2d3347;
+    }
+
+    .comment-like {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    @media (min-width: 1024px) {
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .article-title {
+        font-size: 1.45rem;
+      }
+
+      .before-after {
+        flex-direction: column;
+      }
+
+      .article-cta-area {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../mockup/index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-layout">
+        <article class="article-main">
+          <div class="article-header">
+            <div class="article-meta-top">
+              <span class="badge" style="background:#8B5CF6;color:#fff;">병원 선택</span>
+              <span class="article-date">2025-09-09</span>
+            </div>
+            <h1 class="article-title">숙소·동반자 가이드</h1>
+            <div class="author-profile">
+              <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#FFE0EC;display:flex;align-items:center;justify-content:center;">👩</div>
+              <div><strong>김서연 에디터</strong></div>
+            </div>
+          </div>
+
+          
+          <div class="article-hero-image" style="margin: 0 0 18px;">
+            <img src="../../external/cdn.prod.website-files.com/68993c805b6ff04a733e5d25/68bfc6892fbd82a25bedc167_uc.jpeg" alt="숙소·동반자 가이드" style="width:100%;border-radius:12px;">
+          </div>
+
+          <div class="article-content">
+            <h2>숙소·동반자 가이드</h2><p>숙소와 동반자는 여행이 더욱 특별하고 편안하게 진행되는 요소입니다. 여행지의 숙소 선택은 편리함과 안전성을 보장하며, 동반자는 여행의 즐거움을 배가시키는 중요한 존재입니다. 이 글에서는 숙소와 동반자 선택 시 고려해야 할 여러 요소와 팁에 대해 설명합니다.</p><h2>숙소 선택의 중요성</h2><p>좋은 숙소는 건강한 여행의 기본입니다. 숙소의 위치, 청결도, 편의 시설 등은 여행의 질에 큰 영향을 미칠 수 있습니다.</p><ul role="list">  <li>위치: 관광지와의 거리, 교통 편의성</li>  <li>청결도: 리뷰 확인, 청소 서비스</li>  <li>편의 시설: Wifi, 조식 포함 여부</li></ul><h2>동반자 선택의 중요성</h2><p>동반자와의 여행은 감정을 나누고 소중한 추억을 쌓는 데 큰 역할을 합니다. 동반자가 누구인지에 따라 여행의 색깔이 달라질 수 있습니다.</p><ul role="list">  <li>관심사: 비슷한 취향, 활동 및 관광지 선호</li>  <li>의사소통: 여행 중 의견 조율의 용이함</li>  <li>안전: 건강 상태 등 고려 필요</li></ul><h2>숙소 예약 프로세스</h2><h3>사전 조사</h3><p>숙소를 예약하기 위해서는 사전 조사가 필수적입니다. 여행 일정과 예산을 고려하여 적합한 숙소를 찾는 것이 중요합니다.</p><ul role="list">  <li>관광 일정에 맞춘 숙소의 위치 확인</li>  <li>비교 플랫폼에서 가격 및 리뷰 조사</li>  <li>선택한 숙소의 취소 정책 확인</li></ul><h3>예약 방법</h3><p>여러 방법으로 숙소를 예약할 수 있습니다. 인기 있는 웹사이트와 앱들을 활용하면 손쉽게 예약할 수 있습니다.</p><ol role="list">  <li>예약 플랫폼 선택: 부킹닷컴, 에어비앤비 등</li>  <li>날짜, 인원 수 입력하여 검색</li>  <li>조건 맞는 숙소 선택 및 예약 진행</li></ol><h3>숙소 이용 팁</h3><p>숙소에서의 하룻밤을 편안하게 보내기 위한 몇 가지 팁입니다.</p><ul role="list">  <li>체크인 전 숙소 위치 미리 파악</li>  <li>안전 및 소음 문제의 확인</li>  <li>필요한 경우 추가 요청사항 사전 안내</li></ul><h2>동반자와의 여행 준비</h2><p>동반자와 함께 여행을 떠나기 위해서는 몇 가지 준비 사항이 필요합니다. 서로의 요구를 존중하고 이해하는 것이 중요합니다.</p><p>  준비 사항권장 사항  일정 조율모두의 일정 확인 후 최적화  비용 분담예산 미리 설정 후 공유  활동 계획각자의 관심사 포함하기</p><h2>숙소·동반자 선택의 장단점</h2><p>숙소와 동반자를 선택할 때의 장점과 단점을 균형 있게 이해하는 것이 중요합니다.</p><p>  장점단점  편안한 여행 환경 조성비용 증가 가능성  즐거운 추억 만들기의견 차이로 인한 갈등 가능성</p><h2>핵심 요약 &amp; 실행 가이드(CTA)</h2><ul role="list">  <li><strong>요약:</strong> 숙소 선택의 중요성, 동반자 선택의 요소, 예약 및 이용 팁.</li>  </ul>
+          </div>
+
+          
+          <div class="info-box checklist-box">
+            <h3>✅ 체크리스트</h3>
+            <ul class="checklist">
+              <li>대안 시술 설명 유무</li><li>리스크/회복 기준 설명</li><li>추가 비용 트리거</li><li>사후관리 프로토콜</li>
+            </ul>
+          </div>
+
+          
+          <section class="faq-section" style="margin-top:24px;">
+            <h2>자주 묻는 질문</h2>
+            <details><summary>숙소·동반자 가이드은/는 무엇인가요?</summary><p>본문의 '숙소·동반자 가이드' 섹션을 참고하세요.</p></details><details><summary>숙소 선택의 중요성은/는 무엇인가요?</summary><p>본문의 '숙소 선택의 중요성' 섹션을 참고하세요.</p></details><details><summary>동반자 선택의 중요성은/는 무엇인가요?</summary><p>본문의 '동반자 선택의 중요성' 섹션을 참고하세요.</p></details><details><summary>병원 후기의 신뢰도를 어떻게 판단하나요?</summary><p>지나치게 긍정적이거나 구체성이 없는 후기는 주의가 필요합니다.</p></details><details><summary>상담 시 반드시 물어봐야 할 질문은?</summary><p>시술 방법, 리스크, 회복 기간, 총비용, 사후관리 범위를 확인하세요.</p></details><details><summary>여러 병원을 비교할 때 기준은?</summary><p>동일한 항목(비용, 방법, 경력, 관리)으로 통일하여 비교하세요.</p></details>
+          </section>
+
+          <p class="article-disclaimer">본 내용은 외부 공개 후기의 공통 패턴을 재정리한 요약 정보이며, 원문은 각 플랫폼에서 직접 확인하세요.</p>
+        </article>
+
+        <aside class="article-sidebar">
+          <section class="card sidebar-card">
+            <span class="badge" style="background:#ffe7ef;color:#d9336c;">상담 안내</span>
+            <h3 style="margin:8px 0 4px;">THE GLAM · 미녀는 괴로워</h3>
+            <div class="hospital-meta">
+              <span>hello@theglam.kr</span>
+              <span>02-333-3539</span>
+            </div>
+            <a href="../mockup/consultation.html" class="btn-primary" style="width:100%;">무료상담</a>
+          </section>
+        </aside>
+      </div>
+
+      <div class="article-cta-area">
+        <p>이 시술에 관심이 있으신가요?</p>
+        <a href="../mockup/consultation.html" class="btn-primary">💬 무료 상담 받아보기</a>
+        <div class="crosscheck-links">
+          <span>다른 플랫폼에서도 확인하기: </span><a href="https://www.babitalk.com/" target="_blank" rel="noopener">바비톡 원문 확인 ↗</a><a href="https://www.gangnamunni.com/" target="_blank" rel="noopener">강남언니 원문 확인 ↗</a><a href="tel:0233333539" target="_blank" rel="noopener">전화 상담 ↗</a><a href="mailto:hello@theglam.kr" target="_blank" rel="noopener">이메일 문의 ↗</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="../mockup-v2/terms.html">이용약관</a>
+        <a href="../mockup-v2/privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="../mockup/consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="../mockup/index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="../mockup/articles.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="../mockup/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="../mockup/hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="../mockup/consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+</body>
+</html>

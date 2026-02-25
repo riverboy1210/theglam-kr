@@ -1,0 +1,10 @@
+THE GLAM Article Migration Report
+Generated at: 2026-02-25T08:21:39.594Z
+
+Total articles generated: 383
+Total with hero images: 383
+Total with FAQs: 383
+Total with checklists: 383
+
+Failures:
+- none

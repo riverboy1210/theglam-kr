@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>울쎄라 가격·샷수 가이드 | 미녀는 괴로워</title>
+  <meta name="description" content="울쎄라 가격은 샷수와 부위(얼굴·목), 카트리지 조합(1.5·3.0·4.5mm), 지역(강남 vs 지방), 시술자 숙련도에 따라 달라집니다. 결제 전에는 VAT 포함 최종가를 꼭 확인하세요. 같은 조건표로 2~3곳만 비교해도 내 예산과 목표 라인이 선명해집니다.">
+  <link rel="canonical" href="https://theglam.kr/articles/ulthera-price-guide">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .article-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .article-header {
+      margin-bottom: 20px;
+    }
+
+    .article-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .article-title {
+      margin: 0;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .author-profile {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-content p {
+      margin: 0 0 14px;
+      color: #2d3347;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .price-table thead {
+      background: #fff1f7;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-tag {
+      color: #d9336c;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .info-box {
+      background: var(--bg-pink);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #7d2046;
+    }
+
+    .checklist-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip-header {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0 10px;
+    }
+
+    .before-after-item {
+      flex: 1;
+      display: block;
+      min-height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .before-after-item p {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+    }
+
+    .article-disclaimer {
+      margin-top: 22px;
+      font-size: 0.76rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      padding: 14px;
+    }
+
+    .hospital-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 6px 0 12px;
+    }
+
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .related-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-item .img-placeholder {
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .related-item p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .article-cta-area {
+      text-align: center;
+      padding: 32px;
+      background: var(--bg-gray);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .article-cta-area p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .crosscheck-links {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      justify-content: center;
+    }
+
+    .crosscheck-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .comments-section {
+      margin-top: 22px;
+    }
+
+    .comments-section h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-item .avatar {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      font-size: 0.84rem;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+    }
+
+    .comment-head strong {
+      color: var(--text);
+    }
+
+    .comment-head span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #2d3347;
+    }
+
+    .comment-like {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    @media (min-width: 1024px) {
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .article-title {
+        font-size: 1.45rem;
+      }
+
+      .before-after {
+        flex-direction: column;
+      }
+
+      .article-cta-area {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../mockup/index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-layout">
+        <article class="article-main">
+          <div class="article-header">
+            <div class="article-meta-top">
+              <span class="badge" style="background:#10B981;color:#fff;">비용 비교</span>
+              <span class="article-date">2025-08-24</span>
+            </div>
+            <h1 class="article-title">울쎄라 가격·샷수 가이드</h1>
+            <div class="author-profile">
+              <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#FFE0EC;display:flex;align-items:center;justify-content:center;">👩</div>
+              <div><strong>박지훈 에디터</strong></div>
+            </div>
+          </div>
+
+          
+          <div class="article-hero-image" style="margin: 0 0 18px;">
+            <img src="../images/68aa6c8c568ed1d53d611932_68aa6b02d05fb7bf869e41f1_68aa67fb51902a842f50c6dc_689bd6a8452ab41e258f538e_ChatGPT%20Image%202025%EB%85%84%208%EC%9B%94%2013%EC%9D%BC%20%EC%98%A4%EC%A0%84%2007_56_17.png" alt="울쎄라 가격·샷수 가이드" style="width:100%;border-radius:12px;">
+          </div>
+
+          <div class="article-content">
+            <p>‍</p><h1>울쎄라 가격·샷수 가이드, 숫자 없이 핵심만 딱</h1><h1>‍</h1><h2>샷수 설계, 이렇게 이해하면 편해요<br/>‍</h2><p>소부위 위주 설계는 라인 정리 느낌이 가볍습니다. 얼굴 전체 설계는 결·톤과 리프팅 체감이 균형 잡히고, 얼굴과 목을 함께 잡으면 윤곽과 탄력의 연결감이 좋아집니다. 카트리지는 얕은·중간·깊은 층을 조합해 부위별로 맞춤 타깃팅합니다.</p><h2>가격대, 말로 구분해 보기<br/>‍</h2><p>입문가 느낌: 소부위 중심, 샷수 부담이 적고 체감도 가벼운 편.<br/>중간가 느낌: 얼굴 전체 기준, 사후관리 기본 포함이 많은 편.<br/>프리미엄가 느낌: 얼굴과 목을 함께, 리터치·진정 관리가 넉넉한 패키지.<br/>어떤 구간이든 최종 판단은 “샷수·부위·카트리지·사후관리·쿠폰·VAT”를 합친 금액으로만 하세요.</p><h2>강남 vs 지방, 실제 체감가 비교<br/>‍</h2><p>강남은 증례와 장비 선택지가 넓어 커스터마이징이 쉽습니다. 대신 평균 단가는 높은 편입니다. 지방은 평균가가 합리적인 편이라 예산 관리에 유리합니다. 다만 이동·내원·사후관리 방문 비용을 더해 총액으로 비교해야 공정합니다.</p><h2>다운타임·체감 타임라인<br/>‍</h2><p>울쎄라는 일상 복귀가 빠른 편입니다. 결·톤은 비교적 이른 시점부터 정리되는 느낌이 있고, 리프팅은 시간이 지나며 서서히 올라옵니다. 유지감은 생활습관과 샷수 설계, 피부 두께에 따라 달라집니다.</p><p>쿠폰·이벤트 활용 팁<br/>앱 쿠폰과 병원 이벤트, 제휴 결제는 조합 가능한 경우가 있습니다. 다만 이벤트가는 스펙(샷수·부위·사후관리)이 줄어드는 조건이 숨어 있을 수 있어요. 결제 직전 화면에서 중복 적용 여부와 스펙을 다시 확인하세요. 최종 기준은 VAT 포함 금액입니다.</p><p>부작용·주의 포인트<br/>일시적 붉어짐·당김·압통이 생길 수 있습니다. 과도한 에너지 세팅은 통증이나 지방 위축 리스크가 있어요. 최근 필러·실리프팅 부위, 금속물질 인접 부위, 임신·수유 중은 반드시 사전 상담이 필요합니다. 피부가 얇은 부위는 보수적 세팅이 안전합니다.</p><h2>병원 비교표, 숫자 대신 등급으로<br/>‍</h2><p>부위 선택: 소부위 / 얼굴 전체 / 얼굴+목<br/>샷수 등급: 낮음 / 보통 / 높음<br/>카트리지: 얕은·중간·깊은 조합 표기<br/>시술자: 원장 직접 여부, 증례 사진(조명·각도 동일)<br/>사후관리: 진정·쿨링 포함 유무, 재내원 방식<br/>쿠폰·제휴: 적용 가능 여부<br/>VAT: 포함 표기<br/>최종가: 위 항목을 모두 반영한 금액(영수증 기준)</p><h2>상담 체크리스트<br/>‍</h2><p>내 목표 부위와 예산을 문장으로 정리한다.<br/>정품 카트리지·팁 인증과 실제 샷 카운트 방식을 묻는다.<br/>사후관리 포함 범위와 재내원 계획을 확인한다.<br/>쿠폰·이벤트·제휴 결제의 중복 적용을 결제 직전 화면으로 검증한다.<br/>VAT 포함 최종가와 환불·변경 규정을 계약서로 남긴다.</p><h2>자주 묻는 질문<br/>‍</h2><p>울쎄라와 유사 장비 차이는 뭔가요<br/>핵심은 장비 스펙보다 개인 피부 두께와 목표에 맞춘 세팅입니다. 같은 조건표로 샷수·부위·사후관리·VAT를 통일해 비교하세요.<br/>아픈가요<br/>개인차가 큽니다. 마취 크림·진통 보조·쿨링으로 조절 가능하며, 무리한 에너지는 피하는 것이 안전합니다.<br/>리터치가 꼭 필요한가요<br/>목표와 반응, 생활습관에 따라 다릅니다. 상담 때 주기와 방법을 미리 합의하면 계획이 편합니다.</p><h2>검색 키워드 메모<br/>‍</h2><p>울쎄라 가격 샷수, 울쎄라 가격 강남 평균, 울쎄라 샷수 쿠폰 이벤트, 울쎄라 VAT 포함, 울쎄라 리터치 사후관리</p><p>마무리<br/>숫자에 휘둘리지 마세요. 울쎄라 가격 비교의 핵심은 샷수·부위·카트리지·사후관리·쿠폰·VAT를 같은 기준표로 맞추는 것입니다. 이 표만 들고 여러 병원을 차분히 비교해 보세요. 내 피부와 예산에 맞는 답이 선명해집니다.<br/>바비톡 <a href="https://web.babitalk.com/">https://web.babitalk.com</a><br/>강남언니 <a href="https://www.gangnamunni.com/">https://www.gangnamunni.com</a></p><p>‍</p>
+          </div>
+
+          
+          <div class="info-box checklist-box">
+            <h3>✅ 체크리스트</h3>
+            <ul class="checklist">
+              <li>이벤트 적용 기간/대상</li><li>마취/검사/약/사후관리 포함 여부</li><li>추가 시술 전환 가능성</li><li>환불/일정 변경 규정</li>
+            </ul>
+          </div>
+
+          
+          <section class="faq-section" style="margin-top:24px;">
+            <h2>자주 묻는 질문</h2>
+            <details><summary>울쎄라 가격·샷수 가이드, 숫자 없이 핵심만 딱은/는 무엇인가요?</summary><p>본문의 '울쎄라 가격·샷수 가이드, 숫자 없이 핵심만 딱' 섹션을 참고하세요.</p></details><details><summary>샷수 설계, 이렇게 이해하면 편해요‍은/는 무엇인가요?</summary><p>본문의 '샷수 설계, 이렇게 이해하면 편해요‍' 섹션을 참고하세요.</p></details><details><summary>이벤트가와 최종 결제가가 다른 이유는?</summary><p>마취비, 검사비, 사후관리비 등이 별도 청구될 수 있습니다.</p></details><details><summary>비용을 비교할 때 가장 중요한 항목은?</summary><p>포함 항목을 통일한 기준으로 총비용을 비교하는 것이 정확합니다.</p></details><details><summary>환불 규정은 어떻게 확인하나요?</summary><p>상담 시 계약서의 환불 조항을 반드시 확인하세요.</p></details>
+          </section>
+
+          <p class="article-disclaimer">본 콘텐츠는 일반적인 비용 정보를 제공하며, 실제 비용은 병원·시술 범위·개인 상태에 따라 달라질 수 있습니다.</p>
+        </article>
+
+        <aside class="article-sidebar">
+          <section class="card sidebar-card">
+            <span class="badge" style="background:#ffe7ef;color:#d9336c;">상담 안내</span>
+            <h3 style="margin:8px 0 4px;">THE GLAM · 미녀는 괴로워</h3>
+            <div class="hospital-meta">
+              <span>hello@theglam.kr</span>
+              <span>02-333-3539</span>
+            </div>
+            <a href="../mockup/consultation.html" class="btn-primary" style="width:100%;">무료상담</a>
+          </section>
+        </aside>
+      </div>
+
+      <div class="article-cta-area">
+        <p>이 시술에 관심이 있으신가요?</p>
+        <a href="../mockup/consultation.html" class="btn-primary">💬 무료 상담 받아보기</a>
+        <div class="crosscheck-links">
+          <span>다른 플랫폼에서도 확인하기: </span><a href="https://www.babitalk.com/" target="_blank" rel="noopener">바비톡 원문 확인 ↗</a><a href="https://www.gangnamunni.com/" target="_blank" rel="noopener">강남언니 원문 확인 ↗</a><a href="tel:0233333539" target="_blank" rel="noopener">전화 상담 ↗</a><a href="mailto:hello@theglam.kr" target="_blank" rel="noopener">이메일 문의 ↗</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="../mockup-v2/terms.html">이용약관</a>
+        <a href="../mockup-v2/privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="../mockup/consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="../mockup/index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="../mockup/articles.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="../mockup/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="../mockup/hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="../mockup/consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+</body>
+</html>

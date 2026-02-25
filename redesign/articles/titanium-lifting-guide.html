@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>티타늄 리프팅(최근 이벤트 多) 완전 가이드 | 미녀는 괴로워</title>
+  <meta name="description" content="요즘 강남언니/바비톡에서 ‘티타늄 리프팅’ 이름의 이벤트가 자주 보여요. 하지만 ‘티타늄’은 의료기기 공식 명칭이라기보다 병원별 마케팅명으로 쓰이는 경우가 많아, **어떤 방식(HIFU/RF/실/마이크로니들 등)**을 의미하는지 꼭 확인해야 합니다. 아래는 **효과·다운타임·부작용·가격(총액)**을 기준으로, 명칭이 달라도 같은 조건으로 안전하게 비교하는 방법을 정리했어요.">
+  <link rel="canonical" href="https://theglam.kr/articles/titanium-lifting-guide">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .article-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .article-header {
+      margin-bottom: 20px;
+    }
+
+    .article-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .article-title {
+      margin: 0;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .author-profile {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-content p {
+      margin: 0 0 14px;
+      color: #2d3347;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .price-table thead {
+      background: #fff1f7;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-tag {
+      color: #d9336c;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .info-box {
+      background: var(--bg-pink);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #7d2046;
+    }
+
+    .checklist-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip-header {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0 10px;
+    }
+
+    .before-after-item {
+      flex: 1;
+      display: block;
+      min-height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .before-after-item p {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+    }
+
+    .article-disclaimer {
+      margin-top: 22px;
+      font-size: 0.76rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      padding: 14px;
+    }
+
+    .hospital-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 6px 0 12px;
+    }
+
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .related-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-item .img-placeholder {
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .related-item p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .article-cta-area {
+      text-align: center;
+      padding: 32px;
+      background: var(--bg-gray);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .article-cta-area p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .crosscheck-links {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      justify-content: center;
+    }
+
+    .crosscheck-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .comments-section {
+      margin-top: 22px;
+    }
+
+    .comments-section h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-item .avatar {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      font-size: 0.84rem;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+    }
+
+    .comment-head strong {
+      color: var(--text);
+    }
+
+    .comment-head span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #2d3347;
+    }
+
+    .comment-like {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    @media (min-width: 1024px) {
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .article-title {
+        font-size: 1.45rem;
+      }
+
+      .before-after {
+        flex-direction: column;
+      }
+
+      .article-cta-area {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../mockup/index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-layout">
+        <article class="article-main">
+          <div class="article-header">
+            <div class="article-meta-top">
+              <span class="badge" style="background:#8B5CF6;color:#fff;">병원 선택</span>
+              <span class="article-date">2025-08-24</span>
+            </div>
+            <h1 class="article-title">티타늄 리프팅(최근 이벤트 多) 완전 가이드</h1>
+            <div class="author-profile">
+              <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#FFE0EC;display:flex;align-items:center;justify-content:center;">👩</div>
+              <div><strong>이다혜 에디터</strong></div>
+            </div>
+          </div>
+
+          
+          <div class="article-hero-image" style="margin: 0 0 18px;">
+            <img src="../images/68aa6c9168df8ff6e8b2ed5e_68aa6b060ac6aa428d9ef553_68aa67ff32abbe05efaf9072_68a6a3c3605ee0cd4d146dd2_%5B%EB%B3%B5%EC%82%AC%EB%B3%B8%5D%20740%20466%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EC%84%B8%EB%B6%80%EC%A0%95%EB%B3%B4%20%EC%8D%B8%EB%84%A4%EC%9D%BC%2060.png" alt="티타늄 리프팅(최근 이벤트 多) 완전 가이드" style="width:100%;border-radius:12px;">
+          </div>
+
+          <div class="article-content">
+            <h3>20‧30대가 딱 궁금한 “효과 기간 · 다운타임 · 부작용 · 가격(총액)” 4요소로 끝내기</h3><h2>요약(3줄 컷)</h2><ul role="list"><li><strong>무엇?</strong> ‘티타늄 리프팅’은 보통 <strong>에너지 기반(초음파/HIFU, 고주파/RF)</strong> 또는 <strong>스레드(실)·니들링</strong>에 **‘티타늄 팁/코팅’**을 결합해 <strong>자극→콜라겐 재생/탄력</strong>을 노리는 설계예요.</li><li><strong>핵심</strong>: 이름이 같아도 <strong>기기/재료·깊이·에너지·회차</strong>가 다릅니다. 반드시 <strong>공식 모델명·스펙</strong>을 확인하고 <strong>동일 조건 총액</strong>으로 비교하세요.</li><li><strong>플랫폼 포인트</strong>: <em>강남언니/바비톡</em> 카드에 **아이·V라인 분할, 첫방문 특가, 조합 패키지(예: 인모드/슈링크+티타늄)**가 자주 보이니, <strong>부위·패스/샷·케어·VAT 포함</strong>을 캡처해 상담 견적과 1:1로 대조하세요.</li></ul><h2>1) 티타늄 리프팅, 한 문장 정의</h2><ul role="list"><li><strong>마케팅명</strong>: 병원에 따라 <strong>① 에너지 장비(RF/HIFU)의 ‘티타늄 팁’</strong>, <strong>② ‘티타늄 코팅 니들’ 장비</strong>, <strong>③ ‘티타늄실’</strong> 같은 스레드 리프팅을 통칭하기도 해요.</li><li><strong>따라서</strong>: 첫 단계는 **“정확히 무엇(기기/실 모델명)으로, 어느 층(진피/SMAS), 어떤 방식(패스/샷/줄 수)으로 하느냐”**를 확인하는 것!</li></ul><p>잡지식 팁<br/>플랫폼 후기에서 **“아이존(눈가)·광대 라인·턱선”**처럼 미세 부위를 겨냥한 카드가 많고, <strong>인모드·슈링크</strong> 등과 <strong>조합 패키지</strong>로 묶이는 경우가 잦아요. 후기는 보통 <strong>“당일 복귀, 2~4주쯤 쫀쫀함↑”</strong> 같은 흐름(개인차).</p><h2>2) 효과 기간(타임라인)</h2><h3>에너지 기반(초음파/HIFU·고주파/RF)형</h3><ul role="list"><li><strong>즉시</strong>: 윤기·당김감 체감(개인차).</li><li><strong>2–4주</strong>: 콜라겐 리모델링이 진행되며 <strong>결·탄력</strong>이 좋아짐.</li><li><strong>8–12주</strong>: <strong>피크</strong> 구간(사진발 좋다는 후기가 많은 시점).</li><li><strong>6–12개월</strong>: 유지 범위(생활습관·장비·세팅에 따라 상이).</li></ul><h3>스레드(실)형</h3><ul role="list"><li><strong>즉시</strong>: <strong>라인·리프팅</strong> 체감(초기 당김).</li><li><strong>2–6주</strong>: 자리 잡는 구간—<strong>콜라겐 보강</strong>으로 밀도↑.</li><li><strong>6–12개월+</strong>: 실 재질(PDO/PLLA/PCL)·개인 컨디션에 따라 <strong>유지감</strong> 차이.</li></ul><h2>3) 다운타임(회복)</h2><ul role="list"><li><strong>에너지형</strong>: 대체로 <strong>즉시 일상 가능</strong>. <strong>홍조·당김·따뜻함</strong>이 수시간~수일 내 완화되는 편. 아이존은 예민해 <strong>쿨링/패스 조절</strong>이 관건.</li><li><strong>스레드형</strong>: <strong>멍·땅김·당김 통증</strong>이 초기에 있고 <strong>1–2주</strong> 사이에 잦아드는 흐름(개인차). 직장 복귀는 <strong>마스크+루즈 상의</strong>로 스텔스 가능.</li></ul><p><em>후기 톤(요약)</em><br/>“<strong>아이존 촘촘/당일 복귀</strong>”, “<strong>턱선·심부볼 정리</strong>”, “<strong>2주차부터 라인 체감</strong>”이 많은 편. 반대론으로는 “<strong>회차 필요</strong>”, “<strong>초기 당김</strong>” 언급도 있어요.</p><h2>4) 부작용(알아두면 안심)</h2><ul role="list"><li><strong>에너지형</strong>: <strong>홍반·부종·압통</strong>(대개 짧음), 드물게 <strong>표재 화상/감각 변화</strong>. <strong>겹침 패스·과도한 에너지</strong>를 피하는 <strong>숙련 시술</strong>이 안전.</li><li><strong>스레드형</strong>: <strong>멍·딤플(패임)·불편감</strong>, 드물게 <strong>비대칭/라인 불규칙/염증</strong>. <strong>실 재질·벡터·고정</strong>이 핵심이라 <strong>경험 많은 시술자</strong>가 중요.</li><li><strong>즉시연락</strong>: 하루 이상 지속되는 강한 통증·수포/물집·한쪽만 과한 붓기/열감·피부색 변화 등.</li></ul><h2>5) 가격(총액) — 진짜로 비교하는 법</h2><p><strong>총액 = 기본가 + (부위/샷·패스·줄 수 × 단가) + (마취·케어/소모품) + VAT − (쿠폰·포인트)</strong></p><ul role="list"><li><strong>체험가 vs 권장 스펙</strong>: “아이·V라인 소량/첫방문가”는 <strong>입문 조건</strong>일 수 있어요. <strong>권장 패스/샷/줄 수</strong>를 반영한 <strong>총액</strong>도 함께 받아야 현실적인 비교가 됩니다.</li><li><strong>포함 항목</strong>: 연고마취·쿨링·재생관리(LED/수분팩/멍 레이저), 사후 내원 횟수, VAT 포함 여부.</li><li><strong>조합 패키지</strong>: 인모드/슈링크 + 티타늄 패키지의 **실체(각각 몇 샷/패스)**를 <strong>숫자</strong>로 고정 → 단품 합계와 <strong>엑셀처럼</strong> 비교.</li></ul><h2>6) 이렇게 고르면 실패 확률이 줄어요(체크리스트 복붙)</h2><ul role="list"><li> <strong>정확 명칭</strong>: ‘티타늄 리프팅’이 <strong>어떤 기기/실</strong>인지 <strong>모델명</strong> 확인.</li><li> <strong>깊이·방식</strong>: 진피/SMAS 타깃? RF/HIFU/니들/실? <strong>부위·패스/샷/줄 수</strong>는?</li><li> <strong>시술자</strong>: 의사 <strong>실명/누적후기/증례</strong>(플랫폼 의료진 프로필 활용). <strong>의사 고정</strong> 가능 여부.</li><li> <strong>무통·안전</strong>: 연고/스프레이 마취, 쿨링, <strong>저통증 주입장치</strong>, <strong>수술실 CCTV/응급체계</strong> 등 안전 장치 명시.</li><li> <strong>총액 캡처</strong>: <strong>부가세(VAT) 포함</strong>, 오늘 기준 <strong>문자/톡/견적서</strong>로.</li><li> <strong>후기 교차확인</strong>: <em>강남언니</em> 이벤트 후기 + <em>바비톡</em> 개별 후기를 <strong>경과 사진·수치(패스/샷/줄 수)</strong> 중심으로 비교.</li></ul><h2>7) 자주 묻는 질문(FAQ)</h2><p><strong>Q1. 티타늄=효과가 더 좋은 건가요?</strong><br/>A. <strong>이름만으로 단정 불가</strong>. 같은 ‘티타늄’이라도 <strong>장비/실/니들</strong>이 다를 수 있어요. <strong>모델명·스펙·부위·세팅</strong>을 확인하세요.</p><p><strong>Q2. 티타늄은 아이존에 좋다는 말이 많던데요?</strong><br/>A. 에너지형에서 <strong>아이·광대 라인</strong> 분할 카드가 많은 건 사실. 다만 <strong>민감 부위</strong>라 <strong>쿨링·패스 조절·숙련도</strong>가 더 중요합니다.</p><p><strong>Q3. 다른 리프팅(인모드/슈링크/실)과 같이 해도 되나요?</strong><br/>A. 병행 가능하지만 <strong>순서·간격</strong>이 관건. 보통 <strong>에너지→필러</strong> 순서, <strong>실</strong>은 <strong>부위·벡터</strong>상 충돌이 없는지 의사와 상의하세요.</p><p><strong>Q4. 몇 번 받아야 티가 나나요?</strong><br/>A. 에너지형은 <strong>1회 체감→2~4주 업</strong>, 스레드형은 <strong>즉시 리프팅→2–6주 자리 잡기</strong>. 이벤트 설명의 <strong>권장 회차/세팅</strong>을 참고하세요.</p><h2>8) 한눈에 보는 결론(언니 팁)</h2><ul role="list"><li><strong>핵심은 이름이 아니라 ‘스펙’</strong>: <strong>모델명/방식·깊이·부위/패스/샷/줄 수</strong>를 <strong>숫자</strong>로 고정해 비교해요.</li><li><strong>다운타임·부작용</strong>은 방식에 따라 달라져요: 에너지형은 <strong>짧고 경미</strong>, 스레드형은 <strong>초기 당김/멍</strong> 관리가 포인트.</li><li>**가격(총액)**은 <strong>케어·VAT</strong>까지 포함해야 진짜 비교가 됩니다. 플랫폼 카드 <strong>스크린샷 ↔ 상담 견적</strong>을 1:1로 대조하세요.</li></ul><h3>참고(플랫폼 읽는 요령, 부드럽게)</h3><ul role="list"><li><em>강남언니</em>에서 ‘티타늄’ 키워드는 <strong>아이/페이스 분할</strong>이 잘 보이고, <strong>첫방문 특가</strong>가 자주 붙습니다.</li><li><em>바비톡</em> 후기는 <strong>“아이존 촘촘, 당일 복귀”</strong>, “<strong>턱선 위주로 깔끔</strong>”, “<strong>회차형으로 보완</strong>” 같은 톤이 많아요(개인차).</li><li>어떤 병원이든 <strong>의사별 누적후기/경과 사진</strong>을 먼저 보고, <strong>동일 조건 총액 캡처</strong>까지 챙기면—<strong>티는 덜, 만족은 더, 지출은 슬림</strong>하게 선택할 수 있어요.</li></ul><p>‍</p>
+          </div>
+
+          
+          <div class="info-box checklist-box">
+            <h3>✅ 체크리스트</h3>
+            <ul class="checklist">
+              <li>대안 시술 설명 유무</li><li>리스크/회복 기준 설명</li><li>추가 비용 트리거</li><li>사후관리 프로토콜</li>
+            </ul>
+          </div>
+
+          
+          <section class="faq-section" style="margin-top:24px;">
+            <h2>자주 묻는 질문</h2>
+            <details><summary>20‧30대가 딱 궁금한 “효과 기간 · 다운타임 · 부작용 · 가격(총액)” 4요소로 끝내기은/는 무엇인가요?</summary><p>본문의 '20‧30대가 딱 궁금한 “효과 기간 · 다운타임 · 부작용 · 가격(총액)” 4요소로 끝내기' 섹션을 참고하세요.</p></details><details><summary>요약(3줄 컷)은/는 무엇인가요?</summary><p>본문의 '요약(3줄 컷)' 섹션을 참고하세요.</p></details><details><summary>1) 티타늄 리프팅, 한 문장 정의은/는 무엇인가요?</summary><p>본문의 '1) 티타늄 리프팅, 한 문장 정의' 섹션을 참고하세요.</p></details><details><summary>병원 후기의 신뢰도를 어떻게 판단하나요?</summary><p>지나치게 긍정적이거나 구체성이 없는 후기는 주의가 필요합니다.</p></details><details><summary>상담 시 반드시 물어봐야 할 질문은?</summary><p>시술 방법, 리스크, 회복 기간, 총비용, 사후관리 범위를 확인하세요.</p></details><details><summary>여러 병원을 비교할 때 기준은?</summary><p>동일한 항목(비용, 방법, 경력, 관리)으로 통일하여 비교하세요.</p></details>
+          </section>
+
+          <p class="article-disclaimer">본 내용은 외부 공개 후기의 공통 패턴을 재정리한 요약 정보이며, 원문은 각 플랫폼에서 직접 확인하세요.</p>
+        </article>
+
+        <aside class="article-sidebar">
+          <section class="card sidebar-card">
+            <span class="badge" style="background:#ffe7ef;color:#d9336c;">상담 안내</span>
+            <h3 style="margin:8px 0 4px;">THE GLAM · 미녀는 괴로워</h3>
+            <div class="hospital-meta">
+              <span>hello@theglam.kr</span>
+              <span>02-333-3539</span>
+            </div>
+            <a href="../mockup/consultation.html" class="btn-primary" style="width:100%;">무료상담</a>
+          </section>
+        </aside>
+      </div>
+
+      <div class="article-cta-area">
+        <p>이 시술에 관심이 있으신가요?</p>
+        <a href="../mockup/consultation.html" class="btn-primary">💬 무료 상담 받아보기</a>
+        <div class="crosscheck-links">
+          <span>다른 플랫폼에서도 확인하기: </span><a href="https://www.babitalk.com/" target="_blank" rel="noopener">바비톡 원문 확인 ↗</a><a href="https://www.gangnamunni.com/" target="_blank" rel="noopener">강남언니 원문 확인 ↗</a><a href="tel:0233333539" target="_blank" rel="noopener">전화 상담 ↗</a><a href="mailto:hello@theglam.kr" target="_blank" rel="noopener">이메일 문의 ↗</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="../mockup-v2/terms.html">이용약관</a>
+        <a href="../mockup-v2/privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="../mockup/consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="../mockup/index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="../mockup/articles.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="../mockup/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="../mockup/hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="../mockup/consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+</body>
+</html>

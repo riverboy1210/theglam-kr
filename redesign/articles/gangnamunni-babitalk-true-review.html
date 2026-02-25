@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>강남언니·바비톡 후기, “진짜”만 골라보는 법 | 미녀는 괴로워</title>
+  <meta name="description" content="바비톡은 **‘클린캠페인’**으로 가짜 후기 작성 계정 영구 차단·관련 게시물 삭제, 거짓 홍보 병원 플랫폼 이용금지까지 밝힌 바 있습니다. 강남언니는 2022년부터 거짓 후기 페널티를 운영해 **10회 신고 시 광고금지, 20회 누적 시 퇴점(제휴 해지)**을 공표했고, 영수증 인증·가격 일치 모니터링과 대규모 차단(’22~’24 약 10만건) 등 정화 조치를 병행 중이에요. 이 글은 이런 정책을 내 편으로 활용해, 후기를 똑똑하게 읽고 남기는 방법을 정리합니다. (지디넷코리아, 아시아경제, 미래를 보는 창 - 전자신문)">
+  <link rel="canonical" href="https://theglam.kr/articles/gangnamunni-babitalk-true-review">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .article-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .article-header {
+      margin-bottom: 20px;
+    }
+
+    .article-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .article-title {
+      margin: 0;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .author-profile {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-content p {
+      margin: 0 0 14px;
+      color: #2d3347;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .price-table thead {
+      background: #fff1f7;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-tag {
+      color: #d9336c;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .info-box {
+      background: var(--bg-pink);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #7d2046;
+    }
+
+    .checklist-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip-header {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0 10px;
+    }
+
+    .before-after-item {
+      flex: 1;
+      display: block;
+      min-height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .before-after-item p {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+    }
+
+    .article-disclaimer {
+      margin-top: 22px;
+      font-size: 0.76rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      padding: 14px;
+    }
+
+    .hospital-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 6px 0 12px;
+    }
+
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .related-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-item .img-placeholder {
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .related-item p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .article-cta-area {
+      text-align: center;
+      padding: 32px;
+      background: var(--bg-gray);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .article-cta-area p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .crosscheck-links {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      justify-content: center;
+    }
+
+    .crosscheck-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .comments-section {
+      margin-top: 22px;
+    }
+
+    .comments-section h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-item .avatar {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      font-size: 0.84rem;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+    }
+
+    .comment-head strong {
+      color: var(--text);
+    }
+
+    .comment-head span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #2d3347;
+    }
+
+    .comment-like {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    @media (min-width: 1024px) {
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .article-title {
+        font-size: 1.45rem;
+      }
+
+      .before-after {
+        flex-direction: column;
+      }
+
+      .article-cta-area {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../mockup/index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-layout">
+        <article class="article-main">
+          <div class="article-header">
+            <div class="article-meta-top">
+              <span class="badge" style="background:#8B5CF6;color:#fff;">병원 선택</span>
+              <span class="article-date">2025-08-24</span>
+            </div>
+            <h1 class="article-title">강남언니·바비톡 후기, “진짜”만 골라보는 법</h1>
+            <div class="author-profile">
+              <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#FFE0EC;display:flex;align-items:center;justify-content:center;">👩</div>
+              <div><strong>한상민 에디터</strong></div>
+            </div>
+          </div>
+
+          
+          <div class="article-hero-image" style="margin: 0 0 18px;">
+            <img src="../images/68aa6c7bea8e96c73c23a13c_68aa6af5700314ecdf4cef98_68aa67efecacfd9b4b79b67b_68a2d67ad39a1a3d6cb910d9_%5B%EB%B3%B5%EC%82%AC%EB%B3%B8%5D%20740%20466%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EC%84%B8%EB%B6%80%EC%A0%95%EB%B3%B4%20%EC%8D%B8%EB%84%A4%EC%9D%BC%2045.png" alt="강남언니·바비톡 후기, “진짜”만 골라보는 법" style="width:100%;border-radius:12px;">
+          </div>
+
+          <div class="article-content">
+            <p>‍</p><h1>강남언니·바비톡 후기, “진짜”만 골라보는 법</h1><h3>20‧30대 여성을 위한 신뢰 체크 → 비교 → 예약까지, 실전 가이드</h3><p><br/>바비톡은 **‘클린캠페인’**으로 가짜 후기 작성 계정 <strong>영구 차단</strong>·관련 <strong>게시물 삭제</strong>, <strong>거짓 홍보 병원 플랫폼 이용금지</strong>까지 밝힌 바 있습니다. 강남언니는 2022년부터 <strong>거짓 후기 페널티</strong>를 운영해 **10회 신고 시 광고금지, 20회 누적 시 퇴점(제휴 해지)**을 공표했고, <strong>영수증 인증·가격 일치 모니터링</strong>과 <strong>대규모 차단(’22~’24 약 10만건)</strong> 등 정화 조치를 병행 중이에요. 이 글은 이런 정책을 <strong>내 편으로</strong> 활용해, 후기를 똑똑하게 읽고 남기는 방법을 정리합니다. (<a href="https://zdnet.co.kr/view/?no=20221228160724&amp;utm_source=chatgpt.com">지디넷코리아</a>, <a href="https://www.asiae.co.kr/article/2021061610132255008?utm_source=chatgpt.com">아시아경제</a>, <a href="https://www.etnews.com/20240904000280?utm_source=chatgpt.com">미래를 보는 창 - 전자신문</a>)</p><h2>요약(3줄 컷)</h2><ul role="list"><li><strong>가짜 후기 제로에 도전</strong>: 바비톡 <strong>클린캠페인(영구 차단·병원 이용금지)</strong>, 강남언니 **페널티(10회 광고금지/20회 퇴점)**가 공식화돼 있어요. (<a href="https://zdnet.co.kr/view/?no=20221228160724&amp;utm_source=chatgpt.com">지디넷코리아</a>, <a href="https://www.asiae.co.kr/article/2021061610132255008?utm_source=chatgpt.com">아시아경제</a>)</li><li><strong>증빙이 핵심</strong>: 강남언니는 <strong>영수증 인증 후기</strong>와 <strong>앱 가격 vs 실제 결제 가격</strong> 불일치 모니터링을 운영합니다. (<a href="https://medigatenews.com/news/3164789726?utm_source=chatgpt.com">MediGate News</a>, <a href="https://www.etnews.com/20240904000280?utm_source=chatgpt.com">미래를 보는 창 - 전자신문</a>)</li><li><strong>나에게 유리하게</strong>: “영수증·숫자(단위·cc·샷/라인)”가 있는 후기를 중심으로 읽고, 동일 조건 <strong>총액</strong>으로 비교하세요.</li></ul><h2>플랫폼 정책, 한눈에 정리</h2><ul role="list"><li><strong>바비톡 — ‘클린캠페인’</strong><br/>가짜 후기를 올린 <strong>부정 사용자 영구 차단</strong>, 해당 <strong>게시물 삭제</strong>, <strong>거짓 홍보를 한 병원 플랫폼 이용금지</strong>까지 공개적으로 밝힘. 정책의 실효성을 높이려는 방향이에요. (<a href="https://zdnet.co.kr/view/?no=20221228160724&amp;utm_source=chatgpt.com">지디넷코리아</a>)</li><li><strong>강남언니 — 거짓 후기 페널티 &amp; 정화 캠페인</strong><br/><strong>10회 신고</strong>: 앱 내 <strong>광고금지(1주)</strong> → <strong>20회 신고 누적</strong>: <strong>퇴점(제휴 해지)</strong>. 여기에 <strong>영수증 인증</strong>과 <strong>가격 불일치 모니터링</strong>을 더해, ’22~’24에만 <strong>약 10만건 가짜 후기 차단</strong>을 발표했습니다. (<a href="https://www.asiae.co.kr/article/2021061610132255008?utm_source=chatgpt.com">아시아경제</a>, <a href="https://medigatenews.com/news/3164789726?utm_source=chatgpt.com">MediGate News</a>, <a href="https://www.etnews.com/20240904000280?utm_source=chatgpt.com">미래를 보는 창 - 전자신문</a>)</li></ul><p>정책은 수시로 업데이트될 수 있으니, <strong>방문 전 최신 공지/카드 설명</strong>을 반드시 확인하세요.</p><h2>“좋은 정보”만 뽑아내는 읽기 순서(5단계)</h2><ol role="list"><li><strong>영수증 인증 태그</strong>부터 보기: 결제 증빙이 검수된 후기부터 읽으면 기본 신뢰선을 확보할 수 있어요. (<a href="https://medigatenews.com/news/3164789726?utm_source=chatgpt.com">MediGate News</a>)</li><li><strong>경과 사진이 있는 후기</strong>: 즉시/1–2주/1달 같은 <strong>타임라인</strong>이 있는 후기만 추립니다. (부풀려진 한 컷 전후 대비 ↓)</li><li><strong>숫자 있는 후기</strong>: 보톡스 <strong>U(단위)</strong>, 필러 <strong>cc</strong>, 레이저 <strong>샷/라인</strong>, 실리프팅 <strong>줄 수/재질</strong>, 수술 <strong>보형물/절개·층(예: 듀얼플레인)</strong> 같은 <strong>스펙 수치</strong>가 적힌 후기 우선.</li><li><strong>부정·중립 후기도 필수</strong>: “좋아요”만 보지 말고 <strong>낮은 평점 순</strong>도 확인해 공통 불만(추가비·대기·통증/다운타임)을 체크.</li><li><strong>의사/지점별로 묶기</strong>: 같은 병원도 <strong>의사·지점</strong>이 다르면 만족도가 갈릴 수 있어요—동일 <strong>집도의</strong> 케이스를 모아 비교.</li></ol><h2>검색 → 비교 → 예약, 10분 루틴(복붙)</h2><ul role="list"><li> <strong>키워드</strong>로 병원 3곳 북마크(예: “사각턱 보톡스 50U”, “입술필러 하프 0.5cc”, “실리프팅 PCL”).</li><li> 각 병원 <strong>영수증+경과 후기 3개</strong>만 읽고, <strong>스펙/총액/다운타임</strong> 메모. (<a href="https://medigatenews.com/news/3164789726?utm_source=chatgpt.com">MediGate News</a>)</li><li> 병원에 <strong>동일 조건 총액</strong> 요청: “브랜드/용량·단위/샷·줄 수 + VAT·소모품·사후관리 <strong>포함 총액</strong> 주세요.”</li><li> <strong>리터치/환불 규정·유효기간</strong> 캡처.</li><li> <strong>쿠폰·포인트</strong>까지 합산해 <strong>체감가</strong> 비교 후, 상담 1~2곳만 예약.</li></ul><p><strong>실지출 공식</strong>: 총액 = 기본가 + (추가 용량·단위 × 단가) + (소모품·마취) + VAT − (쿠폰·포인트)</p><h2>신고/보호: 이런 경우 바로 행동</h2><ul role="list"><li><strong>대가성 후기 요구</strong>(할인·보증금·계정 양도 등)나 <strong>후기 강요</strong>를 받았다면, 플랫폼 <strong>신고→증빙 제출</strong>하세요. 강남언니는 <strong>10회 광고금지, 20회 퇴점</strong>까지 명시되어 있어 사용자 신고가 실제 페널티로 연결됩니다. (<a href="https://www.asiae.co.kr/article/2021061610132255008?utm_source=chatgpt.com">아시아경제</a>)</li><li><strong>가짜 후기 의심</strong>: 스펙/영수증·경과가 없는 ‘복붙형’ 후기라면 신고 + 교차 검증(두 플랫폼·커뮤니티)으로 <strong>편향 최소화</strong>. 바비톡은 <strong>영구 차단/병원 이용금지</strong> 기조를 밝힌 바 있어요. (<a href="https://zdnet.co.kr/view/?no=20221228160724&amp;utm_source=chatgpt.com">지디넷코리아</a>)</li></ul><h2>강남언니·바비톡, 이렇게 쓰면 좋다(핵심 기능)</h2><ul role="list"><li><strong>영수증 인증 후기/가격 모니터링(강남언니)</strong>: 후기 등록 시 영수증을 첨부하면 운영팀이 검수·표기, 앱 가격과 실제 결제 가격의 <strong>불일치</strong>도 감지·분석합니다. (<a href="https://medigatenews.com/news/3164789726?utm_source=chatgpt.com">MediGate News</a>, <a href="https://www.etnews.com/20240904000280?utm_source=chatgpt.com">미래를 보는 창 - 전자신문</a>)</li><li><strong>클린캠페인(바비톡)</strong>: <strong>가짜 후기 계정 영구 차단</strong>·<strong>관련 게시물 삭제</strong>·<strong>거짓 홍보 병원 이용금지</strong>를 공개적으로 공언. (<a href="https://zdnet.co.kr/view/?no=20221228160724&amp;utm_source=chatgpt.com">지디넷코리아</a>)</li></ul><h2>FAQ (짧고 정확하게)</h2><p><strong>Q. 영수증 인증이 없는 후기는 다 거르나요?</strong><br/>A. 전부 제외할 필요는 없지만, <strong>증빙·숫자·경과</strong>가 있는 후기부터 신뢰하세요(없는 후기는 교차 검증). (<a href="https://medigatenews.com/news/3164789726?utm_source=chatgpt.com">MediGate News</a>)</p><p><strong>Q. 병원이 후기를 요구하면 어떻게 해요?</strong><br/>A. <strong>증빙과 함께 신고</strong>하세요. 강남언니는 <strong>10회 광고금지/20회 퇴점</strong> 페널티를 공표했습니다. (<a href="https://www.asiae.co.kr/article/2021061610132255008?utm_source=chatgpt.com">아시아경제</a>)</p><p><strong>Q. 진짜/가짜 구분이 여전히 어렵다면?</strong><br/>A. <strong>두 플랫폼 교차 확인 + 스펙 숫자 중심</strong>으로 필터링하세요. 강남언니는 ’22~’24 <strong>약 10만건 차단</strong>을 발표하며 정화 노력을 강화하고 있어요. (<a href="https://www.etnews.com/20240904000280?utm_source=chatgpt.com">미래를 보는 창 - 전자신문</a>)</p><h2>마지막 한 줄(언니 팁)</h2><p><strong>문구보다 ‘증빙과 숫자’.</strong><br/>영수증 인증·경과 사진·스펙 수치가 있는 후기를 먼저 읽고, 동일 조건 <strong>총액</strong>으로만 비교하세요. 바비톡의 <strong>클린캠페인</strong>과 강남언니의 <strong>페널티·영수증 인증</strong>을 <em>내 편 도구</em>로 쓰면, <strong>티는 덜</strong>하고 <strong>지출은 슬림</strong>, <strong>후회는 최소</strong>로 원하는 결과에 더 빨리 도달할 수 있어요. (<a href="https://zdnet.co.kr/view/?no=20221228160724&amp;utm_source=chatgpt.com">지디넷코리아</a>, <a href="https://www.asiae.co.kr/article/2021061610132255008?utm_source=chatgpt.com">아시아경제</a>, <a href="https://medigatenews.com/news/3164789726?utm_source=chatgpt.com">MediGate News</a>)</p><p>‍</p>
+          </div>
+
+          
+          <div class="info-box checklist-box">
+            <h3>✅ 체크리스트</h3>
+            <ul class="checklist">
+              <li>대안 시술 설명 유무</li><li>리스크/회복 기준 설명</li><li>추가 비용 트리거</li><li>사후관리 프로토콜</li>
+            </ul>
+          </div>
+
+          
+          <section class="faq-section" style="margin-top:24px;">
+            <h2>자주 묻는 질문</h2>
+            <details><summary>강남언니·바비톡 후기, “진짜”만 골라보는 법은/는 무엇인가요?</summary><p>본문의 '강남언니·바비톡 후기, “진짜”만 골라보는 법' 섹션을 참고하세요.</p></details><details><summary>20‧30대 여성을 위한 신뢰 체크 → 비교 → 예약까지, 실전 가이드은/는 무엇인가요?</summary><p>본문의 '20‧30대 여성을 위한 신뢰 체크 → 비교 → 예약까지, 실전 가이드' 섹션을 참고하세요.</p></details><details><summary>요약(3줄 컷)은/는 무엇인가요?</summary><p>본문의 '요약(3줄 컷)' 섹션을 참고하세요.</p></details><details><summary>병원 후기의 신뢰도를 어떻게 판단하나요?</summary><p>지나치게 긍정적이거나 구체성이 없는 후기는 주의가 필요합니다.</p></details><details><summary>상담 시 반드시 물어봐야 할 질문은?</summary><p>시술 방법, 리스크, 회복 기간, 총비용, 사후관리 범위를 확인하세요.</p></details><details><summary>여러 병원을 비교할 때 기준은?</summary><p>동일한 항목(비용, 방법, 경력, 관리)으로 통일하여 비교하세요.</p></details>
+          </section>
+
+          <p class="article-disclaimer">본 내용은 외부 공개 후기의 공통 패턴을 재정리한 요약 정보이며, 원문은 각 플랫폼에서 직접 확인하세요.</p>
+        </article>
+
+        <aside class="article-sidebar">
+          <section class="card sidebar-card">
+            <span class="badge" style="background:#ffe7ef;color:#d9336c;">상담 안내</span>
+            <h3 style="margin:8px 0 4px;">THE GLAM · 미녀는 괴로워</h3>
+            <div class="hospital-meta">
+              <span>hello@theglam.kr</span>
+              <span>02-333-3539</span>
+            </div>
+            <a href="../mockup/consultation.html" class="btn-primary" style="width:100%;">무료상담</a>
+          </section>
+        </aside>
+      </div>
+
+      <div class="article-cta-area">
+        <p>이 시술에 관심이 있으신가요?</p>
+        <a href="../mockup/consultation.html" class="btn-primary">💬 무료 상담 받아보기</a>
+        <div class="crosscheck-links">
+          <span>다른 플랫폼에서도 확인하기: </span><a href="https://www.babitalk.com/" target="_blank" rel="noopener">바비톡 원문 확인 ↗</a><a href="https://www.gangnamunni.com/" target="_blank" rel="noopener">강남언니 원문 확인 ↗</a><a href="tel:0233333539" target="_blank" rel="noopener">전화 상담 ↗</a><a href="mailto:hello@theglam.kr" target="_blank" rel="noopener">이메일 문의 ↗</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="../mockup-v2/terms.html">이용약관</a>
+        <a href="../mockup-v2/privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="../mockup/consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="../mockup/index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="../mockup/articles.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="../mockup/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="../mockup/hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="../mockup/consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+</body>
+</html>

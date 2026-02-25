@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LDM 물방울 리프팅, 간단히 알아보장 | 미녀는 괴로워</title>
+  <meta name="description" content="LDM(Local Dynamic Micro-massage)은 듀얼 주파수 초음파를 빠르게 전환해 피부에 미세 마사지 → 수분/장벽/탄력을 돕는 저자극 리프팅 케어예요. 강남언니에선 ‘LDM’이 시술정보·이벤트·후기로 묶여 소개되고(이벤트 수천 건 규모), 지역/할인별로 비교가 쉬워요. 바비톡도 **이벤트 카드(예: VAT 포함 표기)**와 커뮤니티 Q&amp;amp;A가 활성화되어 있어 부위·회차·케어·VAT 포함 총액으로 비교하기 좋습니다.">
+  <link rel="canonical" href="https://theglam.kr/articles/ldm-lifting-guide">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .article-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .article-header {
+      margin-bottom: 20px;
+    }
+
+    .article-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .article-title {
+      margin: 0;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .author-profile {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-content p {
+      margin: 0 0 14px;
+      color: #2d3347;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .price-table thead {
+      background: #fff1f7;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-tag {
+      color: #d9336c;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .info-box {
+      background: var(--bg-pink);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #7d2046;
+    }
+
+    .checklist-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip-header {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0 10px;
+    }
+
+    .before-after-item {
+      flex: 1;
+      display: block;
+      min-height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .before-after-item p {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+    }
+
+    .article-disclaimer {
+      margin-top: 22px;
+      font-size: 0.76rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      padding: 14px;
+    }
+
+    .hospital-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 6px 0 12px;
+    }
+
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .related-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-item .img-placeholder {
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .related-item p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .article-cta-area {
+      text-align: center;
+      padding: 32px;
+      background: var(--bg-gray);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .article-cta-area p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .crosscheck-links {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      justify-content: center;
+    }
+
+    .crosscheck-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .comments-section {
+      margin-top: 22px;
+    }
+
+    .comments-section h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-item .avatar {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      font-size: 0.84rem;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+    }
+
+    .comment-head strong {
+      color: var(--text);
+    }
+
+    .comment-head span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #2d3347;
+    }
+
+    .comment-like {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    @media (min-width: 1024px) {
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .article-title {
+        font-size: 1.45rem;
+      }
+
+      .before-after {
+        flex-direction: column;
+      }
+
+      .article-cta-area {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../mockup/index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-layout">
+        <article class="article-main">
+          <div class="article-header">
+            <div class="article-meta-top">
+              <span class="badge" style="background:#8B5CF6;color:#fff;">병원 선택</span>
+              <span class="article-date">2025-08-24</span>
+            </div>
+            <h1 class="article-title">LDM 물방울 리프팅, 간단히 알아보장</h1>
+            <div class="author-profile">
+              <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#FFE0EC;display:flex;align-items:center;justify-content:center;">👩</div>
+              <div><strong>이다혜 에디터</strong></div>
+            </div>
+          </div>
+
+          
+          <div class="article-hero-image" style="margin: 0 0 18px;">
+            <img src="../images/68aa6c74ed47367c629b8714_68aa6aef6e4ca42b28d0833f_68aa67ea6ed7c56fd0e1ba59_68a80ea6eedbdca34a675465_%5B%EB%B3%B5%EC%82%AC%EB%B3%B8%5D%20740%20466%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EC%84%B8%EB%B6%80%EC%A0%95%EB%B3%B4%20%EC%8D%B8%EB%84%A4%EC%9D%BC%2051.png" alt="LDM 물방울 리프팅, 간단히 알아보장" style="width:100%;border-radius:12px;">
+          </div>
+
+          <div class="article-content">
+            <p>‍</p><h2>요약(3줄 컷)</h2><ul role="list"><li><strong>무엇?</strong> 초음파 듀얼 주파수의 <strong>미세 진동</strong>으로 <strong>수분 유입·장벽·콜라겐 도움</strong> → <strong>결/탄력/잔주름</strong>을 순하게 관리. (강남언니 시술설명) (<a href="https://www.gangnamunni.com/search?q=LDM+%EB%AC%BC%EB%B0%A9%EC%9A%B8+%EB%A6%AC%ED%94%84%ED%8C%85">Gangnam Unni</a>)</li><li><strong>언제 체감?</strong> 직후 <strong>광·촉촉함</strong> → <strong>2~4주 누적</strong> 시 탄력·결 업. 보통 <strong>4~8회 프로그램</strong> 만족도↑.</li><li><strong>어떻게 고르지?</strong> 플랫폼 카드의 <strong>부위(페이스/아이/넥)·회차·케어·VAT 포함 총액</strong>을 <strong>동일 조건</strong>으로 캡처 비교! (바비톡 카드 예시 다수) (<a href="https://web.babitalk.com/?utm_source=chatgpt.com">바비톡</a>)</li></ul><h2>1) LDM 물방울 리프팅, 한 문장 정의</h2><p><strong>LDM = 저·고주파를 번갈아 쏘는 초음파로 ‘로컬 다이내믹 미세 마사지’를 일으켜</strong> 피부 <strong>수분·장벽·탄력</strong>을 돕는 <strong>저자극 리프팅 케어</strong>. 강남언니 시술설명도 **“고밀도 초음파가 콜라겐 촉진·보습 도움”**으로 정의해요. (<a href="https://www.gangnamunni.com/search?q=LDM+%EB%AC%BC%EB%B0%A9%EC%9A%B8+%EB%A6%AC%ED%94%84%ED%8C%85">Gangnam Unni</a>)</p><ul role="list"><li><strong>포지션</strong>: 슈링크·울쎄라 같은 <strong>깊은 리프팅</strong>보다, <strong>결/수분/탱탱함</strong> 중심의 <strong>진정·데일리형 리프팅</strong>에 가까움.</li><li><strong>타깃</strong>: <strong>건성/민감·마스크 자극·시술 직후 진정</strong>, <strong>아이존·입가</strong>처럼 예민 부위.</li></ul><p>플랫폼 흐름 톡톡<br/>강남언니/바비톡에 <strong>“LDM 물방울 리프팅/관리/체험권”</strong> 같은 <strong>부위·회차형 카드</strong>가 꾸준하고, 후기/커뮤니티에서 <strong>직후 광·2주차 탄력감</strong> 톤이 반복됩니다(개인차). (<a href="https://www.gangnamunni.com/search?q=LDM+%EB%AC%BC%EB%B0%A9%EC%9A%B8+%EB%A6%AC%ED%94%84%ED%8C%85">Gangnam Unni</a>, <a href="https://babitalk.com/web/community/5625965?utm_source=chatgpt.com">바비톡</a>)</p><h2>2) 효과 기간(타임라인)</h2><ul role="list"><li><strong>즉시</strong>: <strong>광채·촉촉함·보송한 탄력감</strong>. 약속/촬영 전 <strong>응급 케어</strong> 용도로도 선택.</li><li><strong>2~4주</strong>: <strong>주 1~2회 누적</strong> 시 <strong>결·탄력·잔주름</strong>이 차분히 개선.</li><li><strong>4~8주(피크)</strong>: 프로그램 마무리 즈음 체감↑. 이후 <strong>월 1회 유지</strong> 추천이 많음.</li><li><strong>장기 유지 팁</strong>: <strong>선크림·수분 루틴</strong>이 유지기간을 좌우.</li></ul><h2>3) 다운타임(회복)</h2><ul role="list"><li><strong>복귀</strong>: <strong>즉시 가능</strong>. 세안·메이크업 당일 OK라는 안내가 일반적.</li><li><strong>초기 반응</strong>: <strong>홍조/따뜻함/미세 당김</strong> → 대개 수 시간 내 가라앉음.</li><li><strong>체감 통증</strong>: “<strong>편안한 마사지 느낌</strong>” 후기가 많음. 예민한 날엔 <strong>출력 낮춤·쿨링 요청</strong>하기.</li></ul><h2>4) 부작용(알아두면 안심)</h2><ul role="list"><li><strong>흔한 범주</strong>: 일시적 <strong>홍조·당김</strong>, 드물게 <strong>가벼운 붓기/따가움</strong>.</li><li><strong>매우 드물게</strong>: 표재 화끈거림·열감 지속. <strong>24~48시간</strong> 이상 지속 시 <strong>의료진 즉시 문의</strong>.</li><li><strong>주의 대상</strong>: <strong>활동성 염증/상처</strong>, <strong>임신·수유</strong>, <strong>심장질환/금속 임플란트</strong> 등은 <strong>적응증 사전 확인</strong> 필수.</li></ul><p><em>보장 표현 금지·개인차 큼. 설계·출력·간격은 의료진과 보수적으로.</em></p><h2>5) 가격(총액) — 진짜로 비교하는 법</h2><p><strong>총액 = 기본가 + (부위/회차 × 단가) + (마취·소모품/케어) + VAT − (쿠폰·포인트)</strong></p><ul role="list"><li><strong>부위/회차형</strong>: <strong>페이스/아이/넥 단일</strong> vs <strong>4~8회 패키지</strong>. <strong>묶음일수록 회당 단가↓</strong> 경향(플랫폼 정렬/필터로 비교 가능). (<a href="https://www.gangnamunni.com/events?district=N1116&amp;q=LDM+%EB%AC%BC%EB%B0%A9%EC%9A%B8+%EB%A6%AC%ED%94%84%ED%8C%85">Gangnam Unni</a>)</li><li><strong>케어 포함</strong>: <strong>모델링팩·LED·재생앰플</strong> 포함 여부가 체감 차이를 크게 만듭니다.</li><li><strong>카드 판독법</strong>: 이벤트 카드의 <strong>부위·회차·케어·VAT 포함/제외</strong>를 <strong>스크린샷</strong> → 오프라인 견적과 <strong>1:1 대조</strong>. (바비톡 다수 카드가 VAT 포함 표기) (<a href="https://web.babitalk.com/?utm_source=chatgpt.com">바비톡</a>)</li><li><strong>체험가 주의</strong>: 1회 **입문가(체험권)**일 수 있음 → 상담에서 <strong>권장 회차 반영 총액</strong>도 함께 요청해야 현실 비교가 돼요.</li></ul><p><strong>실제 카드/병원 예시(‘동일 조건 총액’ 비교용, 시점·지점별 변동)</strong></p><ul role="list"><li><strong>강남언니</strong>:<ul role="list"><li><em>로바에의원(홍대입구역)</em> <strong>LDM 물방울리프팅 66,000원(47%↓)</strong>,</li><li><em>룩엣미의원(문정역)</em> <strong>55,000원(44%↓)</strong>,</li><li><em>유메이비의원(노원역)</em> <strong>LDM 24분 198,000원</strong>,</li><li><em>벨뷰의원(강남역)</em> <strong>LDM 관리 체험권 31,900원(48%↓)</strong> 등. (<a href="https://www.gangnamunni.com/events?q=LDM+%EB%AC%BC%EB%B0%A9%EC%9A%B8+%EB%A6%AC%ED%94%84%ED%8C%85&amp;utm_source=chatgpt.com">Gangnam Unni</a>)</li></ul></li><li><strong>바비톡</strong>:<ul role="list"><li><em>아비쥬의원(강남/홍대/잠실/명동 등)</em> <strong>LDM 물방울리프팅 첫방문 10,890원</strong>(카드 다수),</li><li><em>에이탑뷰티클리닉</em> <strong>LDM 물방울리프팅 55,000원(VAT 포함) 카드</strong>,</li><li><em>유이성형외과</em> <strong>LDM 이벤트 페이지</strong> 운영. (<a href="https://www.gangnamunni.com/events?q=LDM+%EB%AC%BC%EB%B0%A9%EC%9A%B8+%EB%A6%AC%ED%94%84%ED%8C%85&amp;utm_source=chatgpt.com">Gangnam Unni</a>, <a href="https://babitalk.com/web/events/68309?utm_source=chatgpt.com">바비톡</a>)</li></ul></li></ul><h2>6) 이렇게 고르면 실패가 줄어요(체크리스트 복붙)</h2><p><strong>상담/견적</strong></p><ul role="list"><li> <strong>프로그램</strong>: <strong>회차/간격(주 1~2회)</strong>, <strong>부위(아이/페이스/넥)</strong>, <strong>세션 시간(분)</strong> 숫자 확인</li><li> <strong>케어 포함</strong>: <strong>재생팩·LED·앰플</strong> 포함/추가 비용</li><li> <strong>총액</strong>: <strong>VAT·마취·소모품·리터치</strong> 포함/제외 구분 &amp; 문자/견적서 캡처</li><li> <strong>시술자</strong>: 의사/전문 스태프 <strong>실명·누적후기</strong>(의사 고정 가능 여부)</li><li> <strong>안전/무통</strong>: <strong>쿨링·저출력 시작·응급 대응 체계</strong></li><li> <strong>충돌 시술</strong>: 최근 <strong>레이저/필러/보톡스</strong>와 <strong>간격·순서</strong>(보통 <strong>에너지→필러</strong>)</li></ul><p><strong>후기 읽기</strong></p><ul role="list"><li> <strong>경과 사진 타임라인</strong>(즉시/2~4주/8주)</li><li> <strong>수치·스펙 언급</strong>(회차/세션 시간/케어 포함)</li><li> <strong>부정·중립 후기 반복 포인트</strong>(추가비·대기·체감 미미)</li><li> <strong>의사/지점 동일 케이스</strong>끼리 묶어 비교</li></ul><h2>7) 자주 묻는 질문(FAQ)</h2><p><strong>Q1. LDM만으로 리프팅이 되나요?</strong><br/>A. <strong>결·수분·잔주름·탄력</strong>에 강점인 <strong>저자극 리프팅</strong>이에요. 턱 라인/SMAS 같은 <strong>깊은 처짐</strong>은 <strong>HIFU·실리프팅</strong>과 <strong>병행 설계</strong>를.</p><p><strong>Q2. 직후 행사/촬영 가도 될까요?</strong><br/>A. <strong>즉시 복귀</strong> 톤이 일반적. 다만 <strong>자외선 차단·수분 보충</strong>은 필수, 과한 각질 케어는 잠시 쉬어요.</p><p><strong>Q3. 여드름/민감 피부도 가능?</strong><br/>A. <strong>진정·장벽 케어</strong>로 쓰는 곳 많지만, <strong>활동성 염증</strong>이면 <strong>출력·간격</strong>을 의료진과 보수적으로 조정.</p><p><strong>Q4. 몇 번 받아야 티가 나요?</strong><br/>A. <strong>1회도 촉촉함</strong>은 흔하지만, 보통 <strong>4~8회 프로그램</strong> 체감이 확 올라갑니다(개인차).</p><p><strong>Q5. 플랫폼 카드에 ‘체험권’이 많던데?</strong><br/>A. 체험권은 <strong>입문가</strong>일 가능성이 높아요. <strong>권장 회차 반영 총액</strong>을 함께 받아 현실 비교하세요. (강남언니/바비톡 체험권 카드 다수) (<a href="https://www.gangnamunni.com/events?q=LDM&amp;utm_source=chatgpt.com">Gangnam Unni</a>)</p><h2>8) 한눈에 보는 결론(언니 팁)</h2><ul role="list"><li><strong>효과</strong>: 즉시 <strong>광/촉촉</strong> → <strong>2~4주 누적 업</strong>, <strong>4~8회</strong>에서 만족도↑</li><li><strong>다운타임</strong>: <strong>거의 없음</strong>·바로 출근/메이크업 OK</li><li><strong>부작용</strong>: 대체로 경미, <strong>예민 피부</strong>는 출력·간격 보수적으로</li><li><strong>가격(총액)</strong>: <strong>부위·회차·케어·VAT</strong> 4요소를 <strong>동일 조건 총액</strong>으로만 비교!</li></ul><p>‍</p><p>‍</p>
+          </div>
+
+          
+          <div class="info-box checklist-box">
+            <h3>✅ 체크리스트</h3>
+            <ul class="checklist">
+              <li>대안 시술 설명 유무</li><li>리스크/회복 기준 설명</li><li>추가 비용 트리거</li><li>사후관리 프로토콜</li>
+            </ul>
+          </div>
+
+          
+          <section class="faq-section" style="margin-top:24px;">
+            <h2>자주 묻는 질문</h2>
+            <details><summary>요약(3줄 컷)은/는 무엇인가요?</summary><p>본문의 '요약(3줄 컷)' 섹션을 참고하세요.</p></details><details><summary>1) LDM 물방울 리프팅, 한 문장 정의은/는 무엇인가요?</summary><p>본문의 '1) LDM 물방울 리프팅, 한 문장 정의' 섹션을 참고하세요.</p></details><details><summary>2) 효과 기간(타임라인)은/는 무엇인가요?</summary><p>본문의 '2) 효과 기간(타임라인)' 섹션을 참고하세요.</p></details><details><summary>병원 후기의 신뢰도를 어떻게 판단하나요?</summary><p>지나치게 긍정적이거나 구체성이 없는 후기는 주의가 필요합니다.</p></details><details><summary>상담 시 반드시 물어봐야 할 질문은?</summary><p>시술 방법, 리스크, 회복 기간, 총비용, 사후관리 범위를 확인하세요.</p></details><details><summary>여러 병원을 비교할 때 기준은?</summary><p>동일한 항목(비용, 방법, 경력, 관리)으로 통일하여 비교하세요.</p></details>
+          </section>
+
+          <p class="article-disclaimer">본 내용은 외부 공개 후기의 공통 패턴을 재정리한 요약 정보이며, 원문은 각 플랫폼에서 직접 확인하세요.</p>
+        </article>
+
+        <aside class="article-sidebar">
+          <section class="card sidebar-card">
+            <span class="badge" style="background:#ffe7ef;color:#d9336c;">상담 안내</span>
+            <h3 style="margin:8px 0 4px;">THE GLAM · 미녀는 괴로워</h3>
+            <div class="hospital-meta">
+              <span>hello@theglam.kr</span>
+              <span>02-333-3539</span>
+            </div>
+            <a href="../mockup/consultation.html" class="btn-primary" style="width:100%;">무료상담</a>
+          </section>
+        </aside>
+      </div>
+
+      <div class="article-cta-area">
+        <p>이 시술에 관심이 있으신가요?</p>
+        <a href="../mockup/consultation.html" class="btn-primary">💬 무료 상담 받아보기</a>
+        <div class="crosscheck-links">
+          <span>다른 플랫폼에서도 확인하기: </span><a href="https://www.babitalk.com/" target="_blank" rel="noopener">바비톡 원문 확인 ↗</a><a href="https://www.gangnamunni.com/" target="_blank" rel="noopener">강남언니 원문 확인 ↗</a><a href="tel:0233333539" target="_blank" rel="noopener">전화 상담 ↗</a><a href="mailto:hello@theglam.kr" target="_blank" rel="noopener">이메일 문의 ↗</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="../mockup-v2/terms.html">이용약관</a>
+        <a href="../mockup-v2/privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="../mockup/consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="../mockup/index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="../mockup/articles.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="../mockup/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="../mockup/hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="../mockup/consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+</body>
+</html>

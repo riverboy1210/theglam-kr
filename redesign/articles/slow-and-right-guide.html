@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>빨리보다 바르게, 당신의 속도로 | 미녀는 괴로워</title>
+  <meta name="description" content="광고보다 약관, 말솜씨보다 시스템. 질문은 서면으로, 비교는 올인 총액. 불안이 줄면 진행, 아니면 미루기. 빨리보다 바르게, 당신의 속도로.">
+  <link rel="canonical" href="https://theglam.kr/articles/slow-and-right-guide">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .article-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .article-header {
+      margin-bottom: 20px;
+    }
+
+    .article-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .article-title {
+      margin: 0;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .author-profile {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-content p {
+      margin: 0 0 14px;
+      color: #2d3347;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .price-table thead {
+      background: #fff1f7;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-tag {
+      color: #d9336c;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .info-box {
+      background: var(--bg-pink);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #7d2046;
+    }
+
+    .checklist-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip-header {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0 10px;
+    }
+
+    .before-after-item {
+      flex: 1;
+      display: block;
+      min-height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .before-after-item p {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+    }
+
+    .article-disclaimer {
+      margin-top: 22px;
+      font-size: 0.76rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      padding: 14px;
+    }
+
+    .hospital-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 6px 0 12px;
+    }
+
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .related-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-item .img-placeholder {
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .related-item p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .article-cta-area {
+      text-align: center;
+      padding: 32px;
+      background: var(--bg-gray);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .article-cta-area p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .crosscheck-links {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      justify-content: center;
+    }
+
+    .crosscheck-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .comments-section {
+      margin-top: 22px;
+    }
+
+    .comments-section h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-item .avatar {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      font-size: 0.84rem;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+    }
+
+    .comment-head strong {
+      color: var(--text);
+    }
+
+    .comment-head span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #2d3347;
+    }
+
+    .comment-like {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    @media (min-width: 1024px) {
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .article-title {
+        font-size: 1.45rem;
+      }
+
+      .before-after {
+        flex-direction: column;
+      }
+
+      .article-cta-area {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../mockup/index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-layout">
+        <article class="article-main">
+          <div class="article-header">
+            <div class="article-meta-top">
+              <span class="badge" style="background:#8B5CF6;color:#fff;">병원 선택</span>
+              <span class="article-date">2025-08-24</span>
+            </div>
+            <h1 class="article-title">빨리보다 바르게, 당신의 속도로</h1>
+            <div class="author-profile">
+              <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#FFE0EC;display:flex;align-items:center;justify-content:center;">👩</div>
+              <div><strong>한상민 에디터</strong></div>
+            </div>
+          </div>
+
+          
+          <div class="article-hero-image" style="margin: 0 0 18px;">
+            <img src="../images/68aa6c83838f94731de33983_68aa6afa45a40c4baf28b036_68aa67f582b161bd552854b8_689e9793f6831b210edd4f8f_740%20466%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EC%84%B8%EB%B6%80%EC%A0%95%EB%B3%B4%20%EC%8D%B8%EB%84%A4%EC%9D%BC%2019.png" alt="빨리보다 바르게, 당신의 속도로" style="width:100%;border-radius:12px;">
+          </div>
+
+          <div class="article-content">
+            <p>‍</p><h1>의사와 환자의 짧은 대화</h1><p>빨리보다 바르게, 당신의 속도로</p><p><strong>환자</strong> 요즘 광고를 보면 마음이 자꾸 흔들려요. 하면 인생이 확 달라질 것 같기도 하고요. 그런데 무섭기도 해요.<br/><strong>의사</strong> 그 마음, 아주 정상이에요. 기대와 두려움이 같이 오는 건 자연스러운 일입니다. 먼저 “하면 바뀔까?”보다 “안 해도 나는 괜찮은가?”를 스스로 물어보면, 생각이 조금 단단해집니다.</p><p>‍</p><p>‍</p><p><strong>환자</strong> 뭘 먼저 준비하면 좋을까요?<br/><strong>의사</strong> 세 가지만요. 첫째, 거울 보면서 정확히 불편한 점을 문장으로 적어 오기. 둘째, “이건 좋다, 이건 아니다” 레퍼런스 사진 5~7장. 셋째, 본인 우선순위 세 가지(자연스러움, 티 적음, 회복 빠름 등). 이걸 들고 오시면 상담이 훨씬 선명해집니다.</p><p>‍</p><p><strong>환자</strong> 병원은 어떻게 고르죠? 다 거기서 거기 같아서요.<br/><strong>의사</strong> 대기실보다 <strong>수술실</strong>을 보세요. 마취를 누가 맡는지, 모니터링과 응급 대응 체계가 문서로 준비돼 있는지, 사후관리 계획이 구체적인지. 또 설명을 질문으로 받아들이는 태도인지, 피하려 하는지. 말하자면 “말 잘하는 병원”보다 “<strong>설명과 시스템이 있는 병원</strong>”이 안전합니다.</p><p>‍</p><p><strong>환자</strong> 광고가 너무 많아요. 쿠폰, 이벤트… 혹하거든요.<br/><strong>의사</strong> 광고는 밑줄 친 문장만 보여줍니다. 진짜는 약관에 있어요. 유효기간, 중복 제한, 환불 규정. 비교는 “수술비만”이 아니라 <strong>올인 총액</strong>(마취·소모품·사후관리 포함)으로 하세요. 싸다고 더 안전한 것도, 비싸다고 무조건 더 좋은 것도 아닙니다. <strong>과밀, 과속, 과소통</strong>을 피하는 쪽이 대체로 옳습니다.</p><p>‍</p><p><strong>환자</strong> 제일 무서운 건 부작용이에요. 혹시 망하면…<br/><strong>의사</strong> 0% 위험은 없습니다. 대신 <strong>범위를 좁히는 방법</strong>은 있어요. 당신 체질·복용약·생활 습관에 맞춘 리스크 점검, 수술 범위 과욕 금지, 회복 계획 현실화. 또 하나, 불안이 심하면 <strong>세컨드 오피니언</strong>을 받아보세요. 설명을 듣고도 심장이 계속 뛰면, 미루는 게 맞습니다.</p><p>‍</p><p><strong>환자</strong> 회복은 어느 정도로 생각해야 할까요?<br/><strong>의사</strong> 등산처럼 보시면 돼요. 오르막이 있습니다. 초반 1~2주는 일정 비우고, 가족·지인 두 사람에게 도움을 미리 부탁하세요(수술 당일 동행 1명, 연락 담당 1명). 같은 조명에서 3·7·14·30일 경과 사진을 남기면 “지금은 과정”이라는 걸 눈으로 확인하게 됩니다.</p><p>‍</p><p><strong>환자</strong> 결정할 때 마지막으로 점검할 건요?<br/><strong>의사</strong> 두 가지입니다. 하나, <strong>멈춤 신호</strong>가 있는지. “오늘만 이 가격”, 여러 수술 묶음 권유, 리스크 축소, 사후관리·환불 조항이 흐릿한 계약서. 둘, 설명을 듣고 난 뒤 <strong>마음이 고요</strong>해졌는지. 고요해지면 가도 됩니다. 불안이 계속 요동치면 멈추는 게 맞습니다.</p><p>‍</p><p><strong>환자</strong> 선생님, 진짜 솔직히… 해도 될까요?<br/><strong>의사</strong> 해도, 안 해도 당신은 이미 괜찮은 사람입니다. 제 일은 “더 예쁘게 해드리겠다”보다 <strong>안전과 설명을 지키는 것</strong>이에요. 당신의 속도로, 당신의 기준으로 결정하세요. 저는 그 길을 환하게 비춰드릴게요.</p><p>‍</p><h3>짧은 체크</h3><ul role="list"><li>질문 리스트를 만들어 상담하라. 답은 <strong>서면으로</strong> 받아라.</li><li>비교는 <strong>올인 총액</strong>으로 하라. 광고보다 <strong>약관</strong>을 보라.</li><li>불안이 설명으로 줄어들면 진행, 아니면 <strong>미루기</strong>.</li><li>당신의 속도가 곧 정답이다.</li></ul><p><em>이 대화는 일반 정보입니다. 실제 시술 여부는 대면 진료와 충분한 설명을 거쳐 결정하시기 바랍니다. 이상 증상이 의심되면 즉시 의료기관에 연락하세요.</em></p><p>‍</p>
+          </div>
+
+          
+          <div class="info-box checklist-box">
+            <h3>✅ 체크리스트</h3>
+            <ul class="checklist">
+              <li>대안 시술 설명 유무</li><li>리스크/회복 기준 설명</li><li>추가 비용 트리거</li><li>사후관리 프로토콜</li>
+            </ul>
+          </div>
+
+          
+          <section class="faq-section" style="margin-top:24px;">
+            <h2>자주 묻는 질문</h2>
+            <details><summary>의사와 환자의 짧은 대화은/는 무엇인가요?</summary><p>본문의 '의사와 환자의 짧은 대화' 섹션을 참고하세요.</p></details><details><summary>병원 후기의 신뢰도를 어떻게 판단하나요?</summary><p>지나치게 긍정적이거나 구체성이 없는 후기는 주의가 필요합니다.</p></details><details><summary>상담 시 반드시 물어봐야 할 질문은?</summary><p>시술 방법, 리스크, 회복 기간, 총비용, 사후관리 범위를 확인하세요.</p></details><details><summary>여러 병원을 비교할 때 기준은?</summary><p>동일한 항목(비용, 방법, 경력, 관리)으로 통일하여 비교하세요.</p></details>
+          </section>
+
+          <p class="article-disclaimer">본 내용은 외부 공개 후기의 공통 패턴을 재정리한 요약 정보이며, 원문은 각 플랫폼에서 직접 확인하세요.</p>
+        </article>
+
+        <aside class="article-sidebar">
+          <section class="card sidebar-card">
+            <span class="badge" style="background:#ffe7ef;color:#d9336c;">상담 안내</span>
+            <h3 style="margin:8px 0 4px;">THE GLAM · 미녀는 괴로워</h3>
+            <div class="hospital-meta">
+              <span>hello@theglam.kr</span>
+              <span>02-333-3539</span>
+            </div>
+            <a href="../mockup/consultation.html" class="btn-primary" style="width:100%;">무료상담</a>
+          </section>
+        </aside>
+      </div>
+
+      <div class="article-cta-area">
+        <p>이 시술에 관심이 있으신가요?</p>
+        <a href="../mockup/consultation.html" class="btn-primary">💬 무료 상담 받아보기</a>
+        <div class="crosscheck-links">
+          <span>다른 플랫폼에서도 확인하기: </span><a href="https://www.babitalk.com/" target="_blank" rel="noopener">바비톡 원문 확인 ↗</a><a href="https://www.gangnamunni.com/" target="_blank" rel="noopener">강남언니 원문 확인 ↗</a><a href="tel:0233333539" target="_blank" rel="noopener">전화 상담 ↗</a><a href="mailto:hello@theglam.kr" target="_blank" rel="noopener">이메일 문의 ↗</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="../mockup-v2/terms.html">이용약관</a>
+        <a href="../mockup-v2/privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="../mockup/consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="../mockup/index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="../mockup/articles.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="../mockup/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="../mockup/hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="../mockup/consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+</body>
+</html>

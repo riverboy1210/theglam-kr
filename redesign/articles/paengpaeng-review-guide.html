@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>팽팽의원 “후기 1,000개? 네이버까지 합치면 3,000+개” 팩트체크 | 미녀는 괴로워</title>
+  <meta name="description" content="팽팽의원이 유튜브·SNS에서 쓰는 “후기 1,000개, 채널 합계 3,000+” 문구를 사실 확인하고, 플랫폼별 리뷰 현황·반응, 그리고 실리프팅 선택·가격 비교법까지 한 번에 정리했습니다. (YouTube, Instagram)요약(3줄로 끝내기)">
+  <link rel="canonical" href="https://theglam.kr/articles/paengpaeng-review-guide">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .article-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .article-header {
+      margin-bottom: 20px;
+    }
+
+    .article-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .article-title {
+      margin: 0;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .author-profile {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-content p {
+      margin: 0 0 14px;
+      color: #2d3347;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .price-table thead {
+      background: #fff1f7;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-tag {
+      color: #d9336c;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .info-box {
+      background: var(--bg-pink);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #7d2046;
+    }
+
+    .checklist-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip-header {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0 10px;
+    }
+
+    .before-after-item {
+      flex: 1;
+      display: block;
+      min-height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .before-after-item p {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+    }
+
+    .article-disclaimer {
+      margin-top: 22px;
+      font-size: 0.76rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      padding: 14px;
+    }
+
+    .hospital-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 6px 0 12px;
+    }
+
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .related-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-item .img-placeholder {
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .related-item p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .article-cta-area {
+      text-align: center;
+      padding: 32px;
+      background: var(--bg-gray);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .article-cta-area p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .crosscheck-links {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      justify-content: center;
+    }
+
+    .crosscheck-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .comments-section {
+      margin-top: 22px;
+    }
+
+    .comments-section h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-item .avatar {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      font-size: 0.84rem;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+    }
+
+    .comment-head strong {
+      color: var(--text);
+    }
+
+    .comment-head span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #2d3347;
+    }
+
+    .comment-like {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    @media (min-width: 1024px) {
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .article-title {
+        font-size: 1.45rem;
+      }
+
+      .before-after {
+        flex-direction: column;
+      }
+
+      .article-cta-area {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../mockup/index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-layout">
+        <article class="article-main">
+          <div class="article-header">
+            <div class="article-meta-top">
+              <span class="badge" style="background:#8B5CF6;color:#fff;">병원 선택</span>
+              <span class="article-date">2025-08-24</span>
+            </div>
+            <h1 class="article-title">팽팽의원 “후기 1,000개? 네이버까지 합치면 3,000+개” 팩트체크</h1>
+            <div class="author-profile">
+              <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#FFE0EC;display:flex;align-items:center;justify-content:center;">👩</div>
+              <div><strong>한상민 에디터</strong></div>
+            </div>
+          </div>
+
+          
+          <div class="article-hero-image" style="margin: 0 0 18px;">
+            <img src="../images/68aa6c92e6d1d2e93295334b_68aa6b06e793eadbdb5b13a9_68aa6800bf2a9406ea8a320f_68a2927c683adbd857b1f7be_%5B%EB%B3%B5%EC%82%AC%EB%B3%B8%5D%20740%20466%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EC%84%B8%EB%B6%80%EC%A0%95%EB%B3%B4%20%EC%8D%B8%EB%84%A4%EC%9D%BC%2032.png" alt="팽팽의원 “후기 1,000개? 네이버까지 합치면 3,000+개” 팩트체크" style="width:100%;border-radius:12px;">
+          </div>
+
+          <div class="article-content">
+            <h1>팽팽의원 “후기 1,000개? 네이버까지 합치면 3,000+개” 팩트체크</h1><h3> 20‧30대 여성을 위한 “리뷰 진짜냐부터, 똑똑한 비교법까지” 정보형 가이드</h3><p><br/>팽팽의원이 유튜브·SNS에서 쓰는 “<strong>후기 1,000개, 채널 합계 3,000+</strong>” 문구를 <strong>사실 확인</strong>하고, 플랫폼별 <strong>리뷰 현황·반응</strong>, 그리고 <strong>실리프팅 선택·가격 비교법</strong>까지 한 번에 정리했습니다. (<a href="https://www.youtube.com/watch?v=jvGepE_HOFM&amp;utm_source=chatgpt.com">YouTube</a>, <a href="https://www.instagram.com/pangpang_clinic/p/DE36dD6yjti/?utm_source=chatgpt.com">Instagram</a>)</p><p><strong>요약(3줄로 끝내기)</strong></p><ul role="list"><li>병원 자체 콘텐츠에 “<strong>네이버 외 채널 합쳐 3,000+ 후기</strong>”, “구글맵/바비톡 리뷰 인증” 같은 문구가 반복 노출됩니다(자체 홍보). (<a href="https://www.youtube.com/watch?v=OpltOOYJyys&amp;utm_source=chatgpt.com">YouTube</a>)</li><li>공식 뉴스에 <strong>“네이버 리뷰 1,000건 임박(2024-12-17)”</strong> 공지가 있어 <em>네이버 1,000 근접</em> 근거는 확인됩니다. 다만 <strong>실시간 수치는 변동</strong>됩니다. (<a href="https://www.pangpangclinic.com/Community/view/news/166?boardtype=news&amp;idx=166&amp;page=1&amp;searchkey=&amp;searchval=&amp;utm_source=chatgpt.com">팡팡클리닉</a>)</li><li>채널 합산(네이버·구글·강남언니·SNS 등)은 <strong>정의가 불명확</strong>하므로, 실제 비교는 <strong>카드(이벤트)별 최신 평점/후기와 총액</strong> 기준으로 하세요. (<a href="https://www.gangnamunni.com/hospitals/4668?utm_source=chatgpt.com">Gangnam Unni</a>)</li></ul><h2>팩트체크: “후기 1,000 → 3,000+” 문구, 진짜?</h2><ul role="list"><li><strong>근거 ① (병원 공지)</strong>: 2024-12-17 병원 뉴스에 <strong>“네이버 리뷰 1,000건 달성 임박”</strong> 게시. → <em>네이버 단일 채널 1,000에 근접</em>한 정황은 공식 확인. (<a href="https://www.pangpangclinic.com/Community/view/news/166?boardtype=news&amp;idx=166&amp;page=1&amp;searchkey=&amp;searchval=&amp;utm_source=chatgpt.com">팡팡클리닉</a>)</li><li><strong>근거 ② (광고/콘텐츠)</strong>: 유튜브·인스타·틱톡에 <strong>“네이버 외 채널까지 더하면 3,000+”</strong> 문구가 반복 노출. → <em>병원 자가 집계</em>에 근거한 <strong>마케팅 표현</strong>입니다. (<a href="https://www.youtube.com/watch?v=jvGepE_HOFM&amp;utm_source=chatgpt.com">YouTube</a>, <a href="https://www.instagram.com/pangpang_clinic/p/DE36dD6yjti/?utm_source=chatgpt.com">Instagram</a>, <a href="https://www.tiktok.com/%40pangclinic/video/7527861064109673736?utm_source=chatgpt.com">TikTok</a>)</li><li><strong>보완 자료</strong>: “구글맵/바비톡 리뷰 인증” 콘셉트 영상·모음집이 다수 올라옵니다(정확한 합산 방식은 영상에서 명시X). (<a href="https://www.youtube.com/watch?v=OpltOOYJyys&amp;utm_source=chatgpt.com">YouTube</a>)</li><li><strong>타 플랫폼 단서</strong>: 강남언니 병원 카드에는 <strong>리뷰 705개</strong>(검색 스니펫 기준)가 표시된 적이 있습니다(카드·시점마다 변동). (<a href="https://www.gangnamunni.com/hospitals/4668?utm_source=chatgpt.com">Gangnam Unni</a>)</li></ul><p><strong>정리</strong>: “네이버 1,000 근접”은 병원 공지로 <strong>부분 확인</strong>, “채널 합계 3,000+”는 <strong>병원발(자가 집계) 홍보 문구</strong>입니다. 실제 선택은 <strong>최근 날짜의 카드별 평점·후기</strong>로 확인하세요.</p><p>‍</p><h2>한눈에 보는 핵심 7</h2><ol role="list"><li><strong>전문화 포지션</strong>: 실리프팅 특화·리뷰 강조형 콘텐츠 다수. 브랜드 내 <strong>기법명/전후사진/주의사항</strong>을 꾸준히 발행합니다. (<a href="https://www.pangpangclinic.com/?utm_source=chatgpt.com">팡팡클리닉</a>)</li><li><strong>채널 합산 문구 주의</strong>: “3,000+”는 <strong>플랫폼 합계치</strong>로, <strong>리뷰 정의·중복·기간</strong>이 불명확할 수 있습니다. 최신 카드별 지표로 재확인! (<a href="https://www.youtube.com/watch?v=jvGepE_HOFM&amp;utm_source=chatgpt.com">YouTube</a>)</li><li><strong>평점/모수는 ‘시점·카드’ 따라 변동</strong>: 강남언니·구글·네이버·여행/의료 플랫폼마다 수치가 다르고 수시로 바뀝니다. (<a href="https://www.gangnamunni.com/hospitals/4668?utm_source=chatgpt.com">Gangnam Unni</a>, <a href="https://www.youtube.com/watch?v=OpltOOYJyys&amp;utm_source=chatgpt.com">YouTube</a>)</li><li><strong>통증 커뮤니케이션</strong>: 병원은 통증 최소화를 강조하지만 <strong>개인차</strong>가 큼(층·벡터·줄 수·마취). (<a href="https://www.youtube.com/watch?v=qrUBqisiLmI&amp;utm_source=chatgpt.com">YouTube</a>)</li><li><strong>외국인·영문 후기 풀 존재</strong>: 영문 후기/가이드에선 통역·친절·자연스러운 리프팅을 언급. (<a href="https://www.pangpangclinic.co/testimonials/?utm_source=chatgpt.com">PangPangClinic</a>, <a href="https://www.koreaclinicguide.com/clinic/pangpang-clinic?utm_source=chatgpt.com">Korea Clinic Guide</a>)</li><li><strong>커뮤니티 비용 체감 후기도 참고</strong>: 줄 수·추가 재료 따라 <strong>총액</strong> 편차 큼. (<a href="https://sungyesa.com/new/hlist/146658?utm_source=chatgpt.com">성예사</a>)</li><li><strong>결론</strong>: 브랜드/후기 숫자보다 <strong>내 얼굴 기준의 설계 근거 + 총액</strong>이 본질.</li></ol><h2>나에게 맞나? (초간단 셀프 체크)</h2><ul role="list"><li><strong>실리프팅이 맞을 때</strong>: 팔자·심부볼·이중턱 같은 <strong>윤곽 정리</strong>가 1순위, <strong>짧은 회복</strong>으로 조용히 복귀 필요.</li><li><strong>다시 생각할 때</strong>: 처짐 범위가 크면 <strong>절개 거상</strong>이 합리적일 수 있음. 최근 <strong>필러 대량/피부염</strong>은 사전 고지.</li><li><strong>기대치</strong>: 실리프팅은 <strong>정돈/리프레시</strong>에 가깝고, 유지감·통증은 <strong>개인차</strong>.</li></ul><h2>실(THREAD)·설계, 아주 쉽게</h2><ul role="list"><li><strong>재질</strong>: <strong>PDO</strong>(보편/담백) · <strong>PLLA(콘형/실루엣 계열)</strong>(볼륨+당김) · <strong>PCL</strong>(상대적 유지감 강조)</li><li><strong>형태</strong>: <strong>코그</strong>(리프팅 중심) vs <strong>모노</strong>(탄력 보강)</li><li><strong>설계 공식</strong> = <strong>실 종류 + 줄 수 + 벡터(층/방향)</strong><br/>→ 병원에 “<strong>왜 그 실/몇 줄/어느 방향</strong>인지” <strong>숫자와 근거</strong>를 요구하세요.</li></ul><h2>가격·이벤트 읽는 법(절약 포인트)</h2><ul role="list"><li><strong>체험가=입구가</strong>: “8줄”, “300샷” 같은 <strong>최소 조건</strong>일 가능성↑.</li><li><strong>실지출 공식</strong><br/><strong>총액 = 기본가 + (추가 줄/샷 × 단가) + (소모품/마취) + VAT − (쿠폰·포인트·현장혜택)</strong></li><li><strong>채널 합산 평점보다</strong> <strong>카드별 최신 리뷰/포함 항목</strong>을 우선 확인(날짜·부위·줄 수·부가비용). (<a href="https://www.gangnamunni.com/hospitals/4668?utm_source=chatgpt.com">Gangnam Unni</a>)</li></ul><h2>시술 전/후, 현실 루틴</h2><ul role="list"><li><strong>전(3~7일)</strong>: 음주/격운동 잠시 쉬기, <strong>앞여밈 셔츠</strong> 준비.</li><li><strong>당일</strong>: 장거리 이동·대중교통 가급적 피하기, <strong>모자/마스크</strong>로 스텔스 복귀.</li><li><strong>초기(1~3일)</strong>: 세게 만지지 않기·사우나 보류·<strong>정면 수면</strong>.</li><li><strong>1~2주</strong>: 양치·세수 <strong>부드럽게</strong>, 걷기 OK, <strong>강한 마사지</strong> 보류.</li><li><strong>효과 타임라인</strong>: 즉시 당김 + <strong>2~3개월</strong> 콜라겐 리모델링 피크.</li></ul><h2>부작용·주의 신호(알아두면 든든)</h2><ul role="list"><li><strong>흔함</strong>: 멍·땅김·일시적 패임(딤플).</li><li><strong>즉시 연락</strong>: 한쪽만 심한 비대칭, <strong>강한 통증·열감·고름</strong>, <strong>눈/입 움직임 이상</strong>.</li><li><strong>예방</strong>: 자차 철저, <strong>고열·문지르기</strong> 금지, 안내된 <strong>재생/보습 루틴</strong> 준수.</li></ul><p>‍</p><p><strong>상담 때 쓰는 한 줄(복붙)</strong></p><ul role="list"><li>“제 얼굴에 <strong>최소 효과 줄</strong>·<strong>권장 줄</strong>은 각각 몇 줄인가요? <strong>근거</strong>는요?”</li><li>“<strong>딤플/땅김</strong> 관리는 어떻게? <strong>추적 내원</strong> 포함인가요?”</li><li>“이 이벤트 <strong>그대로</strong> 진행 시 <strong>총액</strong>(부가세·소모품 포함)은?”</li></ul><h2>전화·위치(공식)</h2><p><strong>대표전화 1660-3300</strong>(문의·예약). <em>전화 시</em> “포함 항목/환불규정”을 <strong>문자·톡 캡처</strong>로 받아두면 비교가 쉬워요. (<a href="https://www.pangpangclinic.com/Community/view/news/207?boardtype=news&amp;idx=207&amp;page=1&amp;searchkey=&amp;searchval=&amp;utm_source=chatgpt.com">팡팡클리닉</a>)</p><h2>FAQ (짧고 정확하게)</h2><p><strong>Q. ‘3,000+ 후기’는 믿어도 돼요?</strong><br/>A. <strong>병원 자가 집계 홍보 문구</strong>입니다. 네이버 1,000 임박 공지는 확인되지만(2024-12-17), 실제 선택은 <strong>카드별 최신 리뷰/총액</strong>으로 판단하세요. (<a href="https://www.pangpangclinic.com/Community/view/news/166?boardtype=news&amp;idx=166&amp;page=1&amp;searchkey=&amp;searchval=&amp;utm_source=chatgpt.com">팡팡클리닉</a>, <a href="https://www.youtube.com/watch?v=jvGepE_HOFM&amp;utm_source=chatgpt.com">YouTube</a>)</p><p><strong>Q. 통증 정말 적나요?</strong><br/>A. “무통” 톤의 콘텐츠가 있지만, 통증·멍·당김은 <strong>개인차</strong>. 시술층/벡터/줄 수/마취에 따라 달라요. (<a href="https://www.youtube.com/watch?v=qrUBqisiLmI&amp;utm_source=chatgpt.com">YouTube</a>)</p><p><strong>Q. 해외/영문 이용자도 많나요?</strong><br/>A. 영문 후기·가이드가 다수 있으며 통역 지원 언급도 있습니다(후기 모수 자체는 수시 변동). (<a href="https://www.pangpangclinic.co/testimonials/?utm_source=chatgpt.com">PangPangClinic</a>, <a href="https://www.koreaclinicguide.com/blog/korean-thread-lift-before-after?utm_source=chatgpt.com">Korea Clinic Guide</a>)</p><h2>마지막 한 줄</h2><p><strong>숫자는 시작점, 결정은 근거.</strong> “3,000+” 같은 총량보다 <strong>내 얼굴 설계(실·줄·벡터)와 카드별 최신 리뷰/총액</strong>을 보세요. 그러면 <strong>티는 덜</strong>, <strong>라인은 더</strong>, <strong>지출은 슬림</strong>하게 선택할 수 있습니다.</p><p>‍</p>
+          </div>
+
+          
+          <div class="info-box checklist-box">
+            <h3>✅ 체크리스트</h3>
+            <ul class="checklist">
+              <li>대안 시술 설명 유무</li><li>리스크/회복 기준 설명</li><li>추가 비용 트리거</li><li>사후관리 프로토콜</li>
+            </ul>
+          </div>
+
+          
+          <section class="faq-section" style="margin-top:24px;">
+            <h2>자주 묻는 질문</h2>
+            <details><summary>팽팽의원 “후기 1,000개? 네이버까지 합치면 3,000+개” 팩트체크은/는 무엇인가요?</summary><p>본문의 '팽팽의원 “후기 1,000개? 네이버까지 합치면 3,000+개” 팩트체크' 섹션을 참고하세요.</p></details><details><summary>20‧30대 여성을 위한 “리뷰 진짜냐부터, 똑똑한 비교법까지” 정보형 가이드은/는 무엇인가요?</summary><p>본문의 '20‧30대 여성을 위한 “리뷰 진짜냐부터, 똑똑한 비교법까지” 정보형 가이드' 섹션을 참고하세요.</p></details><details><summary>팩트체크: “후기 1,000 → 3,000+” 문구, 진짜?</summary><p>본문의 '팩트체크: “후기 1,000 → 3,000+” 문구, 진짜?' 섹션을 참고하세요.</p></details><details><summary>병원 후기의 신뢰도를 어떻게 판단하나요?</summary><p>지나치게 긍정적이거나 구체성이 없는 후기는 주의가 필요합니다.</p></details><details><summary>상담 시 반드시 물어봐야 할 질문은?</summary><p>시술 방법, 리스크, 회복 기간, 총비용, 사후관리 범위를 확인하세요.</p></details><details><summary>여러 병원을 비교할 때 기준은?</summary><p>동일한 항목(비용, 방법, 경력, 관리)으로 통일하여 비교하세요.</p></details>
+          </section>
+
+          <p class="article-disclaimer">본 내용은 외부 공개 후기의 공통 패턴을 재정리한 요약 정보이며, 원문은 각 플랫폼에서 직접 확인하세요.</p>
+        </article>
+
+        <aside class="article-sidebar">
+          <section class="card sidebar-card">
+            <span class="badge" style="background:#ffe7ef;color:#d9336c;">상담 안내</span>
+            <h3 style="margin:8px 0 4px;">THE GLAM · 미녀는 괴로워</h3>
+            <div class="hospital-meta">
+              <span>hello@theglam.kr</span>
+              <span>02-333-3539</span>
+            </div>
+            <a href="../mockup/consultation.html" class="btn-primary" style="width:100%;">무료상담</a>
+          </section>
+        </aside>
+      </div>
+
+      <div class="article-cta-area">
+        <p>이 시술에 관심이 있으신가요?</p>
+        <a href="../mockup/consultation.html" class="btn-primary">💬 무료 상담 받아보기</a>
+        <div class="crosscheck-links">
+          <span>다른 플랫폼에서도 확인하기: </span><a href="https://www.babitalk.com/" target="_blank" rel="noopener">바비톡 원문 확인 ↗</a><a href="https://www.gangnamunni.com/" target="_blank" rel="noopener">강남언니 원문 확인 ↗</a><a href="tel:0233333539" target="_blank" rel="noopener">전화 상담 ↗</a><a href="mailto:hello@theglam.kr" target="_blank" rel="noopener">이메일 문의 ↗</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="../mockup-v2/terms.html">이용약관</a>
+        <a href="../mockup-v2/privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="../mockup/consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="../mockup/index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="../mockup/articles.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="../mockup/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="../mockup/hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="../mockup/consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+</body>
+</html>

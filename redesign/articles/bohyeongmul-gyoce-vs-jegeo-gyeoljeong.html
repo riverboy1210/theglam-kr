@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>보형물 교체 vs 제거 결정 | 미녀는 괴로워</title>
+  <meta name="description" content="미용 목표, BII 우려, 조직 상태를 반영해 교체와 제거의 기준·장단점·다운타임 차이를 비교합니다.">
+  <link rel="canonical" href="https://theglam.kr/articles/bohyeongmul-gyoce-vs-jegeo-gyeoljeong">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .article-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .article-header {
+      margin-bottom: 20px;
+    }
+
+    .article-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .article-title {
+      margin: 0;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .author-profile {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-content p {
+      margin: 0 0 14px;
+      color: #2d3347;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .price-table thead {
+      background: #fff1f7;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-tag {
+      color: #d9336c;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .info-box {
+      background: var(--bg-pink);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #7d2046;
+    }
+
+    .checklist-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip-header {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0 10px;
+    }
+
+    .before-after-item {
+      flex: 1;
+      display: block;
+      min-height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .before-after-item p {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+    }
+
+    .article-disclaimer {
+      margin-top: 22px;
+      font-size: 0.76rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      padding: 14px;
+    }
+
+    .hospital-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 6px 0 12px;
+    }
+
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .related-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-item .img-placeholder {
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .related-item p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .article-cta-area {
+      text-align: center;
+      padding: 32px;
+      background: var(--bg-gray);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .article-cta-area p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .crosscheck-links {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      justify-content: center;
+    }
+
+    .crosscheck-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .comments-section {
+      margin-top: 22px;
+    }
+
+    .comments-section h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-item .avatar {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      font-size: 0.84rem;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+    }
+
+    .comment-head strong {
+      color: var(--text);
+    }
+
+    .comment-head span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #2d3347;
+    }
+
+    .comment-like {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    @media (min-width: 1024px) {
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .article-title {
+        font-size: 1.45rem;
+      }
+
+      .before-after {
+        flex-direction: column;
+      }
+
+      .article-cta-area {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../mockup/index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-layout">
+        <article class="article-main">
+          <div class="article-header">
+            <div class="article-meta-top">
+              <span class="badge" style="background:#8B5CF6;color:#fff;">병원 선택</span>
+              <span class="article-date">2025-09-03</span>
+            </div>
+            <h1 class="article-title">보형물 교체 vs 제거 결정</h1>
+            <div class="author-profile">
+              <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#FFE0EC;display:flex;align-items:center;justify-content:center;">👩</div>
+              <div><strong>김서연 에디터</strong></div>
+            </div>
+          </div>
+
+          
+          <div class="article-hero-image" style="margin: 0 0 18px;">
+            <img src="../../external/cdn.prod.website-files.com/68993c805b6ff04a733e5d25/68b7942478cc390184fdfe64_%EC%9E%AC%EC%88%98%EC%88%A0%C2%B7%EC%95%88%EC%A0%84%20%EA%B0%80%EC%9D%B4%EB%93%9C%206.png" alt="보형물 교체 vs 제거 결정" style="width:100%;border-radius:12px;">
+          </div>
+
+          <div class="article-content">
+            <h2>보형물 교체 vs 제거 결정 이해</h2><p>가슴 보형물은 시간이 지나면서 파열, 구형구축, 위치 이상, 또는 단순한 미용적 불만족으로 인해 다시 선택의 기로에 서게 된다. 이때 꼭 교체를 해야 하는지, 아니면 제거만으로도 충분한지 고민이 많다. 선택은 단순히 미용 목적뿐 아니라 건강 상태, 생활 패턴, 심리적 요인까지 종합적으로 고려해야 한다.</p><h2>보형물 교체가 적합한 경우</h2><p>보형물을 계속 유지하면서 개선을 원하는 경우 교체가 적합하다.</p><ul role="list"><li>여전히 볼륨을 유지하고 싶은 경우</li><li>파열·구형구축으로 문제가 생겼지만 가슴 확대 효과를 유지하고자 할 때</li><li>좌우 대칭이나 모양 개선이 필요한 경우</li><li>기존 보형물이 체형에 맞지 않아 새로운 사이즈·모양으로 바꾸고 싶을 때</li></ul><h2>보형물 제거가 적합한 경우</h2><p>보형물이 반드시 필요하지 않거나, 건강·안전 문제가 우선이라면 제거가 적합하다.</p><ul role="list"><li>더 이상 가슴 볼륨 유지가 필요하지 않은 경우</li><li><strong>BII(보형물 관련 증후군)</strong> 의심 증상(피로, 통증, 면역 반응 등)이 있는 경우</li><li>장기간 불편감이나 통증이 지속될 때</li><li>보형물 유지보다 거상술이나 지방이식으로 충분할 때</li><li>심리적으로 보형물 제거를 원해 일상 만족감을 높이고자 할 때</li></ul><h2>교체와 제거 결정의 기준</h2><p>결정은 단순히 미용적 욕구보다 <strong>현재 몸 상태와 생활 목표</strong>에 맞춰야 한다.</p><ul role="list"><li><strong>체형 목표</strong>: 볼륨·대칭을 유지하고 싶다면 교체, 자연스러움과 안전을 원한다면 제거</li><li><strong>건강 상태</strong>: 면역 질환, 만성 통증, 염증 이력이 있다면 제거 우선 고려</li><li><strong>심리적 요인</strong>: 보형물이 있다는 사실 자체가 스트레스라면 제거가 더 적합</li><li><strong>경제적·시간적 여건</strong>: 교체는 추가 비용·다운타임이 필요함</li></ul><h2>장단점 비교</h2><p>선택장점단점교체원하는 볼륨 유지, 미용적 개선또 다른 수술, 비용 발생제거건강·안전성 강화, 심리적 안정볼륨 감소, 처짐 발생 가능</p><h2>보형물 제거 후 대안</h2><p>보형물을 제거한다고 해서 항상 “빈가슴”이 되는 것은 아니다.</p><ul role="list"><li><strong>가슴 거상술</strong>: 처진 피부를 당겨 모양 개선</li><li><strong>지방이식</strong>: 본인 지방을 활용해 볼륨 보완</li><li><strong>거상+지방이식 병행</strong>: 자연스러운 형태 유지</li></ul><h2>핵심 요약 &amp; 실행 가이드</h2><ul role="list"><li><strong>요약</strong><ul role="list"><li>교체는 볼륨·대칭 유지 목적, 제거는 안전·심리적 안정이 주된 이유다.</li><li>건강 문제, 면역 반응, 장기간 불편이 있다면 제거가 적합하다.</li><li>제거 후에는 거상술·지방이식 등으로 자연스러운 모양 보완이 가능하다.</li></ul></li><li><strong>체크리스트(상담 전 6문항)</strong><ol role="list"><li>나는 여전히 가슴 볼륨 유지가 필요한가?</li><li>보형물 관련 건강 문제나 불편감이 있는가?</li><li>제거 후 발생할 수 있는 처짐·볼륨 감소를 감수할 수 있는가?</li><li>교체 시 원하는 사이즈·모양을 구체적으로 정했는가?</li><li>제거 후 대안(거상, 지방이식)에 대해 설명을 들었는가?</li><li>수술 후 다운타임과 비용 부담을 현실적으로 고려했는가?</li></ol></li><li><strong>CTA</strong><br/>상담 전 자신의 목표와 고민을 <strong>자가 점검표</strong>로 정리해 두자. “나는 여전히 보형물을 원하는가, 아니면 안전과 자연스러움이 더 중요한가?”라는 질문을 스스로에게 해보면 교체와 제거 중 무엇이 나에게 맞는지 방향이 더 명확해진다.</li></ul><p><em>이 글은 일반 정보 제공 목적이며, 개인의 병력·체형·검사 결과에 따라 권고가 달라질 수 있다. 최종 결정은 전문 의료진 상담 후 진행해야 한다. 업데이트: 2025-09-03</em></p><p>‍</p>
+          </div>
+
+          
+          <div class="info-box checklist-box">
+            <h3>✅ 체크리스트</h3>
+            <ul class="checklist">
+              <li>대안 시술 설명 유무</li><li>리스크/회복 기준 설명</li><li>추가 비용 트리거</li><li>사후관리 프로토콜</li>
+            </ul>
+          </div>
+
+          
+          <section class="faq-section" style="margin-top:24px;">
+            <h2>자주 묻는 질문</h2>
+            <details><summary>보형물 교체 vs 제거 결정 이해은/는 무엇인가요?</summary><p>본문의 '보형물 교체 vs 제거 결정 이해' 섹션을 참고하세요.</p></details><details><summary>보형물 교체가 적합한 경우은/는 무엇인가요?</summary><p>본문의 '보형물 교체가 적합한 경우' 섹션을 참고하세요.</p></details><details><summary>보형물 제거가 적합한 경우은/는 무엇인가요?</summary><p>본문의 '보형물 제거가 적합한 경우' 섹션을 참고하세요.</p></details><details><summary>병원 후기의 신뢰도를 어떻게 판단하나요?</summary><p>지나치게 긍정적이거나 구체성이 없는 후기는 주의가 필요합니다.</p></details><details><summary>상담 시 반드시 물어봐야 할 질문은?</summary><p>시술 방법, 리스크, 회복 기간, 총비용, 사후관리 범위를 확인하세요.</p></details><details><summary>여러 병원을 비교할 때 기준은?</summary><p>동일한 항목(비용, 방법, 경력, 관리)으로 통일하여 비교하세요.</p></details>
+          </section>
+
+          <p class="article-disclaimer">본 내용은 외부 공개 후기의 공통 패턴을 재정리한 요약 정보이며, 원문은 각 플랫폼에서 직접 확인하세요.</p>
+        </article>
+
+        <aside class="article-sidebar">
+          <section class="card sidebar-card">
+            <span class="badge" style="background:#ffe7ef;color:#d9336c;">상담 안내</span>
+            <h3 style="margin:8px 0 4px;">THE GLAM · 미녀는 괴로워</h3>
+            <div class="hospital-meta">
+              <span>hello@theglam.kr</span>
+              <span>02-333-3539</span>
+            </div>
+            <a href="../mockup/consultation.html" class="btn-primary" style="width:100%;">무료상담</a>
+          </section>
+        </aside>
+      </div>
+
+      <div class="article-cta-area">
+        <p>이 시술에 관심이 있으신가요?</p>
+        <a href="../mockup/consultation.html" class="btn-primary">💬 무료 상담 받아보기</a>
+        <div class="crosscheck-links">
+          <span>다른 플랫폼에서도 확인하기: </span><a href="https://www.babitalk.com/" target="_blank" rel="noopener">바비톡 원문 확인 ↗</a><a href="https://www.gangnamunni.com/" target="_blank" rel="noopener">강남언니 원문 확인 ↗</a><a href="tel:0233333539" target="_blank" rel="noopener">전화 상담 ↗</a><a href="mailto:hello@theglam.kr" target="_blank" rel="noopener">이메일 문의 ↗</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="../mockup-v2/terms.html">이용약관</a>
+        <a href="../mockup-v2/privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="../mockup/consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="../mockup/index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="../mockup/articles.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="../mockup/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="../mockup/hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="../mockup/consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+</body>
+</html>

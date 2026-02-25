@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>대표원장 직접 시술·전문의 전담을 똑똑하게 고르는 20‧30대 여성 가이드 | 미녀는 괴로워</title>
+  <meta name="description" content="성형·쁘띠 시술에서 **“누가 시술하느냐”**는 결과·만족도를 좌우하는 핵심 변수예요. 이 글은 강남언니 앱의 의료진 프로필·누적후기를 활용해 대표원장 직접 시술 보장과 전문의 전담 체계를 확인하는 방법을 정리했습니다. 실제로 병원 페이지에서 의사별 누적후기 수가 공개되고(예: 기린성형외과 의료진별 후기 표기), 일부 병원은 “대표원장 1:1” 같은 보장 문구로 품질관리를 내세웁니다. 읽고 나면 바로 체크리스트로 비교·예약이 가능해요. (Gangnam Unni, Business Wire, marqps.com)">
+  <link rel="canonical" href="https://theglam.kr/articles/choosing-surgeon-guide">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .article-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .article-header {
+      margin-bottom: 20px;
+    }
+
+    .article-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .article-title {
+      margin: 0;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .author-profile {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-content p {
+      margin: 0 0 14px;
+      color: #2d3347;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .price-table thead {
+      background: #fff1f7;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-tag {
+      color: #d9336c;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .info-box {
+      background: var(--bg-pink);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #7d2046;
+    }
+
+    .checklist-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip-header {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0 10px;
+    }
+
+    .before-after-item {
+      flex: 1;
+      display: block;
+      min-height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .before-after-item p {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+    }
+
+    .article-disclaimer {
+      margin-top: 22px;
+      font-size: 0.76rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      padding: 14px;
+    }
+
+    .hospital-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 6px 0 12px;
+    }
+
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .related-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-item .img-placeholder {
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .related-item p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .article-cta-area {
+      text-align: center;
+      padding: 32px;
+      background: var(--bg-gray);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .article-cta-area p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .crosscheck-links {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      justify-content: center;
+    }
+
+    .crosscheck-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .comments-section {
+      margin-top: 22px;
+    }
+
+    .comments-section h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-item .avatar {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      font-size: 0.84rem;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+    }
+
+    .comment-head strong {
+      color: var(--text);
+    }
+
+    .comment-head span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #2d3347;
+    }
+
+    .comment-like {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    @media (min-width: 1024px) {
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .article-title {
+        font-size: 1.45rem;
+      }
+
+      .before-after {
+        flex-direction: column;
+      }
+
+      .article-cta-area {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../mockup/index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-layout">
+        <article class="article-main">
+          <div class="article-header">
+            <div class="article-meta-top">
+              <span class="badge" style="background:#8B5CF6;color:#fff;">병원 선택</span>
+              <span class="article-date">2025-08-24</span>
+            </div>
+            <h1 class="article-title">대표원장 직접 시술·전문의 전담을 똑똑하게 고르는 20‧30대 여성 가이드</h1>
+            <div class="author-profile">
+              <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#FFE0EC;display:flex;align-items:center;justify-content:center;">👩</div>
+              <div><strong>한상민 에디터</strong></div>
+            </div>
+          </div>
+
+          
+          <div class="article-hero-image" style="margin: 0 0 18px;">
+            <img src="../images/68aa6c7c606d5eef2fd4741b_68aa6af659be0ad264abf708_68aa67f135da48b9430d68d8_68a2e116000cb3b5c61d1b63_%5B%EB%B3%B5%EC%82%AC%EB%B3%B8%5D%20740%20466%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EC%84%B8%EB%B6%80%EC%A0%95%EB%B3%B4%20%EC%8D%B8%EB%84%A4%EC%9D%BC%2050.png" alt="대표원장 직접 시술·전문의 전담을 똑똑하게 고르는 20‧30대 여성 가이드" style="width:100%;border-radius:12px;">
+          </div>
+
+          <div class="article-content">
+            <h3>대표원장 직접 시술·전문의 전담을 똑똑하게 고르는 20‧30대 여성 가이드</h3><p><br/>성형·쁘띠 시술에서 **“누가 시술하느냐”**는 결과·만족도를 좌우하는 핵심 변수예요. 이 글은 <strong>강남언니 앱의 의료진 프로필·누적후기</strong>를 활용해 <strong>대표원장 직접 시술 보장</strong>과 <strong>전문의 전담 체계</strong>를 확인하는 방법을 정리했습니다. 실제로 <strong>병원 페이지에서 의사별 누적후기 수</strong>가 공개되고(예: 기린성형외과 의료진별 후기 표기), 일부 병원은 <strong>“대표원장 1:1”</strong> 같은 보장 문구로 품질관리를 내세웁니다. 읽고 나면 바로 <strong>체크리스트</strong>로 비교·예약이 가능해요. (<a href="https://www.gangnamunni.com/hospitals/398?utm_source=chatgpt.com">Gangnam Unni</a>, <a href="https://www.businesswire.com/news/home/20231205938563/en/The-Largest-Plastic-Surgery-Information-Platform-in-South-Korea-Launches-UNNI-a-Global-K-Medical-Information-App-for-Foreigners?utm_source=chatgpt.com">Business Wire</a>, <a href="https://www.marqps.com/?utm_source=chatgpt.com">marqps.com</a>)</p><h2>요약(3줄 컷)</h2><ul role="list"><li>강남언니 병원 페이지에서 <strong>의사별 누적후기 수</strong>를 확인하고, <strong>집도의/시술자 이름</strong>을 메모하세요. 기린성형외과 페이지처럼 <strong>주요 의료진과 각자의 후기 수</strong>가 공개돼 있어요. (<a href="https://www.gangnamunni.com/hospitals/398?utm_source=chatgpt.com">Gangnam Unni</a>)</li><li><strong>보장 방식</strong>은 크게 두 가지: ① <strong>대표원장 직접 시술 보장</strong>(1:1) ② <strong>여러 전문의 중 케이스 매칭</strong>. 사이트·이벤트에 <strong>누가, 어떤 시술을 맡는지</strong>를 문서로 고정하세요. (<a href="https://www.marqps.com/?utm_source=chatgpt.com">marqps.com</a>)</li><li>최종 선택은 <strong>문구보다 숫자</strong>: <strong>시술자 이름·전문의 여부·누적후기·증례 사진·총액</strong>을 캡처하고, <strong>의사 변경 시 동의 절차</strong>까지 확인하면 안전합니다. (<a href="https://www.businesswire.com/news/home/20231205938563/en/The-Largest-Plastic-Surgery-Information-Platform-in-South-Korea-Launches-UNNI-a-Global-K-Medical-Information-App-for-Foreigners?utm_source=chatgpt.com">Business Wire</a>)</li></ul><h2>왜 “누가 시술하느냐”가 중요한가?</h2><ul role="list"><li>같은 장비·제품이라도 <strong>디자인·주입층·용량 분배</strong>는 **사람(시술자)**의 손끝에서 결정돼요.</li><li>강남언니는 병원 페이지에 <strong>주요 의료진과 의사별 누적후기</strong>를 공개합니다. 예를 들어 <strong>기린성형외과</strong> 페이지에선 의사별로 “후기 n건”이 표기되어 <strong>실사용자 평가</strong>를 바로 비교할 수 있어요. (<a href="https://www.gangnamunni.com/hospitals/398?utm_source=chatgpt.com">Gangnam Unni</a>)</li><li>플랫폼 전반에선 누적 <strong>리얼후기 100만+</strong> 단위의 데이터가 축적되어, <strong>의사 선택의 근거</strong>로 쓰기 좋아요. (<a href="https://www.businesswire.com/news/home/20231205938563/en/The-Largest-Plastic-Surgery-Information-Platform-in-South-Korea-Launches-UNNI-a-Global-K-Medical-Information-App-for-Foreigners?utm_source=chatgpt.com">Business Wire</a>)</li></ul><h2>보장 방식 2가지, 무엇이 나에게 맞을까?</h2><h3>① 대표원장 직접 시술 보장형</h3><ul role="list"><li>장점: <strong>의사 고정</strong>으로 상담–시술–사후관리의 <strong>일관성</strong> 높음, 커뮤니케이션 명확.</li><li>확인 포인트: 웹/이벤트에 <strong>“대표원장 1:1/직접 시술”</strong> 같은 문구가 <strong>명시</strong>돼 있는지, <strong>변경 시 동의 절차</strong>가 있는지. 실제로 일부 병원은 사이트에서 **“대표원장의 철저한 1:1 전담”**을 전면 문구로 사용합니다. (<a href="https://www.marqps.com/?utm_source=chatgpt.com">marqps.com</a>)</li></ul><h3>② 케이스 매칭형(다수 전문의 운영)</h3><ul role="list"><li>장점: <strong>부위·난이도별</strong>로 <strong>경험 많은 전문의</strong> 매칭 가능, 대기·스케줄 선택 폭 ↑.</li><li>확인 포인트: 강남언니 병원 페이지에서 <strong>여러 의료진의 누적후기 수·시술 분야</strong>를 비교하고, <strong>내 케이스와 유사한 증례</strong>가 많은 의사를 지정하세요. (기린성형외과 페이지처럼 <strong>의사별 분야/후기</strong>가 정리됨) (<a href="https://www.gangnamunni.com/hospitals/398?utm_source=chatgpt.com">Gangnam Unni</a>)</li></ul><h2>플랫폼에서 이렇게 보세요(실전 5단계)</h2><ol role="list"><li><strong>병원 페이지 열기 → ‘주요 의료진’</strong>: 의사별 <strong>누적후기 수·전공 시술</strong>을 기록. (예: 기린성형외과 의료진별 후기 수 표기) (<a href="https://www.gangnamunni.com/hospitals/398?utm_source=chatgpt.com">Gangnam Unni</a>)</li><li><strong>의사 프로필 클릭</strong>: 의사 개별 페이지·증례·커뮤니티 코멘트 확인. 강남언니는 <strong>리얼후기 대량 데이터</strong>가 강점. (<a href="https://www.businesswire.com/news/home/20231205938563/en/The-Largest-Plastic-Surgery-Information-Platform-in-South-Korea-Launches-UNNI-a-Global-K-Medical-Information-App-for-Foreigners?utm_source=chatgpt.com">Business Wire</a>)</li><li><strong>의사 고정 요청</strong>: “상담한 <strong>OO원장</strong>이 <strong>직접 시술</strong>하는 조건으로 예약할게요. <strong>변경 시 사전 동의</strong> 포함해 주세요.”</li><li><strong>증빙 캡처</strong>: **의사 이름·시술명·부위·용량/단위·총액(부가세·소모품·리터치 포함)**이 기재된 화면/견적서를 <strong>캡처</strong>.</li><li><strong>후기 교차검증</strong>: 같은 의사/병원을 **다른 플랫폼(공식 사이트·SNS·커뮤니티)**과 <strong>기간 경과 후기</strong>로 한 번 더 확인.</li></ol><p>팁: <strong>팽팽클리닉</strong>처럼 리프팅 특화 병원의 경우 강남언니 병원 페이지에서 <strong>원장별 후기 건수</strong>가 공개됩니다. <strong>특화 시술(실·리프팅 등)</strong> 증례가 많은지를 우선 체크하세요. (<a href="https://www.gangnamunni.com/hospitals/4668?utm_source=chatgpt.com">Gangnam Unni</a>)</p><h2>가격·보장 문구 해석하기(쉽게)</h2><ul role="list"><li><strong>“대표원장 1:1 책임/직접 시술”</strong>: <strong>시술자 고정</strong> 보장. <strong>부득이한 변경 시 절차</strong>(사전 고지·동의·환불옵션)를 꼭 물어보세요. (<a href="https://www.marqps.com/?utm_source=chatgpt.com">marqps.com</a>)</li><li><strong>“전문의 전담/전문의만 시술”</strong>: 전담 전문의 체계 강조. 다만 <strong>어느 전문과·이름</strong>인지 <strong>실명</strong>이 중요합니다. (전문의 표시는 의료광고 가이드라인을 따르므로 표기 방식도 합법 범위 내여야 합니다.) (<a href="https://partner-with-gangnamunni.oopy.io/10e5848e-6150-80ff-92f5-dbffeca7cadc?utm_source=chatgpt.com">병원과 함께하는 강남언니</a>)</li><li><strong>“팀 매칭/전담 매칭”</strong>: 다수 의료진 중 <strong>케이스 적합도</strong>로 배정. <strong>누구에게 배정되는지</strong>를 확정하고 진행하세요.</li></ul><h2>내 예약서에 꼭 넣을 문장(복붙)</h2><ul role="list"><li>“상담 의사 <strong>OO원장</strong> <strong>직접 시술</strong> 조건, <strong>변경 시 사전 동의</strong> 필수. <strong>변경 동의 없을 시 취소/환불</strong>.”</li><li>“<strong>총액</strong>: 제품·용량/단위(예: U/cc/샷, 실 개수) + 부가세 + 소모품 + 리터치(있다면) <strong>포함</strong>.”</li><li>“<strong>경과 내원·리터치 비용·기간</strong> 사전 고지.”</li></ul><h2>체크리스트(문구보다 숫자·증빙)</h2><ul role="list"><li> 강남언니 병원 페이지에서 <strong>의사별 누적후기 수</strong> 확인(예: 기린성형외과 의료진별 후기 수). (<a href="https://www.gangnamunni.com/hospitals/398?utm_source=chatgpt.com">Gangnam Unni</a>)</li><li> <strong>의사 실명·전문의 여부·시술 분야</strong> 확인(가이드라인상 전문의 표기 주의도 참고). (<a href="https://partner-with-gangnamunni.oopy.io/10e5848e-6150-80ff-92f5-dbffeca7cadc?utm_source=chatgpt.com">병원과 함께하는 강남언니</a>)</li><li> <strong>의사 고정</strong>: 상담–시술–사후관리 <strong>동일 의사</strong>인지 계약서/톡으로 캡처.</li><li> <strong>증례 사진</strong>: 내 얼굴/구조와 유사한 케이스가 많은지.</li><li> <strong>총액 캡처</strong>: “제품·용량/단위·부가세·소모품·리터치 포함”으로 숫자화.</li><li> <strong>변경·지연·대리 시술 방지</strong> 조항 확인(변경 시 동의 절차/환불 규정).</li></ul><h2>실제 예시로 배우기</h2><ul role="list"><li><strong>기린성형외과(강남언니 페이지)</strong>: <strong>주요 의료진 리스트와 의사별 누적후기</strong>가 표시되어, <strong>분야·경험치</strong>를 한눈에 파악할 수 있어요. “가슴성형/지방성형/필러·보톡스” 등 의사별 강점도 함께 확인. (<a href="https://www.gangnamunni.com/hospitals/398?utm_source=chatgpt.com">Gangnam Unni</a>)</li><li><strong>대표원장 1:1 표기 사례</strong>: 일부 병원은 사이트 전면에 **“대표원장의 철저한 1:1 전담”**을 내세워 <strong>직접 시술 보장</strong>을 강조합니다(예시 페이지). 이런 문구가 <strong>예약/견적에도 반영</strong>되어야 실보장입니다. (<a href="https://www.marqps.com/?utm_source=chatgpt.com">marqps.com</a>)</li><li><strong>특화 클리닉(팽팽클리닉)</strong>: 리프팅 특화 병원은 강남언니에서 <strong>원장별 후기 수</strong>가 공개되어 <strong>실제 시술자에 대한 신뢰 형성</strong>에 유리합니다. (<a href="https://www.gangnamunni.com/hospitals/4668?utm_source=chatgpt.com">Gangnam Unni</a>)</li></ul><h2>자주 묻는 질문</h2><p><strong>Q. “누적후기 많으면 무조건 좋다”는 건가요?</strong><br/>A. <strong>아니요.</strong> 많을수록 <strong>경험치 지표</strong>가 되지만, <strong>내 케이스와 유사한 증례·경과 사진</strong>이 더 중요해요. 의사별 <strong>전문 분야</strong>도 함께 보세요. (<a href="https://www.gangnamunni.com/hospitals/398?utm_source=chatgpt.com">Gangnam Unni</a>)</p><p><strong>Q. 대표원장 보장 vs 팀 매칭, 무엇이 더 안전해요?</strong><br/>A. <strong>케이스·예산·스케줄</strong>에 따라 달라요. 대표원장은 <strong>일관성</strong>, 팀 매칭은 <strong>전문성 분업</strong> 장점이 있어요. 어떤 방식을 택하든 <strong>의사 실명·고정·변경 절차</strong>를 문서로 남기는 게 핵심.</p><p><strong>Q. 광고에 ‘전문의’가 많던데 믿어도 되나요?</strong><br/>A. <strong>전문의 표기</strong>는 법적 가이드라인을 따라야 합니다. <strong>어느 전문과</strong>인지, <strong>실명</strong>과 <strong>증빙 페이지</strong>(약력·학회)를 함께 확인하세요. (<a href="https://partner-with-gangnamunni.oopy.io/10e5848e-6150-80ff-92f5-dbffeca7cadc?utm_source=chatgpt.com">병원과 함께하는 강남언니</a>)</p><h2>마지막 한 줄(언니 팁)</h2><p><strong>문구보다 ‘사람’과 ‘증빙’.</strong> 강남언니에서 <strong>의사별 누적후기·증례</strong>를 먼저 보고, <strong>의사 실명 고정 + 변경 시 동의</strong>까지 <strong>문서로 캡처</strong>하세요. 대표원장 직진이든, 전문의 매칭이든—<strong>내 케이스와 맞는 시술자</strong>를 <strong>숫자와 기록</strong>으로 확인하는 순간, 결과와 만족이 달라집니다. (<a href="https://www.gangnamunni.com/hospitals/398?utm_source=chatgpt.com">Gangnam Unni</a>, <a href="https://www.businesswire.com/news/home/20231205938563/en/The-Largest-Plastic-Surgery-Information-Platform-in-South-Korea-Launches-UNNI-a-Global-K-Medical-Information-App-for-Foreigners?utm_source=chatgpt.com">Business Wire</a>, <a href="https://www.marqps.com/?utm_source=chatgpt.com">marqps.com</a>)</p><p>‍</p>
+          </div>
+
+          
+          <div class="info-box checklist-box">
+            <h3>✅ 체크리스트</h3>
+            <ul class="checklist">
+              <li>대안 시술 설명 유무</li><li>리스크/회복 기준 설명</li><li>추가 비용 트리거</li><li>사후관리 프로토콜</li>
+            </ul>
+          </div>
+
+          
+          <section class="faq-section" style="margin-top:24px;">
+            <h2>자주 묻는 질문</h2>
+            <details><summary>대표원장 직접 시술·전문의 전담을 똑똑하게 고르는 20‧30대 여성 가이드은/는 무엇인가요?</summary><p>본문의 '대표원장 직접 시술·전문의 전담을 똑똑하게 고르는 20‧30대 여성 가이드' 섹션을 참고하세요.</p></details><details><summary>요약(3줄 컷)은/는 무엇인가요?</summary><p>본문의 '요약(3줄 컷)' 섹션을 참고하세요.</p></details><details><summary>왜 “누가 시술하느냐”가 중요한가?</summary><p>본문의 '왜 “누가 시술하느냐”가 중요한가?' 섹션을 참고하세요.</p></details><details><summary>병원 후기의 신뢰도를 어떻게 판단하나요?</summary><p>지나치게 긍정적이거나 구체성이 없는 후기는 주의가 필요합니다.</p></details><details><summary>상담 시 반드시 물어봐야 할 질문은?</summary><p>시술 방법, 리스크, 회복 기간, 총비용, 사후관리 범위를 확인하세요.</p></details><details><summary>여러 병원을 비교할 때 기준은?</summary><p>동일한 항목(비용, 방법, 경력, 관리)으로 통일하여 비교하세요.</p></details>
+          </section>
+
+          <p class="article-disclaimer">본 내용은 외부 공개 후기의 공통 패턴을 재정리한 요약 정보이며, 원문은 각 플랫폼에서 직접 확인하세요.</p>
+        </article>
+
+        <aside class="article-sidebar">
+          <section class="card sidebar-card">
+            <span class="badge" style="background:#ffe7ef;color:#d9336c;">상담 안내</span>
+            <h3 style="margin:8px 0 4px;">THE GLAM · 미녀는 괴로워</h3>
+            <div class="hospital-meta">
+              <span>hello@theglam.kr</span>
+              <span>02-333-3539</span>
+            </div>
+            <a href="../mockup/consultation.html" class="btn-primary" style="width:100%;">무료상담</a>
+          </section>
+        </aside>
+      </div>
+
+      <div class="article-cta-area">
+        <p>이 시술에 관심이 있으신가요?</p>
+        <a href="../mockup/consultation.html" class="btn-primary">💬 무료 상담 받아보기</a>
+        <div class="crosscheck-links">
+          <span>다른 플랫폼에서도 확인하기: </span><a href="https://www.babitalk.com/" target="_blank" rel="noopener">바비톡 원문 확인 ↗</a><a href="https://www.gangnamunni.com/" target="_blank" rel="noopener">강남언니 원문 확인 ↗</a><a href="tel:0233333539" target="_blank" rel="noopener">전화 상담 ↗</a><a href="mailto:hello@theglam.kr" target="_blank" rel="noopener">이메일 문의 ↗</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="../mockup-v2/terms.html">이용약관</a>
+        <a href="../mockup-v2/privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="../mockup/consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="../mockup/index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="../mockup/articles.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="../mockup/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="../mockup/hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="../mockup/consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+</body>
+</html>

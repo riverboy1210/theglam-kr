@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>샤워·세안·염색 가능 시점 | 미녀는 괴로워</title>
+  <meta name="description" content="상처 건조·방수 조건에 따른 샤워·세안·염색 재개 시점을 안전하게 안내합니다.">
+  <link rel="canonical" href="https://theglam.kr/articles/shower-face-wash-hair-dye-timing">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .article-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .article-header {
+      margin-bottom: 20px;
+    }
+
+    .article-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .article-title {
+      margin: 0;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .author-profile {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-content p {
+      margin: 0 0 14px;
+      color: #2d3347;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .price-table thead {
+      background: #fff1f7;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-tag {
+      color: #d9336c;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .info-box {
+      background: var(--bg-pink);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #7d2046;
+    }
+
+    .checklist-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip-header {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0 10px;
+    }
+
+    .before-after-item {
+      flex: 1;
+      display: block;
+      min-height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .before-after-item p {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+    }
+
+    .article-disclaimer {
+      margin-top: 22px;
+      font-size: 0.76rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      padding: 14px;
+    }
+
+    .hospital-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 6px 0 12px;
+    }
+
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .related-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-item .img-placeholder {
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .related-item p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .article-cta-area {
+      text-align: center;
+      padding: 32px;
+      background: var(--bg-gray);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .article-cta-area p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .crosscheck-links {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      justify-content: center;
+    }
+
+    .crosscheck-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .comments-section {
+      margin-top: 22px;
+    }
+
+    .comments-section h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-item .avatar {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      font-size: 0.84rem;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+    }
+
+    .comment-head strong {
+      color: var(--text);
+    }
+
+    .comment-head span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #2d3347;
+    }
+
+    .comment-like {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    @media (min-width: 1024px) {
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .article-title {
+        font-size: 1.45rem;
+      }
+
+      .before-after {
+        flex-direction: column;
+      }
+
+      .article-cta-area {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../mockup/index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-layout">
+        <article class="article-main">
+          <div class="article-header">
+            <div class="article-meta-top">
+              <span class="badge" style="background:#3B82F6;color:#fff;">회복 관리</span>
+              <span class="article-date">2025-09-09</span>
+            </div>
+            <h1 class="article-title">샤워·세안·염색 가능 시점</h1>
+            <div class="author-profile">
+              <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#FFE0EC;display:flex;align-items:center;justify-content:center;">👩</div>
+              <div><strong>김서연 에디터</strong></div>
+            </div>
+          </div>
+
+          
+          <div class="article-hero-image" style="margin: 0 0 18px;">
+            <img src="../../external/cdn.prod.website-files.com/68993c805b6ff04a733e5d25/68bfc6901b5f01000f68e45e_uc.jpeg" alt="샤워·세안·염색 가능 시점" style="width:100%;border-radius:12px;">
+          </div>
+
+          <div class="article-content">
+            <h2>샤워·세안·염색 가능 시점에 대한 이해</h2><p>샤워, 세안, 염색 등의 활동은 수술 후 회복 과정에서 중요한 고려 사항입니다. 특히 구형구축 재수술이나 다른 미용 시술 후에는 적절한 시점에 이러한 활동을 재개하는 것이 중요합니다. 이 글에서는 회복기간 2주~6주 동안의 가이드라인을 제시합니다.</p><h2>샤워 및 세안 가능 시점</h2><p>수술 후 초기 몇 주 동안에는 가벼운 세안 및 샤워를 피하는 것이 좋습니다. 상처가 회복되고 감염 위험이 줄어든 후에야 세안과 샤워를 시작할 수 있습니다.</p><ul role="list">  <li>수술 후 1주: 샤워 금지, 상처 보호 필요</li>  <li>수술 후 2주: 간단한 샤워 가능, 세안 주의 요망</li>  <li>수술 후 3주: 문지르지 않고 세안 가능</li></ul><h2>염색 가능 시점</h2><p>염색은 피부와 모발에 화학 물질이 닿는 과정으로, 수술 후에는 특히 주의가 필요합니다. 손상된 피부가 회복되는 동안은 염색을 미루는 것이 좋습니다.</p><ul role="list">  <li>수술 후 1개월: 염색 금지</li>  <li>수술 후 6주: 피부 상태가 좋다면 염색 고려 가능</li>  <li>의료진 상담 필요: 염색 전 반드시 확인</li></ul><h2>샤워·세안·염색 가능 시점의 중요성</h2><p>적절한 시점에 개인 위생과 미용 관리를 시행하는 것은 회복에 긍정적인 영향을 미칠 수 있습니다. 그러나 상태를 과소평가하고 조급하게 행동하는 것은 부작용 리스크를 증가시킬 수 있습니다.</p><ul role="list">  <li>감염 예방: 깨끗한 환경 유지</li>  <li>상처 치유: 회복을 방해하는 행동 자제</li>  <li>심리적 만족감: 위생 및 외모 관리로 자신감 향상</li></ul><h2>샤워기 및 세안제 선택 가이드</h2><h3>사전 단계</h3><p>샤워 및 세안 전, 적합한 제품을 선택하는 것이 중요합니다. 저자극성 제품을 우선적으로 고려하여 피부 자극을 최소화하세요.</p><ul role="list">  <li>알코올 없는 클렌저 사용</li>  <li>자극이 적은 샴푸 선택</li>  <li>온도 조절: 부드러운 미지근한 물</li></ul><h3>수술 단계</h3><p>샤워 중 유의사항을 준수하는 것이 필요합니다. 열린 상처가 있다면 직접적인 물 접촉을 피하세요.</p><ol role="list">  <li>상처 부위를 보호하기 위해 방수 필름 사용</li>  <li>부드럽게 물로 헹굼</li>  <li>강한 마찰을 피하고 가볍게 닦기</li></ol><h3>사후 관리</h3><p>회복 후에도 지속적인 관리가 필요합니다. 시간이 지나도 건조함이나 부작용이 발생할 수 있으므로 지속적으로 상태를 확인하세요.</p><ul role="list">  <li>피부 상태 체크</li>  <li>수분 공급 및 보습제 사용</li>  <li>의료진 방문: 정기적인 진료 필요</li></ul><h2>샤워·세안·염색의 장단점</h2><p>이 활동들은 개인 위생 및 심리적 안정감을 제공하지만, 부주의할 경우 위협 요소가 될 수 있습니다.</p><p>  장점단점  자신감 향상감염 리스크  위생 유지상처 치유 방해 가능성</p>
+          </div>
+
+          
+          <div class="info-box checklist-box">
+            <h3>✅ 체크리스트</h3>
+            <ul class="checklist">
+              <li>Day 1: 휴식/냉찜질/연락체계</li><li>Day 3~7: 부기관리/세안 기준</li><li>Day 14: 일상 복귀 점검</li><li>Day 30: 최종 안정 체크</li>
+            </ul>
+          </div>
+
+          
+          <section class="faq-section" style="margin-top:24px;">
+            <h2>자주 묻는 질문</h2>
+            <details><summary>샤워·세안·염색 가능 시점에 대한 이해은/는 무엇인가요?</summary><p>본문의 '샤워·세안·염색 가능 시점에 대한 이해' 섹션을 참고하세요.</p></details><details><summary>샤워 및 세안 가능 시점은/는 무엇인가요?</summary><p>본문의 '샤워 및 세안 가능 시점' 섹션을 참고하세요.</p></details><details><summary>염색 가능 시점은/는 무엇인가요?</summary><p>본문의 '염색 가능 시점' 섹션을 참고하세요.</p></details><details><summary>시술 후 언제부터 운동이 가능한가요?</summary><p>일반적으로 4~6주 후부터 가벼운 운동이 가능하지만, 담당 의료진과 상의하세요.</p></details><details><summary>붓기가 오래 가면 문제가 있는 건가요?</summary><p>2주 이상 붓기가 줄지 않으면 병원에 문의하세요.</p></details><details><summary>회복 중 음주/흡연은 언제부터?</summary><p>최소 2~4주간 금주/금연을 권장하며, 구체적 시기는 담당의와 상의하세요.</p></details>
+          </section>
+
+          <p class="article-disclaimer">회복 기간은 개인에 따라 다를 수 있으며, 구체적인 사항은 담당 의료진과 상의하세요.</p>
+        </article>
+
+        <aside class="article-sidebar">
+          <section class="card sidebar-card">
+            <span class="badge" style="background:#ffe7ef;color:#d9336c;">상담 안내</span>
+            <h3 style="margin:8px 0 4px;">THE GLAM · 미녀는 괴로워</h3>
+            <div class="hospital-meta">
+              <span>hello@theglam.kr</span>
+              <span>02-333-3539</span>
+            </div>
+            <a href="../mockup/consultation.html" class="btn-primary" style="width:100%;">무료상담</a>
+          </section>
+        </aside>
+      </div>
+
+      <div class="article-cta-area">
+        <p>이 시술에 관심이 있으신가요?</p>
+        <a href="../mockup/consultation.html" class="btn-primary">💬 무료 상담 받아보기</a>
+        <div class="crosscheck-links">
+          <span>다른 플랫폼에서도 확인하기: </span><a href="https://www.babitalk.com/" target="_blank" rel="noopener">바비톡 원문 확인 ↗</a><a href="https://www.gangnamunni.com/" target="_blank" rel="noopener">강남언니 원문 확인 ↗</a><a href="tel:0233333539" target="_blank" rel="noopener">전화 상담 ↗</a><a href="mailto:hello@theglam.kr" target="_blank" rel="noopener">이메일 문의 ↗</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="../mockup-v2/terms.html">이용약관</a>
+        <a href="../mockup-v2/privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="../mockup/consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="../mockup/index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="../mockup/articles.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="../mockup/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="../mockup/hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="../mockup/consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+</body>
+</html>
