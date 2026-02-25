@@ -1,0 +1,12 @@
+Verification Results - Task 1 (Foundation files)
+
+1) Directory listing: D:\00000.안티그래비티 아수스\10.글램\redesign\mockup
+boilerplate.html
+shared.css
+shared-data.js
+
+2) CSS variable line count (`--` in shared.css)
+83
+
+3) shared-data.js exported keys
+[ 'PROCEDURES', 'HOSPITALS', 'REVIEWS', 'ARTICLES', 'BRAND' ]

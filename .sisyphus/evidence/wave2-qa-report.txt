@@ -1,0 +1,50 @@
+Wave 2 Mockup QA Report
+Date: 2026-02-25
+Base URL: http://localhost:3030
+
+Screenshots captured (fullPage: true):
+- mockup-index-desktop.png
+- mockup-index-mobile.png
+- mockup-article-desktop.png
+- mockup-article-mobile.png
+- mockup-reviews-desktop.png
+- mockup-reviews-mobile.png
+- mockup-hospitals-desktop.png
+- mockup-hospitals-mobile.png
+- mockup-consultation-desktop.png
+- mockup-consultation-mobile.png
+
+Page load and JS error check:
+- All 5 pages loaded successfully at both desktop (1440x900) and mobile (375x812).
+- No JavaScript runtime errors detected (console error/pageerror checks were clean during verification run).
+
+Key UI element verification:
+- index.html
+  - Header text "미녀는 괴로워": PASS (desktop/mobile)
+  - Bottom nav with 5 tabs and 홈 active: PASS on mobile, NOT VISIBLE as bottom-nav component on desktop
+  - Card/section visible: PASS (desktop/mobile)
+  - Floating CTA button: PASS (desktop/mobile)
+- article.html
+  - Article title/header visible: PASS (desktop/mobile)
+  - Content sections visible: PASS (desktop/mobile)
+  - Bottom nav present: PASS on mobile, NOT VISIBLE as bottom-nav component on desktop
+- reviews.html
+  - Filter chips visible: PASS (desktop/mobile)
+  - Review cards visible: PASS (desktop/mobile)
+  - 후기 tab active in bottom nav: PASS (desktop/mobile)
+- hospitals.html
+  - Search bar visible: PASS (desktop/mobile)
+  - Hospital cards visible: PASS (desktop/mobile)
+  - 병원 tab active in bottom nav: PASS (desktop/mobile)
+- consultation.html
+  - Consultation form visible: PASS (desktop/mobile)
+  - FAQ accordion (details/summary) visible: PASS (desktop/mobile)
+  - 마이 tab active in bottom nav: PASS (desktop/mobile)
+
+Visual issues noticed:
+- No blocking visual defects observed in captured screens.
+- Responsive behavior appears intentional: bottom-nav visibility is reduced on desktop for index/article, while mobile shows full 5-tab nav.
+
+Overall assessment:
+- PASS with minor responsive discrepancy against strict desktop nav expectation for index/article.
+- Evidence package complete with 10 required screenshots.

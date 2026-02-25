@@ -1,0 +1,42 @@
+Content Hub Mockup QA Report
+Date: 2026-02-25
+Server: http://localhost:3030
+
+=== articles.html ===
+Desktop (1440x900): PASS - Full-page screenshot captured, required texts visible
+Mobile (375x812): PASS - Full-page screenshot captured, floating-cta above bottom-nav
+Search bar: PASS
+Filter tabs: PASS
+Article cards visible: 12
+
+=== index.html ===
+Desktop: PASS
+Mobile: PASS
+"최신 정보 기사" section: PASS
+
+=== article.html ===
+Desktop: PASS
+Mobile: PASS
+"이런 기사도 읽어보세요" section: PASS
+
+=== reviews.html ===
+Desktop: PASS
+Mobile: PASS
+"후기 작성 전 꼭 읽어보세요" section: PASS
+
+=== hospitals.html ===
+Desktop: PASS
+Mobile: PASS
+"시술 가이드" section: PASS
+
+=== consultation.html ===
+Desktop: PASS
+Mobile: PASS
+"상담 전 읽어보면 좋은 글" section: PASS
+
+=== Navigation Test ===
+검색 tab → articles.html: PASS
+
+=== Overall ===
+VERDICT: PASS
+Screenshots saved: 12/12

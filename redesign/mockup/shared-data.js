@@ -31,9 +31,18 @@ const REVIEWS = [
 ];
 
 const ARTICLES = [
-  { id: 1, title: '쌍꺼풀 수술 가격, 진짜 얼마가 드는 걸까?', category: '비용비교', categoryColor: '#10B981', date: '2026.02.20', views: 12340, readTime: '5분', author: '김서연 에디터', summary: '매몰법부터 절개법까지 실제 가격 비교와 숨겨진 비용까지 꼼꼼히 정리했어요.' },
-  { id: 2, title: '코 성형 부작용, 미리 알면 막을 수 있어요', category: '안전정보', categoryColor: '#EF4444', date: '2026.02.15', views: 8920, readTime: '7분', author: '이다혜 에디터', summary: '부작용 발생률과 대처법, 그리고 병원 선택 시 꼭 확인해야 할 체크리스트.' },
-  { id: 3, title: '보톡스 효과 언제까지? 지속 기간 완벽 정리', category: '회복/효과', categoryColor: '#8B5CF6', date: '2026.02.10', views: 6540, readTime: '4분', author: '박지훈 에디터', summary: '부위별 지속 기간, 재시술 타이밍, 비용 대비 효과 분석.' },
+  { id: 1, title: '쌍꺼풀 수술 가격, 진짜 얼마가 드는 걸까?', category: '비용비교', categoryColor: '#10B981', contentType: 'PRICE', slug: 'double-eyelid-price', procedureTags: ['눈'], date: '2026.02.20', views: 12340, readTime: '5분', author: '김서연 에디터', summary: '매몰법부터 절개법까지 실제 가격 비교와 숨겨진 비용까지 꼼꼼히 정리했어요.' },
+  { id: 2, title: '코 성형 부작용, 미리 알면 막을 수 있어요', category: '안전정보', categoryColor: '#EF4444', contentType: 'SAFETY', slug: 'nose-surgery-side-effects', procedureTags: ['코'], date: '2026.02.15', views: 8920, readTime: '7분', author: '이다혜 에디터', summary: '부작용 발생률과 대처법, 그리고 병원 선택 시 꼭 확인해야 할 체크리스트.' },
+  { id: 3, title: '보톡스 효과 언제까지? 지속 기간 완벽 정리', category: '회복/효과', categoryColor: '#8B5CF6', contentType: 'RECOVERY', slug: 'botox-duration-guide', procedureTags: ['보톡스'], date: '2026.02.10', views: 6540, readTime: '4분', author: '박지훈 에디터', summary: '부위별 지속 기간, 재시술 타이밍, 비용 대비 효과 분석.' },
+  { id: 4, title: '코성형 비용 총정리 — 필러부터 재건술까지', category: '비용비교', categoryColor: '#10B981', contentType: 'PRICE', slug: 'nose-surgery-cost', procedureTags: ['코'], date: '2026.02.18', views: 9850, readTime: '6분', author: '김서연 에디터', summary: '코성형 방법별 가격 범위, 마취비·검사비 포함 총비용 실전 가이드.' },
+  { id: 5, title: '지방흡입 가격, 부위별로 얼마나 들까?', category: '비용비교', categoryColor: '#10B981', contentType: 'PRICE', slug: 'liposuction-price-guide', procedureTags: ['지방흡입'], date: '2026.02.14', views: 11200, readTime: '7분', author: '이다혜 에디터', summary: '복부·허벅지·팔뚝별 가격 비교, 이벤트가 vs 실제 총비용 차이.' },
+  { id: 6, title: '눈 성형 부작용 신호 — 이건 꼭 확인하세요', category: '안전정보', categoryColor: '#EF4444', contentType: 'SAFETY', slug: 'eye-surgery-safety', procedureTags: ['눈'], date: '2026.02.12', views: 7430, readTime: '5분', author: '박지훈 에디터', summary: '붓기 vs 감염 신호 구분법, 병원 재방문이 필요한 경우 체크리스트.' },
+  { id: 7, title: '리프팅 시술, 내 피부에 맞는 걸 어떻게 고를까?', category: '안전정보', categoryColor: '#EF4444', contentType: 'SAFETY', slug: 'lifting-safety-guide', procedureTags: ['리프팅'], date: '2026.02.08', views: 6120, readTime: '6분', author: '김서연 에디터', summary: '울쎄라·써마지·HIFU 차이, 피부 타입별 추천 기준 정리.' },
+  { id: 8, title: '쌍꺼풀 수술 회복기간 — 일상 복귀 현실 타임라인', category: '회복관리', categoryColor: '#3B82F6', contentType: 'RECOVERY', slug: 'double-eyelid-recovery', procedureTags: ['눈'], date: '2026.02.06', views: 8340, readTime: '5분', author: '이다혜 에디터', summary: '수술 직후부터 6개월까지, 붓기 빠지는 시기와 출근·운동 복귀 기준.' },
+  { id: 9, title: '리프팅 후 관리법 — 효과 오래 가려면?', category: '회복관리', categoryColor: '#3B82F6', contentType: 'RECOVERY', slug: 'lifting-aftercare', procedureTags: ['리프팅'], date: '2026.02.02', views: 5890, readTime: '4분', author: '박지훈 에디터', summary: '시술 당일 주의사항, 자외선 차단, 마사지 시작 시점 가이드.' },
+  { id: 10, title: '성형외과 고르는 법 — 후기 말고 이것도 보세요', category: '병원선택', categoryColor: '#8B5CF6', contentType: 'CLINIC_CHOICE', slug: 'how-to-choose-clinic', procedureTags: ['눈', '코', '리프팅'], date: '2026.01.30', views: 14200, readTime: '8분', author: '김서연 에디터', summary: '자격증 확인, 집도의 직접 상담 여부, 후기 신뢰도 판단 5단계.' },
+  { id: 11, title: '온라인 후기 검증법 — 진짜 후기 vs 홍보 후기 구분', category: '병원선택', categoryColor: '#8B5CF6', contentType: 'CLINIC_CHOICE', slug: 'review-verification', procedureTags: ['눈', '코', '보톡스'], date: '2026.01.25', views: 10500, readTime: '6분', author: '이다혜 에디터', summary: '인증 후기, 사진 후기, 업체 작성 후기를 구분하는 실전 체크포인트.' },
+  { id: 12, title: '첫 상담 전 체크리스트 — 이 질문은 꼭 하세요', category: '병원선택', categoryColor: '#8B5CF6', contentType: 'CLINIC_CHOICE', slug: 'consultation-checklist', procedureTags: ['눈', '코', '리프팅', '지방흡입'], date: '2026.01.20', views: 12800, readTime: '7분', author: '박지훈 에디터', summary: '상담 시 집도의 직접 참여 여부, 수술 방법, 비용 총액 확인 방법.' },
 ];
 
 const BRAND = {
