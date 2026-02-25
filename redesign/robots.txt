@@ -1,0 +1,34 @@
+User-agent: *
+Allow: /
+
+# Block admin/utility pages from indexing
+Disallow: /mockup/boilerplate.html
+Disallow: /mockup-v2/boilerplate.html
+
+# Block search result pages
+Disallow: /*?q=
+Disallow: /*?search=
+
+# Sitemap
+Sitemap: https://theglam.kr/sitemap.xml
+
+# AI Bot Management
+User-agent: GPTBot
+Allow: /articles/
+Allow: /mockup/
+Disallow: /mockup-v2/terms.html
+Disallow: /mockup-v2/privacy.html
+
+User-agent: ChatGPT-User
+Allow: /articles/
+Allow: /mockup/
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Allow: /articles/
+Allow: /mockup/
