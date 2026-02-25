@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쌍꺼풀 수술 가격 완전 정복 | 미녀는 괴로워</title>
+  <meta name="description" content="쌍꺼풀 수술 방법별 비용 비교와 체크리스트를 한눈에 확인해보세요.">
+  <meta property="og:title" content="쌍꺼풀 수술 가격 완전 정복 | 미녀는 괴로워">
+  <meta property="og:description" content="매몰법·절개법·자연유착법 가격 차이와 수술 전 확인사항을 정리했습니다.">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .article-layout {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
+
+    .article-header {
+      margin-bottom: 20px;
+    }
+
+    .article-meta-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .article-title {
+      margin: 0;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .author-profile {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .article-content p {
+      margin: 0 0 14px;
+      color: #2d3347;
+    }
+
+    .article-content h2 {
+      margin: 28px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .price-table thead {
+      background: #fff1f7;
+    }
+
+    .price-table th,
+    .price-table td {
+      padding: 10px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-tag {
+      color: #d9336c;
+      font-weight: 700;
+      display: inline;
+    }
+
+    .info-box {
+      background: var(--bg-pink);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      color: #7d2046;
+    }
+
+    .checklist-box h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tip-header {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .before-after {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0 10px;
+    }
+
+    .before-after-item {
+      flex: 1;
+      display: block;
+      min-height: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .before-after-item p {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+    }
+
+    .article-disclaimer {
+      margin-top: 22px;
+      font-size: 0.76rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-self: start;
+    }
+
+    .sidebar-card {
+      padding: 14px;
+    }
+
+    .hospital-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 6px 0 12px;
+    }
+
+    .related-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .related-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-item .img-placeholder {
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    .related-item p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .article-cta-area {
+      text-align: center;
+      padding: 32px;
+      background: var(--bg-gray);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .article-cta-area p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .crosscheck-links {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      justify-content: center;
+    }
+
+    .crosscheck-links a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .comments-section {
+      margin-top: 22px;
+    }
+
+    .comments-section h3 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-item .avatar {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      font-size: 0.84rem;
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+    }
+
+    .comment-head strong {
+      color: var(--text);
+    }
+
+    .comment-head span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: #2d3347;
+    }
+
+    .comment-like {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    @media (min-width: 1024px) {
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .article-title {
+        font-size: 1.45rem;
+      }
+
+      .before-after {
+        flex-direction: column;
+      }
+
+      .article-cta-area {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-layout">
+        <article class="article-main">
+          <div class="article-header">
+            <div class="article-meta-top">
+              <span class="badge" style="background:#10B981;color:#fff;">비용비교</span>
+              <span class="article-date">2026.02.20</span>
+              <span class="article-views">👁️ 12,340</span>
+              <span class="article-readtime">⏱️ 5분</span>
+            </div>
+            <h1 class="article-title">쌍꺼풀 수술 가격, 진짜 얼마가 드는 걸까?</h1>
+            <div class="author-profile">
+              <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#FFE0EC;display:flex;align-items:center;justify-content:center;">👩</div>
+              <div>
+                <strong>김서연 에디터</strong>
+                <p style="font-size:0.8rem;margin:2px 0 0;color:var(--text-muted);">성형 정보 전문 에디터 · 3년 경력</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-content">
+            <p>쌍꺼풀 수술은 비교적 대중적인 시술이지만, 실제 상담을 받아보면 병원마다 견적 차이가 꽤 크게 느껴집니다. 같은 매몰법이라고 해도 포함 항목, 마취 방식, 사후 관리 여부에 따라 가격이 달라질 수 있기 때문입니다. 이벤트가를 기준으로 판단하면 예상보다 추가 비용이 발생하는 경우도 있어 사전 확인이 필요합니다. 그래서 오늘은 대표적인 수술 방법별 가격대와 체크 포인트를 한 번에 정리해드립니다.</p>
+
+            <h2>매몰법 vs 절개법, 가격 차이가 나는 이유</h2>
+            <p>가격 차이는 단순히 수술명 때문이 아니라 수술 난이도, 집도의 숙련도, 개인 눈 상태에 따른 추가 술식 여부에서 발생합니다. 피부 처짐, 지방량, 비대칭 교정 필요성에 따라 시간이 더 소요될수록 비용도 높아질 수 있습니다.</p>
+
+            <table class="price-table">
+              <thead><tr><th>수술 방법</th><th>가격 범위</th><th>지속 기간</th><th>회복 기간</th></tr></thead>
+              <tbody>
+                <tr><td>매몰법</td><td class="price-tag">50~80만원</td><td>2~5년</td><td>1~2주</td></tr>
+                <tr><td>절개법</td><td class="price-tag">80~150만원</td><td>반영구</td><td>2~4주</td></tr>
+                <tr><td>자연유착법</td><td class="price-tag">70~120만원</td><td>3~7년</td><td>1~3주</td></tr>
+              </tbody>
+            </table>
+
+            <h2>수술 전 꼭 확인해야 할 것들</h2>
+            <div class="info-box checklist-box">
+              <h3>✅ 수술 전 확인사항 5가지</h3>
+              <ul class="checklist">
+                <li>의료기관 인증 여부 및 전문의 자격 확인</li>
+                <li>수술 전 충분한 상담 (최소 2곳 이상 비교)</li>
+                <li>시술 방법별 장단점 이해 및 기대치 현실화</li>
+                <li>회복 기간 동안 일정 조율 (학교/직장 휴가)</li>
+                <li>부작용 발생 시 처치 방법 및 A/S 정책 확인</li>
+              </ul>
+            </div>
+
+            <div class="info-box editor-tip">
+              <div class="tip-header">💡 에디터 TIP</div>
+              <p>같은 매몰법이라도 병원마다 가격이 크게 차이 납니다. 단순히 저렴한 곳보다는 상담 시 의사가 직접 진료하는지, 부작용 케이스를 얼마나 경험했는지 확인하는 것이 중요합니다.</p>
+            </div>
+
+            <div class="before-after">
+              <div class="before-after-item"><div class="img-placeholder" style="height:200px;">Before</div><p>수술 전</p></div>
+              <div class="before-after-item"><div class="img-placeholder" style="height:200px;">After</div><p>수술 후 3주</p></div>
+            </div>
+
+            <h2>가격 외에 봐야 할 것들</h2>
+            <p>수술 만족도는 비용보다 상담의 질과 사후 관리 체계에서 갈리는 경우가 많습니다. 질문에 대한 답변이 구체적인지, 부작용이나 재수술 가능성에 대해 현실적으로 안내하는지 반드시 확인해보세요.</p>
+            <p>또한 후기 사진만 보기보다 회복 경과를 시간대별로 확인하는 것이 좋습니다. 첫 3일, 1주, 1개월 경과처럼 단계별 변화를 체크하면 본인 일정과 기대치에 맞는 선택을 하는 데 도움이 됩니다.</p>
+
+            <p class="article-disclaimer">본 콘텐츠는 일반적인 정보 제공을 위한 참고 자료이며, 개인 상태에 따른 의료적 판단을 대체하지 않습니다. 정확한 진단과 시술 여부는 반드시 의료진 상담을 통해 결정하세요.</p>
+          </div>
+        </article>
+
+        <aside class="article-sidebar">
+          <section class="card sidebar-card">
+            <span class="badge" style="background:#ffe7ef;color:#d9336c;">추천 병원</span>
+            <h3 style="margin:8px 0 4px;">강남 AA성형외과</h3>
+            <div class="hospital-meta">
+              <span class="rating">★4.7</span>
+              <span>후기 328개</span>
+            </div>
+            <a href="./consultation.html" class="btn-primary" style="width:100%;">무료상담</a>
+          </section>
+
+          <section class="card sidebar-card">
+            <h3 style="margin:0 0 10px;">연관 아티클</h3>
+            <div class="related-list">
+              <a href="#" class="related-item">
+                <div class="img-placeholder">thumb</div>
+                <p>첫 상담에서 꼭 물어봐야 할 쌍꺼풀 질문 7가지</p>
+              </a>
+              <a href="#" class="related-item">
+                <div class="img-placeholder">thumb</div>
+                <p>매몰법 회복기간, 직장인은 며칠 쉬어야 할까?</p>
+              </a>
+              <a href="#" class="related-item">
+                <div class="img-placeholder">thumb</div>
+                <p>자연유착 vs 절개, 눈매 타입별 선택 포인트</p>
+              </a>
+            </div>
+          </section>
+        </aside>
+      </div>
+
+      <div class="article-cta-area">
+        <p>이 시술에 관심이 있으신가요?</p>
+        <a href="./consultation.html" class="btn-primary">💬 무료 상담 받아보기</a>
+        <div class="crosscheck-links">
+          <span>다른 플랫폼에서도 확인하기: </span>
+          <a href="https://www.gangnamunni.com" target="_blank">강남언니 ↗</a>
+          <a href="https://www.babitalk.com" target="_blank">바비톡 ↗</a>
+        </div>
+      </div>
+
+      <section class="comments-section">
+        <h3>💬 댓글 3개</h3>
+        <div class="comment-list">
+          <div class="comment-item">
+            <div class="avatar">혜</div>
+            <div>
+              <div class="comment-head"><strong>혜진23</strong><span>2시간 전</span></div>
+              <p>가격표 정리되어 있어서 비교하기 편하네요. 상담 갈 때 체크리스트 메모해서 가보려고요.</p>
+              <div class="comment-like">👍 도움돼요 18</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="avatar">루</div>
+            <div>
+              <div class="comment-head"><strong>루나</strong><span>5시간 전</span></div>
+              <p>저도 병원마다 안내가 달라서 헷갈렸는데, 회복기간 기준으로 보니 이해가 잘 됐어요.</p>
+              <div class="comment-like">👍 도움돼요 11</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="avatar">수</div>
+            <div>
+              <div class="comment-head"><strong>수아링</strong><span>어제</span></div>
+              <p>이벤트가만 보고 결정하면 안 된다는 말 공감해요. 상담 퀄리티 꼭 따져봐야겠네요.</p>
+              <div class="comment-like">👍 도움돼요 9</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">이용약관</a>
+        <a href="#">개인정보처리방침</a>
+        <a href="#">의료광고심의</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="./consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="./index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="./index.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="./reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="./hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="./consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+
+  <script src="./shared-data.js"></script>
+</body>
+</html>

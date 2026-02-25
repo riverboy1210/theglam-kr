@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>병원 찾기 & 비교 | 미녀는 괴로워</title>
+  <meta name="description" content="성형 시술 병원 찾기, 비교, 이벤트 정보 - 미녀는 괴로워">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .hospitals-filter-section {
+      background: #fff;
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 16px;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 16px var(--shadow);
+    }
+
+    .hospital-search {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .hospital-search-input {
+      flex: 1;
+      padding: 10px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .hospital-search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px var(--primary-light);
+    }
+
+    .filter-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin: 8px 0 4px 16px;
+    }
+
+    .filter-sort-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .filter-select {
+      padding: 8px 10px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text);
+      font-family: inherit;
+      background: #fff;
+    }
+
+    .hospitals-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .hospital-card-body {
+      padding: 12px;
+    }
+
+    .hospital-badges {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+
+    .hospital-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 4px 0;
+    }
+
+    .hospital-location {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin: 4px 0;
+    }
+
+    .hospital-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin: 8px 0;
+    }
+
+    .hospital-rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 8px 0;
+      font-size: 0.84rem;
+    }
+
+    .rating-count {
+      color: var(--text-muted);
+    }
+
+    .hospital-price {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin: 8px 0;
+      font-size: 0.9rem;
+    }
+
+    .price-label {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .hospital-cta {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .hospital-cta .btn-primary,
+    .hospital-cta .btn-outline {
+      flex: 1;
+    }
+
+    .price-comparison-section {
+      margin: 18px 0 24px;
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      box-shadow: 0 6px 18px var(--shadow);
+      padding: 14px;
+    }
+
+    .comparison-select-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 0.85rem;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .comparison-table thead th {
+      background: var(--bg-pink);
+      font-weight: 600;
+    }
+
+    .comparison-table-wrapper {
+      overflow-x: auto;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .event-card {
+      padding: 16px;
+      text-align: center;
+    }
+
+    .event-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-full);
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #b91c1c;
+      background: #fee2e2;
+      padding: 4px 10px;
+      margin-bottom: 8px;
+    }
+
+    .event-procedure {
+      margin: 4px 0 6px;
+      font-weight: 700;
+    }
+
+    .event-period {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin: 8px 0 0;
+    }
+
+    @media (min-width: 768px) {
+      .hospitals-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .events-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <section class="hospitals-filter-section">
+        <div class="hospital-search">
+          <input type="search" placeholder="병원명, 시술명, 지역 검색" class="hospital-search-input">
+          <button type="button" class="btn-primary">검색</button>
+        </div>
+
+        <div class="filter-label">📍 지역</div>
+        <div class="filter-bar">
+          <button type="button" class="filter-chip active">전체</button>
+          <button type="button" class="filter-chip">강남</button>
+          <button type="button" class="filter-chip">신사</button>
+          <button type="button" class="filter-chip">압구정</button>
+          <button type="button" class="filter-chip">잠실</button>
+          <button type="button" class="filter-chip">홍대</button>
+          <button type="button" class="filter-chip">신촌</button>
+          <button type="button" class="filter-chip">기타</button>
+        </div>
+
+        <div class="filter-label">💉 시술</div>
+        <div class="filter-bar">
+          <button type="button" class="filter-chip active">전체</button>
+          <button type="button" class="filter-chip">눈</button>
+          <button type="button" class="filter-chip">코</button>
+          <button type="button" class="filter-chip">윤곽</button>
+          <button type="button" class="filter-chip">가슴</button>
+          <button type="button" class="filter-chip">지방흡입</button>
+          <button type="button" class="filter-chip">리프팅</button>
+          <button type="button" class="filter-chip">피부</button>
+        </div>
+
+        <div class="filter-sort-row">
+          <span class="text-muted" style="font-size:0.875rem;">총 328개 병원</span>
+          <select class="filter-select">
+            <option>추천순</option>
+            <option>리뷰많은순</option>
+            <option>별점높은순</option>
+            <option>가격낮은순</option>
+          </select>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-header">
+          <h2 class="section-title">병원 찾기</h2>
+        </div>
+
+        <div class="hospitals-grid">
+          <div class="card card-hover hospital-card">
+            <div class="img-placeholder" style="height:140px;">병원 이미지</div>
+            <div class="hospital-card-body">
+              <div class="hospital-badges">
+                <span class="badge badge-hot">🏆인기</span>
+                <span class="badge badge-verified">인증</span>
+                <span class="badge badge-new">🎉이벤트</span>
+              </div>
+              <h3 class="hospital-name">강남 AA성형외과</h3>
+              <p class="hospital-location">📍 강남역 3번출구 도보 5분</p>
+              <div class="hospital-tags">
+                <span class="tag">눈</span><span class="tag">코</span><span class="tag">윤곽</span>
+              </div>
+              <div class="hospital-rating">
+                <span class="rating">★ 4.7</span>
+                <span class="rating-count">328개 후기</span>
+              </div>
+              <div class="hospital-price">
+                <span class="price-original">80만원</span>
+                <span class="price-discount">59만원</span>
+                <span class="price-label">(이벤트)</span>
+              </div>
+              <div class="hospital-cta">
+                <a href="./consultation.html" class="btn-primary">무료 상담 신청</a>
+                <button type="button" class="btn-outline">상세보기</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-hover hospital-card">
+            <div class="img-placeholder" style="height:140px;">병원 이미지</div>
+            <div class="hospital-card-body">
+              <div class="hospital-badges">
+                <span class="badge badge-verified">인증</span>
+              </div>
+              <h3 class="hospital-name">신사 BB클리닉</h3>
+              <p class="hospital-location">📍 신사역 2번출구 도보 3분</p>
+              <div class="hospital-tags">
+                <span class="tag">보톡스</span><span class="tag">필러</span><span class="tag">리프팅</span>
+              </div>
+              <div class="hospital-rating">
+                <span class="rating">★ 4.5</span>
+                <span class="rating-count">215개 후기</span>
+              </div>
+              <div class="hospital-price">
+                <span class="price-original">89만원</span>
+                <span class="price-discount">72만원</span>
+                <span class="price-label">(상담가)</span>
+              </div>
+              <div class="hospital-cta">
+                <a href="./consultation.html" class="btn-primary">무료 상담 신청</a>
+                <button type="button" class="btn-outline">상세보기</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-hover hospital-card">
+            <div class="img-placeholder" style="height:140px;">병원 이미지</div>
+            <div class="hospital-card-body">
+              <div class="hospital-badges">
+                <span class="badge badge-hot">🏆인기</span>
+                <span class="badge badge-verified">인증</span>
+                <span class="badge badge-new">🎉이벤트</span>
+              </div>
+              <h3 class="hospital-name">압구정 CC의원</h3>
+              <p class="hospital-location">📍 압구정역 5번출구 도보 7분</p>
+              <div class="hospital-tags">
+                <span class="tag">눈</span><span class="tag">지방흡입</span>
+              </div>
+              <div class="hospital-rating">
+                <span class="rating">★ 4.8</span>
+                <span class="rating-count">541개 후기</span>
+              </div>
+              <div class="hospital-price">
+                <span class="price-original">150만원</span>
+                <span class="price-discount">105만원</span>
+                <span class="price-label">(이벤트)</span>
+              </div>
+              <div class="hospital-cta">
+                <a href="./consultation.html" class="btn-primary">무료 상담 신청</a>
+                <button type="button" class="btn-outline">상세보기</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-hover hospital-card">
+            <div class="img-placeholder" style="height:140px;">병원 이미지</div>
+            <div class="hospital-card-body">
+              <div class="hospital-badges">
+                <span class="badge badge-new">🎉이벤트</span>
+              </div>
+              <h3 class="hospital-name">강남 DD성형</h3>
+              <p class="hospital-location">📍 강남역 11번출구 도보 2분</p>
+              <div class="hospital-tags">
+                <span class="tag">코</span><span class="tag">윤곽</span>
+              </div>
+              <div class="hospital-rating">
+                <span class="rating">★ 4.3</span>
+                <span class="rating-count">189개 후기</span>
+              </div>
+              <div class="hospital-price">
+                <span class="price-original">65만원</span>
+                <span class="price-discount">45만원</span>
+                <span class="price-label">(이벤트)</span>
+              </div>
+              <div class="hospital-cta">
+                <a href="./consultation.html" class="btn-primary">무료 상담 신청</a>
+                <button type="button" class="btn-outline">상세보기</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-hover hospital-card">
+            <div class="img-placeholder" style="height:140px;">병원 이미지</div>
+            <div class="hospital-card-body">
+              <div class="hospital-badges">
+                <span class="badge badge-verified">인증</span>
+              </div>
+              <h3 class="hospital-name">청담 EE뷰티클리닉</h3>
+              <p class="hospital-location">📍 청담역 8번출구 도보 10분</p>
+              <div class="hospital-tags">
+                <span class="tag">피부</span><span class="tag">리프팅</span>
+              </div>
+              <div class="hospital-rating">
+                <span class="rating">★ 4.6</span>
+                <span class="rating-count">302개 후기</span>
+              </div>
+              <div class="hospital-price">
+                <span class="price-original">96만원</span>
+                <span class="price-discount">83만원</span>
+                <span class="price-label">(상담가)</span>
+              </div>
+              <div class="hospital-cta">
+                <a href="./consultation.html" class="btn-primary">무료 상담 신청</a>
+                <button type="button" class="btn-outline">상세보기</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-hover hospital-card">
+            <div class="img-placeholder" style="height:140px;">병원 이미지</div>
+            <div class="hospital-card-body">
+              <div class="hospital-badges">
+                <span class="badge badge-new">🎉이벤트</span>
+                <span class="badge badge-verified">인증</span>
+              </div>
+              <h3 class="hospital-name">논현 FF성형외과</h3>
+              <p class="hospital-location">📍 논현역 4번출구 도보 6분</p>
+              <div class="hospital-tags">
+                <span class="tag">눈</span><span class="tag">보톡스</span>
+              </div>
+              <div class="hospital-rating">
+                <span class="rating">★ 4.4</span>
+                <span class="rating-count">157개 후기</span>
+              </div>
+              <div class="hospital-price">
+                <span class="price-original">28만원</span>
+                <span class="price-discount">19만원</span>
+                <span class="price-label">(이벤트)</span>
+              </div>
+              <div class="hospital-cta">
+                <a href="./consultation.html" class="btn-primary">무료 상담 신청</a>
+                <button type="button" class="btn-outline">상세보기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="price-comparison-section">
+        <div class="section-header">
+          <h2 class="section-title">가격 비교하기</h2>
+        </div>
+        <div class="comparison-select-row">
+          <label>시술 선택: </label>
+          <select class="filter-select">
+            <option>쌍꺼풀 매몰법</option>
+            <option>보톡스 사각턱</option>
+            <option>콧대 필러</option>
+          </select>
+        </div>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>항목</th>
+                <th>강남 AA성형외과</th>
+                <th>신사 BB클리닉</th>
+                <th>압구정 CC의원</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>가격</td><td class="price-discount">59만원</td><td>72만원</td><td>105만원</td></tr>
+              <tr><td>별점</td><td>★★★★☆ 4.7</td><td>★★★★☆ 4.5</td><td>★★★★★ 4.8</td></tr>
+              <tr><td>후기수</td><td>328개</td><td>215개</td><td>541개</td></tr>
+              <tr><td>위치</td><td>강남역 5분</td><td>신사역 3분</td><td>압구정역 7분</td></tr>
+              <tr><td>이벤트</td><td>✅ 진행중</td><td>❌</td><td>✅ 진행중</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="text-align:center;margin-top:16px;">
+          <a href="./consultation.html" class="btn-primary">이 병원들에 한번에 상담 문의하기</a>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-header">
+          <h2 class="section-title">진행 중인 이벤트</h2>
+        </div>
+        <div class="events-grid">
+          <div class="card event-card">
+            <div class="event-badge">🎉 이벤트</div>
+            <h4>강남 AA성형외과</h4>
+            <p class="event-procedure">쌍꺼풀 매몰법</p>
+            <div><span class="price-original">80만원</span> → <span class="price-discount">59만원</span></div>
+            <p class="event-period">📅 ~2026.03.31</p>
+            <a href="./consultation.html" class="btn-primary" style="display:block;text-align:center;margin-top:8px;text-decoration:none;">신청하기</a>
+          </div>
+          <div class="card event-card">
+            <div class="event-badge">🎉 이벤트</div>
+            <h4>압구정 CC의원</h4>
+            <p class="event-procedure">눈절개</p>
+            <div><span class="price-original">150만원</span> → <span class="price-discount">105만원</span></div>
+            <p class="event-period">📅 ~2026.04.07</p>
+            <a href="./consultation.html" class="btn-primary" style="display:block;text-align:center;margin-top:8px;text-decoration:none;">신청하기</a>
+          </div>
+          <div class="card event-card">
+            <div class="event-badge">🎉 이벤트</div>
+            <h4>논현 FF성형외과</h4>
+            <p class="event-procedure">보톡스</p>
+            <div><span class="price-original">28만원</span> → <span class="price-discount">19만원</span></div>
+            <p class="event-period">📅 ~2026.03.20</p>
+            <a href="./consultation.html" class="btn-primary" style="display:block;text-align:center;margin-top:8px;text-decoration:none;">신청하기</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">이용약관</a>
+        <a href="#">개인정보처리방침</a>
+        <a href="#">의료광고심의</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="./consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="./index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="./index.html" class="bottom-nav-item">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="./reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="./hospitals.html" class="bottom-nav-item active">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="./consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+
+  <script src="./shared-data.js"></script>
+</body>
+</html>

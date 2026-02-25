@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>리얼 후기 모아보기 | 미녀는 괴로워</title>
+  <meta name="description" content="검증된 리얼 후기 모아보기 - 미녀는 괴로워">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .page-title-bar {
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-title-bar h1 {
+      margin: 0;
+      font-size: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .page-title-bar p {
+      margin: 6px 0 0;
+    }
+
+    .filter-section {
+      position: sticky;
+      top: 57px;
+      z-index: 120;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .filter-section .filter-bar {
+      padding: 10px 16px;
+    }
+
+    .filter-select {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 0.8rem;
+      font-family: inherit;
+      color: var(--text);
+      background: #fff;
+      min-width: 108px;
+    }
+
+    .reviews-area {
+      padding: 16px 0 4px;
+    }
+
+    .write-review-banner {
+      background: var(--bg-pink);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 16px 0;
+      gap: 8px;
+    }
+
+    .write-review-banner span {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #7d2046;
+    }
+
+    .review-card {
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .review-card-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 2px;
+    }
+
+    .review-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 8px 0 4px;
+      line-height: 1.4;
+    }
+
+    .review-summary {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .review-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin: 8px 0 4px;
+    }
+
+    .review-stats {
+      display: flex;
+      gap: 12px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .review-card .before-after {
+      margin-top: 10px;
+    }
+
+    .card.unsatisfied {
+      border-left: 3px solid var(--danger);
+    }
+
+    .card.progress-card {
+      border-left: 3px solid var(--secondary);
+    }
+
+    .progress-timeline {
+      margin: 10px 0 8px;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 6px 0;
+    }
+
+    .timeline-item p {
+      margin: 2px 0 0;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-badge {
+      background: var(--secondary-light);
+      color: var(--secondary);
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+
+    @media (min-width: 768px) {
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .review-card {
+        margin-bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="page-title-bar">
+      <h1>리얼 후기 모아보기</h1>
+      <p class="text-muted">검증된 후기만 모았어요 · 총 1,247개</p>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-bar">
+        <button class="filter-chip active" type="button">전체</button>
+        <button class="filter-chip" type="button">눈</button>
+        <button class="filter-chip" type="button">코</button>
+        <button class="filter-chip" type="button">윤곽</button>
+        <button class="filter-chip" type="button">가슴</button>
+        <button class="filter-chip" type="button">지방흡입</button>
+        <button class="filter-chip" type="button">리프팅</button>
+        <button class="filter-chip" type="button">피부</button>
+      </div>
+      <div class="filter-row-2" style="display:flex;gap:8px;padding:8px 16px;border-top:1px solid var(--border);">
+        <select class="filter-select" aria-label="정렬 옵션">
+          <option>인기순</option>
+          <option>최신순</option>
+          <option>별점높은순</option>
+          <option>댓글많은순</option>
+        </select>
+        <div style="display:flex;gap:6px;">
+          <button class="filter-chip active" type="button">전체</button>
+          <button class="filter-chip" type="button">🏷️ 인증후기</button>
+          <button class="filter-chip" type="button">📸 사진후기</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container reviews-area">
+      <div class="write-review-banner">
+        <span>📝 나도 후기를 작성하고 싶다면?</span>
+        <button class="btn-primary" type="button">후기 작성하기</button>
+      </div>
+
+      <section class="reviews-grid" aria-label="후기 목록">
+        <div class="card card-hover review-card">
+          <div class="review-card-header">
+            <span class="badge badge-verified">🏷️ 인증후기</span>
+            <span class="tag">쌍꺼풀 자연유착</span>
+            <span class="rating">★★★★★ 4.8</span>
+          </div>
+          <h3 class="review-title">쌍꺼풀 자연유착 3주차 — 진짜 자연스러워요!</h3>
+          <p class="review-summary">처음엔 붓기가 걱정됐는데 회복이 생각보다 빠르고 자연스러워요. 화장할 때 라인이 깔끔하게 살아나서 만족도가 높아요.</p>
+          <div class="before-after">
+            <div class="before-after-item"><div class="img-placeholder" style="height:120px;">수술 전</div></div>
+            <div class="before-after-item"><div class="img-placeholder" style="height:120px;">수술 후 3주</div></div>
+          </div>
+          <div class="review-meta">
+            <span>뷰티맘** · 강남 AA성형외과 · 65만원 · 2026.01.15</span>
+          </div>
+          <div class="review-stats">
+            <span>♥ 142</span><span>💬 23</span><span>👁️ 1,820</span>
+          </div>
+        </div>
+
+        <div class="card card-hover review-card">
+          <div class="review-card-header">
+            <span class="badge badge-verified">🏷️ 인증후기</span>
+            <span class="tag">보톡스 사각턱</span>
+            <span class="rating">★★★★★ 4.9</span>
+          </div>
+          <h3 class="review-title">보톡스 사각턱 1달째 후기 — 얼굴선이 훨씬 부드러워졌어요</h3>
+          <p class="review-summary">식사할 때 턱 근육이 덜 뭉치는 느낌이 들고, 정면 사진에서 인상이 확실히 부드러워졌어요. 시술 시간도 짧아서 편했어요.</p>
+          <div class="before-after">
+            <div class="before-after-item"><div class="img-placeholder" style="height:120px;">시술 전</div></div>
+            <div class="before-after-item"><div class="img-placeholder" style="height:120px;">시술 후 1달</div></div>
+          </div>
+          <div class="review-meta">
+            <span>루나핏** · 서초 BB의원 · 19만원 · 2026.01.22</span>
+          </div>
+          <div class="review-stats">
+            <span>♥ 196</span><span>💬 31</span><span>👁️ 2,406</span>
+          </div>
+        </div>
+
+        <div class="card card-hover review-card">
+          <div class="review-card-header">
+            <span class="tag">코 필러</span>
+            <span class="rating">★★★☆☆ 3.0</span>
+          </div>
+          <h3 class="review-title">코 필러 — 기대보다 약했어요</h3>
+          <p class="review-summary">코끝 라인이 살짝 올라오긴 했지만 사진에서 티가 크게 나진 않았어요. 다음에는 용량이나 디자인 상담을 더 꼼꼼히 해보려 해요.</p>
+          <div class="before-after">
+            <div class="before-after-item"><div class="img-placeholder" style="height:120px;">시술 전</div></div>
+            <div class="before-after-item"><div class="img-placeholder" style="height:120px;">시술 후 2주</div></div>
+          </div>
+          <div class="review-meta">
+            <span>미미홀릭** · 잠실 CC클리닉 · 34만원 · 2026.01.09</span>
+          </div>
+          <div class="review-stats">
+            <span>♥ 77</span><span>💬 19</span><span>👁️ 1,143</span>
+          </div>
+        </div>
+
+        <div class="card card-hover review-card">
+          <div class="review-card-header">
+            <span class="badge badge-verified">🏷️ 인증후기</span>
+            <span class="tag">HIFU 리프팅</span>
+            <span class="rating">★★★☆☆ 3.5</span>
+          </div>
+          <h3 class="review-title">HIFU 리프팅 — 통증은 있지만 효과는 확실</h3>
+          <p class="review-summary">시술 중 따끔한 통증은 있었지만 턱 라인 당겨지는 느낌이 있어요. 멍이나 붓기는 거의 없고, 2~3주 지나면서 윤곽이 더 또렷해졌어요.</p>
+          <div class="before-after">
+            <div class="before-after-item"><div class="img-placeholder" style="height:120px;">시술 전</div></div>
+            <div class="before-after-item"><div class="img-placeholder" style="height:120px;">시술 후 3주</div></div>
+          </div>
+          <div class="review-meta">
+            <span>그린티** · 마포 EE피부의원 · 52만원 · 2026.01.28</span>
+          </div>
+          <div class="review-stats">
+            <span>♥ 124</span><span>💬 27</span><span>👁️ 1,665</span>
+          </div>
+        </div>
+
+        <div class="card card-hover review-card unsatisfied">
+          <div class="review-card-header">
+            <span class="tag">지방흡입 복부</span>
+            <span class="rating">★★☆☆☆ 2.0</span>
+          </div>
+          <h3 class="review-title">지방흡입 복부 — 비용 대비 실망</h3>
+          <p class="review-summary">회복 기간은 생각보다 길었는데 기대한 만큼 라인 변화가 크진 않았어요. 사후 관리에 대한 설명을 더 자세히 들었으면 좋았을 것 같아요.</p>
+          <div class="before-after">
+            <div class="before-after-item"><div class="img-placeholder" style="height:120px;">수술 전</div></div>
+            <div class="before-after-item"><div class="img-placeholder" style="height:120px;">수술 후 1달</div></div>
+          </div>
+          <div class="review-meta">
+            <span>디데이** · 강남 DD성형 · 320만원 · 2026.01.03</span>
+          </div>
+          <div class="review-stats">
+            <span>♥ 63</span><span>💬 48</span><span>👁️ 2,099</span>
+          </div>
+        </div>
+
+        <div class="card card-hover review-card progress-card">
+          <div class="review-card-header">
+            <span class="badge badge-new">업데이트</span>
+            <span class="tag">눈 절개 쌍꺼풀</span>
+            <span class="rating">★★★★☆ 4.5</span>
+          </div>
+          <h3 class="review-title">눈 절개 쌍꺼풀 — 경과 업데이트</h3>
+          <p class="review-summary">시간이 지나면서 라인이 자리 잡는 과정이 확실히 보여요. 같은 시술 고민하시는 분들께 경과별로 참고가 될 것 같아요.</p>
+          <div class="progress-timeline">
+            <div class="timeline-item"><span class="timeline-badge">1개월</span><p>아직 붓기 남아있어요</p></div>
+            <div class="timeline-item"><span class="timeline-badge">3개월</span><p>많이 안정, 자연스러워졌어요</p></div>
+            <div class="timeline-item"><span class="timeline-badge">6개월</span><p>완전 정착! 너무 만족해요 ❤️</p></div>
+          </div>
+          <div class="before-after">
+            <div class="before-after-item"><div class="img-placeholder" style="height:120px;">수술 직후</div></div>
+            <div class="before-after-item"><div class="img-placeholder" style="height:120px;">6개월 경과</div></div>
+          </div>
+          <div class="review-meta">
+            <span>햇살눈** · 대전 FF성형클리닉 · 170만원 · 2026.01.18</span>
+          </div>
+          <div class="review-stats">
+            <span>♥ 211</span><span>💬 37</span><span>👁️ 2,832</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">이용약관</a>
+        <a href="#">개인정보처리방침</a>
+        <a href="#">의료광고심의</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="./consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="./index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="./index.html" class="bottom-nav-item">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="./reviews.html" class="bottom-nav-item active">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="./hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="./consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+
+  <script src="./shared-data.js"></script>
+</body>
+</html>
