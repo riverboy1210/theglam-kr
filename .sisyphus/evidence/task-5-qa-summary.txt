@@ -1,0 +1,66 @@
+========================================
+Task 5: Playwright QA Summary
+Date: 2025-02-25
+========================================
+
+## Server Status
+- Port: 3031 (npx serve redesign/mockup-v2)
+- All 4 pages returned HTTP 200
+
+## Page QA Results
+
+### 1. community.html ✅ PASS
+HTTP: 200
+Selectors:
+  .feed-grid        → 2 (expected ≥1) ✅
+  .post-card        → 8 (expected 8)  ✅
+  .filter-tab       → 8 (expected 8)  ✅
+  .medical-disclaimer → 1 (expected 1) ✅
+Screenshots:
+  - task-5-community-mobile.png (375×812, full page)
+  - task-5-community-desktop.png (1280×800, full page)
+  - task-5-community-mobile-top.png (viewport)
+  - task-5-community-mobile-bottom.png (viewport, scrolled)
+
+### 2. community-post.html ✅ PASS
+HTTP: 200
+Selectors:
+  .image-gallery       → 1 (expected 1)  ✅
+  .procedure-info-card → 1 (expected 1)  ✅
+  .share-btn-sns       → 4 (expected 4)  ✅
+  .comment-item        → 5 (expected 5)  ✅
+  .medical-disclaimer  → 1 (expected 1)  ✅
+Screenshots:
+  - task-5-community-post-mobile.png (375×812, full page)
+  - task-5-community-post-desktop.png (1280×800, full page)
+  - task-5-community-post-mobile-top.png (viewport)
+  - task-5-community-post-mobile-bottom.png (viewport, scrolled)
+
+### 3. terms.html ✅ PASS
+HTTP: 200
+Selectors:
+  .legal-page → 1 (expected 1) ✅
+  .toc        → 1 (expected 1) ✅
+  h2          → 8 (expected 8) ✅
+Screenshots:
+  - task-5-terms-mobile.png (375×812, full page)
+  - task-5-terms-desktop.png (1280×800, full page)
+
+### 4. privacy.html ✅ PASS
+HTTP: 200
+Selectors:
+  .legal-page   → 1 (expected 1) ✅
+  .toc          → 1 (expected 1) ✅
+  .legal-table  → 3 (expected 3) ✅
+Screenshots:
+  - task-5-privacy-mobile.png (375×812, full page)
+  - task-5-privacy-desktop.png (1280×800, full page)
+
+## Screenshot Summary
+Total: 12 screenshots
+  - Mobile (375×812): 8
+  - Desktop (1280×800): 4
+
+## Overall Result: ALL 4 PAGES PASS ✅
+All selectors verified. All screenshots captured.
+Ready for git commit.
