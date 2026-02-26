@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정보 콘텐츠 — 성형 시술 가이드 | 미녀는 괴로워</title>
+  <meta name="description" content="383개 성형 시술 정보 가이드와 병원 선택 팁 - 미녀는 괴로워">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .articles-toolbar {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .sort-select {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      padding: 8px 12px;
+      font-size: 13px;
+      font-family: inherit;
+      color: var(--text);
+      background: #fff;
+      min-width: 102px;
+      flex-shrink: 0;
+    }
+
+    .procedure-filter-wrap {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border-light);
+      background: #fff;
+    }
+
+    .articles-section {
+      padding: 18px 16px 8px;
+    }
+
+    .article-card {
+      padding: 14px;
+      text-decoration: none;
+    }
+
+    .keyword-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+    }
+
+    @media (min-width: 768px) {
+      .articles-toolbar {
+        align-items: center;
+      }
+
+      .articles-section {
+        padding: 24px 16px 10px;
+      }
+    }
+  </style>
+  <link rel="canonical" href="https://www.theglam.kr/mockup/articles.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdn.prod.website-files.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="정보 콘텐츠 — 성형 시술 가이드 | 미녀는 괴로워">
+  <meta property="og:description" content="383개 성형 시술 정보 가이드와 병원 선택 팁 - 미녀는 괴로워">
+  <meta property="og:url" content="https://www.theglam.kr/mockup/articles.html">
+  <meta property="og:site_name" content="미녀는 괴로워 THE GLAM">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="정보 콘텐츠 — 성형 시술 가이드 | 미녀는 괴로워">
+  <meta name="twitter:description" content="383개 성형 시술 정보 가이드와 병원 선택 팁 - 미녀는 괴로워">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "성형 정보 블로그",
+      "description": "성형 시술 정보, 후기, 가격 비교 — 383개 전문 콘텐츠",
+      "url": "https://www.theglam.kr/mockup/articles.html",
+      "isPartOf": { "@type": "WebSite", "url": "https://www.theglam.kr" }
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="page-hero" style="background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%); padding: 24px 16px 20px;">
+      <h1 style="font-size:20px; font-weight:800; color:var(--text); margin:0 0 4px;">정보 콘텐츠</h1>
+      <p style="font-size:13px; color:var(--text-muted); margin:0;">383개 성형 시술 정보 가이드</p>
+    </section>
+
+    <div style="padding:16px; background:#fff; border-bottom:1px solid var(--border);">
+      <div class="search-bar">
+        <input type="search" placeholder="쌍꺼풀 가격, 코성형 부작용, 회복기간..." style="border:none;outline:none;flex:1;font-size:15px;background:transparent;">
+        <button type="button" style="background:var(--primary);color:#fff;border:none;border-radius:var(--radius-sm);padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;">검색</button>
+      </div>
+    </div>
+
+    <section class="articles-toolbar" aria-label="콘텐츠 유형 필터와 정렬">
+      <div class="content-type-tabs">
+        <button type="button" class="content-type-tab active">전체</button>
+        <button type="button" class="content-type-tab"><span class="tab-dot" style="color:#10B981;"></span>비용비교</button>
+        <button type="button" class="content-type-tab"><span class="tab-dot" style="color:#EF4444;"></span>안전정보</button>
+        <button type="button" class="content-type-tab"><span class="tab-dot" style="color:#3B82F6;"></span>회복관리</button>
+        <button type="button" class="content-type-tab"><span class="tab-dot" style="color:#8B5CF6;"></span>병원선택</button>
+      </div>
+      <select class="sort-select" aria-label="정렬 선택">
+        <option>최신순</option>
+        <option>인기순</option>
+        <option>조회수순</option>
+      </select>
+    </section>
+
+    <div class="procedure-filter-wrap">
+      <div class="filter-bar" aria-label="시술별 필터">
+        <button type="button" class="filter-chip active">전체</button>
+        <button type="button" class="filter-chip">눈</button>
+        <button type="button" class="filter-chip">코</button>
+        <button type="button" class="filter-chip">리프팅</button>
+        <button type="button" class="filter-chip">보톡스</button>
+        <button type="button" class="filter-chip">지방흡입</button>
+        <button type="button" class="filter-chip">윤곽</button>
+        <button type="button" class="filter-chip">피부</button>
+      </div>
+    </div>
+
+    <section class="articles-section" aria-label="기사 목록">
+      <div class="article-grid">
+        <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
+          <div class="article-card-img">이미지</div>
+          <div>
+            <span class="badge" style="background:#10B98120;color:#10B981;margin-bottom:8px;">비용비교</span>
+            <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">쌍꺼풀 수술 가격, 진짜 얼마가 드는 걸까?</h3>
+            <p style="font-size:13px;color:var(--text-muted);margin:0 0 10px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">매몰법부터 절개법까지 실제 가격 비교와 숨겨진 비용까지 꼼꼼히 정리했어요.</p>
+            <div style="font-size:12px;color:var(--text-light);display:flex;gap:8px;flex-wrap:wrap;">
+              <span>김서연 에디터</span>
+              <span>·</span>
+              <span>2026.02.20</span>
+              <span>·</span>
+              <span>👁️ 12340뷰</span>
+              <span>·</span>
+              <span>⏱️ 5분</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
+          <div class="article-card-img">이미지</div>
+          <div>
+            <span class="badge" style="background:#10B98120;color:#10B981;margin-bottom:8px;">비용비교</span>
+            <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">코성형 비용 총정리 — 필러부터 재건술까지</h3>
+            <p style="font-size:13px;color:var(--text-muted);margin:0 0 10px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">코성형 방법별 가격 범위, 마취비·검사비 포함 총비용 실전 가이드.</p>
+            <div style="font-size:12px;color:var(--text-light);display:flex;gap:8px;flex-wrap:wrap;">
+              <span>김서연 에디터</span>
+              <span>·</span>
+              <span>2026.02.18</span>
+              <span>·</span>
+              <span>👁️ 9850뷰</span>
+              <span>·</span>
+              <span>⏱️ 6분</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
+          <div class="article-card-img">이미지</div>
+          <div>
+            <span class="badge" style="background:#10B98120;color:#10B981;margin-bottom:8px;">비용비교</span>
+            <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">지방흡입 가격, 부위별로 얼마나 들까?</h3>
+            <p style="font-size:13px;color:var(--text-muted);margin:0 0 10px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">복부·허벅지·팔뚝별 가격 비교, 이벤트가 vs 실제 총비용 차이.</p>
+            <div style="font-size:12px;color:var(--text-light);display:flex;gap:8px;flex-wrap:wrap;">
+              <span>이다혜 에디터</span>
+              <span>·</span>
+              <span>2026.02.14</span>
+              <span>·</span>
+              <span>👁️ 11200뷰</span>
+              <span>·</span>
+              <span>⏱️ 7분</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
+          <div class="article-card-img">이미지</div>
+          <div>
+            <span class="badge" style="background:#EF444420;color:#EF4444;margin-bottom:8px;">안전정보</span>
+            <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">코 성형 부작용, 미리 알면 막을 수 있어요</h3>
+            <p style="font-size:13px;color:var(--text-muted);margin:0 0 10px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">부작용 발생률과 대처법, 그리고 병원 선택 시 꼭 확인해야 할 체크리스트.</p>
+            <div style="font-size:12px;color:var(--text-light);display:flex;gap:8px;flex-wrap:wrap;">
+              <span>이다혜 에디터</span>
+              <span>·</span>
+              <span>2026.02.15</span>
+              <span>·</span>
+              <span>👁️ 8920뷰</span>
+              <span>·</span>
+              <span>⏱️ 7분</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
+          <div class="article-card-img">이미지</div>
+          <div>
+            <span class="badge" style="background:#EF444420;color:#EF4444;margin-bottom:8px;">안전정보</span>
+            <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">눈 성형 부작용 신호 — 이건 꼭 확인하세요</h3>
+            <p style="font-size:13px;color:var(--text-muted);margin:0 0 10px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">붓기 vs 감염 신호 구분법, 병원 재방문이 필요한 경우 체크리스트.</p>
+            <div style="font-size:12px;color:var(--text-light);display:flex;gap:8px;flex-wrap:wrap;">
+              <span>박지훈 에디터</span>
+              <span>·</span>
+              <span>2026.02.12</span>
+              <span>·</span>
+              <span>👁️ 7430뷰</span>
+              <span>·</span>
+              <span>⏱️ 5분</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
+          <div class="article-card-img">이미지</div>
+          <div>
+            <span class="badge" style="background:#EF444420;color:#EF4444;margin-bottom:8px;">안전정보</span>
+            <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">리프팅 시술, 내 피부에 맞는 걸 어떻게 고를까?</h3>
+            <p style="font-size:13px;color:var(--text-muted);margin:0 0 10px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">울쎄라·써마지·HIFU 차이, 피부 타입별 추천 기준 정리.</p>
+            <div style="font-size:12px;color:var(--text-light);display:flex;gap:8px;flex-wrap:wrap;">
+              <span>김서연 에디터</span>
+              <span>·</span>
+              <span>2026.02.08</span>
+              <span>·</span>
+              <span>👁️ 6120뷰</span>
+              <span>·</span>
+              <span>⏱️ 6분</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
+          <div class="article-card-img">이미지</div>
+          <div>
+            <span class="badge" style="background:#3B82F620;color:#3B82F6;margin-bottom:8px;">회복관리</span>
+            <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">보톡스 효과 언제까지? 지속 기간 완벽 정리</h3>
+            <p style="font-size:13px;color:var(--text-muted);margin:0 0 10px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">부위별 지속 기간, 재시술 타이밍, 비용 대비 효과 분석.</p>
+            <div style="font-size:12px;color:var(--text-light);display:flex;gap:8px;flex-wrap:wrap;">
+              <span>박지훈 에디터</span>
+              <span>·</span>
+              <span>2026.02.10</span>
+              <span>·</span>
+              <span>👁️ 6540뷰</span>
+              <span>·</span>
+              <span>⏱️ 4분</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
+          <div class="article-card-img">이미지</div>
+          <div>
+            <span class="badge" style="background:#3B82F620;color:#3B82F6;margin-bottom:8px;">회복관리</span>
+            <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">쌍꺼풀 수술 회복기간 — 일상 복귀 현실 타임라인</h3>
+            <p style="font-size:13px;color:var(--text-muted);margin:0 0 10px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">수술 직후부터 6개월까지, 붓기 빠지는 시기와 출근·운동 복귀 기준.</p>
+            <div style="font-size:12px;color:var(--text-light);display:flex;gap:8px;flex-wrap:wrap;">
+              <span>이다혜 에디터</span>
+              <span>·</span>
+              <span>2026.02.06</span>
+              <span>·</span>
+              <span>👁️ 8340뷰</span>
+              <span>·</span>
+              <span>⏱️ 5분</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
+          <div class="article-card-img">이미지</div>
+          <div>
+            <span class="badge" style="background:#3B82F620;color:#3B82F6;margin-bottom:8px;">회복관리</span>
+            <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">리프팅 후 관리법 — 효과 오래 가려면?</h3>
+            <p style="font-size:13px;color:var(--text-muted);margin:0 0 10px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">시술 당일 주의사항, 자외선 차단, 마사지 시작 시점 가이드.</p>
+            <div style="font-size:12px;color:var(--text-light);display:flex;gap:8px;flex-wrap:wrap;">
+              <span>박지훈 에디터</span>
+              <span>·</span>
+              <span>2026.02.02</span>
+              <span>·</span>
+              <span>👁️ 5890뷰</span>
+              <span>·</span>
+              <span>⏱️ 4분</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
+          <div class="article-card-img">이미지</div>
+          <div>
+            <span class="badge" style="background:#8B5CF620;color:#8B5CF6;margin-bottom:8px;">병원선택</span>
+            <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">성형외과 고르는 법 — 후기 말고 이것도 보세요</h3>
+            <p style="font-size:13px;color:var(--text-muted);margin:0 0 10px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">자격증 확인, 집도의 직접 상담 여부, 후기 신뢰도 판단 5단계.</p>
+            <div style="font-size:12px;color:var(--text-light);display:flex;gap:8px;flex-wrap:wrap;">
+              <span>김서연 에디터</span>
+              <span>·</span>
+              <span>2026.01.30</span>
+              <span>·</span>
+              <span>👁️ 14200뷰</span>
+              <span>·</span>
+              <span>⏱️ 8분</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
+          <div class="article-card-img">이미지</div>
+          <div>
+            <span class="badge" style="background:#8B5CF620;color:#8B5CF6;margin-bottom:8px;">병원선택</span>
+            <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">온라인 후기 검증법 — 진짜 후기 vs 홍보 후기 구분</h3>
+            <p style="font-size:13px;color:var(--text-muted);margin:0 0 10px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">인증 후기, 사진 후기, 업체 작성 후기를 구분하는 실전 체크포인트.</p>
+            <div style="font-size:12px;color:var(--text-light);display:flex;gap:8px;flex-wrap:wrap;">
+              <span>이다혜 에디터</span>
+              <span>·</span>
+              <span>2026.01.25</span>
+              <span>·</span>
+              <span>👁️ 10500뷰</span>
+              <span>·</span>
+              <span>⏱️ 6분</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
+          <div class="article-card-img">이미지</div>
+          <div>
+            <span class="badge" style="background:#8B5CF620;color:#8B5CF6;margin-bottom:8px;">병원선택</span>
+            <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">첫 상담 전 체크리스트 — 이 질문은 꼭 하세요</h3>
+            <p style="font-size:13px;color:var(--text-muted);margin:0 0 10px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">상담 시 집도의 직접 참여 여부, 수술 방법, 비용 총액 확인 방법.</p>
+            <div style="font-size:12px;color:var(--text-light);display:flex;gap:8px;flex-wrap:wrap;">
+              <span>박지훈 에디터</span>
+              <span>·</span>
+              <span>2026.01.20</span>
+              <span>·</span>
+              <span>👁️ 12800뷰</span>
+              <span>·</span>
+              <span>⏱️ 7분</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div style="text-align:center;padding:24px 16px;">
+      <button type="button" class="btn-outline" style="padding:12px 32px;font-size:15px;">더 많은 기사 보기 (총 383개)</button>
+    </div>
+
+    <section style="padding:20px 16px 32px;">
+      <h2 style="font-size:16px;font-weight:700;margin:0 0 12px;">인기 검색 키워드</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span class="keyword-tag">쌍꺼풀 가격</span>
+        <span class="keyword-tag">코성형 부작용</span>
+        <span class="keyword-tag">보톡스 지속기간</span>
+        <span class="keyword-tag">지방흡입 회복</span>
+        <span class="keyword-tag">리프팅 종류 비교</span>
+        <span class="keyword-tag">성형외과 선택법</span>
+        <span class="keyword-tag">눈성형 후기</span>
+        <span class="keyword-tag">코필러 vs 수술</span>
+        <span class="keyword-tag">얼굴지방흡입</span>
+        <span class="keyword-tag">보톡스 턱</span>
+        <span class="keyword-tag">피부 리프팅</span>
+        <span class="keyword-tag">병원 상담 체크리스트</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="./terms.html">이용약관</a>
+        <a href="./privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="./consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="./index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="./articles.html" class="bottom-nav-item active">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="./reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="./hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="./consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+
+  <script src="./shared-data.js"></script>
+</body>
+</html>

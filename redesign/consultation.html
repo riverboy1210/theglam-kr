@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>무료 상담 신청 | 미녀는 괴로워</title>
+  <meta name="description" content="성형 시술 정보, 병원 비교, 리얼 후기 — 미녀는 괴로워">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .trust-badges {
+      display: flex; gap: 0;
+      background: var(--bg-pink);
+      border-radius: var(--radius-lg);
+      margin: 16px;
+      overflow: hidden;
+    }
+    .trust-badge-item {
+      flex: 1; display: flex; flex-direction: column; align-items: center;
+      padding: 16px 8px; border-right: 1px solid rgba(255,107,157,0.2);
+      text-align: center;
+    }
+    .trust-badge-item:last-child { border-right: none; }
+    .trust-number { font-size: 1.3rem; font-weight: 800; color: var(--primary); line-height: 1; }
+    .trust-label { font-size: 0.72rem; color: var(--text-muted); margin-top: 4px; }
+
+    .consultation-header { padding: 20px 16px 8px; text-align: center; }
+    .consultation-header h1 { font-size: 1.5rem; color: var(--text); margin: 0 0 4px; }
+
+    .consultation-form { padding: 0 16px; }
+    .form-group { margin-bottom: 20px; }
+    .form-label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 6px; color: var(--text); }
+    .required { color: var(--danger); }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 11px 14px;
+      border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+      font-size: 0.9rem; font-family: inherit; outline: none;
+      transition: border-color 0.15s;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--primary); }
+    .radio-group { display: flex; flex-wrap: wrap; gap: 8px; }
+    .radio-option { display: flex; align-items: center; gap: 6px; font-size: 0.875rem; cursor: pointer; }
+    .checkbox-label { display: flex; align-items: flex-start; gap: 8px; font-size: 0.875rem; cursor: pointer; }
+    .submit-btn { width: 100%; padding: 16px; font-size: 1.05rem; margin-top: 8px; }
+
+    .quick-contact { padding: 20px 16px; border-top: 1px solid var(--border); }
+    .quick-contact-title { font-weight: 700; margin-bottom: 12px; }
+    .quick-contact-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+    .quick-btn { flex: 1; min-width: 120px; padding: 12px; text-align: center; text-decoration: none; border-radius: var(--radius-sm); font-weight: 600; cursor: pointer; }
+    .btn-phone { background: #00BCD4; color: #fff; border: none; }
+
+    .faq-section { padding: 20px 16px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-question {
+      padding: 14px 0; font-weight: 600; cursor: pointer; list-style: none;
+      display: flex; justify-content: space-between;
+    }
+    .faq-question::after { content: '＋'; color: var(--primary); }
+    details[open] .faq-question::after { content: '－'; }
+    .faq-answer { padding: 4px 0 14px; color: var(--text-muted); font-size: 0.875rem; line-height: 1.6; }
+
+    .testimonials { padding: 20px 16px; }
+    .testimonial-card { padding: 16px; }
+    .testimonial-author { font-size: 0.75rem; color: var(--text-muted); margin-top: 8px; display: block; }
+    @media (min-width: 768px) {
+      .testimonial-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .consultation-form { max-width: 600px; margin: 0 auto; }
+    }
+  </style>
+  <link rel="canonical" href="https://www.theglam.kr/mockup/consultation.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdn.prod.website-files.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="무료 상담 신청 | 미녀는 괴로워">
+  <meta property="og:description" content="성형 시술 정보, 병원 비교, 리얼 후기 — 미녀는 괴로워">
+  <meta property="og:url" content="https://www.theglam.kr/mockup/consultation.html">
+  <meta property="og:site_name" content="미녀는 괴로워 THE GLAM">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="무료 상담 신청 | 미녀는 괴로워">
+  <meta name="twitter:description" content="성형 시술 정보, 병원 비교, 리얼 후기 — 미녀는 괴로워">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "홈", "item": "https://www.theglam.kr"},
+        {"@type": "ListItem", "position": 2, "name": "무료 상담"}
+      ]
+    }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <section class="trust-badges">
+      <div class="trust-badge-item">
+        <span class="trust-number">12,340건</span>
+        <span class="trust-label">누적 상담</span>
+      </div>
+      <div class="trust-badge-item">
+        <span class="trust-number">★ 4.8</span>
+        <span class="trust-label">만족도</span>
+      </div>
+      <div class="trust-badge-item">
+        <span class="trust-number">3시간</span>
+        <span class="trust-label">평균 응답</span>
+      </div>
+    </section>
+
+    <div class="consultation-header">
+      <h1>무료 상담 신청</h1>
+      <p class="text-muted">전문 상담사가 24시간 내 연락드립니다</p>
+    </div>
+
+    <form class="consultation-form" action="#" onsubmit="return false;">
+      <div class="form-group">
+        <label class="form-label">이름 <span class="required">*</span></label>
+        <input type="text" class="form-input" placeholder="성함을 입력해주세요" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">연락처 <span class="required">*</span></label>
+        <input type="tel" class="form-input" placeholder="010-0000-0000" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">관심 시술 <span class="required">*</span></label>
+        <select class="form-select" required>
+          <option value="">선택해주세요</option>
+          <option>쌍꺼풀</option><option>코성형</option><option>지방흡입</option>
+          <option>리프팅</option><option>윤곽</option><option>보톡스</option>
+          <option>필러</option><option>기타</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">희망 지역</label>
+        <select class="form-select">
+          <option value="">선택해주세요</option>
+          <option>강남</option><option>신사</option><option>압구정</option>
+          <option>잠실</option><option>홍대</option><option>기타</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">예산 범위</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="budget"> 50만원 이하</label>
+          <label class="radio-option"><input type="radio" name="budget"> 50~100만원</label>
+          <label class="radio-option"><input type="radio" name="budget"> 100~200만원</label>
+          <label class="radio-option"><input type="radio" name="budget"> 200~300만원</label>
+          <label class="radio-option"><input type="radio" name="budget"> 300만원 이상</label>
+          <label class="radio-option"><input type="radio" name="budget" checked> 미정</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">추가 메시지</label>
+        <textarea class="form-textarea" rows="3" placeholder="궁금한 점이나 특이사항을 적어주세요 (선택사항)"></textarea>
+      </div>
+
+      <div class="form-group privacy-group">
+        <label class="checkbox-label">
+          <input type="checkbox" required>
+          <span><a href="./privacy.html" style="color:var(--primary);">개인정보 수집 및 이용</a>에 동의합니다 <span class="required">*</span></span>
+        </label>
+        <p class="privacy-notice" style="font-size:0.75rem;color:var(--text-light);margin:4px 0 0 24px;">수집 목적: 상담 서비스 제공 · 보유 기간: 상담 완료 후 6개월</p>
+      </div>
+        <p style="font-size:0.72rem;color:var(--text-light);margin:6px 0 0 24px;line-height:1.5;">※ 본 서비스의 상담 신청은 의료기관의 진료/시술 계약 체결을 대리하거나 전자상거래(통신판매) 거래를 중개하기 위한 기능이 아닙니다. 결제, 예약 확정, 청약의 접수·승낙 등 거래의 성립 과정에 관여하지 않으며, 의료서비스 계약은 이용자와 해당 의료기관 간에 별도로 이루어집니다.</p>
+
+      <button type="submit" class="btn-primary submit-btn">💬 무료 상담 신청하기</button>
+    </form>
+
+    <div class="quick-contact">
+      <p class="quick-contact-title">바로 연락하기</p>
+      <div class="quick-contact-buttons">
+        <button type="button" class="btn-kakao quick-btn">💛 카카오톡 상담</button>
+        <a href="tel:0233333539" class="btn-phone quick-btn">📞 전화 상담</a>
+        <a href="mailto:hello@theglam.kr" class="btn-outline quick-btn">✉️ 이메일</a>
+      </div>
+    </div>
+
+    <section class="faq-section">
+      <h2 class="section-title">자주 묻는 질문</h2>
+
+      <details class="faq-item">
+        <summary class="faq-question">상담 신청하면 바로 수술해야 하나요?</summary>
+        <div class="faq-answer">아닙니다. 상담은 정보를 얻기 위한 첫 걸음일 뿐입니다. 상담 후 충분히 고민하시고 결정하셔도 됩니다. 당사는 어떠한 수술도 강권하지 않습니다.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">어떤 병원이 연락을 주나요?</summary>
+        <div class="faq-answer">선택하신 관심 시술과 희망 지역에 맞는 병원을 연결해드립니다. 당사는 특정 병원을 우선 추천하지 않으며, 여러 병원을 비교하실 수 있도록 돕습니다.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">상담 비용이 있나요?</summary>
+        <div class="faq-answer">모든 상담은 완전히 무료입니다. 플랫폼 이용 요금도 없습니다. 병원과 직접 계약하실 때 발생하는 시술 비용만 부담하시면 됩니다.</div>
+      </details>
+    </section>
+
+    <section style="padding:0 16px 8px;">
+      <div class="related-articles">
+        <div class="related-articles-header">
+          <span class="related-articles-title">📖 상담 전 읽어보면 좋은 글</span>
+          <a href="./articles.html" class="related-articles-more">더보기 ›</a>
+        </div>
+        <a href="./article.html" class="article-card-horizontal">
+          <div class="article-thumb">이미지</div>
+          <div class="article-info">
+            <span class="badge" style="background:#8B5CF620;color:#8B5CF6;font-size:11px;padding:2px 8px;margin-bottom:4px;display:inline-block;">병원선택</span>
+            <div class="article-title">첫 상담 전 체크리스트 — 이 질문은 꼭 하세요</div>
+            <div class="article-meta"><span>박지훈 에디터</span><span>·</span><span>2026.01.20</span><span>·</span><span>👁️ 12,800뷰</span></div>
+          </div>
+        </a>
+        <a href="./article.html" class="article-card-horizontal">
+          <div class="article-thumb">이미지</div>
+          <div class="article-info">
+            <span class="badge" style="background:#10B98120;color:#10B981;font-size:11px;padding:2px 8px;margin-bottom:4px;display:inline-block;">비용비교</span>
+            <div class="article-title">시술 비용, 상담 시 꼭 물어볼 5가지</div>
+            <div class="article-meta"><span>김서연 에디터</span><span>·</span><span>2026.02.20</span><span>·</span><span>👁️ 12,340뷰</span></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2 class="section-title">상담 후기</h2>
+      <div class="testimonial-cards">
+        <div class="card testimonial-card">
+          <div class="rating">★★★★★</div>
+          <p>"상담 받고 좋은 병원 소개받았어요! 처음엔 막연했는데 전문 상담사가 친절하게 설명해줘서 결정하는 데 큰 도움이 됐습니다."</p>
+          <span class="testimonial-author">— 쌍꺼풀 수술 후기 · 강남구 거주</span>
+        </div>
+        <div class="card testimonial-card">
+          <div class="rating">★★★★★</div>
+          <p>"여러 병원을 비교해서 선택할 수 있어서 좋았어요. 가격도 생각보다 합리적이었고 상담도 빠르게 이루어졌어요."</p>
+          <span class="testimonial-author">— 코 필러 상담 후기 · 서초구 거주</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="./terms.html">이용약관</a>
+        <a href="./privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA BAR -->
+  <div class="floating-cta">
+    <a href="./consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <!-- BOTTOM NAV (모바일 전용) -->
+  <nav class="bottom-nav">
+    <a href="./index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="./articles.html" class="bottom-nav-item">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="./reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="./hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="./consultation.html" class="bottom-nav-item active">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+
+  <script src="./shared-data.js"></script>
+  <script>
+    // Override floating CTA for consultation page
+    document.querySelector('.floating-cta').innerHTML = '<a href="tel:0233333539" style="color:#fff;font-size:1rem;font-weight:700;text-decoration:none;display:block;width:100%;text-align:center;padding:16px;">📞 전화로 바로 상담 · 02-333-3539</a>';
+    document.querySelector('.floating-cta').style.background = '#00BCD4';
+  </script>
+</body>
+</html>

@@ -1,108 +1,574 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>THE GLAM | 성형 가격·안전·병원선택 인텐트 허브</title>
-  <meta name="description" content="강남언니·바비톡 유입 사용자를 위한 가격 비교, 안전/회복, 병원 선택 가이드를 제공하는 THE GLAM 인텐트 허브">
-  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미녀는 괴로워 — 성형 정보 & 리얼 후기 플랫폼 | THE GLAM</title>
+  <meta name="description" content="성형 시술 정보, 병원 비교, 리얼 후기 — 미녀는 괴로워">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .hero-banner {
+      background: linear-gradient(135deg, #FF6B9D 0%, #8B5CF6 100%);
+      color: #fff;
+      border-radius: 20px;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 16px 28px rgba(139, 92, 246, 0.2);
+      margin-bottom: 16px;
+    }
+
+    .hero-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.2);
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      margin: 0;
+      line-height: 1.35;
+      font-size: 1.55rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-subtitle {
+      margin: 10px 0 18px;
+      opacity: 0.95;
+      font-weight: 500;
+    }
+
+    .hero-cta {
+      background: #fff;
+      color: #b83270;
+    }
+
+    .popular-tags {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 2px 0 10px;
+      margin-bottom: 14px;
+      scrollbar-width: thin;
+    }
+
+    .category-tabs {
+      position: sticky;
+      top: 64px;
+      z-index: 140;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(6px);
+      padding: 10px 0;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .home-section {
+      margin-bottom: 24px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .card-body {
+      padding: 12px;
+    }
+
+    .card-title {
+      margin: 8px 0 6px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .meta-inline {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+    }
+
+    .badge-green {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .badge-red {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .badge-purple {
+      background: #ede9fe;
+      color: #6d28d9;
+    }
+
+    .price-card {
+      padding: 14px;
+    }
+
+    .price-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .price-value {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .hospital-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 8px 0;
+    }
+
+    .hospital-name {
+      margin: 8px 0 4px;
+      font-size: 0.96rem;
+      font-weight: 800;
+    }
+
+    .hospital-location {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .event-row {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+
+    .event-card {
+      min-width: 260px;
+      padding: 14px;
+      border-radius: var(--radius);
+      color: #fff;
+      background: linear-gradient(145deg, #ff7ca8 0%, #f05392 100%);
+      box-shadow: 0 10px 18px rgba(240, 83, 146, 0.28);
+    }
+
+    .event-card:nth-child(2) {
+      background: linear-gradient(145deg, #8b5cf6 0%, #6366f1 100%);
+      box-shadow: 0 10px 18px rgba(99, 102, 241, 0.28);
+    }
+
+    .event-title {
+      margin: 0 0 4px;
+      font-size: 0.95rem;
+      font-weight: 800;
+    }
+
+    .event-sub {
+      margin: 0 0 10px;
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    .event-price {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .event-period {
+      margin: 0;
+      font-size: 0.76rem;
+      opacity: 0.9;
+    }
+
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .content-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .event-row {
+        overflow: visible;
+      }
+
+      .event-card {
+        flex: 1;
+        min-width: 0;
+      }
+    }
+  </style>
+  <link rel="canonical" href="https://www.theglam.kr/mockup/index.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdn.prod.website-files.com">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="THE GLAM">
-  <meta property="og:description" content="가격 비교, 안전/회복, 병원 선택 의도를 빠르게 해결하는 뷰티 인텐트 허브">
-  <meta property="og:url" content="https://www.theglam.kr/">
-  <meta property="og:site_name" content="THE GLAM">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="THE GLAM">
-  <meta name="twitter:description" content="강남언니·바비톡 유입 사용자 의도 대응: 가격/안전/병원선택 가이드">
-  <link rel="canonical" href="https://www.theglam.kr/">
-  <link rel="stylesheet" href="./styles.css">
-  <script type="application/ld+json" id="schema-json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "THE GLAM",
-    "description": "Intent-driven beauty decision hub for price, safety, and clinic selection",
-    "url": "https://www.theglam.kr/",
-    "inLanguage": "ko-KR"
-  }
+  <meta property="og:title" content="미녀는 괴로워 — 성형 정보 &amp; 리얼 후기 플랫폼 | THE GLAM">
+  <meta property="og:description" content="성형 시술 정보, 병원 비교, 리얼 후기 — 미녀는 괴로워">
+  <meta property="og:url" content="https://www.theglam.kr/mockup/index.html">
+  <meta property="og:site_name" content="미녀는 괴로워 THE GLAM">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="미녀는 괴로워 — 성형 정보 &amp; 리얼 후기 플랫폼 | THE GLAM">
+  <meta name="twitter:description" content="성형 시술 정보, 병원 비교, 리얼 후기 — 미녀는 괴로워">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "미녀는 괴로워",
+      "alternateName": "THE GLAM",
+      "url": "https://www.theglam.kr",
+      "description": "성형 시술 정보, 병원 비교, 리얼 후기 플랫폼",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.theglam.kr/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "미녀는 괴로워",
+        "alternateName": "THE GLAM",
+        "url": "https://www.theglam.kr",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+82-2-333-3539",
+          "email": "hello@theglam.kr",
+          "contactType": "customer service",
+          "availableLanguage": "Korean"
+        }
+      }
+    }
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#content">본문으로 건너뛰기</a>
 
   <header class="site-header">
-    <div class="logo">THE GLAM</div>
-    <nav class="main-nav" aria-label="주요 메뉴">
-      <a href="#map">Insight Map</a>
-      <a href="#method">Method</a>
-      <a href="#lab">Scenario Lab</a>
-      <a href="#intent">Intent</a>
-      <a href="#funnel">Funnel</a>
-      <a href="#ethics">Ethics</a>
-    </nav>
+    <div class="header-inner">
+      <a href="./index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
   </header>
 
-  <main id="content">
-    <section class="hero-block">
-      <p class="eyebrow">ORIGINAL FRAMEWORK-DRIVEN DESIGN</p>
-      <h1>복제가 아닌,<br>사고 모델 기반의<br>신규 정보 경험</h1>
-      <p class="hero-copy">
-        이 페이지는 특정 사이트의 표현을 재사용하지 않고,
-        "관찰-연결-패턴-종합"과 "문제 재정의"를 핵심 축으로 설계한 독립 구조입니다.
-      </p>
-      <div class="cta-row">
-        <button type="button" class="btn primary" data-scroll="#map">지도 보기</button>
-        <button type="button" class="btn" data-scroll="#method">설계 원리 보기</button>
+  <main class="main-content">
+    <div class="container">
+      <section class="hero-banner">
+        <div class="hero-inner">
+          <div class="hero-badge">🔥 이번 주 인기</div>
+          <h1 class="hero-title">성형 전, 미녀는 괴로워에서<br>먼저 알아보세요</h1>
+          <p class="hero-subtitle">리얼 후기 · 병원 비교 · 가격 정보</p>
+          <a href="./consultation.html" class="btn-primary hero-cta">무료 상담 받아보기</a>
+        </div>
+      </section>
+
+      <div class="popular-tags">
+        <span class="chip">#쌍꺼풀</span><span class="chip">#코성형</span><span class="chip">#리프팅</span>
+        <span class="chip">#보톡스</span><span class="chip">#지방흡입</span><span class="chip">#윤곽</span>
       </div>
-    </section>
 
-    <section id="map" class="map-section panel">
-      <h2>Insight Map (뼈대 변경 핵심)</h2>
-      <p class="section-note">기존 뉴스형 나열 대신, 질문 중심 맵 구조로 정보 탐색을 재구성했습니다.</p>
-      <div class="map-grid" id="map-grid"></div>
-    </section>
+      <div class="filter-bar category-tabs">
+        <button type="button" class="filter-chip active">전체</button>
+        <button type="button" class="filter-chip">👁️ 눈</button>
+        <button type="button" class="filter-chip">👃 코</button>
+        <button type="button" class="filter-chip">😊 윤곽</button>
+        <button type="button" class="filter-chip">💉 보톡스</button>
+        <button type="button" class="filter-chip">✨ 리프팅</button>
+        <button type="button" class="filter-chip">💊 지방흡입</button>
+        <button type="button" class="filter-chip">🌸 피부</button>
+      </div>
 
-    <section id="method" class="panel method-section">
-      <h2>Method Stack</h2>
-      <div class="stack" id="method-stack"></div>
-    </section>
+      <section class="home-section">
+        <div class="section-header">
+          <h2 class="section-title">실시간 인기 후기</h2>
+          <a href="./reviews.html" class="section-more">더보기 ›</a>
+        </div>
+        <div class="content-grid">
+          <article class="card card-hover">
+            <div class="img-placeholder" style="height:160px">이미지</div>
+            <div class="card-body">
+              <span class="badge badge-hot">쌍꺼풀</span>
+              <p class="meta-inline" style="margin: 8px 0 4px;"><span class="rating">★ 4.8</span><span class="text-muted">(후기 184)</span></p>
+              <p class="card-title">자연유착 쌍꺼풀 후기, 붓기 관리가 핵심이었어요.</p>
+              <p class="card-meta"><span>♥ 326</span><span>📅 2026.02.22</span></p>
+            </div>
+          </article>
+          <article class="card card-hover">
+            <div class="img-placeholder" style="height:160px">이미지</div>
+            <div class="card-body">
+              <span class="badge badge-hot">보톡스</span>
+              <p class="meta-inline" style="margin: 8px 0 4px;"><span class="rating">★ 4.6</span><span class="text-muted">(후기 132)</span></p>
+              <p class="card-title">턱 보톡스 2주 차, 라인 정리 체감 시점 공유해요.</p>
+              <p class="card-meta"><span>♥ 214</span><span>📅 2026.02.20</span></p>
+            </div>
+          </article>
+          <article class="card card-hover">
+            <div class="img-placeholder" style="height:160px">이미지</div>
+            <div class="card-body">
+              <span class="badge badge-hot">리프팅</span>
+              <p class="meta-inline" style="margin: 8px 0 4px;"><span class="rating">★ 4.7</span><span class="text-muted">(후기 96)</span></p>
+              <p class="card-title">HIFU 리프팅 리얼 후기, 통증과 회복 기간 정리.</p>
+              <p class="card-meta"><span>♥ 179</span><span>📅 2026.02.19</span></p>
+            </div>
+          </article>
+        </div>
+      </section>
 
-    <section id="lab" class="panel lab-section">
-      <h2>Scenario Lab</h2>
-      <p class="section-note">카테고리 페이지 대신, 시나리오 기반 의사결정 실험 공간으로 변경했습니다.</p>
-      <div class="lab-cards" id="lab-cards"></div>
-    </section>
+      <section class="home-section">
+        <div class="section-header">
+          <h2 class="section-title">에디터 추천</h2>
+          <a href="./articles.html" class="section-more">더보기 ›</a>
+        </div>
+        <div class="content-grid">
+          <a href="./article.html" class="card card-hover" style="text-decoration: none;">
+            <div class="img-placeholder" style="height:140px">이미지</div>
+            <div class="card-body">
+              <span class="badge badge-green">비용비교</span>
+              <p class="card-title">쌍꺼풀 수술, 방식별 가격대와 비용 체크포인트</p>
+              <p class="card-meta"><span>2026.02.18</span><span>12,340뷰</span></p>
+            </div>
+          </a>
+          <a href="./article.html" class="card card-hover" style="text-decoration: none;">
+            <div class="img-placeholder" style="height:140px">이미지</div>
+            <div class="card-body">
+              <span class="badge badge-red">안전정보</span>
+              <p class="card-title">코성형 전 꼭 확인해야 할 부작용 체크리스트</p>
+              <p class="card-meta"><span>2026.02.17</span><span>8,920뷰</span></p>
+            </div>
+          </a>
+          <a href="./article.html" class="card card-hover" style="text-decoration: none;">
+            <div class="img-placeholder" style="height:140px">이미지</div>
+            <div class="card-body">
+              <span class="badge badge-purple">회복/효과</span>
+              <p class="card-title">보톡스 효과 지속 기간, 재시술 타이밍 가이드</p>
+              <p class="card-meta"><span>2026.02.16</span><span>6,540뷰</span></p>
+            </div>
+          </a>
+        </div>
+      </section>
 
-    <section id="intent" class="panel intent-section">
-      <h2>Intent Landing (강남언니/바비톡 유입 대응)</h2>
-      <p class="section-note">외부 플랫폼에서 검색으로 넘어오는 사용자 의도를 빠르게 분류해, 이탈 없이 다음 행동으로 연결합니다.</p>
-      <div class="intent-grid" id="intent-grid"></div>
-    </section>
+      <section style="padding:0 16px 24px;">
+        <div class="section-header">
+          <h2>최신 정보 기사</h2>
+          <a href="./articles.html" class="section-more">더보기 ›</a>
+        </div>
+        <div class="related-articles" style="margin:0;">
+          <a href="./article.html" class="article-card-horizontal">
+            <div class="article-thumb">이미지</div>
+            <div class="article-info">
+              <span class="badge" style="background:#10B98120;color:#10B981;font-size:11px;padding:2px 8px;margin-bottom:4px;display:inline-block;">비용비교</span>
+              <div class="article-title">쌍꺼풀 수술 가격, 진짜 얼마가 드는 걸까?</div>
+              <div class="article-meta"><span>김서연 에디터</span><span>·</span><span>2026.02.20</span><span>·</span><span>👁️ 12,340뷰</span></div>
+            </div>
+          </a>
+          <a href="./article.html" class="article-card-horizontal">
+            <div class="article-thumb">이미지</div>
+            <div class="article-info">
+              <span class="badge" style="background:#EF444420;color:#EF4444;font-size:11px;padding:2px 8px;margin-bottom:4px;display:inline-block;">안전정보</span>
+              <div class="article-title">눈 성형 부작용 신호 — 이건 꼭 확인하세요</div>
+              <div class="article-meta"><span>박지훈 에디터</span><span>·</span><span>2026.02.12</span><span>·</span><span>👁️ 7,430뷰</span></div>
+            </div>
+          </a>
+          <a href="./article.html" class="article-card-horizontal">
+            <div class="article-thumb">이미지</div>
+            <div class="article-info">
+              <span class="badge" style="background:#3B82F620;color:#3B82F6;font-size:11px;padding:2px 8px;margin-bottom:4px;display:inline-block;">회복관리</span>
+              <div class="article-title">쌍꺼풀 수술 회복기간 — 일상 복귀 현실 타임라인</div>
+              <div class="article-meta"><span>이다혜 에디터</span><span>·</span><span>2026.02.06</span><span>·</span><span>👁️ 8,340뷰</span></div>
+            </div>
+          </a>
+        </div>
+      </section>
 
-    <section id="funnel" class="panel funnel-section">
-      <h2>Traffic to Conversion Funnel</h2>
-      <div class="funnel-steps" id="funnel-steps"></div>
-      <div class="cta-surface" id="cta-surface"></div>
-    </section>
+      <section class="home-section">
+        <div class="section-header">
+          <h2 class="section-title">시술별 가격 비교</h2>
+          <a href="./hospitals.html" class="section-more">더보기 ›</a>
+        </div>
+        <div class="content-grid">
+          <article class="card card-hover price-card">
+            <div class="price-top">
+              <strong>쌍꺼풀</strong>
+              <span class="tag tag-category">눈</span>
+            </div>
+            <div class="price-value">50~80만원</div>
+            <a href="./hospitals.html" class="btn-outline">비교하기</a>
+          </article>
+          <article class="card card-hover price-card">
+            <div class="price-top">
+              <strong>코성형</strong>
+              <span class="tag tag-category">코</span>
+            </div>
+            <div class="price-value">180~350만원</div>
+            <a href="./hospitals.html" class="btn-outline">비교하기</a>
+          </article>
+          <article class="card card-hover price-card">
+            <div class="price-top">
+              <strong>리프팅</strong>
+              <span class="tag tag-category">리프팅</span>
+            </div>
+            <div class="price-value">70~140만원</div>
+            <a href="./hospitals.html" class="btn-outline">비교하기</a>
+          </article>
+        </div>
+      </section>
 
-    <section id="ethics" class="panel ethics-section">
-      <h2>Ethics & Legal Safety</h2>
-      <ul>
-        <li>특정 사이트 문구·이미지·구조를 직접 복제하지 않음</li>
-        <li>브랜드 고유 톤과 독립 내비게이션 구조 사용</li>
-        <li>원본과 다른 정보 아키텍처(질문형 맵 + 시나리오 랩) 채택</li>
-      </ul>
-      <p class="legal-note">본 시안은 참고 자료의 "사고 방법"만 반영한 신규 창작 레이아웃입니다.</p>
-      <div class="policy-box" id="policy-box"></div>
-    </section>
+      <section class="home-section">
+        <div class="section-header">
+          <h2 class="section-title">이달의 추천 병원</h2>
+          <a href="./hospitals.html" class="section-more">더보기 ›</a>
+        </div>
+        <div class="content-grid">
+          <article class="card card-hover">
+            <div class="img-placeholder" style="height:120px">이미지</div>
+            <div class="card-body">
+              <h3 class="hospital-name">강남 AA성형외과</h3>
+              <p class="hospital-location">서울 강남구</p>
+              <div class="hospital-tags">
+                <span class="tag">쌍꺼풀</span>
+                <span class="tag">코성형</span>
+                <span class="tag">리프팅</span>
+              </div>
+              <p class="meta-inline" style="margin: 0 0 8px;"><span class="rating">★ 4.7</span><span class="text-muted">리뷰 328개</span></p>
+              <div class="price-tag" style="margin-bottom: 10px;"><span class="price-original">89만원</span><span class="price-discount">69만원</span></div>
+              <a href="./consultation.html" class="btn-primary">무료상담</a>
+            </div>
+          </article>
+          <article class="card card-hover">
+            <div class="img-placeholder" style="height:120px">이미지</div>
+            <div class="card-body">
+              <h3 class="hospital-name">신사 BB클리닉</h3>
+              <p class="hospital-location">서울 서초구</p>
+              <div class="hospital-tags">
+                <span class="tag">보톡스</span>
+                <span class="tag">필러</span>
+                <span class="tag">피부</span>
+              </div>
+              <p class="meta-inline" style="margin: 0 0 8px;"><span class="rating">★ 4.5</span><span class="text-muted">리뷰 215개</span></p>
+              <div class="price-tag" style="margin-bottom: 10px;"><span class="price-discount">29만원</span></div>
+              <a href="./consultation.html" class="btn-primary">무료상담</a>
+            </div>
+          </article>
+          <article class="card card-hover">
+            <div class="img-placeholder" style="height:120px">이미지</div>
+            <div class="card-body">
+              <h3 class="hospital-name">압구정 CC의원</h3>
+              <p class="hospital-location">서울 강남구</p>
+              <div class="hospital-tags">
+                <span class="tag">윤곽</span>
+                <span class="tag">리프팅</span>
+                <span class="tag">지방흡입</span>
+              </div>
+              <p class="meta-inline" style="margin: 0 0 8px;"><span class="rating">★ 4.8</span><span class="text-muted">리뷰 541개</span></p>
+              <div class="price-tag" style="margin-bottom: 10px;"><span class="price-original">159만원</span><span class="price-discount">129만원</span></div>
+              <a href="./consultation.html" class="btn-primary">무료상담</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-section">
+        <div class="section-header">
+          <h2 class="section-title">진행 중인 이벤트</h2>
+          <a href="./hospitals.html" class="section-more">더보기 ›</a>
+        </div>
+        <div class="event-row">
+          <article class="event-card">
+            <p class="event-title">강남 AA성형외과 · 자연유착 쌍꺼풀</p>
+            <p class="event-sub">첫 방문 고객 대상 특별 혜택</p>
+            <div class="event-price">69만원</div>
+            <p class="event-period">기간: 2026.02.01 ~ 2026.03.31</p>
+          </article>
+          <article class="event-card">
+            <p class="event-title">압구정 CC의원 · 리프팅 패키지</p>
+            <p class="event-sub">상담 완료 시 시술비 추가 할인</p>
+            <div class="event-price">129만원</div>
+            <p class="event-period">기간: 2026.02.10 ~ 2026.03.20</p>
+          </article>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer">
-    <p id="footer-brand">© 2026 THE GLAM</p>
-    <p id="footer-contact">contact: hello@theglam.kr | 02-333-3539</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="./terms.html">이용약관</a>
+        <a href="./privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼은 의료광고 심의 기준을 준수하며, 특정 의료기관의 우열을 단정하거나 환자 유치를 알선하지 않습니다. 시술 결과는 개인에 따라 다를 수 있습니다.</p>
+    </div>
   </footer>
 
-  <script src="./content.js"></script>
-  <script src="./script.js"></script>
+  <div class="floating-cta">
+    <a href="./consultation.html" class="floating-cta-btn">💬 무료 상담 받아보기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="./index.html" class="bottom-nav-item active">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="./articles.html" class="bottom-nav-item">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="./reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="./hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
+    </a>
+    <a href="./consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+
+  <script src="./shared-data.js"></script>
 </body>
 </html>

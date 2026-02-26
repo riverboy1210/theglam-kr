@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>커뮤니티 | 미녀는 괴로워</title>
+  <meta name="description" content="시술 후기 상세 — 이미지 갤러리, 시술 정보, 댓글, 공유, 의료 자문위원 정보">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .post-detail-layout { max-width: 720px; margin: 0 auto; }
+    @media (min-width: 1024px) {
+      .post-detail-wrap { display: grid; grid-template-columns: 1fr 280px; gap: 24px; max-width: 1100px; margin: 0 auto; }
+      .post-detail-layout { max-width: none; }
+    }
+    .bottom-nav-item.active { color: var(--primary); }
+    .rating-stars { color: #FFB800; }
+  </style>
+  <link rel="canonical" href="https://www.theglam.kr/mockup-v2/community-post.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdn.prod.website-files.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="글램바비 후기 상세 | THE GLAM">
+  <meta property="og:description" content="시술 후기 상세 — 이미지 갤러리, 시술 정보, 댓글, 공유, 의료 자문위원 정보">
+  <meta property="og:url" content="https://www.theglam.kr/mockup-v2/community-post.html">
+  <meta property="og:site_name" content="미녀는 괴로워 THE GLAM">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="글램바비 후기 상세 | THE GLAM">
+  <meta name="twitter:description" content="시술 후기 상세 — 이미지 갤러리, 시술 정보, 댓글, 공유, 의료 자문위원 정보">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "홈", "item": "https://www.theglam.kr"},
+        {"@type": "ListItem", "position": 2, "name": "글램바비", "item": "https://www.theglam.kr/mockup-v2/community.html"},
+        {"@type": "ListItem", "position": 3, "name": "게시글"}
+      ]
+    }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo">
+        <span class="logo-ko">미녀는 괴로워</span>
+        <span class="logo-en">THE GLAM</span>
+      </a>
+      <div class="header-search">
+        <input type="search" class="header-search-input" placeholder="쌍꺼풀, 코성형, 리프팅...">
+        <button type="button" class="header-search-btn">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="post-detail-wrap">
+
+        <div class="post-detail-layout" id="post-main">
+
+          <div style="padding: 8px 0;">
+            <a href="./community.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--text-muted);font-size:0.875rem;text-decoration:none;">← 글램바비로 돌아가기</a>
+          </div>
+
+          <div class="procedure-tags" style="padding: 0 0 8px;" id="post-tags">
+            <span class="tag--proc-primary">#쌍꺼풀</span>
+            <span class="tag--proc-secondary">#매몰법</span>
+            <span class="tag--proc-clinic">눈</span>
+          </div>
+          <h1 id="post-title" style="font-size: 1.2rem; font-weight: 800; margin: 0 0 12px; line-height: 1.4;">쌍꺼풀 매몰법 3개월 후기 — 생각보다 자연스러워요</h1>
+
+          <div class="author-section">
+            <div class="author-left">
+              <div class="avatar" id="author-avatar" style="width:40px;height:40px;font-size:1.1rem;flex-shrink:0;">🐰</div>
+              <div>
+                <div class="author-name" id="author-name">익명의 토끼 🐰</div>
+                <div class="author-sub" id="author-sub">3일 전 · 조회 1,820</div>
+              </div>
+            </div>
+            <span class="badge badge-verified">✓ 인증후기</span>
+          </div>
+
+          <div class="image-gallery">
+            <div class="gallery-main" id="gallery-main">
+              <span style="font-size:2rem;">📷</span>
+              <span style="font-size:0.9rem;font-weight:600;" id="gallery-label">Before</span>
+              <span style="font-size:0.75rem;color:var(--text-muted);">이미지 플레이스홀더</span>
+            </div>
+            <div class="gallery-dots">
+              <button type="button" class="gallery-dot active" onclick="switchSlide(0,'Before')"></button>
+              <button type="button" class="gallery-dot" onclick="switchSlide(1,'After 1주')"></button>
+              <button type="button" class="gallery-dot" onclick="switchSlide(2,'After 1개월')"></button>
+            </div>
+            <div class="img-disclaimer">※ 시술 결과는 개인에 따라 다를 수 있습니다 (의료법 제56조)</div>
+          </div>
+
+          <div class="procedure-info-card">
+            <h3>💉 시술 정보</h3>
+            <div class="info-row"><span class="info-label">시술명</span><span class="info-value" id="info-procedure">쌍꺼풀 매몰법</span></div>
+            <div class="info-row"><span class="info-label">병원</span><span class="info-value" id="info-hospital">강남 AA성형외과</span></div>
+            <div class="info-row"><span class="info-label">비용</span><span class="info-value" id="info-cost">65만원</span></div>
+            <div class="info-row"><span class="info-label">회복기간</span><span class="info-value" id="info-recovery">약 2주</span></div>
+            <div class="info-row"><span class="info-label">만족도</span><span class="info-value"><span class="rating-stars">★★★★½</span> <span id="info-rating">4.5</span></span></div>
+          </div>
+
+          <div style="margin: 16px 0; line-height: 1.8; font-size: 0.9rem; color: var(--text);">
+            <p>강남 AA성형외과에서 쌍꺼풀 매몰법 받은 지 3개월이 됐어요. 처음엔 붓기가 너무 심해서 걱정됐는데 생각보다 빨리 빠졌고 지금은 정말 자연스러워요.</p>
+            <p style="margin-top:12px;">수술 전 상담 때 원하는 스타일 사진을 가져갔더니 선생님이 꼼꼼하게 설명해주셨어요. 수술 자체는 30분 정도 걸렸고, 당일은 집에서 아이스팩으로 붓기 관리를 했어요.</p>
+            <p style="margin-top:12px;">1주차: 많이 부어있고 실이 보여서 외출이 힘들었어요.<br>2주차: 실밥 제거 후 붓기가 많이 빠졌어요.<br>1개월: 거의 자연스러워졌고 친구들도 잘 모르더라고요.<br>3개월: 지금은 완전히 정착해서 너무 만족해요! ❤️</p>
+          </div>
+
+          <div class="medical-disclaimer">
+            <span class="disc-icon">⚠️</span>본 후기는 개인 경험담으로, 의료적 조언이나 진단을 대체하지 않습니다. 시술 결과는 개인에 따라 크게 다를 수 있으며, 반드시 자격을 갖춘 의료 전문가와 상담하시기 바랍니다. (의료법 제56조)
+          </div>
+
+          <div class="share-section">
+            <p class="share-label">📢 이 후기 공유하기</p>
+            <div class="share-buttons">
+              <button type="button" class="share-btn-sns kakao" onclick="alert('카카오톡 공유 SDK 연동 예정')">
+                <span class="share-icon">💬</span>
+                <span>카카오톡</span>
+              </button>
+              <button type="button" class="share-btn-sns naver" onclick="alert('네이버 블로그 공유 예정')">
+                <span class="share-icon">N</span>
+                <span>네이버</span>
+              </button>
+              <button type="button" class="share-btn-sns instagram" onclick="alert('인스타그램 공유 예정')">
+                <span class="share-icon">📷</span>
+                <span>인스타</span>
+              </button>
+              <button type="button" class="share-btn-sns copy" onclick="copyLink()">
+                <span class="share-icon">🔗</span>
+                <span>링크복사</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="comments-section">
+            <h3 class="comments-title">댓글 <span id="comment-count">5</span></h3>
+            <div class="comment-input-wrap">
+              <div class="avatar" style="width:32px;height:32px;font-size:0.9rem;flex-shrink:0;">🌸</div>
+              <input class="comment-input" type="text" placeholder="익명으로 댓글을 남겨보세요...">
+              <button type="button" class="comment-submit">등록</button>
+            </div>
+            <div class="comment-list" id="comment-list"></div>
+          </div>
+
+        </div>
+
+        <aside id="post-sidebar" style="display:none;">
+          <div class="trust-section">
+            <div class="trust-section-title">🏥 의료 자문위원</div>
+            <p style="font-size:0.75rem;color:var(--text-muted);margin-bottom:10px;">본 플랫폼의 의료 정보는 전문가 자문을 통해 검토됩니다.</p>
+            <div id="trust-list"></div>
+          </div>
+          <div style="margin-top:20px;">
+            <div class="trust-section-title">📌 비슷한 후기</div>
+            <div id="related-posts"></div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <div class="post-action-bar">
+    <button type="button" class="post-like-btn" id="like-btn">
+      <span id="like-icon">🤍</span>
+      <span id="like-count">247</span>
+    </button>
+    <button type="button" class="post-comment-btn" onclick="document.querySelector('.comment-input').focus()">💬 댓글 쓰기</button>
+    <button type="button" class="post-save-btn" id="save-btn">🔖</button>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>THE GLAM · 미녀는 괴로워</strong>
+        <p style="margin: 4px 0 0;">성형 시술 정보 플랫폼 | theglam.kr</p>
+      </div>
+      <div class="footer-links">
+        <a href="./terms.html">이용약관</a>
+        <a href="./privacy.html">개인정보처리방침</a>
+        <a href="mailto:hello@theglam.kr">문의하기</a>
+      </div>
+      <div style="margin: 8px 0; display: flex; gap: 16px; font-size: 0.8rem;">
+        <a href="mailto:hello@theglam.kr" style="color: var(--text-muted); text-decoration: none;">hello@theglam.kr</a>
+        <a href="tel:0233333539" style="color: var(--text-muted); text-decoration: none;">02-333-3539</a>
+      </div>
+      <p class="footer-disclaimer">본 플랫폼의 모든 후기 및 정보는 개인 경험담으로, 의료적 조언이나 진단을 대체하지 않습니다. 시술 결과는 개인에 따라 다를 수 있으며, 반드시 자격을 갖춘 의료 전문가와 상담하시기 바랍니다. (의료법 제56조)</p>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="./community.html" class="floating-cta-btn">💬 글램바비 참여하기</a>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="./index.html" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="./community.html" class="bottom-nav-item active">
+      <span class="nav-icon">💬</span>
+      <span>글램바비</span>
+    </a>
+    <a href="./articles.html" class="bottom-nav-item">
+      <span class="nav-icon">🔍</span>
+      <span>검색</span>
+    </a>
+    <a href="./reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="./consultation.html" class="bottom-nav-item">
+      <span class="nav-icon">👤</span>
+      <span>마이</span>
+    </a>
+  </nav>
+
+  <script src="./shared-data.js"></script>
+  <script>
+    const DATA = typeof window !== 'undefined' ? window.GLAM_DATA : {};
+    const comments = DATA.COMMENTS || [];
+    const experts = DATA.TRUST_EXPERTS || [];
+    const posts = DATA.COMMUNITY_POSTS || [];
+
+    const params = new URLSearchParams(window.location.search);
+    const postId = Number(params.get('id')) || 1;
+    const post = posts.find((p) => p.id === postId) || posts[0] || {
+      id: 1,
+      author: '익명의 토끼 🐰',
+      date: '3일 전',
+      procedure: '쌍꺼풀 매몰법',
+      category: '눈',
+      hospital: '강남 AA성형외과',
+      cost: '65만원',
+      recovery: '2주',
+      rating: 4.5,
+      title: '쌍꺼풀 매몰법 3개월 후기 — 생각보다 자연스러워요',
+      likes: 247,
+      views: 1820,
+      tags: ['쌍꺼풀', '매몰법']
+    };
+
+    function renderPost() {
+      document.getElementById('post-title').textContent = post.title;
+      document.getElementById('author-name').textContent = post.author;
+      document.getElementById('author-avatar').textContent = post.author.split(' ')[2] || '🌸';
+      document.getElementById('author-sub').textContent = `${post.date} · 조회 ${Number(post.views || 0).toLocaleString('ko-KR')}`;
+      document.getElementById('info-procedure').textContent = post.procedure;
+      document.getElementById('info-hospital').textContent = post.hospital;
+      document.getElementById('info-cost').textContent = post.cost;
+      document.getElementById('info-recovery').textContent = `약 ${post.recovery}`;
+      document.getElementById('info-rating').textContent = post.rating;
+      document.getElementById('like-count').textContent = post.likes;
+      const tags = post.tags || ['쌍꺼풀', '매몰법'];
+      const category = post.category || '눈';
+      document.getElementById('post-tags').innerHTML = `
+        <span class="tag--proc-primary">#${tags[0] || '쌍꺼풀'}</span>
+        <span class="tag--proc-secondary">#${tags[1] || '매몰법'}</span>
+        <span class="tag--proc-clinic">${category}</span>
+      `;
+    }
+
+    function renderComments() {
+      const list = document.getElementById('comment-list');
+      list.innerHTML = comments.map(c => `
+        <div class="comment-item">
+          <div class="avatar" style="width:32px;height:32px;font-size:0.9rem;flex-shrink:0;">${c.author.split(' ')[2] || '🌸'}</div>
+          <div class="comment-body">
+            <span class="comment-author">${c.author}</span>
+            <p class="comment-text">${c.text}</p>
+            <div class="comment-meta">
+              <span>${c.date}</span>
+              <button type="button" class="comment-like">🤍 ${c.likes}</button>
+              <button type="button" class="comment-reply">답글</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      document.getElementById('comment-count').textContent = comments.length;
+    }
+
+    function renderExperts() {
+      const list = document.getElementById('trust-list');
+      list.innerHTML = experts.map(e => `
+        <div class="trust-card">
+          <div class="trust-avatar">${e.emoji}</div>
+          <div>
+            <div class="trust-name">${e.name}</div>
+            <div class="trust-desc">${e.specialty} · ${e.experience}</div>
+          </div>
+          <span class="trust-badge">${e.role}</span>
+        </div>
+      `).join('');
+    }
+
+    function renderRelated() {
+      const related = posts.filter(p => p.id !== post.id).slice(0, 3);
+      const el = document.getElementById('related-posts');
+      el.innerHTML = related.map(p => `
+        <a href="./community-post.html?id=${p.id}" style="display:flex;gap:8px;padding:8px 0;border-bottom:1px solid var(--border-light);text-decoration:none;color:inherit;">
+          <div style="width:48px;height:48px;background:var(--border);border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">📷</div>
+          <div>
+            <p style="font-size:0.8rem;font-weight:600;margin:0 0 3px;line-height:1.3;">${p.title}</p>
+            <span style="font-size:0.7rem;color:var(--text-muted);">🤍 ${p.likes}</span>
+          </div>
+        </a>
+      `).join('');
+    }
+
+    function switchSlide(idx, label) {
+      document.querySelectorAll('.gallery-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === idx);
+      });
+      document.getElementById('gallery-label').textContent = label;
+    }
+
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert('링크가 복사되었습니다!');
+      }).catch(() => { alert(`링크: ${window.location.href}`); });
+    }
+
+    window.switchSlide = switchSlide;
+    window.copyLink = copyLink;
+
+    let liked = false;
+    document.getElementById('like-btn').addEventListener('click', () => {
+      liked = !liked;
+      document.getElementById('like-icon').textContent = liked ? '❤️' : '🤍';
+      document.getElementById('like-count').textContent = liked ? Number(post.likes || 247) + 1 : Number(post.likes || 247);
+    });
+
+    let saved = false;
+    document.getElementById('save-btn').addEventListener('click', (event) => {
+      saved = !saved;
+      event.currentTarget.textContent = '🔖';
+      event.currentTarget.style.color = saved ? 'var(--primary)' : 'var(--text-muted)';
+    });
+
+    if (window.innerWidth >= 1024) {
+      document.getElementById('post-sidebar').style.display = 'block';
+    }
+
+    if (window.innerWidth < 1024) {
+      const trustMobile = document.createElement('div');
+      trustMobile.innerHTML = `
+        <div class="trust-section" style="margin: 16px 0;">
+          <div class="trust-section-title">🏥 의료 자문위원</div>
+          <p style="font-size:0.75rem;color:var(--text-muted);margin-bottom:10px;">본 플랫폼의 의료 정보는 전문가 자문을 통해 검토됩니다.</p>
+          <div>${experts.map(e => `
+            <div class="trust-card">
+              <div class="trust-avatar">${e.emoji}</div>
+              <div>
+                <div class="trust-name">${e.name}</div>
+                <div class="trust-desc">${e.specialty} · ${e.experience}</div>
+              </div>
+              <span class="trust-badge">${e.role}</span>
+            </div>
+          `).join('')}</div>
+        </div>
+      `;
+      document.querySelector('.share-section').after(trustMobile);
+    }
+
+    renderPost();
+    renderComments();
+    renderExperts();
+    renderRelated();
+  </script>
+</body>
+</html>
