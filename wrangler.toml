@@ -1,5 +1,10 @@
 name = "theglam-kr"
 compatibility_date = "2024-09-23"
 
+routes = [
+  { pattern = "www.theglam.kr/*", zone_name = "theglam.kr" },
+  { pattern = "theglam.kr/*", zone_name = "theglam.kr" }
+]
+
 [assets]
 directory = "./redesign"
