@@ -65,7 +65,7 @@
 
     .category-tabs {
       position: sticky;
-      top: 64px;
+      top: 56px;
       z-index: 140;
       background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(6px);
@@ -310,15 +310,15 @@
         <span class="chip">#보톡스</span><span class="chip">#지방흡입</span><span class="chip">#윤곽</span>
       </div>
 
-      <div class="filter-bar category-tabs">
-        <button type="button" class="filter-chip active">전체</button>
-        <button type="button" class="filter-chip">👁️ 눈</button>
-        <button type="button" class="filter-chip">👃 코</button>
-        <button type="button" class="filter-chip">😊 윤곽</button>
-        <button type="button" class="filter-chip">💉 보톡스</button>
-        <button type="button" class="filter-chip">✨ 리프팅</button>
-        <button type="button" class="filter-chip">💊 지방흡입</button>
-        <button type="button" class="filter-chip">🌸 피부</button>
+      <div class="filter-bar category-tabs" id="home-category-tabs">
+        <button type="button" class="filter-chip active" data-cat="all">전체</button>
+        <button type="button" class="filter-chip" data-cat="눈">👁️ 눈</button>
+        <button type="button" class="filter-chip" data-cat="코">👃 코</button>
+        <button type="button" class="filter-chip" data-cat="윤곽">😊 윤곽</button>
+        <button type="button" class="filter-chip" data-cat="보톡스">💉 보톡스</button>
+        <button type="button" class="filter-chip" data-cat="리프팅">✨ 리프팅</button>
+        <button type="button" class="filter-chip" data-cat="지방흡입">💊 지방흡입</button>
+        <button type="button" class="filter-chip" data-cat="피부">🌸 피부</button>
       </div>
 
       <section class="home-section">
@@ -326,9 +326,9 @@
           <h2 class="section-title">실시간 인기 후기</h2>
           <a href="./reviews.html" class="section-more">더보기 ›</a>
         </div>
-        <div class="content-grid">
+        <div class="content-grid" id="editor-picks-grid">
           <article class="card card-hover">
-            <div class="img-placeholder" style="height:160px"><img src="./images/68bfc699508eb6e13847c379_uc.jpeg" alt="쌍꺼풀 시술 후기 사진" loading="lazy"></div>
+            <div class="img-placeholder" style="height:160px"><img src="./images/68bfc674f6fd28266557a322_uc.jpeg" alt="쌍꺼풀 시술 후기 사진" loading="lazy"></div>
             <div class="card-body">
               <span class="badge badge-hot">쌍꺼풀</span>
               <p class="meta-inline" style="margin: 8px 0 4px;"><span class="rating">★ 4.8</span><span class="text-muted">(후기 184)</span></p>
@@ -337,7 +337,7 @@
             </div>
           </article>
           <article class="card card-hover">
-            <div class="img-placeholder" style="height:160px"><img src="./images/68bfc69a59f2ae62f9ab345e_uc.jpeg" alt="보톡스 후기 대표 사진" loading="lazy"></div>
+            <div class="img-placeholder" style="height:160px"><img src="./images/68bfc67536f1426d54b6da0a_uc.jpeg" alt="보톡스 후기 대표 사진" loading="lazy"></div>
             <div class="card-body">
               <span class="badge badge-hot">보톡스</span>
               <p class="meta-inline" style="margin: 8px 0 4px;"><span class="rating">★ 4.6</span><span class="text-muted">(후기 132)</span></p>
@@ -346,7 +346,7 @@
             </div>
           </article>
           <article class="card card-hover">
-            <div class="img-placeholder" style="height:160px"><img src="./images/68bfc6979aab8d530d8ff6de_uc.jpeg" alt="리프팅 변화 후기 사진" loading="lazy"></div>
+            <div class="img-placeholder" style="height:160px"><img src="./images/68bfc676777472ae45bec4b5_uc.jpeg" alt="리프팅 변화 후기 사진" loading="lazy"></div>
             <div class="card-body">
               <span class="badge badge-hot">리프팅</span>
               <p class="meta-inline" style="margin: 8px 0 4px;"><span class="rating">★ 4.7</span><span class="text-muted">(후기 96)</span></p>
@@ -395,7 +395,7 @@
           <h2>최신 정보 기사</h2>
           <a href="./articles.html" class="section-more">더보기 ›</a>
         </div>
-        <div class="related-articles" style="margin:0;">
+        <div class="related-articles" id="latest-articles-list" style="margin:0;">
           <a href="./article.html" class="article-card-horizontal">
             <div class="article-thumb"><img src="./images/68bfc67a2887457b567f1c48_uc.jpeg" alt="최신 비용 비교 기사 썸네일" loading="lazy"></div>
             <div class="article-info">
@@ -580,5 +580,88 @@
   </nav>
 
   <script src="./shared-data.js"></script>
+  <script>
+    (function rotateHomeArticlesByHour() {
+      var data = (typeof window !== 'undefined' && window.GLAM_DATA) ? window.GLAM_DATA : {};
+      var articles = Array.isArray(data.ARTICLES) ? data.ARTICLES.slice() : [];
+      if (!articles.length) return;
+
+      var hourSeed = new Date().getHours();
+      var rot = hourSeed % articles.length;
+      var rolled = articles.slice(rot).concat(articles.slice(0, rot));
+
+      var editorItems = rolled.slice(0, 6);
+      var latestItems = rolled.slice(3, 6).concat(rolled.slice(0, Math.max(0, 6 - Math.min(6, rolled.length - 3)))).slice(0, 3);
+
+      var thumbs = [
+        './images/68bfc6a200bab76cb9430952_uc.jpeg',
+        './images/68bfc6a2c05ccaa2eefff759_uc.jpeg',
+        './images/68bfc69d0c201171a6596963_uc.jpeg',
+        './images/68bfc67a2887457b567f1c48_uc.jpeg',
+        './images/68bfc6802082eb0b6980782c_uc.jpeg',
+        './images/68bfc6814c4f014bc9e34d07_uc.jpeg'
+      ];
+
+      function badgeStyle(category) {
+        if (category === '비용비교') return 'badge-green';
+        if (category === '안전정보') return 'badge-red';
+        if (category === '회복관리' || category === '회복/효과') return 'badge-purple';
+        return '';
+      }
+
+      var editorEl = document.getElementById('editor-picks-grid');
+      if (editorEl) {
+        editorEl.innerHTML = editorItems.map(function (a, idx) {
+          var badgeCls = badgeStyle(a.category);
+          return '<a href="./article.html" class="card card-hover" style="text-decoration:none;">'
+            + '<div class="img-placeholder" style="height:140px"><img src="' + thumbs[idx % thumbs.length] + '" alt="' + a.title + ' 썸네일" loading="lazy"></div>'
+            + '<div class="card-body" data-cat="' + ((a.procedureTags && a.procedureTags[0]) || a.category || '') + '">'
+            + '<span class="badge ' + badgeCls + '">' + a.category + '</span>'
+            + '<p class="card-title">' + a.title + '</p>'
+            + '<p class="card-meta"><span>' + a.date + '</span><span>' + Number(a.views || 0).toLocaleString() + '뷰</span></p>'
+            + '</div></a>';
+        }).join('');
+      }
+
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('#home-category-tabs .filter-chip'));
+      function normalizeCat(v) {
+        return (v || '').replace(/[^가-힣a-zA-Z0-9]/g, '');
+      }
+      function applyHomeFilter(cat) {
+        var cards = Array.prototype.slice.call(document.querySelectorAll('#editor-picks-grid .card'));
+        cards.forEach(function (card) {
+          var body = card.querySelector('.card-body');
+          var text = normalizeCat(body ? body.getAttribute('data-cat') : '');
+          if (cat === 'all') {
+            card.style.display = '';
+          } else {
+            card.style.display = text.indexOf(normalizeCat(cat)) > -1 ? '' : 'none';
+          }
+        });
+      }
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          tabs.forEach(function (t) { t.classList.remove('active'); });
+          tab.classList.add('active');
+          applyHomeFilter(tab.getAttribute('data-cat') || 'all');
+        });
+      });
+      applyHomeFilter('all');
+
+      var latestEl = document.getElementById('latest-articles-list');
+      if (latestEl) {
+        latestEl.innerHTML = latestItems.map(function (a, idx) {
+          var color = a.categoryColor || '#10B981';
+          return '<a href="./article.html" class="article-card-horizontal">'
+            + '<div class="article-thumb"><img src="' + thumbs[(idx + 3) % thumbs.length] + '" alt="' + a.title + ' 썸네일" loading="lazy"></div>'
+            + '<div class="article-info">'
+            + '<span class="badge" style="background:' + color + '20;color:' + color + ';font-size:11px;padding:2px 8px;margin-bottom:4px;display:inline-block;">' + a.category + '</span>'
+            + '<div class="article-title">' + a.title + '</div>'
+            + '<div class="article-meta"><span>' + (a.author || '에디터') + '</span><span>·</span><span>' + a.date + '</span><span>·</span><span>👁️ ' + Number(a.views || 0).toLocaleString() + '뷰</span></div>'
+            + '</div></a>';
+        }).join('');
+      }
+    })();
+  </script>
 </body>
 </html>

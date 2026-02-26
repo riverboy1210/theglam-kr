@@ -5,7 +5,6 @@
   <link rel="icon" type="image/png" href="./images/68aa6c79781901103940a08d_68aa6af402e976cbdb44dc3f_68aa67eed68127fbc661c053_68a55e8e785a2a578ae69b31_%EB%AF%B8%EB%85%80%EB%8A%94%EA%B4%B4%EB%A1%9C%EC%9B%8C%EB%8C%80%ED%91%9C%EC%9D%B4%EB%AF%B8%EC%A7%80%205.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>커뮤니티 | 미녀는 괴로워</title>
-  미녀는 괴로워
   <link rel="stylesheet" href="./shared.css">
   <style>
     .bottom-nav-item.active { color: var(--primary); }
@@ -16,14 +15,12 @@
   <link rel="dns-prefetch" href="https://cdn.prod.website-files.com">
   <meta property="og:type" content="website">
   <meta property="og:title" content="커뮤니티 | 미녀는 괴로워">
-  미녀는 괴로워
   <meta property="og:url" content="https://www.theglam.kr/community.html">
   <meta property="og:image" content="https://www.theglam.kr/images/68aa6c79781901103940a08d_68aa6af402e976cbdb44dc3f_68aa67eed68127fbc661c053_68a55e8e785a2a578ae69b31_%EB%AF%B8%EB%85%80%EB%8A%94%EA%B4%B4%EB%A1%9C%EC%9B%8C%EB%8C%80%ED%91%9C%EC%9D%B4%EB%AF%B8%EC%A7%80%205.png">
   <meta property="og:site_name" content="미녀는 괴로워 THE GLAM">
   <meta property="og:locale" content="ko_KR">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="커뮤니티 | 미녀는 괴로워">
-  미녀는 괴로워
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -160,7 +157,7 @@
       grid.innerHTML = posts.map(post => `
     <article class="post-card" onclick="location.href='./community-post.html?id=${post.id}'">
       <div class="card-header">
-        <div class="avatar" style="width:32px;height:32px;font-size:1rem;flex-shrink:0;">${post.author.split(' ')[2] || '🌸'}</div>
+        <div class="avatar" style="width:38px;height:38px;font-size:0.95rem;flex-shrink:0;">${post.author.split(' ')[2] || '🌸'}</div>
         <div class="user-meta">
           <span class="username">${post.author}</span>
           <span class="post-date">${post.date}</span>
@@ -196,7 +193,33 @@
     }
 
     const DATA = typeof window !== 'undefined' ? window.GLAM_DATA : {};
-    const posts = DATA.COMMUNITY_POSTS || [];
+    const mapProcedureToCategory = (procedure = '') => {
+      if (procedure.includes('눈') || procedure.includes('쌍꺼풀')) return '눈';
+      if (procedure.includes('코')) return '코';
+      if (procedure.includes('윤곽')) return '얼굴윤곽';
+      if (procedure.includes('피부')) return '피부';
+      if (procedure.includes('지방흡입') || procedure.includes('바디')) return '바디';
+      if (procedure.includes('리프팅')) return '리프팅';
+      if (procedure.includes('필러') || procedure.includes('보톡스')) return '필러/보톡스';
+      return '피부';
+    };
+
+    const fallbackPosts = (DATA.REVIEWS || []).slice(0, 8).map((review, idx) => ({
+      id: review.id || idx + 1,
+      author: review.author || '글램유저',
+      date: review.date || '2026.02.01',
+      verified: !!review.verified,
+      procedure: mapProcedureToCategory(review.procedure),
+      category: review.procedure || '시술후기',
+      imageCount: 2,
+      excerpt: review.summary || '실제 경험을 바탕으로 작성된 후기입니다.',
+      likes: review.likes || 0,
+      comments: review.comments || 0
+    }));
+
+    const posts = (Array.isArray(DATA.COMMUNITY_POSTS) && DATA.COMMUNITY_POSTS.length > 0)
+      ? DATA.COMMUNITY_POSTS
+      : fallbackPosts;
     renderPosts(posts);
 
     document.querySelectorAll('.filter-tab').forEach(btn => {
@@ -206,7 +229,7 @@
         });
         this.classList.add('active');
         const filter = this.dataset.filter;
-        const filtered = filter === 'all' ? posts : posts.filter(p => p.category === filter);
+        const filtered = filter === 'all' ? posts : posts.filter(p => p.procedure === filter);
         renderPosts(filtered);
       });
     });

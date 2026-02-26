@@ -45,6 +45,17 @@ const ARTICLES = [
   { id: 12, title: '첫 상담 전 체크리스트 — 이 질문은 꼭 하세요', category: '병원선택', categoryColor: '#8B5CF6', contentType: 'CLINIC_CHOICE', slug: 'consultation-checklist', procedureTags: ['눈', '코', '리프팅', '지방흡입'], date: '2026.01.20', views: 12800, readTime: '7분', author: '박지훈 에디터', summary: '상담 시 집도의 직접 참여 여부, 수술 방법, 비용 총액 확인 방법.' },
 ];
 
+const COMMUNITY_POSTS = [
+  { id: 101, author: '눈예쁘게**', date: '2026.02.18', verified: true, procedure: '눈', category: '절개 쌍꺼풀', imageCount: 3, excerpt: '절개 쌍꺼풀 6주차예요. 붓기 변화 과정이 궁금하실까봐 주차별로 정리해봤어요.', likes: 128, comments: 21 },
+  { id: 102, author: '코고민끝**', date: '2026.02.17', verified: true, procedure: '코', category: '콧대+코끝 복합', imageCount: 2, excerpt: '코끝 높이와 라인 밸런스를 맞춘 케이스예요. 회복 첫 2주가 핵심이었어요.', likes: 94, comments: 14 },
+  { id: 103, author: '윤곽체크**', date: '2026.02.16', verified: true, procedure: '얼굴윤곽', category: '광대+턱라인', imageCount: 4, excerpt: '윤곽은 붓기 관리가 정말 중요하네요. 식단/수면/산책 루틴 공유합니다.', likes: 77, comments: 10 },
+  { id: 104, author: '피부광채**', date: '2026.02.15', verified: false, procedure: '피부', category: '레이저 토닝', imageCount: 2, excerpt: '톤 개선 목적 시술 후기예요. 3회차부터 피부결이 매끈해진 느낌이 났어요.', likes: 52, comments: 8 },
+  { id: 105, author: '바디라인**', date: '2026.02.14', verified: true, procedure: '바디', category: '복부 지방흡입', imageCount: 3, excerpt: '복부 라인 교정 후 압박복 관리가 가장 중요했어요. 현실적인 회복 일정 적어둘게요.', likes: 166, comments: 33 },
+  { id: 106, author: '리프팅후기**', date: '2026.02.13', verified: true, procedure: '리프팅', category: 'HIFU 리프팅', imageCount: 2, excerpt: '통증은 있었지만 3주차부터 턱선이 정리됐어요. 유지 기간 체감도 남겨요.', likes: 88, comments: 12 },
+  { id: 107, author: '필러보톡스**', date: '2026.02.12', verified: false, procedure: '필러/보톡스', category: '입술 필러 + 턱 보톡스', imageCount: 2, excerpt: '과하지 않게 자연스럽게 맞춘 케이스예요. 멍/붓기 경과까지 적어봤어요.', likes: 61, comments: 9 },
+  { id: 108, author: '초보상담러**', date: '2026.02.11', verified: true, procedure: '피부', category: '첫 상담 경험', imageCount: 1, excerpt: '처음 상담 가시는 분들을 위한 준비물/질문 리스트 공유해요.', likes: 39, comments: 7 },
+];
+
 const BRAND = {
   name: '미녀는 괴로워',
   nameEn: 'THE GLAM',
@@ -56,7 +67,7 @@ const BRAND = {
 
 // Browser + Node.js 호환
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { PROCEDURES, HOSPITALS, REVIEWS, ARTICLES, BRAND };
+  module.exports = { PROCEDURES, HOSPITALS, REVIEWS, ARTICLES, COMMUNITY_POSTS, BRAND };
 } else {
-  window.GLAM_DATA = { PROCEDURES, HOSPITALS, REVIEWS, ARTICLES, BRAND };
+  window.GLAM_DATA = { PROCEDURES, HOSPITALS, REVIEWS, ARTICLES, COMMUNITY_POSTS, BRAND };
 }

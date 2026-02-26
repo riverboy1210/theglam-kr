@@ -1,0 +1,11 @@
+﻿const fs = require('fs');
+const ap = s => fs.appendFileSync('index.html', s + '\n', 'utf8');
+ap("");
+ap("");
+ap("");
+ap("");
+ap("");
+ap("");
+ap("");
+ap("");
+console.log('test', fs.statSync('index.html').size);

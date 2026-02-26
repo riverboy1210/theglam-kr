@@ -1,0 +1,957 @@
+﻿<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>글램톡 - 성형시술 커뮤니티</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,600&display=swap' rel='stylesheet'>
+<style>
+:root {
+  --ivory:#FAF7F4; --ivory-dark:#F2EDE8; --ivory-mid:#EDE5DC;
+  --rose-deep:#C4526A; --rose-mid:#D9748A; --rose-light:#F0B8C4; --rose-pale:#FBF0F3;
+  --gold:#C9A96E; --gold-light:#E8D5B0; --gold-pale:#FBF6EE;
+  --charcoal:#2A2320; --ink:#3D3330; --muted:#8A7B75; --muted-light:#B5A9A4;
+  --border:#E8DDD6; --border-soft:#F0E8E2; --white:#FFFFFF;
+  --shadow-sm:0 1px 4px rgba(42,35,32,.06);
+  --shadow-md:0 4px 16px rgba(42,35,32,.10);
+  --shadow-lg:0 8px 32px rgba(42,35,32,.14);
+  --radius-sm:8px; --radius-md:14px; --radius-lg:20px; --radius-xl:28px;
+  --font-sans:'Noto Sans KR',sans-serif;
+  --font-serif:'Playfair Display',serif;
+  --transition:all .22s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--ivory);color:var(--ink);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+img{display:block;max-width:100%}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--ivory-dark)}
+::-webkit-scrollbar-thumb{background:var(--rose-light);border-radius:3px}
+.header{position:sticky;top:0;z-index:100;background:rgba(250,247,244,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border-soft)}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;height:60px;display:flex;align-items:center;gap:16px}
+.logo{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.logo-mark{width:34px;height:34px;background:linear-gradient(135deg,var(--rose-deep) 0%,var(--rose-mid) 60%,var(--gold) 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 2px 8px rgba(196,82,106,.3)}
+.logo-text{font-family:var(--font-serif);font-size:20px;font-weight:700;color:var(--charcoal);letter-spacing:-.3px}
+.logo-text span{color:var(--rose-deep)}
+.header-search{flex:1;max-width:380px;position:relative}
+.header-search input{width:100%;height:38px;background:var(--ivory-dark);border:1.5px solid var(--border);border-radius:20px;padding:0 40px 0 16px;font-family:var(--font-sans);font-size:13px;color:var(--ink);outline:none;transition:var(--transition)}
+.header-search input:focus{border-color:var(--rose-mid);background:var(--white);box-shadow:0 0 0 3px rgba(196,82,106,.08)}
+.header-search input::placeholder{color:var(--muted-light)}
+.search-icon{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:15px;pointer-events:none}
+.btn-icon{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--muted);transition:var(--transition);position:relative}
+.btn-icon:hover{background:var(--ivory-dark);color:var(--rose-deep)}
+.badge{position:absolute;top:4px;right:4px;width:16px;height:16px;background:var(--rose-deep);color:white;font-size:9px;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--ivory)}
+.btn-write{height:36px;padding:0 16px;background:linear-gradient(135deg,var(--rose-deep),var(--rose-mid));color:white;border-radius:18px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;transition:var(--transition);box-shadow:0 2px 8px rgba(196,82,106,.25);white-space:nowrap}
+.btn-write:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(196,82,106,.35)}
+.avatar-sm{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--rose-light));border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:14px;overflow:hidden;flex-shrink:0}
+.nav-tabs-bar{background:var(--white);border-bottom:1px solid var(--border-soft);position:sticky;top:60px;z-index:90}
+.nav-tabs-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;overflow-x:auto;scrollbar-width:none}
+.nav-tabs-inner::-webkit-scrollbar{display:none}
+.nav-tab{height:46px;padding:0 18px;font-size:13.5px;font-weight:500;color:var(--muted);white-space:nowrap;border-bottom:2.5px solid transparent;transition:var(--transition);display:flex;align-items:center;gap:6px}
+.nav-tab:hover{color:var(--rose-deep)}
+.nav-tab.active{color:var(--rose-deep);font-weight:700;border-bottom-color:var(--rose-deep)}
+.tab-count{font-size:11px;background:var(--rose-pale);color:var(--rose-deep);padding:1px 6px;border-radius:10px;font-weight:600}
+.page-layout{max-width:1200px;margin:0 auto;padding:24px 20px;display:grid;grid-template-columns:220px 1fr 280px;gap:24px;align-items:start}
+.sidebar-left{position:sticky;top:130px}
+.sidebar-section{background:var(--white);border-radius:var(--radius-md);border:1px solid var(--border-soft);overflow:hidden;margin-bottom:16px}
+.sidebar-title{padding:14px 16px 10px;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;border-bottom:1px solid var(--border-soft)}
+.category-list{padding:8px 0}
+.category-item{display:flex;align-items:center;gap:10px;padding:9px 16px;font-size:13px;color:var(--ink);transition:var(--transition);cursor:pointer}
+.category-item:hover{background:var(--ivory);color:var(--rose-deep)}
+.category-item.active{background:var(--rose-pale);color:var(--rose-deep);font-weight:600}
+.category-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.category-count{margin-left:auto;font-size:11px;color:var(--muted-light);font-weight:500}
+.trending-tags{padding:12px 16px;display:flex;flex-wrap:wrap;gap:6px}
+.tag-chip{height:26px;padding:0 10px;background:var(--ivory-dark);border-radius:13px;font-size:12px;color:var(--muted);transition:var(--transition);cursor:pointer;display:flex;align-items:center}
+.tag-chip:hover{background:var(--rose-pale);color:var(--rose-deep)}
+.tag-chip.hot{background:var(--rose-pale);color:var(--rose-deep);font-weight:600}
+.feed-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.feed-title{font-size:15px;font-weight:700;color:var(--charcoal)}
+.feed-controls{display:flex;align-items:center;gap:8px}
+.sort-btn{height:32px;padding:0 12px;border-radius:16px;font-size:12.5px;font-weight:500;color:var(--muted);background:var(--ivory-dark);transition:var(--transition);display:flex;align-items:center;gap:4px}
+.sort-btn:hover,.sort-btn.active{background:var(--rose-pale);color:var(--rose-deep);font-weight:600}
+.view-toggle{display:flex;background:var(--ivory-dark);border-radius:8px;padding:2px;gap:2px}
+.view-btn{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted);transition:var(--transition)}
+.view-btn.active{background:var(--white);color:var(--rose-deep);box-shadow:var(--shadow-sm)}
+.filter-row{display:flex;gap:8px;margin-bottom:20px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.filter-row::-webkit-scrollbar{display:none}
+.filter-chip{height:32px;padding:0 14px;border-radius:16px;font-size:12.5px;font-weight:500;white-space:nowrap;border:1.5px solid var(--border);color:var(--muted);background:var(--white);transition:var(--transition);display:flex;align-items:center;gap:5px}
+.filter-chip:hover{border-color:var(--rose-mid);color:var(--rose-deep)}
+.filter-chip.active{background:var(--rose-deep);border-color:var(--rose-deep);color:white;font-weight:600}
+.featured-banner{border-radius:var(--radius-lg);overflow:hidden;margin-bottom:20px;position:relative;height:160px;background:linear-gradient(135deg,#2A1520 0%,#4A1E2E 40%,#7A2E4A 70%,#C4526A 100%);display:flex;align-items:center;padding:0 28px;cursor:pointer}
+.featured-content{position:relative;z-index:1}
+.featured-badge{display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 10px;background:rgba(201,169,110,.25);border:1px solid rgba(201,169,110,.4);border-radius:11px;font-size:10.5px;font-weight:700;color:#E8D5B0;letter-spacing:.5px;margin-bottom:10px}
+.featured-title{font-family:var(--font-serif);font-size:22px;font-weight:700;color:white;line-height:1.3;margin-bottom:8px}
+.featured-sub{font-size:12.5px;color:rgba(255,255,255,.65)}
+.featured-cta{position:absolute;right:28px;bottom:24px;height:34px;padding:0 16px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:17px;color:white;font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:6px;backdrop-filter:blur(4px);transition:var(--transition)}
+.featured-cta:hover{background:rgba(255,255,255,.25)}
+.card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.post-card{background:var(--white);border-radius:var(--radius-md);border:1px solid var(--border-soft);overflow:hidden;transition:var(--transition);cursor:pointer;position:relative}
+.post-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border)}
+.post-card.has-photo .card-photo{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--ivory-mid)}
+.card-photo img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.post-card:hover .card-photo img{transform:scale(1.04)}
+.ba-badge{position:absolute;top:10px;left:10px;height:22px;padding:0 8px;background:rgba(42,35,32,.75);backdrop-filter:blur(4px);border-radius:11px;font-size:10px;font-weight:700;color:white;display:flex;align-items:center;gap:4px;letter-spacing:.3px}
+.ba-dot{width:6px;height:6px;border-radius:50%;background:var(--rose-light)}
+.photo-count{position:absolute;bottom:10px;right:10px;height:22px;padding:0 8px;background:rgba(42,35,32,.65);backdrop-filter:blur(4px);border-radius:11px;font-size:10.5px;color:white;display:flex;align-items:center;gap:4px}
+.proc-tag-photo{position:absolute;bottom:10px;left:10px;height:22px;padding:0 8px;background:var(--rose-deep);border-radius:11px;font-size:10px;font-weight:700;color:white;display:flex;align-items:center}
+.card-body{padding:12px 14px 10px}
+.card-meta-top{display:flex;align-items:center;gap:6px;margin-bottom:7px}
+.proc-tag{height:20px;padding:0 8px;background:var(--rose-pale);border-radius:10px;font-size:10.5px;font-weight:600;color:var(--rose-deep);display:inline-flex;align-items:center}
+.proc-tag.skin{background:#EEF6F0;color:#3A7A4A}
+.proc-tag.body{background:#EEF0FB;color:#3A4A9A}
+.proc-tag.hair{background:#FBF5EE;color:#8A5A2A}
+.verified-badge{display:flex;align-items:center;gap:3px;font-size:10px;color:var(--gold);font-weight:600}
+.card-title{font-size:13.5px;font-weight:600;color:var(--charcoal);line-height:1.45;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-excerpt{font-size:12px;color:var(--muted);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:10px}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding:8px 14px 10px;border-top:1px solid var(--border-soft)}
+.card-author{display:flex;align-items:center;gap:7px}
+.author-avatar{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--rose-light));display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
+.author-name{font-size:11.5px;color:var(--muted);font-weight:500}
+.author-name strong{color:var(--ink);font-weight:600}
+.anon-label{font-size:11px;color:var(--muted-light);display:flex;align-items:center;gap:3px}
+.card-actions{display:flex;align-items:center;gap:10px}
+.action-btn{display:flex;align-items:center;gap:4px;font-size:11.5px;color:var(--muted-light);transition:var(--transition);padding:2px 4px;border-radius:4px}
+.action-btn:hover{color:var(--rose-deep)}
+.action-btn.liked{color:var(--rose-deep)}
+.action-btn.bookmarked{color:var(--gold)}
+.action-icon{font-size:14px}
+.post-card.wide{grid-column:1/-1;display:grid;grid-template-columns:200px 1fr}
+.post-card.wide .card-photo{aspect-ratio:unset;height:100%;min-height:140px}
+.post-card.wide .card-content{display:flex;flex-direction:column}
+.post-card.wide .card-body{flex:1}
+.post-card.text-only .card-body{padding:14px 16px}
+.post-card.text-only .card-title{font-size:14px;-webkit-line-clamp:3;margin-bottom:8px}
+.text-card-bg{height:6px;background:linear-gradient(90deg,var(--rose-pale),var(--gold-pale));border-radius:3px;margin-bottom:10px}
+.hot-indicator{position:absolute;top:10px;right:10px;z-index:2;width:28px;height:28px;background:linear-gradient(135deg,#FF6B35,#FF3D5A);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;box-shadow:0 2px 8px rgba(255,61,90,.35)}
+.load-more-wrap{text-align:center;padding:24px 0 8px}
+.btn-load-more{height:42px;padding:0 28px;border:1.5px solid var(--border);border-radius:21px;font-size:13.5px;font-weight:600;color:var(--muted);background:var(--white);transition:var(--transition);display:inline-flex;align-items:center;gap:8px}
+.btn-load-more:hover{border-color:var(--rose-mid);color:var(--rose-deep);background:var(--rose-pale)}
+.sidebar-right{position:sticky;top:130px}
+.quick-write{background:var(--white);border-radius:var(--radius-md);border:1px solid var(--border-soft);padding:16px;margin-bottom:16px}
+.quick-write-title{font-size:13px;font-weight:700;color:var(--charcoal);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.quick-write-input{width:100%;min-height:72px;background:var(--ivory);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;font-family:var(--font-sans);font-size:13px;color:var(--ink);resize:none;outline:none;transition:var(--transition);margin-bottom:10px}
+.quick-write-input:focus{border-color:var(--rose-mid);background:var(--white)}
+.quick-write-input::placeholder{color:var(--muted-light)}
+.quick-write-options{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.option-chip{height:26px;padding:0 10px;border:1px solid var(--border);border-radius:13px;font-size:11.5px;color:var(--muted);background:var(--ivory);display:flex;align-items:center;gap:4px;transition:var(--transition)}
+.option-chip:hover{border-color:var(--rose-mid);color:var(--rose-deep)}
+.option-chip.selected{background:var(--rose-pale);border-color:var(--rose-light);color:var(--rose-deep);font-weight:600}
+.anon-toggle{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);margin-left:auto}
+.toggle-switch{width:32px;height:18px;background:var(--rose-deep);border-radius:9px;position:relative;cursor:pointer}
+.toggle-switch::after{content:'';position:absolute;width:14px;height:14px;background:white;border-radius:50%;top:2px;right:2px;transition:var(--transition);box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.btn-submit-post{width:100%;height:38px;background:linear-gradient(135deg,var(--rose-deep),var(--rose-mid));color:white;border-radius:var(--radius-sm);font-size:13px;font-weight:700;transition:var(--transition);display:flex;align-items:center;justify-content:center;gap:6px}
+.btn-submit-post:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(196,82,106,.3)}
+.popular-list{padding:4px 0}
+.popular-item{display:flex;align-items:flex-start;gap:10px;padding:10px 16px;transition:var(--transition);cursor:pointer}
+.popular-item:hover{background:var(--ivory)}
+.popular-rank{width:20px;height:20px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;margin-top:1px}
+.popular-rank.r1{background:var(--rose-deep);color:white}
+.popular-rank.r2{background:var(--rose-mid);color:white}
+.popular-rank.r3{background:var(--rose-light);color:white}
+.popular-rank.rn{background:var(--ivory-dark);color:var(--muted)}
+.popular-text{flex:1;min-width:0}
+.popular-title{font-size:12.5px;font-weight:500;color:var(--ink);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:3px}
+.popular-meta{font-size:11px;color:var(--muted-light);display:flex;align-items:center;gap:6px}
+.popular-thumb{width:44px;height:44px;border-radius:var(--radius-sm);background:var(--ivory-mid);overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:20px}
+.hospital-card{background:var(--white);border-radius:var(--radius-md);border:1px solid var(--border-soft);overflow:hidden;margin-bottom:16px}
+.hospital-header{padding:14px 16px 10px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border-soft)}
+.hospital-header-title{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.8px;text-transform:uppercase}
+.see-all{font-size:11.5px;color:var(--rose-deep);font-weight:600}
+.hospital-item{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--border-soft);transition:var(--transition);cursor:pointer}
+.hospital-item:last-child{border-bottom:none}
+.hospital-item:hover{background:var(--ivory)}
+.hospital-logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--ivory-mid),var(--rose-pale));display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;border:1px solid var(--border-soft)}
+.hospital-info{flex:1;min-width:0}
+.hospital-name{font-size:12.5px;font-weight:700;color:var(--charcoal);margin-bottom:2px}
+.hospital-tags{display:flex;gap:4px;flex-wrap:wrap}
+.hospital-tag{font-size:10px;color:var(--muted);background:var(--ivory-dark);padding:1px 6px;border-radius:4px}
+.hospital-rating{display:flex;flex-direction:column;align-items:flex-end;gap:2px;flex-shrink:0}
+.rating-score{font-size:13px;font-weight:800;color:var(--charcoal)}
+.rating-stars{font-size:10px;color:var(--gold);letter-spacing:1px}
+.disclaimer-box{background:var(--gold-pale);border:1px solid var(--gold-light);border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:16px}
+.disclaimer-title{font-size:11px;font-weight:700;color:var(--gold);margin-bottom:6px;display:flex;align-items:center;gap:5px;letter-spacing:.3px}
+.disclaimer-text{font-size:10.5px;color:var(--muted);line-height:1.6}
+.privacy-banner{background:linear-gradient(135deg,var(--rose-pale),var(--gold-pale));border:1px solid var(--rose-light);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;display:flex;align-items:flex-start;gap:8px}
+.privacy-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.privacy-text{font-size:11.5px;color:var(--muted);line-height:1.55}
+.privacy-text a{color:var(--rose-deep);font-weight:600;text-decoration:underline}
+.modal-test{color:red}
+.modal-overlay{position:fixed;inset:0;background:rgba(42,35,32,.6);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s ease}
+.test{color:rgba(255,255,255,.2)}
+.gallery-nav{background:rgba(255,255,255,.2)}
+.modal-close{background:rgba(42,35,32,.08)}
+.modal-overlay{position:fixed;inset:0;background:rgba(42,35,32,.6);backdrop-filter:blur(4px);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s ease}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-box{background:var(--white);border-radius:var(--radius-xl);width:100%;max-width:780px;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-lg);transform:translateY(20px);transition:transform .25s ease;position:relative}
+.modal-overlay.open .modal-box{transform:translateY(0)}
+.modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(42,35,32,.08);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--ink);transition:var(--transition);z-index:10}
+.modal-close:hover{background:rgba(42,35,32,.15)}
+.modal-gallery{position:relative;background:var(--charcoal);border-radius:var(--radius-xl) var(--radius-xl) 0 0;overflow:hidden}
+.gallery-main{aspect-ratio:16/9;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#3A1A28,#5A2A40)}
+.gallery-nav{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;background:rgba(255,255,255,.2);backdrop-filter:blur(4px);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:white;transition:var(--transition);z-index:5}
+.gallery-nav:hover{background:rgba(255,255,255,.35)}
+.gallery-nav.prev{left:12px}
+.gallery-nav.next{right:12px}
+.gallery-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px}
+.gallery-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.4);transition:var(--transition);cursor:pointer}
+.gallery-dot.active{background:white;width:18px;border-radius:3px}
+.gallery-thumbs{display:flex;gap:4px;padding:8px;background:rgba(0,0,0,.3);overflow-x:auto}
+.gallery-thumb{width:56px;height:42px;border-radius:6px;overflow:hidden;border:2px solid transparent;cursor:pointer;transition:var(--transition);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(255,255,255,.7);background:rgba(255,255,255,.1)}
+.gallery-thumb.active{border-color:var(--rose-light)}
+.modal-content{padding:24px 28px}
+.modal-proc-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.modal-title{font-size:20px;font-weight:700;color:var(--charcoal);line-height:1.4;margin-bottom:14px}
+.modal-author-row{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--border-soft)}
+.modal-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--rose-light));display:flex;align-items:center;justify-content:center;font-size:16px;border:2px solid var(--border)}
+.modal-author-info{flex:1}
+.modal-author-name{font-size:13.5px;font-weight:700;color:var(--charcoal);margin-bottom:2px}
+.modal-author-meta{font-size:11.5px;color:var(--muted-light);display:flex;align-items:center;gap:8px}
+.modal-body-text{font-size:14px;line-height:1.8;color:var(--ink);margin-bottom:20px}
+.modal-body-text p{margin-bottom:12px}
+.modal-body-text strong{color:var(--charcoal);font-weight:700}
+.info-table{background:var(--ivory);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:20px;display:grid;grid-template-columns:1fr 1fr;gap:10px 20px}
+.info-row{display:flex;flex-direction:column;gap:2px}
+.info-label{font-size:10.5px;font-weight:700;color:var(--muted-light);letter-spacing:.5px;text-transform:uppercase}
+.info-value{font-size:13px;font-weight:600;color:var(--charcoal)}
+.modal-actions{display:flex;align-items:center;gap:10px;padding:16px 0;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);margin-bottom:24px;flex-wrap:wrap}
+.modal-action-btn{display:flex;align-items:center;gap:6px;height:38px;padding:0 16px;border-radius:19px;font-size:13px;font-weight:600;transition:var(--transition);border:1.5px solid var(--border);color:var(--muted);background:var(--white)}
+.modal-action-btn:hover{border-color:var(--rose-mid);color:var(--rose-deep)}
+.modal-action-btn.primary{background:var(--rose-deep);border-color:var(--rose-deep);color:white}
+.modal-action-btn.primary:hover{background:var(--rose-mid);box-shadow:0 4px 12px rgba(196,82,106,.3)}
+.modal-action-btn.liked{background:var(--rose-pale);border-color:var(--rose-light);color:var(--rose-deep)}
+.comments-title{font-size:15px;font-weight:700;color:var(--charcoal);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.comments-count{font-size:13px;color:var(--rose-deep);font-weight:700}
+.comment-item{display:flex;gap:10px;margin-bottom:16px}
+.comment-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--ivory-mid),var(--rose-pale));display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;border:1.5px solid var(--border-soft)}
+.comment-bubble{flex:1;background:var(--ivory);border-radius:0 var(--radius-sm) var(--radius-sm) var(--radius-sm);padding:10px 12px}
+.comment-header{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.comment-name{font-size:12.5px;font-weight:700;color:var(--charcoal)}
+.comment-time{font-size:11px;color:var(--muted-light)}
+.comment-text{font-size:13px;color:var(--ink);line-height:1.55}
+.comment-actions{display:flex;gap:10px;margin-top:6px}
+.comment-action{font-size:11px;color:var(--muted-light);display:flex;align-items:center;gap:3px;transition:var(--transition);cursor:pointer}
+.comment-action:hover{color:var(--rose-deep)}
+.comment-reply{margin-left:42px;margin-top:-8px;margin-bottom:16px}
+.comment-input-row{display:flex;gap:10px;align-items:flex-start;margin-top:16px;padding-top:16px;border-top:1px solid var(--border-soft)}
+.comment-input{flex:1;min-height:60px;background:var(--ivory);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;font-family:var(--font-sans);font-size:13px;color:var(--ink);resize:none;outline:none;transition:var(--transition)}
+.comment-input:focus{border-color:var(--rose-mid);background:var(--white)}
+.comment-input::placeholder{color:var(--muted-light)}
+.btn-comment-submit{height:38px;padding:0 16px;background:var(--rose-deep);color:white;border-radius:var(--radius-sm);font-size:13px;font-weight:700;transition:var(--transition);white-space:nowrap;align-self:flex-end}
+.btn-comment-submit:hover{background:var(--rose-mid);box-shadow:0 3px 10px rgba(196,82,106,.3)}
+.related-section{margin-top:28px;padding-top:24px;border-top:1px solid var(--border-soft)}
+.related-title{font-size:14px;font-weight:700;color:var(--charcoal);margin-bottom:14px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.related-card{border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--border-soft);cursor:pointer;transition:var(--transition)}
+.related-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.related-thumb{aspect-ratio:4/3;background:var(--ivory-mid);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:24px}
+.related-info{padding:8px 10px}
+.related-tag{font-size:10px;color:var(--rose-deep);font-weight:600;margin-bottom:3px}
+.related-text{font-size:11.5px;font-weight:500;color:var(--ink);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.site-footer{background:var(--charcoal);color:rgba(255,255,255,.5);padding:32px 20px;margin-top:48px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-logo{font-family:var(--font-serif);font-size:18px;color:rgba(255,255,255,.8);margin-bottom:16px}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.footer-link{font-size:12px;color:rgba(255,255,255,.5);transition:var(--transition)}
+.footer-link:hover{color:rgba(255,255,255,.8)}
+.footer-disclaimer{font-size:11px;line-height:1.7;color:rgba(255,255,255,.35);border-top:1px solid rgba(255,255,255,.08);padding-top:16px}
+.footer-disclaimer strong{color:rgba(255,255,255,.5);font-weight:600}
+@media(max-width:1100px){.page-layout{grid-template-columns:200px 1fr 260px;gap:18px}}
+@media(max-width:900px){.page-layout{grid-template-columns:1fr}.sidebar-left,.sidebar-right{display:none}.card-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.card-grid{grid-template-columns:1fr}.post-card.wide{grid-template-columns:1fr}.post-card.wide .card-photo{height:180px}.modal-content{padding:18px 16px}.related-grid{grid-template-columns:repeat(2,1fr)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.post-card{animation:fadeInUp .35s ease both}
+.post-card:nth-child(1){animation-delay:.05s}.post-card:nth-child(2){animation-delay:.10s}.post-card:nth-child(3){animation-delay:.15s}.post-card:nth-child(4){animation-delay:.20s}.post-card:nth-child(5){animation-delay:.25s}.post-card:nth-child(6){animation-delay:.30s}.post-card:nth-child(7){animation-delay:.35s}.post-card:nth-child(8){animation-delay:.40s}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--charcoal);color:white;padding:12px 20px;border-radius:24px;font-size:13px;font-weight:500;box-shadow:var(--shadow-lg);z-index:300;transition:transform .3s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;display:flex;align-items:center;gap:8px}
+.toast.show{transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+<header class='header'><div class='logo-mark'>test</div></header>
+<header class='header'>
+  <div class='header-inner'>
+    <div class='logo'>
+      <div class='logo-mark'>&#128142;</div>
+      <div class='logo-text'>&#44544;&#47016;<span>&#53685;</span></div>
+    </div>
+    <div class='header-search'>
+      <input type='text' placeholder='시술명, 병원, 고민을 검색해보세요' value=''>
+      <span class='search-icon'>&#128269;</span>
+    </div>
+    <div class='header-actions'>
+      <button class='btn-icon' onclick='showToast(chr39알림chr39)' title='알림'>&#128276;<span class='badge'>3</span></button>
+      <button class='btn-icon' title='저장함'>&#128278;</button>
+      <button class='btn-write' onclick='showToast(chr39글쓰기chr39)'>&#9999;&#65039; 글쓰기</button>
+      <div class='avatar-sm'>&#127800;</div>
+    </div>
+  </div>
+</header>
+<header class='header'>
+  <div class='header-inner'>
+    <div class='logo'>
+      <div class='logo-mark'>&#128142;</div>
+      <div class='logo-text'>글램<span>톡</span></div>
+    </div>
+    <div class='header-search'>
+      <input type='text' placeholder='시술명, 병원, 고민을 검색해보세요' value=''>
+      <span class='search-icon'>&#128269;</span>
+    </div>
+    <div class='header-actions'>
+      <button class='btn-icon' onclick='showToast(&quot;&#128276; 알림&quot;)' title='알림'>&#128276;<span class='badge'>3</span></button>
+      <button class='btn-icon' title='저장함'>&#128278;</button>
+      <button class='btn-write' onclick='showToast(&quot;&#9999; 글쓰기&quot;)'>&#9999;&#65039; 글쓰기</button>
+      <div class='avatar-sm'>&#127800;</div>
+    </div>
+  </div>
+</header>
+<nav class='nav-tabs-bar'>
+  <div class='nav-tabs-inner'>
+    <button class='nav-tab active'>&#127968; 홈피드</button>
+    <button class='nav-tab' onclick='setTab(this)'>&#128248; 후기 <span class='tab-count'>3.2만</span></button>
+    <button class='nav-tab' onclick='setTab(this)'>&#128172; 고민상담</button>
+    <button class='nav-tab' onclick='setTab(this)'>&#127973; 병원찾기</button>
+    <button class='nav-tab' onclick='setTab(this)'>&#127873; 이벤트</button>
+    <button class='nav-tab' onclick='setTab(this)'>&#128203; 시술정보</button>
+    <button class='nav-tab' onclick='setTab(this)'>&#127775; 인기글</button>
+  </div>
+</nav><div class='page-layout'>
+  <!-- LEFT SIDEBAR -->
+  <aside class='sidebar-left'>
+    <div class='sidebar-section'>
+      <div class='sidebar-title'>시술 카테고리</div>
+      <div class='category-list'>
+        <div class='category-item active'><div class='category-icon' style='background:#FBF0F3'>&#127800;</div><span>전체</span><span class='category-count'>32만</span></div>
+        <div class='category-item' onclick='setCategory(this)'><div class='category-icon' style='background:#FBF0F3'>&#128065;&#65039;</div><span>눈 성형</span><span class='category-count'>8.4만</span></div>
+        <div class='category-item' onclick='setCategory(this)'><div class='category-icon' style='background:#FBF0F3'>&#128067;</div><span>코 성형</span><span class='category-count'>6.1만</span></div>
+        <div class='category-item' onclick='setCategory(this)'><div class='category-icon' style='background:#EEF6F0'>&#10024;</div><span>피부·레이저</span><span class='category-count'>5.7만</span></div>
+        <div class='category-item' onclick='setCategory(this)'><div class='category-icon' style='background:#FBF5EE'>&#128137;</div><span>보톡스·필러</span><span class='category-count'>4.9만</span></div>
+        <div class='category-item' onclick='setCategory(this)'><div class='category-icon' style='background:#FBF0F3'>&#128522;</div><span>윤곽·지방</span><span class='category-count'>3.2만</span></div>
+        <div class='category-item' onclick='setCategory(this)'><div class='category-icon' style='background:#EEF0FB'>&#128170;</div><span>바디·가슴</span><span class='category-count'>2.8만</span></div>
+        <div class='category-item' onclick='setCategory(this)'><div class='category-icon' style='background:#FBF5EE'>&#128135;</div><span>모발이식</span><span class='category-count'>1.4만</span></div>
+        <div class='category-item' onclick='setCategory(this)'><div class='category-icon' style='background:#EEF6F0'>&#129463;</div><span>치아·구강</span><span class='category-count'>9.8천</span></div>
+      </div>
+    </div>
+    <div class='sidebar-section'>
+      <div class='sidebar-title'>&#128293; 실시간 태그</div>
+      <div class='trending-tags'>
+        <span class='tag-chip hot'>#쌍꺼풀</span>
+        <span class='tag-chip hot'>#코필러</span>
+        <span class='tag-chip'>#리프팅</span>
+        <span class='tag-chip'>#지방이식</span>
+        <span class='tag-chip hot'>#보톡스</span>
+        <span class='tag-chip'>#레이저토닝</span>
+        <span class='tag-chip'>#눈밑지방</span>
+        <span class='tag-chip'>#윤곽주사</span>
+        <span class='tag-chip'>#실리프팅</span>
+        <span class='tag-chip'>#피부관리</span>
+      </div>
+    </div>
+    <div class='sidebar-section'>
+      <div class='sidebar-title'>내 활동</div>
+      <div class='category-list'>
+        <div class='category-item' onclick='showToast(&quot;내 후기 목록&quot;)'><div class='category-icon' style='background:#FBF0F3'>&#128221;</div><span>내 후기</span><span class='category-count'>12</span></div>
+        <div class='category-item' onclick='showToast(&quot;저장한 글 목록&quot;)'><div class='category-icon' style='background:#FBF5EE'>&#128278;</div><span>저장한 글</span><span class='category-count'>47</span></div>
+        <div class='category-item' onclick='showToast(&quot;팔로우한 병원&quot;)'><div class='category-icon' style='background:#EEF6F0'>&#127973;</div><span>팔로우 병원</span><span class='category-count'>5</span></div>
+      </div>
+    </div>
+  </aside>  <main>
+    <div class='feed-header'>
+      <div class='feed-title'>&#10024; 최신 커뮤니티 피드</div>
+      <div class='feed-controls'>
+        <button class='sort-btn active' onclick='setSort(this)'>최신순</button>
+        <button class='sort-btn' onclick='setSort(this)'>인기순</button>
+        <button class='sort-btn' onclick='setSort(this)'>댓글순</button>
+        <div class='view-toggle'>
+          <button class='view-btn active'>&#8862;</button>
+          <button class='view-btn' onclick='showToast(this.title)' title='리스트'>&#9776;</button>
+        </div>
+      </div>
+    </div>
+    <div class='filter-row'>
+      <button class='filter-chip active' onclick='setFilter(this)'>&#127775; 전체</button>
+      <button class='filter-chip' onclick='setFilter(this)'>&#128248; 비포애프터</button>
+      <button class='filter-chip' onclick='setFilter(this)'>&#128172; 고민상담</button>
+      <button class='filter-chip' onclick='setFilter(this)'>&#9989; 인증후기</button>
+      <button class='filter-chip' onclick='setFilter(this)'>&#10067; Q&amp;A</button>
+      <button class='filter-chip' onclick='setFilter(this)'>&#127381; 신규시술</button>
+      <button class='filter-chip' onclick='setFilter(this)'>&#9888; 부작용주의</button>
+      <button class='filter-chip' onclick='setFilter(this)'>&#128176; 가격정보</button>
+    </div>
+    <div class='featured-banner' onclick='openModal()'>
+      <div class='featured-content'>
+        <div class='featured-badge'>&#127919; 이번 주 기획전</div>
+        <div class='featured-title'>봄맞이 피부 리셋<br>레이저 시술 특집</div>
+        <div class='featured-sub'>실제 후기 1,240건 · 평균 만족도 4.8★</div>
+      </div>
+      <button class='featured-cta'>후기 보러가기 →</button>
+    </div>    <div class='card-grid'>
+      <div class='post-card has-photo' onclick='openModal()'>
+        <div class='hot-indicator'>&#128293;</div>
+        <div class='card-photo' style='background:linear-gradient(135deg,#F5E6EA,#EDD5DC);display:flex;align-items:center;justify-content:center;font-size:48px'>&#128065;</div>
+        <div class='ba-badge'><span class='ba-dot'></span>비포&amp;애프터</div>
+        <div class='photo-count'>&#128247; 6</div>
+        <div class='card-body'>
+          <div class='card-meta-top'><span class='proc-tag'>눈 성형</span><span class='verified-badge'>&#11088; 인증후기</span></div>
+          <div class='card-title'>매몰법 쌍꺼풀 3개월 경과 후기 — 자연스러운 라인 완성!</div>
+          <div class='card-excerpt'>처음엔 너무 진할까봐 걱정했는데 시간이 지나면서 정말 자연스러워졌어요.</div>
+        </div>
+        <div class='card-footer'>
+          <div class='card-author'><div class='author-avatar'>&#127800;</div><div class='author-name'><strong>뷰티러버_지은</strong></div></div>
+          <div class='card-actions'>
+            <button class='action-btn liked' onclick='toggleLike(event,this)'>&#10084; 284</button>
+            <button class='action-btn' onclick='event.stopPropagation()'>&#128172; 47</button>
+            <button class='action-btn bookmarked' onclick='toggleBookmark(event,this)'>&#128278;</button>
+          </div>
+        </div>
+      </div>
+      <div class='post-card text-only' onclick='openModal()'>
+        <div class='card-body'>
+          <div class='text-card-bg'></div>
+          <div class='card-meta-top'><span class='proc-tag'>코 성형</span></div>
+          <div class='card-title'>코 필러 vs 코 성형 고민 중인데 어떤 게 나을까요? 자연스러운 게 목표예요</div>
+          <div class='card-excerpt'>콧대가 낮고 코끝이 뭉툭한 편인데, 필러로 먼저 해보고 싶은데 유지기간이 너무 짧다고 해서요.</div>
+        </div>
+        <div class='card-footer'>
+          <div class='card-author'><div class='anon-label'>&#128274; 익명</div></div>
+          <div class='card-actions'>
+            <button class='action-btn' onclick='toggleLike(event,this)'>&#10084; 52</button>
+            <button class='action-btn' onclick='event.stopPropagation()'>&#128172; 31</button>
+            <button class='action-btn' onclick='toggleBookmark(event,this)'>&#128278;</button>
+          </div>
+        </div>
+      </div>
+      <div class='post-card has-photo' onclick='openModal()'>
+        <div class='card-photo' style='background:linear-gradient(135deg,#E8F5EE,#D5EAE0);display:flex;align-items:center;justify-content:center;font-size:48px'>&#10024;</div>
+        <div class='proc-tag-photo'>피부·레이저</div>
+        <div class='photo-count'>&#128247; 4</div>
+        <div class='card-body'>
+          <div class='card-meta-top'><span class='proc-tag skin'>피부·레이저</span><span class='verified-badge'>&#11088; 인증후기</span></div>
+          <div class='card-title'>레이저토닝 10회 완료 후기 — 기미가 정말 옅어졌어요</div>
+          <div class='card-excerpt'>강남 ○○피부과에서 받았는데 10회 패키지 가격이랑 효과 솔직하게 공유해요.</div>
+        </div>
+        <div class='card-footer'>
+          <div class='card-author'><div class='author-avatar'>&#127807;</div><div class='author-name'><strong>피부고민해결</strong></div></div>
+          <div class='card-actions'>
+            <button class='action-btn' onclick='toggleLike(event,this)'>&#10084; 198</button>
+            <button class='action-btn' onclick='event.stopPropagation()'>&#128172; 23</button>
+            <button class='action-btn' onclick='toggleBookmark(event,this)'>&#128278;</button>
+          </div>
+        </div>
+      </div>
+      <div class='post-card text-only' onclick='openModal()'>
+        <div class='card-body'>
+          <div class='text-card-bg' style='background:linear-gradient(90deg,#FBF5EE,#FBF0F3)'></div>
+          <div class='card-meta-top'><span class='proc-tag' style='background:#FBF5EE;color:#8A5A2A'>보톡스·필러</span></div>
+          <div class='card-title'>팔자주름 필러 2cc 맞고 3주 됐는데 한쪽이 더 많이 들어간 것 같아요 &#128546;</div>
+          <div class='card-excerpt'>비대칭이 생긴 것 같아서 걱정되는데 이런 경험 있으신 분 계세요?</div>
+        </div>
+        <div class='card-footer'>
+          <div class='card-author'><div class='anon-label'>&#128274; 익명</div></div>
+          <div class='card-actions'>
+            <button class='action-btn' onclick='toggleLike(event,this)'>&#10084; 89</button>
+            <button class='action-btn' onclick='event.stopPropagation()'>&#128172; 64</button>
+            <button class='action-btn' onclick='toggleBookmark(event,this)'>&#128278;</button>
+          </div>
+        </div>
+      </div>      <div class='post-card has-photo wide' onclick='openModal()'>
+        <div class='card-photo' style='background:linear-gradient(135deg,#EEF0FB,#DDE0F5);display:flex;align-items:center;justify-content:center;font-size:48px'>&#128170;</div>
+        <div class='card-content'>
+          <div class='card-body'>
+            <div class='card-meta-top'><span class='proc-tag body'>바디·가슴</span><span class='verified-badge'>&#11088; 인증후기</span></div>
+            <div class='card-title'>복부지방흡입 6개월 경과 — 솔직한 회복 타임라인 공유합니다</div>
+            <div class='card-excerpt'>수술 직후부터 6개월까지 매달 사진 찍어서 기록했어요. 붓기, 멍, 감각 이상 등 부작용 경험도 솔직하게 적었습니다.</div>
+          </div>
+          <div class='card-footer'>
+            <div class='card-author'><div class='author-avatar'>&#128156;</div><div class='author-name'><strong>다이어트완성</strong></div></div>
+            <div class='card-actions'>
+              <button class='action-btn' onclick='toggleLike(event,this)'>&#10084; 512</button>
+              <button class='action-btn' onclick='event.stopPropagation()'>&#128172; 88</button>
+              <button class='action-btn' onclick='toggleBookmark(event,this)'>&#128278;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='post-card has-photo' onclick='openModal()'>
+        <div class='card-photo' style='background:linear-gradient(135deg,#FBF0F3,#F5E0E8);display:flex;align-items:center;justify-content:center;font-size:48px'>&#128522;</div>
+        <div class='card-body'>
+          <div class='card-meta-top'><span class='proc-tag'>윤곽·지방</span></div>
+          <div class='card-title'>광대축소 + 사각턱 보톡스 동시에 했어요 — 1개월 후기</div>
+          <div class='card-excerpt'>얼굴이 많이 작아진 것 같아서 만족스러워요. 사진 비교 올려요!</div>
+        </div>
+        <div class='card-footer'>
+          <div class='card-author'><div class='author-avatar'>&#127802;</div><div class='author-name'><strong>소얼굴원해</strong></div></div>
+          <div class='card-actions'>
+            <button class='action-btn' onclick='toggleLike(event,this)'>&#10084; 143</button>
+            <button class='action-btn' onclick='event.stopPropagation()'>&#128172; 19</button>
+            <button class='action-btn' onclick='toggleBookmark(event,this)'>&#128278;</button>
+          </div>
+        </div>
+      </div>
+      <div class='post-card text-only' onclick='openModal()'>
+        <div class='card-body'>
+          <div class='text-card-bg' style='background:linear-gradient(90deg,#EEF6F0,#EEF0FB)'></div>
+          <div class='card-meta-top'><span class='proc-tag skin'>피부·레이저</span></div>
+          <div class='card-title'>여드름 흉터 치료 프락셀 vs 어븀야그 어떤 게 더 효과적인가요?</div>
+          <div class='card-excerpt'>흉터 깊이가 얕은 편인데 어떤 레이저가 더 맞을지 모르겠어요. 경험자분들 조언 주세요!</div>
+        </div>
+        <div class='card-footer'>
+          <div class='card-author'><div class='anon-label'>&#128274; 익명</div></div>
+          <div class='card-actions'>
+            <button class='action-btn' onclick='toggleLike(event,this)'>&#10084; 67</button>
+            <button class='action-btn' onclick='event.stopPropagation()'>&#128172; 42</button>
+            <button class='action-btn' onclick='toggleBookmark(event,this)'>&#128278;</button>
+          </div>
+        </div>
+      </div>
+      <div class='post-card has-photo' onclick='openModal()'>
+        <div class='card-photo' style='background:linear-gradient(135deg,#FBF5EE,#F5EAD8);display:flex;align-items:center;justify-content:center;font-size:48px'>&#128135;</div>
+        <div class='ba-badge'><span class='ba-dot'></span>비포&amp;애프터</div>
+        <div class='photo-count'>&#128247; 5</div>
+        <div class='card-body'>
+          <div class='card-meta-top'><span class='proc-tag hair'>모발이식</span><span class='verified-badge'>&#11088; 인증후기</span></div>
+          <div class='card-title'>비절개 모발이식 1년 후기 — 자연스러운 헤어라인 완성</div>
+          <div class='card-excerpt'>M자 탈모로 고민하다 결국 했는데 정말 만족해요. 이식 후 관리법도 공유합니다.</div>
+        </div>
+        <div class='card-footer'>
+          <div class='card-author'><div class='author-avatar'>&#127775;</div><div class='author-name'><strong>헤어라인고민끝</strong></div></div>
+          <div class='card-actions'>
+            <button class='action-btn' onclick='toggleLike(event,this)'>&#10084; 231</button>
+            <button class='action-btn' onclick='event.stopPropagation()'>&#128172; 35</button>
+            <button class='action-btn' onclick='toggleBookmark(event,this)'>&#128278;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='load-more-wrap'>
+      <button class='btn-load-more' data-msg='더 불러오는 중...' onclick='showToast(this.dataset.msg)'>&#8595; 더 보기 (1,240개 남음)</button>
+    </div>
+  </main>  <aside class="sidebar-right">
+    <div class="sidebar-section quick-write">
+      <div class="sidebar-section-title">&#9997; 뱠른 글쓰기</div>
+      <textarea class="quick-textarea" placeholder="오늘의 고민이나 후기를 공유해보세요..." rows="3"></textarea>
+      <div class="quick-options">
+        <button class="option-chip active" onclick="toggleOption(this)">&#128247; 후기</button>
+        <button class="option-chip" onclick="toggleOption(this)">&#128172; 고민상담</button>
+        <button class="option-chip" onclick="toggleOption(this)">&#128269; 정보공유</button>
+      </div>
+      <div class="quick-footer">
+        <label class="anon-toggle">
+          <input type="checkbox" id="anonCheck" checked>
+          <span class="anon-slider"></span>
+          <span class="anon-label-text">&#128274; 익명으로 올리기</span>
+        </label>
+        <button class="btn-quick-submit" data-msg="글이 등록되었습니다!" onclick="showToast(this.dataset.msg)">등록</button>
+      </div>
+    </div>
+    <div class="sidebar-section privacy-banner">
+      <div class="privacy-icon">&#128737;</div>
+      <div class="privacy-text">
+        <strong>개인정보 보호 안내</strong>
+        <p>얼굴 사진 업로드 시 자동으로 개인식별 정보가 블러 처리됩니다.</p>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">&#128293; 인기글 TOP 5</div>
+      <ol class="popular-list">
+        <li class="popular-item" onclick="openModal()">
+          <span class="popular-rank rank-1">1</span>
+          <div class="popular-thumb" style="background:linear-gradient(135deg,#FBF0F3,#F5E0E8)">&#128522;</div>
+          <div class="popular-info">
+            <div class="popular-title">쌌꺼풀 매물법 3개월 후기 — 자연스럽게 자리잡았어요</div>
+            <div class="popular-stats">&#10084; 892 &nbsp;&#128172; 134</div>
+          </div>
+        </li>
+        <li class="popular-item" onclick="openModal()">
+          <span class="popular-rank rank-2">2</span>
+          <div class="popular-thumb" style="background:linear-gradient(135deg,#EEF6F0,#D8EEE0)">&#127807;</div>
+          <div class="popular-info">
+            <div class="popular-title">코끝 필러 vs 코끝 성형 차이점 총정리</div>
+            <div class="popular-stats">&#10084; 741 &nbsp;&#128172; 98</div>
+          </div>
+        </li>
+        <li class="popular-item" onclick="openModal()">
+          <span class="popular-rank rank-3">3</span>
+          <div class="popular-thumb" style="background:linear-gradient(135deg,#FBF5EE,#F5EAD8)">&#127775;</div>
+          <div class="popular-info">
+            <div class="popular-title">지방흡입 후 멍 빠지는 기간 — 부위별 정리</div>
+            <div class="popular-stats">&#10084; 623 &nbsp;&#128172; 87</div>
+          </div>
+        </li>
+        <li class="popular-item" onclick="openModal()">
+          <span class="popular-rank">4</span>
+          <div class="popular-thumb" style="background:linear-gradient(135deg,#EEF0FB,#E0E4F8)">&#128142;</div>
+          <div class="popular-info">
+            <div class="popular-title">보톡스 맞고 두통 생기는 거 정상인가요?</div>
+            <div class="popular-stats">&#10084; 512 &nbsp;&#128172; 203</div>
+          </div>
+        </li>
+        <li class="popular-item" onclick="openModal()">
+          <span class="popular-rank">5</span>
+          <div class="popular-thumb" style="background:linear-gradient(135deg,#FBF0F3,#EEF0FB)">&#128144;</div>
+          <div class="popular-info">
+            <div class="popular-title">울세라 vs 써마지 — 리프팅 효과 비교 후기</div>
+            <div class="popular-stats">&#10084; 489 &nbsp;&#128172; 76</div>
+          </div>
+        </li>
+      </ol>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">&#127973; 병원 스포트라이트</div>
+      <div class="hospital-card">
+        <div class="hospital-logo" style="background:linear-gradient(135deg,#FBF0F3,#F5E0E8)">&#127973;</div>
+        <div class="hospital-info">
+          <div class="hospital-name">글램성형외과</div>
+          <div class="hospital-tags"><span>눈성형</span><span>코성형</span><span>윤과</span></div>
+          <div class="hospital-rating">&#11088; 4.9 &nbsp;<span class="review-count">(2,341건)</span></div>
+        </div>
+        <button class="btn-hospital" data-msg="병원 정보를 확인합니다" onclick="showToast(this.dataset.msg)">상담</button>
+      </div>
+      <div class="hospital-card">
+        <div class="hospital-logo" style="background:linear-gradient(135deg,#EEF6F0,#D8EEE0)">&#127968;</div>
+        <div class="hospital-info">
+          <div class="hospital-name">뷰티피부과의원</div>
+          <div class="hospital-tags"><span>피부레이저</span><span>보톡스</span><span>필러</span></div>
+          <div class="hospital-rating">&#11088; 4.8 &nbsp;<span class="review-count">(1,892건)</span></div>
+        </div>
+        <button class="btn-hospital" data-msg="병원 정보를 확인합니다" onclick="showToast(this.dataset.msg)">상담</button>
+      </div>
+      <div class="hospital-card">
+        <div class="hospital-logo" style="background:linear-gradient(135deg,#FBF5EE,#F5EAD8)">&#127970;</div>
+        <div class="hospital-info">
+          <div class="hospital-name">에스테틱성형외과</div>
+          <div class="hospital-tags"><span>지방흡입</span><span>윤과</span><span>가슴</span></div>
+          <div class="hospital-rating">&#11088; 4.7 &nbsp;<span class="review-count">(1,456건)</span></div>
+        </div>
+        <button class="btn-hospital" data-msg="병원 정보를 확인합니다" onclick="showToast(this.dataset.msg)">상담</button>
+      </div>
+    </div>
+    <div class="sidebar-section disclaimer-box">
+      <div class="disclaimer-title">&#9888;&#65039; 의료광고 안내</div>
+      <p>본 커뮤니티의 후기 및 정보는 개인의 경험을 공유하는 것으로, 의료적 조언이 아닙니다.</p>
+      <p>시술 결과는 개인차가 있으며, 반드시 전문의의 상담을 받으시기 바랍니다.</p>
+      <p class="disclaimer-law">의료법 제56조 준수 &middot; 의료광고 심의필 확인</p>
+    </div>
+  </aside>
+</div>
+
+<div id="detailModal" class="modal-overlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()" aria-label="닫기">&#10005;</button>
+    <div class="modal-gallery">
+      <div class="gallery-main" id="galleryMain" style="background:linear-gradient(135deg,#FBF0F3 0%,#F5E0E8 50%,#EDE5DC 100%);display:flex;align-items:center;justify-content:center;font-size:80px">&#128522;</div>
+      <button class="gallery-nav prev" onclick="galleryNav(-1)">&#8249;</button>
+      <button class="gallery-nav next" onclick="galleryNav(1)">&#8250;</button>
+      <div class="gallery-dots" id="galleryDots">
+        <span class="gallery-dot active" onclick="galleryGoto(0)"></span>
+        <span class="gallery-dot" onclick="galleryGoto(1)"></span>
+        <span class="gallery-dot" onclick="galleryGoto(2)"></span>
+        <span class="gallery-dot" onclick="galleryGoto(3)"></span>
+        <span class="gallery-dot" onclick="galleryGoto(4)"></span>
+        <span class="gallery-dot" onclick="galleryGoto(5)"></span>
+      </div>
+    </div>
+    <div class="gallery-thumbs" id="galleryThumbs">
+      <div class="gallery-thumb active" onclick="galleryGoto(0)" style="background:linear-gradient(135deg,#FBF0F3,#F5E0E8)"><span>수술전</span></div>
+      <div class="gallery-thumb" onclick="galleryGoto(1)" style="background:linear-gradient(135deg,#F5E0E8,#EDD8E0)"><span>1주</span></div>
+      <div class="gallery-thumb" onclick="galleryGoto(2)" style="background:linear-gradient(135deg,#EDD8E0,#E5D0D8)"><span>1개월</span></div>
+      <div class="gallery-thumb" onclick="galleryGoto(3)" style="background:linear-gradient(135deg,#E5D0D8,#DCC8D0)"><span>2개월</span></div>
+      <div class="gallery-thumb" onclick="galleryGoto(4)" style="background:linear-gradient(135deg,#DCC8D0,#D4C0C8)"><span>3개월</span></div>
+      <div class="gallery-thumb" onclick="galleryGoto(5)" style="background:linear-gradient(135deg,#C4526A,#D9748A)"><span>현재</span></div>
+    </div>
+    <div class="modal-content">
+      <div class="modal-tags">
+        <span class="proc-tag">눈성형</span>
+        <span class="verified-badge">&#11088; 인증후기</span>
+        <span class="ba-badge"><span class="ba-dot"></span>비포&amp;애프터</span>
+      </div>
+      <h2 class="modal-title">쌌꺼풀 자연유 매물법 3개월 후기 — 일상에서 자연스럽게 자리잡았어요</h2>
+      <div class="modal-author-row">
+        <div class="author-avatar">&#127801;</div>
+        <div>
+          <div class="author-name"><strong>눈빛나는아이</strong></div>
+          <div class="modal-date">2026.02.18 &middot; 조회 4,821</div>
+        </div>
+        <button class="btn-follow" data-msg="팔로우했습니다!" onclick="showToast(this.dataset.msg)">팔로우</button>
+      </div>
+      <table class="info-table">
+        <tr><th>시술명</th><td>쌌꺼풀 자연유 매물법 (양안)</td><th>병원</th><td>글램성형외과</td></tr>
+        <tr><th>수술일</th><td>2025.11.20</td><th>시술비</th><td>120만원</td></tr>
+        <tr><th>마취</th><td>수면마취</td><th>회복기간</th><td>3일 (일상생활 가능)</td></tr>
+      </table>
+      <div class="modal-body">
+        <p>안녕하세요! 오늘은 쌌꺼풀 매물법 3개월 후기를 올립니다. 수술 전부터 지금까지 경과를 사진과 함께 상세히 설명해드릴게요.</p>
+        <p>수술 전 저는 업도 없는 속쌌꺼풀이었는데요. 얼굴이 피곤해 보이는 게 싫어서 오래 고민했어요. 자연유 매물법으로 결정한 건 티가 나지 않아서였어요.</p>
+        <p>3개월이 지난 지금은 정말 자연스럽게 자리잡혀서 주변에서도 모를 정도에요. 수술 결과에 매우 만족하고 있습니다. 고민하시는 분들께 도움이 되었으면 좋겠어요!</p>
+      </div>
+      <div class="modal-actions">
+        <button class="modal-action-btn liked" onclick="toggleLike(event,this)">&#10084; 좋아요 <span>342</span></button>
+        <button class="modal-action-btn" onclick="document.querySelector('.comment-input').focus()">&#128172; 댓글 <span>47</span></button>
+        <button class="modal-action-btn" onclick="toggleBookmark(event,this)">&#128278; 저장</button>
+        <button class="modal-action-btn" data-msg="링크가 복사되었습니다!" onclick="showToast(this.dataset.msg)">&#128279; 공유</button>
+        <button class="modal-action-btn primary" data-msg="병원 상담 페이지로 이동합니다" onclick="showToast(this.dataset.msg)">&#127973; 병원 상담</button>
+      </div>
+      <div class="comments-section">
+        <div class="comments-title">&#128172; 댓글 47</div>
+        <div class="comment-item">
+          <div class="comment-avatar">&#127804;</div>
+          <div class="comment-bubble">
+            <div class="comment-author">코성형궁금</div>
+            <div class="comment-text">정말 자연스럽게 잘 되셨네요! 저도 매물법 고민 중인데 용기 얻어가요 &#128522;</div>
+            <div class="comment-meta">2시간 전 &middot; <button class="comment-like">&#10084; 12</button></div>
+          </div>
+        </div>
+        <div class="comment-item reply">
+          <div class="comment-avatar">&#127801;</div>
+          <div class="comment-bubble">
+            <div class="comment-author">눈빛나는아이 <span class="author-badge">작성자</span></div>
+            <div class="comment-text">감사해요! 저도 처음에 많이 고민했는데 결과적으로 만족스러워요 &#128522; 고민 있으시면 답글 주세요!</div>
+            <div class="comment-meta">1시간 전 &middot; <button class="comment-like">&#10084; 8</button></div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar">&#127803;</div>
+          <div class="comment-bubble">
+            <div class="comment-author">얼굴작아지고싶다</div>
+            <div class="comment-text">수술 비용이 얼마인지 여죭어봐도 될까요? 병원마다 다르겠지만...</div>
+            <div class="comment-meta">45분 전 &middot; <button class="comment-like">&#10084; 3</button></div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="comment-avatar anon-avatar">&#128274;</div>
+          <div class="comment-bubble">
+            <div class="comment-author">익명</div>
+            <div class="comment-text">회복기간이 3일밖에 안 되나요? 저는 1주일 걸렸던 거 같은데...</div>
+            <div class="comment-meta">20분 전 &middot; <button class="comment-like">&#10084; 1</button></div>
+          </div>
+        </div>
+        <div class="comment-input-row">
+          <div class="comment-avatar">&#128100;</div>
+          <input type="text" class="comment-input" placeholder="댓글을 입력하세요...">
+          <button class="btn-comment-submit" data-msg="댓글이 등록되었습니다!" onclick="showToast(this.dataset.msg)">등록</button>
+        </div>
+      </div>
+      <div class="related-section">
+        <div class="related-title">연관 후기 &amp; 고민</div>
+        <div class="related-grid">
+          <div class="related-card" onclick="openModal()">
+            <div class="related-photo" style="background:linear-gradient(135deg,#EEF6F0,#D8EEE0)">&#127807;</div>
+            <div class="related-info">
+              <span class="proc-tag">눈성형</span>
+              <div class="related-card-title">이중소꺼풀 절개법 vs 매물법 비교 후기</div>
+              <div class="related-stats">&#10084; 287</div>
+            </div>
+          </div>
+          <div class="related-card" onclick="openModal()">
+            <div class="related-photo" style="background:linear-gradient(135deg,#FBF5EE,#F5EAD8)">&#127775;</div>
+            <div class="related-info">
+              <span class="proc-tag">눈성형</span>
+              <div class="related-card-title">쌌꺼풀 후 스티커 제거 시기 언제가 좋을까요?</div>
+              <div class="related-stats">&#10084; 156</div>
+            </div>
+          </div>
+          <div class="related-card" onclick="openModal()">
+            <div class="related-photo" style="background:linear-gradient(135deg,#EEF0FB,#E0E4F8)">&#128142;</div>
+            <div class="related-info">
+              <span class="proc-tag">눈성형</span>
+              <div class="related-card-title">언더컷 수술 후 눈꺼풀 하면 안 되나요?</div>
+              <div class="related-stats">&#10084; 203</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <div class="logo-mark" style="width:28px;height:28px;font-size:14px">&#128142;</div>
+        <span class="logo-text" style="font-size:16px">글램<span>톡</span></span>
+      </div>
+      <nav class="footer-links">
+        <a href="#">회사소개</a>
+        <a href="#">이용약관</a>
+        <a href="#" class="highlight">개인정보처리방침</a>
+        <a href="#">커뮤니티 가이드라인</a>
+        <a href="#">광고문의</a>
+        <a href="#">고객센터</a>
+        <a href="#">의료광고 심의신청</a>
+      </nav>
+    </div>
+    <div class="footer-disclaimer">
+      <p><strong>[의료광고 안내]</strong> 본 서비스는 의료법 제56조(의료광고의 금지 등) 및 제57조(의료광고심의위원회의 심의)를 준수합니다. 이용자가 작성한 후기 및 상담 글은 개인의 경험을 공유하는 것으로, 의료적 조언이나 광고가 아닙니다.</p>
+      <p><strong>[개인정보 보호]</strong> 본 서비스는 개인정보보호법에 따라 이용자의 개인정보를 보호합니다. 얼굴 사진 등 민감한 개인정보는 자동 블러 처리되며, 이용자는 언제든지 정보 삭제를 요청할 수 있습니다.</p>
+      <p><strong>[시술 결과 안내]</strong> 성형·시술의 결과는 개인차가 있으며, 본 커뮤니티에 게시된 후기가 동일한 결과를 보장하지 않습니다. 시술 전 반드시 전문 의료인과 충분한 상담을 받으시기 바랍니다.</p>
+      <p class="footer-biz">주식회사 글램톡 &middot; 대표이사: 홍글램 &middot; 사업자등록번호: 000-00-00000 &middot; 통신판매업신고: 제2026-서울강남-0000호 &middot; 주소: 서울특별시 강남구 테헤란로 123 &middot; 고객센터: 1588-0000</p>
+      <p class="footer-copy">&copy; 2026 글램톡. All rights reserved. &middot; 의료광고 심의필 확인 &#9989;</p>
+    </div>
+  </div>
+</footer>
+<style>
+.quick-textarea{width:100%;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;font-family:var(--font-sans);font-size:13px;color:var(--ink);background:var(--ivory-dark);resize:none;outline:none;transition:var(--transition);margin-bottom:10px}
+.quick-textarea:focus{border-color:var(--rose-mid);background:var(--white)}
+.quick-options{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.option-chip{padding:5px 12px;border-radius:14px;border:1.5px solid var(--border);font-size:12px;color:var(--muted);background:var(--white);transition:var(--transition)}
+.option-chip.active,.option-chip:hover{border-color:var(--rose-mid);color:var(--rose-deep);background:var(--rose-pale)}
+.quick-footer{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.anon-toggle{display:flex;align-items:center;gap:6px;cursor:pointer}
+.anon-toggle input{display:none}
+.anon-slider{width:32px;height:18px;background:var(--border);border-radius:9px;position:relative;transition:var(--transition)}
+.anon-slider::after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;background:white;border-radius:50%;transition:var(--transition)}
+.anon-toggle input:checked + .anon-slider{background:var(--rose-deep)}
+.anon-toggle input:checked + .anon-slider::after{transform:translateX(14px)}
+.anon-label-text{font-size:12px;color:var(--muted)}
+.btn-quick-submit{padding:7px 16px;background:linear-gradient(135deg,var(--rose-deep),var(--rose-mid));color:white;border-radius:14px;font-size:13px;font-weight:600;transition:var(--transition)}
+.btn-quick-submit:hover{transform:translateY(-1px);box-shadow:0 3px 10px rgba(196,82,106,.3)}
+.btn-hospital{padding:6px 12px;border:1.5px solid var(--rose-mid);color:var(--rose-deep);border-radius:12px;font-size:12px;font-weight:600;transition:var(--transition);white-space:nowrap}
+.btn-hospital:hover{background:var(--rose-pale)}
+.comments-section{margin-top:28px;padding-top:24px;border-top:1px solid var(--border-soft)}
+.comments-title{font-size:15px;font-weight:700;color:var(--charcoal);margin-bottom:16px}
+.footer-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border-soft)}
+.footer-links{display:flex;flex-wrap:wrap;gap:4px 16px}
+.footer-links a{font-size:12px;color:var(--muted);transition:var(--transition)}
+.footer-links a:hover{color:var(--rose-deep)}
+.footer-links a.highlight{color:var(--charcoal);font-weight:600}
+.footer-biz{font-size:11px;color:var(--muted-light);margin-top:8px;line-height:1.8}
+.footer-copy{font-size:11px;color:var(--muted-light);margin-top:6px}
+</style>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// Gallery state
+const galleryData = [
+  {bg:"linear-gradient(135deg,#FBF0F3,#F5E0E8)",emoji:"&#128522;",label:"수술전"},
+  {bg:"linear-gradient(135deg,#F5E0E8,#EDD8E0)",emoji:"&#128522;",label:"1주"},
+  {bg:"linear-gradient(135deg,#EDD8E0,#E5D0D8)",emoji:"&#128522;",label:"1개월"},
+  {bg:"linear-gradient(135deg,#E5D0D8,#DCC8D0)",emoji:"&#128522;",label:"2개월"},
+  {bg:"linear-gradient(135deg,#DCC8D0,#D4C0C8)",emoji:"&#128522;",label:"3개월"},
+  {bg:"linear-gradient(135deg,#C4526A,#D9748A)",emoji:"&#128522;",label:"현재"}
+];
+let currentSlide = 0;
+
+function showToast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), 2400);
+}
+
+function openModal() {
+  document.getElementById("detailModal").classList.add("active");
+  document.body.style.overflow = "hidden";
+  currentSlide = 0;
+  updateGallery();
+}
+
+function closeModal() {
+  document.getElementById("detailModal").classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+function closeModalOnOverlay(e) {
+  if (e.target === document.getElementById("detailModal")) closeModal();
+}
+
+function updateGallery() {
+  const d = galleryData[currentSlide];
+  const main = document.getElementById("galleryMain");
+  main.style.background = d.bg;
+  main.innerHTML = d.emoji;
+  // Update dots
+  document.querySelectorAll(".gallery-dot").forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentSlide);
+  });
+  // Update thumbs
+  document.querySelectorAll(".gallery-thumb").forEach((th, i) => {
+    th.classList.toggle("active", i === currentSlide);
+  });
+}
+
+function galleryNav(dir) {
+  currentSlide = (currentSlide + dir + galleryData.length) % galleryData.length;
+  updateGallery();
+}
+
+function galleryGoto(idx) {
+  currentSlide = idx;
+  updateGallery();
+}
+
+function toggleLike(e, btn) {
+  e.stopPropagation();
+  const isLiked = btn.classList.toggle("liked");
+  const text = btn.textContent || btn.innerHTML;
+  const match = text.match(/d+/);
+  if (match) {
+    const n = parseInt(match[0]);
+    const newN = isLiked ? n + 1 : n - 1;
+    btn.innerHTML = btn.innerHTML.replace(/d+/, newN);
+  }
+}
+
+function toggleBookmark(e, btn) {
+  e.stopPropagation();
+  const saved = btn.classList.toggle("saved");
+  showToast(saved ? "저장되었습니다!" : "저장이 취소되었습니다.");
+}
+
+function setSort(btn) {
+  document.querySelectorAll(".sort-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+}
+
+function setFilter(btn) {
+  document.querySelectorAll(".filter-chip").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+}
+
+function setCategory(item) {
+  document.querySelectorAll(".category-item").forEach(i => i.classList.remove("active"));
+  item.classList.add("active");
+}
+
+function setTab(btn) {
+  document.querySelectorAll(".nav-tab").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+}
+
+function toggleOption(btn) {
+  document.querySelectorAll(".option-chip").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+}
+
+// Keyboard: Escape closes modal
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") closeModal();
+});
+
+// Enter key on comment input
+document.addEventListener("DOMContentLoaded", function() {
+  const inp = document.querySelector(".comment-input");
+  if (inp) {
+    inp.addEventListener("keydown", function(e) {
+      if (e.key === "Enter" && this.value.trim()) {
+        showToast("댓글이 등록되었습니다!");
+        this.value = "";
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>

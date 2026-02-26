@@ -1,0 +1,23 @@
+﻿:root {
+  --ivory:#FAF7F4; --ivory-dark:#F2EDE8; --ivory-mid:#EDE5DC;
+  --rose-deep:#C4526A; --rose-mid:#D9748A; --rose-light:#F0B8C4; --rose-pale:#FBF0F3;
+  --gold:#C9A96E; --gold-light:#E8D5B0; --gold-pale:#FBF6EE;
+  --charcoal:#2A2320; --ink:#3D3330; --muted:#8A7B75; --muted-light:#B5A9A4;
+  --border:#E8DDD6; --border-soft:#F0E8E2; --white:#FFFFFF;
+  --shadow-sm:0 1px 4px rgba(42,35,32,.06);
+  --shadow-md:0 4px 16px rgba(42,35,32,.10);
+  --shadow-lg:0 8px 32px rgba(42,35,32,.14);
+  --radius-sm:8px; --radius-md:14px; --radius-lg:20px; --radius-xl:28px;
+  --font-sans:'Noto Sans KR',sans-serif;
+  --font-serif:'Playfair Display',serif;
+  --transition:all .22s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--ivory);color:var(--ink);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+img{display:block;max-width:100%}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--ivory-dark)}
+::-webkit-scrollbar-thumb{background:var(--rose-light);border-radius:3px}

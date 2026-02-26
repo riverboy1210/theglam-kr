@@ -16,6 +16,9 @@
       padding: 12px 16px;
       border-bottom: 1px solid var(--border);
       background: #fff;
+      position: sticky;
+      top: 56px;
+      z-index: 130;
     }
 
     .sort-select {
@@ -156,9 +159,9 @@
     </div>
 
     <section class="articles-section" aria-label="기사 목록">
-      <div class="article-grid">
+      <div class="article-grid" id="articles-grid">
         <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
-          <div class="article-card-img"><img src="./images/68b50fc966157f9f5c75d3c1_uc.png" alt="쌍꺼풀 가격 가이드 썸네일" loading="lazy"></div>
+          <div class="article-card-img"><img src="./images/68bfc67a2887457b567f1c48_uc.jpeg" alt="쌍꺼풀 가격 가이드 썸네일" loading="lazy"></div>
           <div>
             <span class="badge" style="background:#10B98120;color:#10B981;margin-bottom:8px;">비용비교</span>
             <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">쌍꺼풀 수술 가격, 진짜 얼마가 드는 걸까?</h3>
@@ -176,7 +179,7 @@
         </article>
 
         <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
-          <div class="article-card-img"><img src="./images/68b50fc92a63226864a5c273_uc.png" alt="코성형 비용 총정리 썸네일" loading="lazy"></div>
+          <div class="article-card-img"><img src="./images/68bfc6802082eb0b6980782c_uc.jpeg" alt="코성형 비용 총정리 썸네일" loading="lazy"></div>
           <div>
             <span class="badge" style="background:#10B98120;color:#10B981;margin-bottom:8px;">비용비교</span>
             <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">코성형 비용 총정리 — 필러부터 재건술까지</h3>
@@ -194,7 +197,7 @@
         </article>
 
         <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
-          <div class="article-card-img"><img src="./images/68b50fc825982ab007daa5e7_uc.png" alt="지방흡입 가격 비교 썸네일" loading="lazy"></div>
+          <div class="article-card-img"><img src="./images/68bfc6814c4f014bc9e34d07_uc.jpeg" alt="지방흡입 가격 비교 썸네일" loading="lazy"></div>
           <div>
             <span class="badge" style="background:#10B98120;color:#10B981;margin-bottom:8px;">비용비교</span>
             <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">지방흡입 가격, 부위별로 얼마나 들까?</h3>
@@ -212,7 +215,7 @@
         </article>
 
         <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
-          <div class="article-card-img"><img src="./images/68b50fc66ac21db37b2e5191_uc.png" alt="코성형 부작용 정보 썸네일" loading="lazy"></div>
+          <div class="article-card-img"><img src="./images/68bfc674f6fd28266557a322_uc.jpeg" alt="코성형 부작용 정보 썸네일" loading="lazy"></div>
           <div>
             <span class="badge" style="background:#EF444420;color:#EF4444;margin-bottom:8px;">안전정보</span>
             <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">코 성형 부작용, 미리 알면 막을 수 있어요</h3>
@@ -230,7 +233,7 @@
         </article>
 
         <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
-          <div class="article-card-img"><img src="./images/68b50fc50c57b5b1193f7a0b_uc.png" alt="눈성형 부작용 체크 썸네일" loading="lazy"></div>
+          <div class="article-card-img"><img src="./images/68bfc67536f1426d54b6da0a_uc.jpeg" alt="눈성형 부작용 체크 썸네일" loading="lazy"></div>
           <div>
             <span class="badge" style="background:#EF444420;color:#EF4444;margin-bottom:8px;">안전정보</span>
             <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">눈 성형 부작용 신호 — 이건 꼭 확인하세요</h3>
@@ -248,7 +251,7 @@
         </article>
 
         <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
-          <div class="article-card-img"><img src="./images/68b50fc4d038f04e5d8d7c4c_uc.png" alt="리프팅 선택 가이드 썸네일" loading="lazy"></div>
+          <div class="article-card-img"><img src="./images/68bfc676777472ae45bec4b5_uc.jpeg" alt="리프팅 선택 가이드 썸네일" loading="lazy"></div>
           <div>
             <span class="badge" style="background:#EF444420;color:#EF4444;margin-bottom:8px;">안전정보</span>
             <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">리프팅 시술, 내 피부에 맞는 걸 어떻게 고를까?</h3>
@@ -266,7 +269,7 @@
         </article>
 
         <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
-          <div class="article-card-img"><img src="./images/68b50fc3bf0308dce47c4b11_uc.png" alt="보톡스 지속기간 가이드 썸네일" loading="lazy"></div>
+          <div class="article-card-img"><img src="./images/68bfc677f0d467bcd1c4a338_uc.jpeg" alt="보톡스 지속기간 가이드 썸네일" loading="lazy"></div>
           <div>
             <span class="badge" style="background:#3B82F620;color:#3B82F6;margin-bottom:8px;">회복관리</span>
             <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">보톡스 효과 언제까지? 지속 기간 완벽 정리</h3>
@@ -284,7 +287,7 @@
         </article>
 
         <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
-          <div class="article-card-img"><img src="./images/68b50fbe1335558002f97d97_uc.png" alt="쌍꺼풀 회복기간 타임라인 썸네일" loading="lazy"></div>
+          <div class="article-card-img"><img src="./images/68bfc678777472ae45bec5df_uc.jpeg" alt="쌍꺼풀 회복기간 타임라인 썸네일" loading="lazy"></div>
           <div>
             <span class="badge" style="background:#3B82F620;color:#3B82F6;margin-bottom:8px;">회복관리</span>
             <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">쌍꺼풀 수술 회복기간 — 일상 복귀 현실 타임라인</h3>
@@ -302,7 +305,7 @@
         </article>
 
         <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
-          <div class="article-card-img"><img src="./images/68b50fbd65f96dd370c282f4_uc.png" alt="리프팅 후 관리법 썸네일" loading="lazy"></div>
+          <div class="article-card-img"><img src="./images/68bfc67968ad161625b08e83_uc.jpeg" alt="리프팅 후 관리법 썸네일" loading="lazy"></div>
           <div>
             <span class="badge" style="background:#3B82F620;color:#3B82F6;margin-bottom:8px;">회복관리</span>
             <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">리프팅 후 관리법 — 효과 오래 가려면?</h3>
@@ -320,7 +323,7 @@
         </article>
 
         <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
-          <div class="article-card-img"><img src="./images/68b50fba4c03cecaabce50e3_uc.png" alt="성형외과 선택법 기사 썸네일" loading="lazy"></div>
+          <div class="article-card-img"><img src="./images/68bfc69d0c201171a6596963_uc.jpeg" alt="성형외과 선택법 기사 썸네일" loading="lazy"></div>
           <div>
             <span class="badge" style="background:#8B5CF620;color:#8B5CF6;margin-bottom:8px;">병원선택</span>
             <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">성형외과 고르는 법 — 후기 말고 이것도 보세요</h3>
@@ -338,7 +341,7 @@
         </article>
 
         <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
-          <div class="article-card-img"><img src="./images/68b50fb92199006db8de8357_uc.png" alt="온라인 후기 검증법 기사 썸네일" loading="lazy"></div>
+          <div class="article-card-img"><img src="./images/68bfc69ff5dfce2aa58e33b4_uc.jpeg" alt="온라인 후기 검증법 기사 썸네일" loading="lazy"></div>
           <div>
             <span class="badge" style="background:#8B5CF620;color:#8B5CF6;margin-bottom:8px;">병원선택</span>
             <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">온라인 후기 검증법 — 진짜 후기 vs 홍보 후기 구분</h3>
@@ -356,7 +359,7 @@
         </article>
 
         <article class="card article-card" style="cursor:pointer;" onclick="location.href='./article.html'">
-          <div class="article-card-img"><img src="./images/68b50fdf9e1e0b057ca5db35_uc.png" alt="첫 상담 체크리스트 기사 썸네일" loading="lazy"></div>
+          <div class="article-card-img"><img src="./images/68bfc69f93ab960ba81387f7_uc.jpeg" alt="첫 상담 체크리스트 기사 썸네일" loading="lazy"></div>
           <div>
             <span class="badge" style="background:#8B5CF620;color:#8B5CF6;margin-bottom:8px;">병원선택</span>
             <h3 style="font-size:15px;font-weight:700;line-height:1.4;margin:0 0 6px;">첫 상담 전 체크리스트 — 이 질문은 꼭 하세요</h3>
@@ -445,5 +448,21 @@
   </nav>
 
   <script src="./shared-data.js"></script>
+  <script>
+    (function rollArticlesByHour() {
+      var grid = document.getElementById('articles-grid');
+      if (!grid) return;
+
+      var cards = Array.prototype.slice.call(grid.children);
+      if (!cards.length) return;
+
+      var hour = new Date().getHours();
+      var offset = hour % cards.length;
+      var rolled = cards.slice(offset).concat(cards.slice(0, offset));
+
+      grid.innerHTML = '';
+      rolled.forEach(function (card) { grid.appendChild(card); });
+    })();
+  </script>
 </body>
 </html>

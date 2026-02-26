@@ -1,0 +1,1 @@
+﻿const fs = require("fs"); fs.appendFileSync("index.html", ".modal-test{color:red}\n", "utf8"); console.log("ok", fs.statSync("index.html").size);
