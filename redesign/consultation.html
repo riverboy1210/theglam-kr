@@ -293,6 +293,10 @@
       <span class="nav-icon">🔍</span>
       <span>검색</span>
     </a>
+    <a href="./community.html" class="bottom-nav-item">
+      <span class="nav-icon">💬</span>
+      <span>글램바비</span>
+    </a>
     <a href="./reviews.html" class="bottom-nav-item">
       <span class="nav-icon">⭐</span>
       <span>후기</span>
@@ -301,10 +305,6 @@
       <span class="nav-icon">🏥</span>
       <span>병원</span>
     </a>
-    <a href="./consultation.html" class="bottom-nav-item active">
-      <span class="nav-icon">👤</span>
-      <span>마이</span>
-    </a>
   </nav>
 
   <script src="./shared-data.js"></script>
@@ -312,6 +312,49 @@
     // Override floating CTA for consultation page
     document.querySelector('.floating-cta').innerHTML = '<a href="tel:0233333539" style="color:#fff;font-size:1rem;font-weight:700;text-decoration:none;display:block;width:100%;text-align:center;padding:16px;">📞 전화로 바로 상담 · 02-333-3539</a>';
     document.querySelector('.floating-cta').style.background = '#00BCD4';
+  </script>
+  <script>
+    (function initConsultationInteractions() {
+      // Form submit feedback
+      var form = document.querySelector('.consultation-form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var nameInput = form.querySelector('input[type="text"]');
+          var name = nameInput ? nameInput.value.trim() : '';
+          if (name) {
+            alert(name + '님, 상담 신청이 완료되었습니다! 24시간 내 연락드릴게요. 😊');
+            form.reset();
+          } else {
+            alert('이름을 입력해주세요.');
+          }
+        });
+      }
+
+      // KakaoTalk button
+      var kakaoBtn = document.querySelector('.btn-kakao');
+      if (kakaoBtn) {
+        kakaoBtn.addEventListener('click', function() {
+          alert('카카오톡 상담 채널은 준비 중입니다. 전화(02-333-3539) 또는 이메일(hello@theglam.kr)로 문의해주세요.');
+        });
+      }
+    })();
+  </script>
+  <script>
+    // 헤더 검색 기본 동작
+    (function() {
+      var searchInput = document.querySelector('.header-search-input');
+      var searchBtn = document.querySelector('.header-search-btn');
+      if (!searchInput || !searchBtn) return;
+      function doSearch() {
+        var q = searchInput.value.trim();
+        if (q) location.href = './articles.html?q=' + encodeURIComponent(q);
+      }
+      searchBtn.addEventListener('click', doSearch);
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') doSearch();
+      });
+    })();
   </script>
 </body>
 </html>

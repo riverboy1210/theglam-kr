@@ -306,8 +306,8 @@
       </section>
 
       <div class="popular-tags">
-        <span class="chip">#쌍꺼풀</span><span class="chip">#코성형</span><span class="chip">#리프팅</span>
-        <span class="chip">#보톡스</span><span class="chip">#지방흡입</span><span class="chip">#윤곽</span>
+        <a href="./articles.html" class="chip" style="text-decoration:none;">#쌍꺼풀</a><a href="./articles.html" class="chip" style="text-decoration:none;">#코성형</a><a href="./articles.html" class="chip" style="text-decoration:none;">#리프팅</a>
+        <a href="./articles.html" class="chip" style="text-decoration:none;">#보톡스</a><a href="./articles.html" class="chip" style="text-decoration:none;">#지방흡입</a><a href="./articles.html" class="chip" style="text-decoration:none;">#윤곽</a>
       </div>
 
       <div class="filter-bar category-tabs" id="home-category-tabs">
@@ -521,12 +521,14 @@
             <p class="event-sub">첫 방문 고객 대상 특별 혜택</p>
             <div class="event-price">69만원</div>
             <p class="event-period">기간: 2026.02.01 ~ 2026.03.31</p>
+            <a href="./consultation.html" class="btn-primary" style="display:inline-block;margin-top:8px;text-decoration:none;">상담 신청</a>
           </article>
           <article class="event-card">
             <p class="event-title">압구정 CC의원 · 리프팅 패키지</p>
             <p class="event-sub">상담 완료 시 시술비 추가 할인</p>
             <div class="event-price">129만원</div>
             <p class="event-period">기간: 2026.02.10 ~ 2026.03.20</p>
+            <a href="./consultation.html" class="btn-primary" style="display:inline-block;margin-top:8px;text-decoration:none;">상담 신청</a>
           </article>
         </div>
       </section>
@@ -565,6 +567,10 @@
       <span class="nav-icon">🔍</span>
       <span>검색</span>
     </a>
+    <a href="./community.html" class="bottom-nav-item">
+      <span class="nav-icon">💬</span>
+      <span>글램바비</span>
+    </a>
     <a href="./reviews.html" class="bottom-nav-item">
       <span class="nav-icon">⭐</span>
       <span>후기</span>
@@ -572,10 +578,6 @@
     <a href="./hospitals.html" class="bottom-nav-item">
       <span class="nav-icon">🏥</span>
       <span>병원</span>
-    </a>
-    <a href="./consultation.html" class="bottom-nav-item">
-      <span class="nav-icon">👤</span>
-      <span>마이</span>
     </a>
   </nav>
 
@@ -661,6 +663,22 @@
             + '</div></a>';
         }).join('');
       }
+    })();
+  </script>
+  <script>
+    // 헤더 검색 기본 동작
+    (function() {
+      var searchInput = document.querySelector('.header-search-input');
+      var searchBtn = document.querySelector('.header-search-btn');
+      if (!searchInput || !searchBtn) return;
+      function doSearch() {
+        var q = searchInput.value.trim();
+        if (q) location.href = './articles.html?q=' + encodeURIComponent(q);
+      }
+      searchBtn.addEventListener('click', doSearch);
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') doSearch();
+      });
     })();
   </script>
 </body>

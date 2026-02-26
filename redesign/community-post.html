@@ -204,21 +204,21 @@
       <span class="nav-icon">🏠</span>
       <span>홈</span>
     </a>
-    <a href="./community.html" class="bottom-nav-item active">
-      <span class="nav-icon">💬</span>
-      <span>글램바비</span>
-    </a>
     <a href="./articles.html" class="bottom-nav-item">
       <span class="nav-icon">🔍</span>
       <span>검색</span>
+    </a>
+    <a href="./community.html" class="bottom-nav-item active">
+      <span class="nav-icon">💬</span>
+      <span>글램바비</span>
     </a>
     <a href="./reviews.html" class="bottom-nav-item">
       <span class="nav-icon">⭐</span>
       <span>후기</span>
     </a>
-    <a href="./consultation.html" class="bottom-nav-item">
-      <span class="nav-icon">👤</span>
-      <span>마이</span>
+    <a href="./hospitals.html" class="bottom-nav-item">
+      <span class="nav-icon">🏥</span>
+      <span>병원</span>
     </a>
   </nav>
 
@@ -373,6 +373,22 @@
     renderComments();
     renderExperts();
     renderRelated();
+  </script>
+  <script>
+    // 헤더 검색 기본 동작
+    (function() {
+      var searchInput = document.querySelector('.header-search-input');
+      var searchBtn = document.querySelector('.header-search-btn');
+      if (!searchInput || !searchBtn) return;
+      function doSearch() {
+        var q = searchInput.value.trim();
+        if (q) location.href = './articles.html?q=' + encodeURIComponent(q);
+      }
+      searchBtn.addEventListener('click', doSearch);
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') doSearch();
+      });
+    })();
   </script>
 </body>
 </html>

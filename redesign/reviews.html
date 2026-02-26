@@ -427,6 +427,10 @@
       <span class="nav-icon">🔍</span>
       <span>검색</span>
     </a>
+    <a href="./community.html" class="bottom-nav-item">
+      <span class="nav-icon">💬</span>
+      <span>글램바비</span>
+    </a>
     <a href="./reviews.html" class="bottom-nav-item active">
       <span class="nav-icon">⭐</span>
       <span>후기</span>
@@ -435,12 +439,99 @@
       <span class="nav-icon">🏥</span>
       <span>병원</span>
     </a>
-    <a href="./consultation.html" class="bottom-nav-item">
-      <span class="nav-icon">👤</span>
-      <span>마이</span>
-    </a>
   </nav>
 
   <script src="./shared-data.js"></script>
+  <script>
+    (function initReviewsInteractions() {
+      // Review card click → detail page
+      var cards = Array.prototype.slice.call(document.querySelectorAll('.review-card'));
+      cards.forEach(function(card) { card.style.cursor = 'pointer'; card.addEventListener('click', function() { location.href = './community-post.html'; }); });
+
+      // Filter chips (procedure)
+      var filterBar = document.querySelector('.filter-section > .filter-bar');
+      if (filterBar) {
+        var chips = Array.prototype.slice.call(filterBar.querySelectorAll('.filter-chip'));
+        chips.forEach(function(chip) {
+          chip.addEventListener('click', function() {
+            chips.forEach(function(c) { c.classList.remove('active'); });
+            chip.classList.add('active');
+            var val = chip.textContent.trim();
+            cards.forEach(function(card) {
+              if (val === '전체') { card.style.display = ''; return; }
+              var text = (card.textContent || '').toLowerCase();
+              card.style.display = text.indexOf(val.toLowerCase()) !== -1 ? '' : 'none';
+            });
+          });
+        });
+      }
+
+      // Sort select
+      var sortSelect = document.querySelector('.filter-select');
+      if (sortSelect) {
+        sortSelect.addEventListener('change', function() {
+          var grid = document.querySelector('.reviews-grid');
+          if (!grid) return;
+          var visible = cards.filter(function(c) { return c.style.display !== 'none'; });
+          visible.sort(function(a, b) {
+            var aLikes = parseInt((a.textContent.match(/♥\s*(\d[\d,]*)/) || [0,'0'])[1].replace(/,/g,'')) || 0;
+            var bLikes = parseInt((b.textContent.match(/♥\s*(\d[\d,]*)/) || [0,'0'])[1].replace(/,/g,'')) || 0;
+            var aViews = parseInt((a.textContent.match(/👁️\s*([\d,]+)/) || [0,'0'])[1].replace(/,/g,'')) || 0;
+            var bViews = parseInt((b.textContent.match(/👁️\s*([\d,]+)/) || [0,'0'])[1].replace(/,/g,'')) || 0;
+            var aRating = parseFloat((a.textContent.match(/(\d\.\d)/) || [0,'0'])[1]) || 0;
+            var bRating = parseFloat((b.textContent.match(/(\d\.\d)/) || [0,'0'])[1]) || 0;
+            var aComments = parseInt((a.textContent.match(/💬\s*(\d+)/) || [0,'0'])[1]) || 0;
+            var bComments = parseInt((b.textContent.match(/💬\s*(\d+)/) || [0,'0'])[1]) || 0;
+            var sort = sortSelect.value;
+            if (sort === '별점높은순') return bRating - aRating;
+            if (sort === '댓글많은순') return bComments - aComments;
+            return bLikes - aLikes; // 인기순 default
+          });
+          visible.forEach(function(c) { grid.appendChild(c); });
+        });
+      }
+
+      // Verified/Photo filter
+      var filterRow2 = document.querySelector('.filter-row-2');
+      if (filterRow2) {
+        var typeChips = Array.prototype.slice.call(filterRow2.querySelectorAll('.filter-chip'));
+        typeChips.forEach(function(chip) {
+          chip.addEventListener('click', function() {
+            typeChips.forEach(function(c) { c.classList.remove('active'); });
+            chip.classList.add('active');
+            var val = chip.textContent.trim();
+            cards.forEach(function(card) {
+              if (val === '전체') { card.style.display = ''; return; }
+              if (val.indexOf('인증') !== -1) {
+                card.style.display = card.querySelector('.badge-verified') ? '' : 'none';
+              } else if (val.indexOf('사진') !== -1) {
+                card.style.display = card.querySelector('.before-after') ? '' : 'none';
+              }
+            });
+          });
+        });
+      }
+
+      // Write review button
+      var writeBtn = document.querySelector('.write-review-banner .btn-primary');
+      if (writeBtn) { writeBtn.addEventListener('click', function() { alert('후기 작성 기능은 곧 오픈 예정이에요! 조금만 기다려주세요 🌸'); }); }
+    })();
+  </script>
+  <script>
+    // 헤더 검색 기본 동작
+    (function() {
+      var searchInput = document.querySelector('.header-search-input');
+      var searchBtn = document.querySelector('.header-search-btn');
+      if (!searchInput || !searchBtn) return;
+      function doSearch() {
+        var q = searchInput.value.trim();
+        if (q) location.href = './articles.html?q=' + encodeURIComponent(q);
+      }
+      searchBtn.addEventListener('click', doSearch);
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') doSearch();
+      });
+    })();
+  </script>
 </body>
 </html>

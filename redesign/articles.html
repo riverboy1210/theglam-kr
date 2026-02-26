@@ -59,6 +59,7 @@
       background: #fff;
       border: 1px solid var(--border);
       border-radius: var(--radius-full);
+      cursor: pointer;
     }
 
     .img-placeholder img, .article-thumb img, .review-card-img img, .article-card-img img, .hospital-card-img img {
@@ -433,6 +434,10 @@
       <span class="nav-icon">🔍</span>
       <span>검색</span>
     </a>
+    <a href="./community.html" class="bottom-nav-item">
+      <span class="nav-icon">💬</span>
+      <span>글램바비</span>
+    </a>
     <a href="./reviews.html" class="bottom-nav-item">
       <span class="nav-icon">⭐</span>
       <span>후기</span>
@@ -440,10 +445,6 @@
     <a href="./hospitals.html" class="bottom-nav-item">
       <span class="nav-icon">🏥</span>
       <span>병원</span>
-    </a>
-    <a href="./consultation.html" class="bottom-nav-item">
-      <span class="nav-icon">👤</span>
-      <span>마이</span>
     </a>
   </nav>
 
@@ -462,6 +463,180 @@
 
       grid.innerHTML = '';
       rolled.forEach(function (card) { grid.appendChild(card); });
+    })();
+  </script>
+  <script>
+    // 헤더 검색 기본 동작
+    (function() {
+      var searchInput = document.querySelector('.header-search-input');
+      var searchBtn = document.querySelector('.header-search-btn');
+      if (!searchInput || !searchBtn) return;
+      function doSearch() {
+        var q = searchInput.value.trim();
+        if (q) location.href = './articles.html?q=' + encodeURIComponent(q);
+      }
+      searchBtn.addEventListener('click', doSearch);
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') doSearch();
+      });
+    })();
+  </script>
+  <script>
+    (function initArticlesInteractions() {
+      var grid = document.getElementById('articles-grid');
+      if (!grid) return;
+
+      var cards = Array.prototype.slice.call(grid.querySelectorAll('.article-card'));
+      var contentTabs = Array.prototype.slice.call(document.querySelectorAll('.content-type-tab'));
+      var procedureChips = Array.prototype.slice.call(document.querySelectorAll('.procedure-filter-wrap .filter-chip'));
+      var sortSelect = document.querySelector('.sort-select');
+      var searchInput = document.querySelector('.search-bar input[type="search"]');
+      var searchButton = document.querySelector('.search-bar button[type="button"]');
+      var keywordTags = Array.prototype.slice.call(document.querySelectorAll('.keyword-tag'));
+      var moreButton = Array.prototype.slice.call(document.querySelectorAll('button.btn-outline')).find(function (btn) {
+        return (btn.textContent || '').indexOf('더 많은 기사 보기') !== -1;
+      });
+
+      function normalize(text) {
+        return (text || '').replace(/\s+/g, ' ').trim().toLowerCase();
+      }
+
+      function parseViews(card) {
+        var text = card.textContent || '';
+        var match = text.match(/👁️\s*([\d,]+)뷰/);
+        if (!match) return 0;
+        return parseInt(match[1].replace(/,/g, ''), 10) || 0;
+      }
+
+      function parseDate(card) {
+        var text = card.textContent || '';
+        var match = text.match(/(\d{4})\.(\d{2})\.(\d{2})/);
+        if (!match) return 0;
+        return new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3])).getTime();
+      }
+
+      cards.forEach(function (card) {
+        card.dataset.badge = normalize((card.querySelector('.badge') || {}).textContent || '');
+        var title = (card.querySelector('h3') || {}).textContent || '';
+        var summary = (card.querySelector('p') || {}).textContent || '';
+        card.dataset.searchText = normalize(title + ' ' + summary + ' ' + card.dataset.badge);
+        card.dataset.views = String(parseViews(card));
+        card.dataset.date = String(parseDate(card));
+      });
+
+      var state = {
+        contentType: '전체',
+        procedure: '전체',
+        search: '',
+        sort: (sortSelect && sortSelect.value) || '최신순'
+      };
+
+      function setActive(target, items) {
+        items.forEach(function (item) { item.classList.remove('active'); });
+        if (target) target.classList.add('active');
+      }
+
+      function cardMatches(card) {
+        var badge = card.dataset.badge || '';
+        var text = card.dataset.searchText || '';
+
+        var contentPass = state.contentType === '전체' || badge.indexOf(normalize(state.contentType)) !== -1;
+        var procedurePass = state.procedure === '전체' || text.indexOf(normalize(state.procedure)) !== -1;
+        var searchPass = !state.search || text.indexOf(normalize(state.search)) !== -1;
+
+        return contentPass && procedurePass && searchPass;
+      }
+
+      function getSortValue(card) {
+        var date = Number(card.dataset.date || 0);
+        var views = Number(card.dataset.views || 0);
+        var dayMs = 24 * 60 * 60 * 1000;
+        var ageDays = 1;
+
+        if (state.sort === '조회수순') return views;
+        if (state.sort === '인기순') {
+          ageDays = Math.max(1, (Date.now() - date) / dayMs);
+          return Math.round((views / ageDays) * 1000) + views;
+        }
+        return date;
+      }
+
+      function applyAll() {
+        cards.forEach(function (card) {
+          card.style.display = cardMatches(card) ? '' : 'none';
+        });
+
+        var visibleCards = cards.filter(function (card) { return card.style.display !== 'none'; });
+        var hiddenCards = cards.filter(function (card) { return card.style.display === 'none'; });
+
+        visibleCards.sort(function (a, b) {
+          return getSortValue(b) - getSortValue(a);
+        });
+
+        grid.innerHTML = '';
+        visibleCards.concat(hiddenCards).forEach(function (card) {
+          grid.appendChild(card);
+        });
+      }
+
+      contentTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          state.contentType = tab.textContent.replace(/\s+/g, ' ').trim();
+          setActive(tab, contentTabs);
+          applyAll();
+        });
+      });
+
+      procedureChips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          state.procedure = chip.textContent.replace(/\s+/g, ' ').trim();
+          setActive(chip, procedureChips);
+          applyAll();
+        });
+      });
+
+      if (sortSelect) {
+        sortSelect.addEventListener('change', function () {
+          state.sort = sortSelect.value;
+          applyAll();
+        });
+      }
+
+      function updateSearch() {
+        state.search = (searchInput && searchInput.value) || '';
+        applyAll();
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', updateSearch);
+        searchInput.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter') {
+            event.preventDefault();
+            updateSearch();
+          }
+        });
+      }
+
+      if (searchButton) {
+        searchButton.addEventListener('click', updateSearch);
+      }
+
+      keywordTags.forEach(function (tag) {
+        tag.addEventListener('click', function () {
+          if (!searchInput) return;
+          searchInput.value = tag.textContent.trim();
+          state.search = searchInput.value;
+          applyAll();
+        });
+      });
+
+      if (moreButton) {
+        moreButton.addEventListener('click', function () {
+          location.href = './articles/breast-augmentation-cost-guide.html';
+        });
+      }
+
+      applyAll();
     })();
   </script>
 </body>

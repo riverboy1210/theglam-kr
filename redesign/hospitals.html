@@ -628,6 +628,10 @@
       <span class="nav-icon">🔍</span>
       <span>검색</span>
     </a>
+    <a href="./community.html" class="bottom-nav-item">
+      <span class="nav-icon">💬</span>
+      <span>글램바비</span>
+    </a>
     <a href="./reviews.html" class="bottom-nav-item">
       <span class="nav-icon">⭐</span>
       <span>후기</span>
@@ -636,12 +640,124 @@
       <span class="nav-icon">🏥</span>
       <span>병원</span>
     </a>
-    <a href="./consultation.html" class="bottom-nav-item">
-      <span class="nav-icon">👤</span>
-      <span>마이</span>
-    </a>
   </nav>
 
   <script src="./shared-data.js"></script>
+  <script>
+    (function initHospitalsInteractions() {
+      var cards = Array.prototype.slice.call(document.querySelectorAll('.hospital-card'));
+      var grid = document.querySelector('.hospitals-grid');
+
+      // Detail buttons
+      var detailBtns = Array.prototype.slice.call(document.querySelectorAll('.hospital-cta .btn-outline'));
+      detailBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var card = btn.closest('.hospital-card');
+          var name = card ? (card.querySelector('.hospital-name') || {}).textContent || '병원' : '병원';
+          alert(name + ' 상세 정보 페이지는 준비 중입니다.');
+        });
+      });
+
+      // Region filter chips
+      var filterSections = Array.prototype.slice.call(document.querySelectorAll('.filter-bar'));
+      var regionBar = filterSections[0];
+      var procedureBar = filterSections[1];
+
+      var regionFilter = '전체';
+      var procedureFilter = '전체';
+      var searchQuery = '';
+
+      function applyFilters() {
+        cards.forEach(function(card) {
+          var loc = ((card.querySelector('.hospital-location') || {}).textContent || '').toLowerCase();
+          var tags = Array.prototype.slice.call(card.querySelectorAll('.hospital-tags .tag')).map(function(t) { return t.textContent.trim().toLowerCase(); }).join(' ');
+          var name = ((card.querySelector('.hospital-name') || {}).textContent || '').toLowerCase();
+          var allText = (loc + ' ' + tags + ' ' + name).toLowerCase();
+
+          var regionPass = regionFilter === '전체' || loc.indexOf(regionFilter.toLowerCase()) !== -1;
+          var procPass = procedureFilter === '전체' || tags.indexOf(procedureFilter.toLowerCase()) !== -1;
+          var searchPass = !searchQuery || allText.indexOf(searchQuery.toLowerCase()) !== -1;
+
+          card.style.display = (regionPass && procPass && searchPass) ? '' : 'none';
+        });
+      }
+
+      if (regionBar) {
+        var regionChips = Array.prototype.slice.call(regionBar.querySelectorAll('.filter-chip'));
+        regionChips.forEach(function(chip) {
+          chip.addEventListener('click', function() {
+            regionChips.forEach(function(c) { c.classList.remove('active'); });
+            chip.classList.add('active');
+            regionFilter = chip.textContent.trim();
+            applyFilters();
+          });
+        });
+      }
+
+      if (procedureBar) {
+        var procChips = Array.prototype.slice.call(procedureBar.querySelectorAll('.filter-chip'));
+        procChips.forEach(function(chip) {
+          chip.addEventListener('click', function() {
+            procChips.forEach(function(c) { c.classList.remove('active'); });
+            chip.classList.add('active');
+            procedureFilter = chip.textContent.trim();
+            applyFilters();
+          });
+        });
+      }
+
+      // Sort select
+      var sortSelect = document.querySelector('.filter-sort-row .filter-select');
+      if (sortSelect) {
+        sortSelect.addEventListener('change', function() {
+          if (!grid) return;
+          var visible = cards.filter(function(c) { return c.style.display !== 'none'; });
+          visible.sort(function(a, b) {
+            var aRating = parseFloat((a.querySelector('.rating') || {}).textContent.replace(/[^\d.]/g, '')) || 0;
+            var bRating = parseFloat((b.querySelector('.rating') || {}).textContent.replace(/[^\d.]/g, '')) || 0;
+            var aReviews = parseInt(((a.querySelector('.rating-count') || {}).textContent || '').replace(/[^\d]/g, '')) || 0;
+            var bReviews = parseInt(((b.querySelector('.rating-count') || {}).textContent || '').replace(/[^\d]/g, '')) || 0;
+            var aPrice = parseInt(((a.querySelector('.price-discount') || {}).textContent || '').replace(/[^\d]/g, '')) || 0;
+            var bPrice = parseInt(((b.querySelector('.price-discount') || {}).textContent || '').replace(/[^\d]/g, '')) || 0;
+            var sort = sortSelect.value;
+            if (sort === '별점높은순') return bRating - aRating;
+            if (sort === '리뷰많은순') return bReviews - aReviews;
+            if (sort === '가격낮은순') return aPrice - bPrice;
+            return bReviews - aReviews; // 추천순 default
+          });
+          visible.forEach(function(c) { grid.appendChild(c); });
+        });
+      }
+
+      // Hospital search
+      var searchInput = document.querySelector('.hospital-search-input');
+      var searchBtn = document.querySelector('.hospital-search .btn-primary');
+      function doHospitalSearch() {
+        searchQuery = (searchInput && searchInput.value || '').trim();
+        applyFilters();
+      }
+      if (searchInput) {
+        searchInput.addEventListener('input', doHospitalSearch);
+        searchInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') { e.preventDefault(); doHospitalSearch(); } });
+      }
+      if (searchBtn) { searchBtn.addEventListener('click', doHospitalSearch); }
+    })();
+  </script>
+  <script>
+    // 헤더 검색 기본 동작
+    (function() {
+      var searchInput = document.querySelector('.header-search-input');
+      var searchBtn = document.querySelector('.header-search-btn');
+      if (!searchInput || !searchBtn) return;
+      function doSearch() {
+        var q = searchInput.value.trim();
+        if (q) location.href = './articles.html?q=' + encodeURIComponent(q);
+      }
+      searchBtn.addEventListener('click', doSearch);
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') doSearch();
+      });
+    })();
+  </script>
 </body>
 </html>
