@@ -2,8 +2,6 @@ User-agent: *
 Allow: /
 
 # Block admin/utility pages from indexing
-Disallow: /mockup/boilerplate.html
-Disallow: /mockup-v2/boilerplate.html
 
 # Block search result pages
 Disallow: /*?q=
@@ -15,13 +13,11 @@ Sitemap: https://www.theglam.kr/sitemap.xml
 # AI Bot Management
 User-agent: GPTBot
 Allow: /articles/
-Allow: /mockup/
-Disallow: /mockup-v2/terms.html
-Disallow: /mockup-v2/privacy.html
+Disallow: /terms.html
+Disallow: /privacy.html
 
 User-agent: ChatGPT-User
 Allow: /articles/
-Allow: /mockup/
 
 User-agent: Google-Extended
 Allow: /
@@ -31,4 +27,3 @@ Disallow: /
 
 User-agent: anthropic-ai
 Allow: /articles/
-Allow: /mockup/

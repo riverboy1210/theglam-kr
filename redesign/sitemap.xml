@@ -6,52 +6,47 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.theglam.kr/mockup/article.html</loc>
+    <loc>https://www.theglam.kr/article.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.theglam.kr/mockup/articles.html</loc>
+    <loc>https://www.theglam.kr/articles.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.theglam.kr/mockup/consultation.html</loc>
+    <loc>https://www.theglam.kr/consultation.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.theglam.kr/mockup/hospitals.html</loc>
+    <loc>https://www.theglam.kr/hospitals.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.theglam.kr/mockup/index.html</loc>
+    <loc>https://www.theglam.kr/reviews.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.theglam.kr/mockup/reviews.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.theglam.kr/mockup-v2/community-post.html</loc>
+    <loc>https://www.theglam.kr/community-post.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.theglam.kr/mockup-v2/community.html</loc>
+    <loc>https://www.theglam.kr/community.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.theglam.kr/mockup-v2/privacy.html</loc>
+    <loc>https://www.theglam.kr/privacy.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.theglam.kr/mockup-v2/terms.html</loc>
+    <loc>https://www.theglam.kr/terms.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
