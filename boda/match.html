@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
+  <title>나에게 맞는 운세 서비스 찾기 | 보다 BODA</title>
+  <meta name="description" content="4가지 질문에 답하면, 30개 운세 서비스 중 나에게 딱 맞는 서비스를 추천해드려요.">
+  <link rel="canonical" href="https://unsetok.com/match.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="나에게 맞는 운세 서비스 찾기 | 보다 BODA">
+  <meta property="og:description" content="4가지 질문에 답하면, 30개 운세 서비스 중 나에게 딱 맞는 서비스를 추천해드려요.">
+  <meta property="og:url" content="https://unsetok.com/match.html">
+  <meta property="og:image" content="https://unsetok.com/images/logo.svg">
+  <meta property="og:site_name" content="보다 BODA">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"나에게 맞는 운세 서비스 찾기","description":"4가지 질문에 답하면, 30개 운세 서비스 중 나에게 딱 맞는 서비스를 추천해드려요.","url":"https://unsetok.com/match.html"}</script>
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    /* ===== QUIZ LAYOUT ===== */
+    .quiz-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      min-height: calc(100vh - 280px);
+    }
+
+    /* ===== PROGRESS BAR ===== */
+    .progress-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 24px;
+      padding: 0 4px;
+    }
+
+    .progress-step {
+      flex: 1;
+      height: 6px;
+      border-radius: 99px;
+      background: var(--border-light);
+      transition: background 0.4s var(--easing-soft);
+      position: relative;
+    }
+
+    .progress-step.done {
+      background: var(--primary);
+    }
+
+    .progress-step.active {
+      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    }
+
+    .progress-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-align: right;
+      margin-bottom: 6px;
+    }
+
+    /* ===== SCREEN TRANSITIONS ===== */
+    .quiz-screen {
+      display: none;
+      animation: quizFadeIn 0.45s var(--easing-soft);
+    }
+
+    .quiz-screen.active {
+      display: block;
+    }
+
+    @keyframes quizFadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== WELCOME SCREEN ===== */
+    .welcome-hero {
+      position: relative;
+      border-radius: 20px;
+      padding: 40px 24px 32px;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 48%),
+        radial-gradient(circle at 85% 78%, rgba(255,255,255,0.26) 0%, rgba(255,255,255,0) 40%),
+        linear-gradient(135deg, #FF6B9D 0%, #8B5CF6 100%);
+      box-shadow: 0 16px 30px rgba(139,92,246,0.24);
+      overflow: hidden;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .welcome-hero::after {
+      content: '';
+      position: absolute;
+      right: -36px;
+      top: -34px;
+      width: 132px;
+      height: 132px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      filter: blur(1px);
+    }
+
+    .welcome-icon {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .welcome-title {
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 800;
+      line-height: 1.36;
+      letter-spacing: -0.015em;
+    }
+
+    .welcome-sub {
+      margin: 0 0 24px;
+      color: rgba(255,255,255,0.92);
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.56;
+    }
+
+    .welcome-features {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .welcome-feat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .welcome-feat-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .welcome-feat-label {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.88);
+      font-weight: 600;
+    }
+
+    .btn-start {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 40px;
+      border-radius: 999px;
+      border: none;
+      background: #fff;
+      color: var(--primary-dark);
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.25s var(--easing-soft), box-shadow 0.25s ease;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-start:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+    }
+
+    .welcome-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 14px;
+    }
+
+    /* ===== QUESTION SCREEN ===== */
+    .question-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .question-text {
+      margin: 0 0 20px;
+      font-size: 1.28rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.4;
+      letter-spacing: -0.015em;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .option-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+      transition: all 0.28s var(--easing-soft);
+      text-align: left;
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.44;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .option-card:hover {
+      border-color: var(--primary);
+      background: var(--bg-pink);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(255,107,157,0.12);
+    }
+
+    .option-card:active {
+      transform: scale(0.98);
+    }
+
+    .option-card.selected {
+      border-color: var(--primary);
+      background: linear-gradient(135deg, #fff0f5 0%, #fce7f3 100%);
+      box-shadow: 0 4px 16px rgba(255,107,157,0.18);
+    }
+
+    .option-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--bg-gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      transition: background 0.28s ease;
+    }
+
+    .option-card:hover .option-icon,
+    .option-card.selected .option-icon {
+      background: var(--primary-light);
+    }
+
+    .option-label {
+      flex: 1;
+    }
+
+    /* ===== ANALYZING SCREEN ===== */
+    .analyzing-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 340px;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .analyzing-spinner {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      animation: spinPulse 1.2s ease-in-out infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+    }
+
+    @keyframes spinPulse {
+      0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+      50% { transform: scale(1.1) rotate(180deg); opacity: 0.85; }
+    }
+
+    .analyzing-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .analyzing-sub {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-top: -12px;
+    }
+
+    .analyzing-dots::after {
+      content: '';
+      animation: dots 1.4s steps(4, end) infinite;
+    }
+
+    @keyframes dots {
+      0% { content: ''; }
+      25% { content: '.'; }
+      50% { content: '..'; }
+      75% { content: '...'; }
+    }
+
+    /* ===== RESULTS SCREEN ===== */
+    .results-header {
+      text-align: center;
+      margin-bottom: 24px;
+      animation: quizFadeIn 0.5s var(--easing-soft);
+    }
+
+    .results-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+      color: var(--primary-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .results-title {
+      margin: 0 0 6px;
+      font-size: 1.32rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.36;
+    }
+
+    .results-sub {
+      margin: 0;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    /* confetti-like particles */
+    .confetti-wrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 300;
+      overflow: hidden;
+    }
+
+    .confetti-piece {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      top: -10px;
+      animation: confettiFall linear forwards;
+    }
+
+    @keyframes confettiFall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      80% { opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+
+    /* result cards */
+    .result-cards {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .result-card {
+      position: relative;
+      background: #fff;
+      border-radius: 16px;
+      border: 1.5px solid var(--border-light);
+      box-shadow: 0 10px 24px rgba(17,24,39,0.06);
+      padding: 20px;
+      overflow: hidden;
+      animation: resultSlideIn 0.5s var(--easing-soft) both;
+    }
+
+    .result-card:nth-child(1) { animation-delay: 0.1s; }
+    .result-card:nth-child(2) { animation-delay: 0.25s; }
+    .result-card:nth-child(3) { animation-delay: 0.4s; }
+
+    .result-card:first-child {
+      border-color: var(--primary);
+      box-shadow: 0 10px 30px rgba(255,107,157,0.15);
+    }
+
+    @keyframes resultSlideIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .rank-badge {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #fff;
+      border-radius: 0 0 12px 0;
+    }
+
+    .result-card:nth-child(1) .rank-badge {
+      background: linear-gradient(135deg, #FF6B9D 0%, #E8568A 100%);
+    }
+
+    .result-card:nth-child(2) .rank-badge {
+      background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+    }
+
+    .result-card:nth-child(3) .rank-badge {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    }
+
+    .result-body {
+      padding-left: 0;
+    }
+
+    .result-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 6px;
+      padding-left: 28px;
+    }
+
+    .result-name {
+      margin: 0;
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .result-type-badge {
+      display: inline-flex;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      white-space: nowrap;
+    }
+
+    .result-reason {
+      margin: 8px 0 12px;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.56;
+      background: var(--bg-gray);
+      border-radius: 10px;
+      padding: 10px 14px;
+    }
+
+    .result-reason strong {
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    .result-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .result-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .result-price {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .result-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.25s var(--easing-soft), filter 0.25s ease;
+    }
+
+    .result-link:hover {
+      transform: translateY(-1px);
+      filter: brightness(0.96);
+    }
+
+    /* results bottom actions */
+    .results-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      margin-top: 28px;
+      animation: resultSlideIn 0.5s var(--easing-soft) 0.55s both;
+    }
+
+    .btn-retry {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      max-width: 320px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s var(--easing-soft);
+      font-family: inherit;
+    }
+
+    .btn-retry:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .btn-share {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      max-width: 320px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      border: none;
+      background: var(--secondary);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s var(--easing-soft);
+      font-family: inherit;
+    }
+
+    .btn-share:hover {
+      transform: translateY(-1px);
+      filter: brightness(0.96);
+    }
+
+    .all-services-link {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 4px;
+    }
+
+    .all-services-link:hover {
+      color: var(--primary);
+    }
+
+    /* toast */
+    .toast {
+      position: fixed;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: rgba(26,26,46,0.92);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      z-index: 400;
+      opacity: 0;
+      transition: all 0.3s var(--easing-soft);
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 520px) {
+      .options-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* 5 options: last one full width */
+      .options-grid.has-5 .option-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 50%;
+        justify-self: center;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .welcome-hero {
+        padding: 52px 32px 40px;
+      }
+
+      .welcome-title {
+        font-size: 1.8rem;
+      }
+
+      .welcome-sub {
+        font-size: 0.94rem;
+      }
+
+      .question-text {
+        font-size: 1.4rem;
+      }
+
+      .result-card {
+        padding: 24px;
+      }
+    }
+
+    /* hide header-nav on narrow screens to match index.html behavior */
+    .header-nav {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .header-nav {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-left: auto;
+      }
+
+      .nav-link {
+        padding: 6px 10px;
+        font-size: 0.84rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        text-decoration: none;
+        border-radius: 8px;
+        transition: color 0.2s ease, background 0.2s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--primary);
+        background: var(--bg-pink);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <span class="logo-ko">보다 BODA</span>
+      </a>
+      <nav class="header-nav">
+        <a href="/" class="nav-link">홈</a>
+        <a href="/services.html" class="nav-link">서비스찾기</a>
+        <a href="/reviews.html" class="nav-link">후기</a>
+        <a href="/compare.html" class="nav-link">비교</a>
+        <a href="/match.html" class="nav-link">매칭</a>
+        <a href="/cost-calculator.html" class="nav-link">비용계산</a>
+        <a href="/community.html" class="nav-link">커뮤니티</a>
+        <a href="/articles.html" class="nav-link">콘텐츠</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <div class="container">
+      <div class="quiz-wrap">
+
+        <!-- ===== SCREEN 0: WELCOME ===== -->
+        <div id="screen-welcome" class="quiz-screen active">
+          <div class="welcome-hero">
+            <span class="welcome-icon">🔮</span>
+            <h1 class="welcome-title">나에게 딱 맞는<br>운세 서비스 찾기</h1>
+            <p class="welcome-sub">4가지 질문에 답하면, 30개 서비스 중<br>나에게 맞는 서비스를 추천해드려요</p>
+            <div class="welcome-features">
+              <div class="welcome-feat">
+                <div class="welcome-feat-icon">⏱️</div>
+                <span class="welcome-feat-label">30초 완성</span>
+              </div>
+              <div class="welcome-feat">
+                <div class="welcome-feat-icon">🎯</div>
+                <span class="welcome-feat-label">맞춤 추천</span>
+              </div>
+              <div class="welcome-feat">
+                <div class="welcome-feat-icon">📊</div>
+                <span class="welcome-feat-label">30개 분석</span>
+              </div>
+            </div>
+            <button type="button" class="btn-start" id="btn-start">시작하기 →</button>
+          </div>
+          <p class="welcome-note">🔒 개인정보 수집 없이, 브라우저에서만 결과를 확인합니다.</p>
+        </div>
+
+        <!-- ===== SCREEN 1: Q1 ===== -->
+        <div id="screen-q1" class="quiz-screen">
+          <div class="progress-label">1 / 4</div>
+          <div class="progress-bar">
+            <div class="progress-step active"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+          </div>
+          <span class="question-number">Q1</span>
+          <h2 class="question-text">어떤 고민이 있나요?</h2>
+          <div class="options-grid has-5" data-question="q1">
+            <button type="button" class="option-card" data-value="연애/궁합">
+              <span class="option-icon">💕</span>
+              <span class="option-label">연애·궁합이 궁금해요</span>
+            </button>
+            <button type="button" class="option-card" data-value="종합운">
+              <span class="option-icon">🌟</span>
+              <span class="option-label">올해 운세가 궁금해요</span>
+            </button>
+            <button type="button" class="option-card" data-value="재물/사업">
+              <span class="option-icon">💰</span>
+              <span class="option-label">재물·사업운이 궁금해요</span>
+            </button>
+            <button type="button" class="option-card" data-value="진로/취업">
+              <span class="option-icon">🎯</span>
+              <span class="option-label">진로·취업 고민이에요</span>
+            </button>
+            <button type="button" class="option-card" data-value="가족/관계">
+              <span class="option-icon">👨‍👩‍👧</span>
+              <span class="option-label">가족·관계 문제예요</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ===== SCREEN 2: Q2 ===== -->
+        <div id="screen-q2" class="quiz-screen">
+          <div class="progress-label">2 / 4</div>
+          <div class="progress-bar">
+            <div class="progress-step done"></div>
+            <div class="progress-step active"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+          </div>
+          <span class="question-number">Q2</span>
+          <h2 class="question-text">어떤 방식이 편한가요?</h2>
+          <div class="options-grid" data-question="q2">
+            <button type="button" class="option-card" data-value="전화 상담">
+              <span class="option-icon">📞</span>
+              <span class="option-label">전문가와 직접 통화하고 싶어요</span>
+            </button>
+            <button type="button" class="option-card" data-value="앱 자동 풀이">
+              <span class="option-icon">📱</span>
+              <span class="option-label">혼자 조용히 앱으로 보고 싶어요</span>
+            </button>
+            <button type="button" class="option-card" data-value="AI 상담">
+              <span class="option-icon">🤖</span>
+              <span class="option-label">AI와 채팅으로 편하게 보고 싶어요</span>
+            </button>
+            <button type="button" class="option-card" data-value="무료">
+              <span class="option-icon">🆓</span>
+              <span class="option-label">무료로 가볍게 확인하고 싶어요</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ===== SCREEN 3: Q3 ===== -->
+        <div id="screen-q3" class="quiz-screen">
+          <div class="progress-label">3 / 4</div>
+          <div class="progress-bar">
+            <div class="progress-step done"></div>
+            <div class="progress-step done"></div>
+            <div class="progress-step active"></div>
+            <div class="progress-step"></div>
+          </div>
+          <span class="question-number">Q3</span>
+          <h2 class="question-text">예산은 어느 정도인가요?</h2>
+          <div class="options-grid" data-question="q3">
+            <button type="button" class="option-card" data-value="무료">
+              <span class="option-icon">🎁</span>
+              <span class="option-label">공짜가 좋아요! 무료만</span>
+            </button>
+            <button type="button" class="option-card" data-value="1만원 이하">
+              <span class="option-icon">💵</span>
+              <span class="option-label">1만원 이하면 괜찮아요</span>
+            </button>
+            <button type="button" class="option-card" data-value="1~3만원">
+              <span class="option-icon">💳</span>
+              <span class="option-label">3만원까지는 투자할 수 있어요</span>
+            </button>
+            <button type="button" class="option-card" data-value="3만원 이상">
+              <span class="option-icon">💎</span>
+              <span class="option-label">좋은 상담이면 가격은 상관없어요</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ===== SCREEN 4: Q4 ===== -->
+        <div id="screen-q4" class="quiz-screen">
+          <div class="progress-label">4 / 4</div>
+          <div class="progress-bar">
+            <div class="progress-step done"></div>
+            <div class="progress-step done"></div>
+            <div class="progress-step done"></div>
+            <div class="progress-step active"></div>
+          </div>
+          <span class="question-number">Q4</span>
+          <h2 class="question-text">나는 이런 스타일이에요</h2>
+          <div class="options-grid" data-question="q4">
+            <button type="button" class="option-card" data-value="심야">
+              <span class="option-icon">🌙</span>
+              <span class="option-label">밤 늦게 갑자기 궁금해질 때가 많아요</span>
+            </button>
+            <button type="button" class="option-card" data-value="분석형">
+              <span class="option-icon">📐</span>
+              <span class="option-label">논리적이고 체계적인 분석을 원해요</span>
+            </button>
+            <button type="button" class="option-card" data-value="감성형">
+              <span class="option-icon">🫶</span>
+              <span class="option-label">위로와 공감이 필요해요</span>
+            </button>
+            <button type="button" class="option-card" data-value="캐주얼">
+              <span class="option-icon">😄</span>
+              <span class="option-label">재미로 가볍게 보고 싶어요</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ===== SCREEN 5: ANALYZING ===== -->
+        <div id="screen-analyzing" class="quiz-screen">
+          <div class="analyzing-wrap">
+            <div class="analyzing-spinner">🔮</div>
+            <p class="analyzing-text">30개 서비스를 분석하고 있어요<span class="analyzing-dots"></span></p>
+            <p class="analyzing-sub">나에게 딱 맞는 서비스를 찾는 중이에요</p>
+          </div>
+        </div>
+
+        <!-- ===== SCREEN 6: RESULTS ===== -->
+        <div id="screen-results" class="quiz-screen">
+          <div class="results-header">
+            <div class="results-badge">✨ 맞춤 추천 완료</div>
+            <h2 class="results-title">나에게 딱 맞는 서비스 TOP 3</h2>
+            <p class="results-sub">답변을 기반으로 30개 서비스를 분석했어요</p>
+          </div>
+          <div id="result-cards" class="result-cards"></div>
+          <div class="results-actions">
+            <button type="button" class="btn-share" id="btn-share">📋 결과 공유하기</button>
+            <button type="button" class="btn-retry" id="btn-retry">🔄 다시 하기</button>
+            <a href="./services.html" class="all-services-link">전체 서비스 보기 ›</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>BODA · 보다</strong>
+        <p style="margin: 4px 0 0;">운세 서비스 비교 플랫폼 | hello@unsetok.com</p>
+      </div>
+      <div class="footer-links">
+        <a href="/privacy.html">개인정보처리방침</a>
+        <a href="/terms.html">이용약관</a>
+      </div>
+      <p class="footer-disclaimer">BODA는 운세 서비스의 정보를 비교·제공하는 플랫폼이며, 특정 서비스의 효과나 정확성을 보증하지 않습니다. 서비스 이용에 따른 결과는 이용자 본인의 판단과 책임 하에 이루어집니다. 운세 상담은 참고용이며, 중요한 의사결정은 전문가(의료/법률/재무 등)와 상의하시기 바랍니다.</p>
+      <p style="margin-top: 12px; font-size: 0.75rem; color: var(--text-muted);">&copy; 2026 BODA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- BOTTOM NAV (모바일 전용) -->
+  <nav class="bottom-nav">
+    <a href="/" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="/services.html" class="bottom-nav-item">
+      <span class="nav-icon">🔍</span>
+      <span>서비스</span>
+    </a>
+    <a href="/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="/compare.html" class="bottom-nav-item">
+      <span class="nav-icon">🆚</span>
+      <span>비교</span>
+    </a>
+    <a href="/articles.html" class="bottom-nav-item">
+      <span class="nav-icon">📰</span>
+      <span>콘텐츠</span>
+    </a>
+  </nav>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast"></div>
+
+  <script src="./shared-data.js"></script>
+  <script>
+    (function initMatchQuiz() {
+      var data = window.BODA_DATA || {};
+      var services = Array.isArray(data.SERVICES) ? data.SERVICES : [];
+
+      // State
+      var answers = { q1: null, q2: null, q3: null, q4: null };
+      var screenOrder = ['screen-welcome', 'screen-q1', 'screen-q2', 'screen-q3', 'screen-q4', 'screen-analyzing', 'screen-results'];
+      var currentScreen = 0;
+
+      // DOM refs
+      var btnStart = document.getElementById('btn-start');
+      var btnRetry = document.getElementById('btn-retry');
+      var btnShare = document.getElementById('btn-share');
+      var resultCardsEl = document.getElementById('result-cards');
+      var toastEl = document.getElementById('toast');
+
+      // ── Navigation ──────────────────────────────────────────────
+
+      function showScreen(index) {
+        screenOrder.forEach(function (id) {
+          document.getElementById(id).classList.remove('active');
+        });
+        var target = document.getElementById(screenOrder[index]);
+        if (target) {
+          target.classList.remove('active');
+          // Force re-trigger animation
+          void target.offsetWidth;
+          target.classList.add('active');
+        }
+        currentScreen = index;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function nextScreen() {
+        if (currentScreen < screenOrder.length - 1) {
+          showScreen(currentScreen + 1);
+        }
+      }
+
+      // ── Option click handler ────────────────────────────────────
+
+      function handleOptionClick(event) {
+        var card = event.target.closest('.option-card');
+        if (!card) return;
+
+        var grid = card.closest('.options-grid');
+        if (!grid) return;
+
+        var question = grid.getAttribute('data-question');
+        var value = card.getAttribute('data-value');
+        if (!question || !value) return;
+
+        // Visual feedback
+        grid.querySelectorAll('.option-card').forEach(function (c) {
+          c.classList.remove('selected');
+        });
+        card.classList.add('selected');
+
+        // Store answer
+        answers[question] = value;
+
+        // Auto-advance after brief pause
+        setTimeout(function () {
+          if (question === 'q4') {
+            // Last question → show analyzing screen
+            showScreen(5);
+            setTimeout(function () {
+              var results = computeResults();
+              renderResults(results);
+              showScreen(6);
+              spawnConfetti();
+            }, 1500);
+          } else {
+            nextScreen();
+          }
+        }, 350);
+      }
+
+      // ── Matching Algorithm ──────────────────────────────────────
+
+      function computeResults() {
+        var scored = services.map(function (service) {
+          var score = 0;
+          var reasons = [];
+          var specialty = Array.isArray(service.specialty) ? service.specialty : [];
+          var method = Array.isArray(service.method) ? service.method : [];
+          var pr = service.priceRange || '';
+          var counselingType = Array.isArray(service.counselingType) ? service.counselingType : [];
+          var opHours = service.operatingHours || '';
+
+          // Q1: specialty match (+3)
+          if (answers.q1) {
+            if (specialty.indexOf(answers.q1) !== -1) {
+              score += 3;
+              reasons.push(answers.q1 + ' 전문');
+            }
+          }
+
+          // Q2: method match (+4, most important)
+          if (answers.q2) {
+            if (answers.q2 === '무료') {
+              // "무료로 가볍게" → free services get bonus
+              if (service.priceStructure === '무료' || service.priceStructure === '무료+부분유료') {
+                score += 4;
+                reasons.push('무료 이용 가능');
+              }
+            } else if (method.indexOf(answers.q2) !== -1) {
+              score += 4;
+              reasons.push(answers.q2 + ' 지원');
+            }
+          }
+
+          // Q3: priceRange match (+2)
+          if (answers.q3) {
+            if (answers.q3 === '3만원 이상') {
+              // "가격 상관없음" → all get some points, premium get more
+              score += 1;
+              if (pr === '1~3만원' || pr === '3~5만원' || pr === '5만원 이상') {
+                score += 1;
+              }
+            } else if (pr === answers.q3) {
+              score += 2;
+              reasons.push(pr + ' 가격대');
+            } else if (answers.q3 === '1만원 이하' && pr === '무료') {
+              score += 2;
+              reasons.push('무료 서비스');
+            } else if (answers.q3 === '1~3만원' && (pr === '1만원 이하' || pr === '무료')) {
+              score += 1;
+            }
+          }
+
+          // Q4: situational bonuses
+          if (answers.q4) {
+
+            switch (answers.q4) {
+              case '심야':
+                if (opHours === '24시간') {
+                  score += 1;
+                  reasons.push('24시간 운영');
+                }
+                if (method2.indexOf('AI 상담') !== -1 || method2.indexOf('앱 자동 풀이') !== -1) {
+                  score += 1;
+                }
+                break;
+
+              case '분석형':
+                if (counselingType.indexOf('사주') !== -1) {
+                  score += 2;
+                  reasons.push('사주 기반 체계적 분석');
+                }
+                if (method2.indexOf('전화 상담') !== -1) {
+                  score += 1;
+                }
+                break;
+
+              case '감성형':
+                if (counselingType.indexOf('타로') !== -1) {
+                  score += 2;
+                  reasons.push('타로 감성 상담');
+                }
+                if (method2.indexOf('전화 상담') !== -1) {
+                  score += 1;
+                }
+                break;
+
+              case '캐주얼':
+                if (service.priceStructure === '무료' || service.priceStructure === '무료+부분유료') {
+                  score += 2;
+                  reasons.push('가볍게 시작 가능');
+                }
+                if (method2.indexOf('AI 상담') !== -1 || method2.indexOf('앱 자동 풀이') !== -1) {
+                  score += 1;
+                }
+                break;
+            }
+          }
+
+          return { service: service, score: score, reasons: reasons };
+        });
+
+        // Sort descending, take top 3
+        scored.sort(function (a, b) { return b.score - a.score; });
+        return scored.slice(0, 3);
+      }
+
+      // ── Generate match reason ───────────────────────────────────
+
+      function buildReasonText(item, rank) {
+        var parts = item.reasons.slice(0, 3);
+        if (parts.length === 0) {
+          parts.push('다양한 조건을 고려한 추천');
+        }
+
+        var serviceType = item.service.type || '서비스';
+        var intro = rank === 0
+          ? '가장 잘 맞는 서비스예요! '
+          : rank === 1
+            ? '이 서비스도 추천해요. '
+            : '이런 점이 좋아요. ';
+
+        return intro + '<strong>' + parts.join('</strong>, <strong>') + '</strong> 특징이 있어요.';
+      }
+
+      // ── Render results ──────────────────────────────────────────
+
+      function renderResults(results) {
+        var rankLabels = ['1st', '2nd', '3rd'];
+        var html = '';
+
+        results.forEach(function (item, idx) {
+          var s = item.service;
+          var methodText = Array.isArray(s.method) ? s.method.slice(0, 2).join(' · ') : '';
+          var counselingText = Array.isArray(s.counselingType) ? s.counselingType.slice(0, 2).join(' · ') : '';
+          var link = './service.html?id=' + encodeURIComponent(s.id);
+          var reasonHtml = buildReasonText(item, idx);
+
+          html += '<article class="result-card">';
+          html += '  <div class="rank-badge">' + rankLabels[idx] + '</div>';
+          html += '  <div class="result-body">';
+          html += '    <div class="result-top">';
+          html += '      <h3 class="result-name">' + s.name + '</h3>';
+          html += '      <span class="result-type-badge">' + (s.type || '서비스') + '</span>';
+          html += '    </div>';
+          html += '    <div class="result-reason">' + reasonHtml + '</div>';
+          html += '    <div class="result-meta">';
+          html += '      <div class="result-tags">';
+          if (counselingText) {
+            html += '        <span class="tag tag-category">' + counselingText + '</span>';
+          }
+          if (methodText) {
+            html += '        <span class="tag">' + methodText + '</span>';
+          }
+          html += '      </div>';
+          html += '      <span class="result-price">' + (s.priceRange || '가격 확인') + '</span>';
+          html += '    </div>';
+          html += '    <div style="margin-top:12px; text-align:right;">';
+          html += '      <a href="' + link + '" class="result-link">자세히 보기 →</a>';
+          html += '    </div>';
+          html += '  </div>';
+          html += '</article>';
+        });
+
+        resultCardsEl.innerHTML = html;
+      }
+
+      // ── Confetti ────────────────────────────────────────────────
+
+      function spawnConfetti() {
+        var wrap = document.createElement('div');
+        var colors = ['#FF6B9D', '#8B5CF6', '#FFE0EC', '#F59E0B', '#10B981', '#EDE9FE', '#FF7F7F'];
+        var count = 40;
+        var i, piece;
+        wrap.className = 'confetti-wrap';
+        document.body.appendChild(wrap);
+
+        for (i = 0; i < count; i++) {
+          piece = document.createElement('div');
+          piece.className = 'confetti-piece';
+          piece.style.left = Math.random() * 100 + '%';
+          piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+          piece.style.width = (Math.random() * 6 + 5) + 'px';
+          piece.style.height = (Math.random() * 6 + 5) + 'px';
+          piece.style.animationDuration = (Math.random() * 2 + 2) + 's';
+          piece.style.animationDelay = (Math.random() * 0.8) + 's';
+          if (Math.random() > 0.5) {
+            piece.style.borderRadius = '50%';
+          }
+          wrap.appendChild(piece);
+        }
+
+        setTimeout(function () {
+          if (wrap.parentNode) {
+            wrap.parentNode.removeChild(wrap);
+          }
+        }, 4500);
+      }
+
+      // ── Share ───────────────────────────────────────────────────
+
+      function shareResult() {
+        var params = new URLSearchParams();
+        if (answers.q1) params.set('q1', answers.q1);
+        if (answers.q2) params.set('q2', answers.q2);
+        if (answers.q3) params.set('q3', answers.q3);
+        if (answers.q4) params.set('q4', answers.q4);
+
+        var url = window.location.origin + window.location.pathname + '?' + params.toString();
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(function () {
+            showToast('링크가 복사되었어요! 친구에게 공유해보세요 ✨');
+          }).catch(function () {
+            fallbackCopy(url);
+          });
+        } else {
+          fallbackCopy(url);
+        }
+      }
+
+      function fallbackCopy(text) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand('copy');
+          showToast('링크가 복사되었어요! 친구에게 공유해보세요 ✨');
+        } catch (e) {
+          showToast('주소를 복사할 수 없습니다. 직접 복사해주세요.');
+        }
+        document.body.removeChild(ta);
+      }
+
+      function showToast(msg) {
+        toastEl.textContent = msg;
+        toastEl.classList.add('show');
+        setTimeout(function () {
+          toastEl.classList.remove('show');
+        }, 2500);
+      }
+
+      // ── Retry ───────────────────────────────────────────────────
+
+      function resetQuiz() {
+        answers = { q1: null, q2: null, q3: null, q4: null };
+
+        // Clear all selected states
+        document.querySelectorAll('.option-card.selected').forEach(function (c) {
+          c.classList.remove('selected');
+        });
+
+        // Clear URL params
+        if (window.history.replaceState) {
+          window.history.replaceState(null, '', window.location.pathname);
+        }
+
+        showScreen(0);
+      }
+
+      // ── Load from URL params (for shared results) ──────────────
+
+      function loadFromParams() {
+        var params = new URLSearchParams(window.location.search);
+        var q1 = params.get('q1');
+        var q2 = params.get('q2');
+        var q3 = params.get('q3');
+        var q4 = params.get('q4');
+        var results;
+
+        if (q1 && q2 && q3 && q4) {
+          answers.q1 = q1;
+          answers.q2 = q2;
+          answers.q3 = q3;
+          answers.q4 = q4;
+
+          // Jump directly to results
+          results = computeResults();
+          renderResults(results);
+          showScreen(6);
+          setTimeout(function () { spawnConfetti(); }, 300);
+        }
+      }
+
+      // ── Event listeners ─────────────────────────────────────────
+
+      btnStart.addEventListener('click', function () {
+        nextScreen();
+      });
+
+      btnRetry.addEventListener('click', resetQuiz);
+      btnShare.addEventListener('click', shareResult);
+
+      // Delegate option clicks
+      document.querySelectorAll('.options-grid').forEach(function (grid) {
+        grid.addEventListener('click', handleOptionClick);
+      });
+
+      // Init: check URL params
+      loadFromParams();
+    }());
+  </script>
+</body>
+</html>

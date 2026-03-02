@@ -26,6 +26,16 @@
     .list { margin: 0; padding-left: 18px; }
     .related-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
     .related-card { text-decoration: none; color: inherit; padding: 12px; border: 1px solid var(--border); border-radius: 12px; background: #fff; }
+    .price-box { margin-top: 10px; border: 1px solid var(--border-light); border-radius: 10px; overflow: hidden; }
+    .price-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+    .price-table th, .price-table td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    .price-table th { background: #faf7f1; color: var(--text-muted); font-weight: 700; }
+    .price-table tr:last-child td { border-bottom: none; }
+    .warning-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+    .warning-badge { display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border-radius: 999px; font-size: 0.82rem; line-height: 1.3; }
+    .warning-caution { background: #fff3e8; color: #9a3412; border: 1px solid #fdba74; }
+    .warning-tip { background: #eff6ff; color: #1d4ed8; border: 1px solid #93c5fd; }
+    .warning-positive { background: #ecfdf3; color: #166534; border: 1px solid #86efac; }
     .empty { text-align: center; color: var(--text-muted); padding: 24px 10px; border: 1px dashed #f3c5db; border-radius: 12px; }
     @media (min-width: 900px) {
       .detail-grid { grid-template-columns: 1.4fr 1fr; }
@@ -35,7 +45,7 @@
   </style>
 </head>
 <body>
-  <header class="site-header"><div class="header-inner"><a href="/" class="logo"><span class="logo-ko">보다 BODA</span></a><nav class="header-nav"><a href="/" class="nav-link">홈</a><a href="/services.html" class="nav-link">서비스찾기</a><a href="/reviews.html" class="nav-link">후기</a><a href="/compare.html" class="nav-link">비교</a><a href="/community.html" class="nav-link">커뮤니티</a><a href="/articles.html" class="nav-link">콘텐츠</a></nav></div></header>
+  <header class="site-header"><div class="header-inner"><a href="/" class="logo"><span class="logo-ko">보다 BODA</span></a><nav class="header-nav"><a href="/" class="nav-link">홈</a><a href="/services.html" class="nav-link">서비스찾기</a><a href="/reviews.html" class="nav-link">후기</a><a href="/compare.html" class="nav-link">비교</a><a href="/match.html" class="nav-link">매칭</a><a href="/cost-calculator.html" class="nav-link">비용계산</a><a href="/community.html" class="nav-link">커뮤니티</a><a href="/articles.html" class="nav-link">콘텐츠</a></nav></div></header>
 
   <main class="main-content">
     <div class="container">
@@ -56,6 +66,14 @@
           <section class="panel">
             <div class="section-header"><h2 class="section-title">핵심 정보</h2></div>
             <div class="kv-grid" id="info-grid"></div>
+          </section>
+
+          <section class="panel">
+            <div class="section-header"><h2 class="section-title">💰 실제 비용 안내</h2></div>
+            <p class="subtitle" id="pricing-real-example">정보 미확인</p>
+            <div class="price-box" id="pricing-mini-table" style="display:none;"></div>
+            <div style="margin-top:14px;" class="section-header"><h2 class="section-title">소비자 참고사항</h2></div>
+            <div id="warning-badges" class="warning-wrap"></div>
           </section>
 
           <section class="panel">
@@ -152,6 +170,40 @@
         ['후기 수', typeof service.reviewCount === 'number' ? service.reviewCount.toLocaleString() : '정보 미확인']
       ];
       document.getElementById('info-grid').innerHTML = infoEntries.map(([k, v]) => `<div class="kv-row"><span class="kv-key">${k}</span><span>${v}</span></div>`).join('');
+
+      const pricing = service.pricingDetail || {};
+      document.getElementById('pricing-real-example').textContent = textOrFallback(pricing.realCostExample);
+      const pricingMiniTable = document.getElementById('pricing-mini-table');
+      if (pricing.billingType === '분당과금') {
+        const cost10 = Math.round((Number(pricing.avgCost30min) || 0) / 3);
+        const cost15 = Number(pricing.avgCost15min) || 0;
+        const cost30 = Number(pricing.avgCost30min) || 0;
+        pricingMiniTable.style.display = 'block';
+        pricingMiniTable.innerHTML = `
+          <table class="price-table">
+            <thead><tr><th>상담 시간</th><th>예상 비용</th></tr></thead>
+            <tbody>
+              <tr><td>10분</td><td>${cost10.toLocaleString()}원</td></tr>
+              <tr><td>15분</td><td>${cost15.toLocaleString()}원</td></tr>
+              <tr><td>30분</td><td>${cost30.toLocaleString()}원</td></tr>
+            </tbody>
+          </table>
+        `;
+      } else {
+        pricingMiniTable.style.display = 'none';
+        pricingMiniTable.innerHTML = '';
+      }
+
+      const warningWrap = document.getElementById('warning-badges');
+      const warningIcons = { caution: '⚠️', tip: '💡', positive: '✅' };
+      const warningClass = { caution: 'warning-caution', tip: 'warning-tip', positive: 'warning-positive' };
+      const warnings = Array.isArray(service.consumerWarnings) ? service.consumerWarnings : [];
+      warningWrap.innerHTML = warnings.length
+        ? warnings.map((item) => {
+          const type = warningClass[item.type] ? item.type : 'tip';
+          return `<span class="warning-badge ${warningClass[type]}">${warningIcons[type]} ${item.text}</span>`;
+        }).join('')
+        : '<span class="tag">특이 참고사항 없음</span>';
 
       const summary = service.reviewSummary || {};
       document.getElementById('ai-summary').textContent = textOrFallback(summary.aiSummary);

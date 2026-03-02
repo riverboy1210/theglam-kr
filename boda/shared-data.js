@@ -53,7 +53,10 @@
  *   summary: string,
  *   officialUrl: string,
  *   rating: number | null,
- *   reviewSummary: ServiceReviewSummary
+ *   reviewSummary: ServiceReviewSummary,
+ *   pricingDetail: { costPerUnit: string, avgCost15min: number, avgCost30min: number, costRange15min: number[], vatIncluded: boolean, billingType: string, realCostExample: string },
+ *   consumerWarnings: { type: 'caution' | 'tip' | 'positive', text: string }[],
+ *   situationMatch: string[]
  * }} Service
  */
 
@@ -153,6 +156,21 @@ const SERVICES = [
     officialUrl: 'http://46saju.com',
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '30초당 1,200~1,700코인',
+      avgCost15min: 46200,
+      avgCost30min: 92400,
+      costRange15min: [39600, 56100],
+      vatIncluded: true,
+      billingType: '분당과금',
+      realCostExample: '코인 선불 1,200~1,600코인/30초, 인기 상담사 15분 ≈ 49,500원(VAT포함)'
+    },
+    consumerWarnings: [
+      { type: 'caution', text: '자동충전 설정 시 코인 부족 시 자동 결제 발생' },
+      { type: 'caution', text: '060 후불 이용 시 정보이용료+통신사 요금 이중 청구' },
+      { type: 'tip', text: '코인 선불이 060 후불보다 최대 20% 저렴' }
+    ],
+    situationMatch: ['심야상담', '전문분석'],
   },
   {
     id: 'chunmyung',
@@ -174,6 +192,21 @@ const SERVICES = [
     officialUrl: 'https://chunmyung.com',
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '건당 35,000~50,000원',
+      avgCost15min: 42500,
+      avgCost30min: 42500,
+      costRange15min: [35000, 50000],
+      vatIncluded: true,
+      billingType: '건당정액',
+      realCostExample: '건당 고정가(35,000~50,000원), 추가과금 없음. 시간 무관.'
+    },
+    consumerWarnings: [
+      { type: 'positive', text: '건당 고정가로 추가 과금 없음' },
+      { type: 'caution', text: '1만원부터 마케팅이나 인기 상담사는 3.5~5만원' },
+      { type: 'tip', text: '시간 걱정 없이 상담받고 싶다면 천명이 유리' }
+    ],
+    situationMatch: ['심야상담', '전문분석', '위로공감'],
   },
   {
     id: 'ssintong',
@@ -195,6 +228,17 @@ const SERVICES = [
     officialUrl: 'https://ssintong.com',
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '30초당 1,000~1,500원(추정)',
+      avgCost15min: 37500,
+      avgCost30min: 75000,
+      costRange15min: [33000, 49500],
+      vatIncluded: true,
+      billingType: '분당과금',
+      realCostExample: 'MZ타겟 영상상담 플랫폼, 분당 과금 방식'
+    },
+    consumerWarnings: [{ type: 'tip', text: 'MZ세대 타겟 고화질 영상 상담 제공' }],
+    situationMatch: ['심야상담', 'MZ감성'],
   },
   {
     id: 'soultalk',
@@ -216,6 +260,17 @@ const SERVICES = [
     officialUrl: null,
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '30초당 1,000~1,500원(추정)',
+      avgCost15min: 37500,
+      avgCost30min: 75000,
+      costRange15min: [33000, 49500],
+      vatIncluded: true,
+      billingType: '분당과금',
+      realCostExample: '타로마스터 추천 플랫폼, 분당 과금'
+    },
+    consumerWarnings: [{ type: 'tip', text: '타로마스터 정회도(유튜브 54만) 공식 추천 플랫폼' }],
+    situationMatch: ['심야상담', '위로공감', '연애특화'],
   },
   {
     id: 'sajoonaru',
@@ -237,6 +292,22 @@ const SERVICES = [
     officialUrl: 'https://sajunaru.com',
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '30초당 800~1,500원',
+      avgCost15min: 33000,
+      avgCost30min: 66000,
+      costRange15min: [26400, 49500],
+      vatIncluded: true,
+      billingType: '분당과금',
+      realCostExample: '30,000원 충전 시 인기 상담사(1,200원/30초)와 약 12분 30초 상담 가능'
+    },
+    consumerWarnings: [
+      { type: 'caution', text: '무료 코인 10,000코인은 3일만 유효, 미사용 시 소멸' },
+      { type: 'caution', text: '7일 초과 미사용 코인 환불 시 10% 수수료' },
+      { type: 'caution', text: '채팅방 나가거나 앱 종료해도 구매 시간 계속 소진' },
+      { type: 'tip', text: '신규 가입 시 10,000코인(3일 유효) 제공, 약 5분 상담 가능' }
+    ],
+    situationMatch: ['심야상담', '전문분석'],
   },
   {
     id: 'unse7',
@@ -258,6 +329,21 @@ const SERVICES = [
     officialUrl: 'https://www.unse7.com',
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '충전 750원~/060 1,500원(30초)',
+      avgCost15min: 33000,
+      avgCost30min: 66000,
+      costRange15min: [24750, 49500],
+      vatIncluded: true,
+      billingType: '분당과금',
+      realCostExample: '충전상담 750원/30초 최저가, 15분=24,750원. 060 대비 최대 50% 할인'
+    },
+    consumerWarnings: [
+      { type: 'positive', text: '충전상담 시 060 대비 최대 50% 할인' },
+      { type: 'caution', text: '타임세일 카운트다운으로 충동결제 유도 가능성' },
+      { type: 'tip', text: '리뷰 작성 시 적립금 1,000원 지급' }
+    ],
+    situationMatch: ['심야상담', '가성비최고'],
   },
   {
     id: 'unsedamda',
@@ -279,6 +365,20 @@ const SERVICES = [
     officialUrl: 'https://www.unsedamda.com',
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '30초당 1,000원',
+      avgCost15min: 33000,
+      avgCost30min: 66000,
+      costRange15min: [33000, 33000],
+      vatIncluded: true,
+      billingType: '분당과금',
+      realCostExample: '코인 1,000원/30초 균일가, 15분=33,000원(VAT포함)'
+    },
+    consumerWarnings: [
+      { type: 'tip', text: '가입 시 적립금 10,000원 제공' },
+      { type: 'caution', text: '후기 작성은 5분 이상 상담 시에만 가능' }
+    ],
+    situationMatch: ['심야상담', '가성비최고'],
   },
 
   // ── 앱기반자동풀이 (11) ────────────────────────────────────────
@@ -302,6 +402,21 @@ const SERVICES = [
     officialUrl: 'https://www.jeomsin.co.kr',
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '기본 무료, 행운패스/PRO 별도',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 55000],
+      vatIncluded: true,
+      billingType: '무료+부분유료',
+      realCostExample: '기본 운세 무료. 전문가 전화상담 첫 3분 무료, 이후 분당과금. 점신PRO 55,000원'
+    },
+    consumerWarnings: [
+      { type: 'caution', text: '일부 사용자가 광고 과다를 보고 (리뷰 95명 공감)' },
+      { type: 'caution', text: '업데이트 후 무료 콘텐츠 범위가 축소된 사례 보고' },
+      { type: 'tip', text: '광고 없이 이용하려면 행운패스 월정액 구독 필요' }
+    ],
+    situationMatch: ['가벼운재미', '전문분석', 'MZ감성'],
   },
   {
     id: 'postellar',
@@ -323,6 +438,21 @@ const SERVICES = [
     officialUrl: 'https://postellar.com',
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '기본 무료, 프리미엄 콘텐츠 유료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 20000],
+      vatIncluded: true,
+      billingType: '무료+부분유료',
+      realCostExample: '기본 운세 무료. 심층 콘텐츠 건당 3,000~20,000원'
+    },
+    consumerWarnings: [
+      { type: 'tip', text: '무료 기본 운세 콘텐츠는 광고 없이 이용 가능' },
+      { type: 'caution', text: '심층 콘텐츠는 개별 유료 구매 방식 (건당 3,000~20,000원)' },
+      { type: 'caution', text: '결제 후 앱 오류 시 고객센터 응답 지연 가능성' }
+    ],
+    situationMatch: ['가벼운재미', 'MZ감성', '전문분석'],
   },
   {
     id: 'unsebigul',
@@ -344,6 +474,17 @@ const SERVICES = [
     officialUrl: null,
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '기본 무료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 10000],
+      vatIncluded: true,
+      billingType: '무료+부분유료',
+      realCostExample: '운세비결 기본 운세 무료, 일부 심층 콘텐츠 유료(최대 10,000원)'
+    },
+    consumerWarnings: [],
+    situationMatch: ['전문분석'],
   },
   {
     id: 'ujucat-bora',
@@ -365,6 +506,17 @@ const SERVICES = [
     officialUrl: null,
     rating: 4.8,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '기본 무료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 10000],
+      vatIncluded: true,
+      billingType: '무료+부분유료',
+      realCostExample: '우주고양이 보라 기본 운세 무료, 연애 심층 리딩 유료(최대 10,000원)'
+    },
+    consumerWarnings: [],
+    situationMatch: ['MZ감성', '연애특화', '가벼운재미'],
   },
   {
     id: 'ozstarot',
@@ -386,6 +538,17 @@ const SERVICES = [
     officialUrl: null,
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '기본 무료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 10000],
+      vatIncluded: true,
+      billingType: '무료+부분유료',
+      realCostExample: '오즈의타로 기본 타로 무료, 프리미엄 리딩 유료(최대 10,000원)'
+    },
+    consumerWarnings: [],
+    situationMatch: ['위로공감', '연애특화'],
   },
   {
     id: 'jeongtong-saju',
@@ -407,6 +570,17 @@ const SERVICES = [
     officialUrl: null,
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '기본 무료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 10000],
+      vatIncluded: true,
+      billingType: '건당정액',
+      realCostExample: '정통사주 기본 기능 무료, 상세 해석은 건당 결제(최대 10,000원)'
+    },
+    consumerWarnings: [],
+    situationMatch: ['전문분석', '논리분석형'],
   },
   {
     id: 'inyeon',
@@ -428,6 +602,17 @@ const SERVICES = [
     officialUrl: null,
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '기본 무료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 10000],
+      vatIncluded: true,
+      billingType: '건당정액',
+      realCostExample: '인연궁합 기본 정보 무료, 궁합 리포트 건당 결제(최대 10,000원)'
+    },
+    consumerWarnings: [],
+    situationMatch: ['연애특화'],
   },
   {
     id: 'hwangje-unse',
@@ -449,6 +634,17 @@ const SERVICES = [
     officialUrl: null,
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '기본 무료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 10000],
+      vatIncluded: true,
+      billingType: '무료+부분유료',
+      realCostExample: '황제운세 기본 운세 무료, 일부 프리미엄 콘텐츠 유료(최대 10,000원)'
+    },
+    consumerWarnings: [],
+    situationMatch: ['가벼운재미', '가성비최고'],
   },
   {
     id: 'mytarot',
@@ -470,6 +666,17 @@ const SERVICES = [
     officialUrl: null,
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '기본 무료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 10000],
+      vatIncluded: true,
+      billingType: '무료+부분유료',
+      realCostExample: '마이타로 기본 운세 무료, AI 심층 상담 유료(최대 10,000원)'
+    },
+    consumerWarnings: [],
+    situationMatch: ['MZ감성', '연애특화'],
   },
   {
     id: 'unsudowon',
@@ -491,6 +698,17 @@ const SERVICES = [
     officialUrl: null,
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '기본 무료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 10000],
+      vatIncluded: true,
+      billingType: '무료+부분유료',
+      realCostExample: '운수도원 투데이 기본 운세 무료, 일부 확장 리딩 유료(최대 10,000원)'
+    },
+    consumerWarnings: [],
+    situationMatch: ['가벼운재미', '가성비최고'],
   },
   {
     id: 'unsebichaek',
@@ -512,6 +730,17 @@ const SERVICES = [
     officialUrl: null,
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '기본 무료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 10000],
+      vatIncluded: true,
+      billingType: '무료+부분유료',
+      realCostExample: '운세비책 기본 운세 무료, 일부 심화 풀이 유료(최대 10,000원)'
+    },
+    consumerWarnings: [],
+    situationMatch: ['가벼운재미'],
   },
 
   // ── AI운세 (6) ─────────────────────────────────────────────────
@@ -535,6 +764,21 @@ const SERVICES = [
     officialUrl: 'https://hellobot.co',
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '무료+보석(인앱화폐)',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 26000],
+      vatIncluded: true,
+      billingType: '무료+부분유료',
+      realCostExample: '200가지+ 무료. 유료 콘텐츠 약 5,000원~. 라마마VIP 월 26,000원'
+    },
+    consumerWarnings: [
+      { type: 'caution', text: '결제 후 콘텐츠 접근 불가 문제 일부 보고' },
+      { type: 'caution', text: '보석(인앱 화폐) 소모가 빠르다는 의견 있음' },
+      { type: 'tip', text: '결제 전 반드시 로그인 상태를 확인하세요 (비로그인 결제 시 콘텐츠 소멸 위험)' }
+    ],
+    situationMatch: ['위로공감', 'MZ감성', 'AI즉시결과'],
   },
   {
     id: 'hori-ai',
@@ -556,6 +800,17 @@ const SERVICES = [
     officialUrl: 'https://hori.chat',
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '무료(베타)',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 0],
+      vatIncluded: true,
+      billingType: '무료',
+      realCostExample: '현재 전체 무료 베타 서비스'
+    },
+    consumerWarnings: [],
+    situationMatch: ['AI즉시결과', '가성비최고', '논리분석형'],
   },
   {
     id: 'dosa-ai',
@@ -577,6 +832,17 @@ const SERVICES = [
     officialUrl: null,
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '기본 무료, 프리미엄 리딩 유료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 10000],
+      vatIncluded: true,
+      billingType: '무료+부분유료',
+      realCostExample: '도사 AI 기본 상담 무료, 확장 해석 유료(최대 10,000원)'
+    },
+    consumerWarnings: [],
+    situationMatch: ['AI즉시결과', 'MZ감성'],
   },
   {
     id: 'annyeong-tarot',
@@ -598,6 +864,17 @@ const SERVICES = [
     officialUrl: null,
     rating: null,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '기본 무료, 프리미엄 타로 리딩 유료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 10000],
+      vatIncluded: true,
+      billingType: '무료+부분유료',
+      realCostExample: '안녕타로 기본 상담 무료, 심층 카드 해석 유료(최대 10,000원)'
+    },
+    consumerWarnings: [],
+    situationMatch: ['AI즉시결과', '위로공감', '연애특화'],
   },
   {
     id: 'unsewiki',
@@ -619,6 +896,17 @@ const SERVICES = [
     officialUrl: 'https://luckyloveme.com',
     rating: 4.8,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '기본 무료, 심층 리포트 유료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 10000],
+      vatIncluded: true,
+      billingType: '무료+부분유료',
+      realCostExample: '운세위키 기본 결과 무료, 전문 리포트 유료(최대 10,000원)'
+    },
+    consumerWarnings: [],
+    situationMatch: ['AI즉시결과', '논리분석형', '전문분석'],
   },
   {
     id: 'zendi',
@@ -640,6 +928,17 @@ const SERVICES = [
     officialUrl: null,
     rating: 4.9,
     reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    pricingDetail: {
+      costPerUnit: '기본 무료, 프리미엄 채팅 유료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 10000],
+      vatIncluded: true,
+      billingType: '무료+부분유료',
+      realCostExample: '젠디 기본 운세 무료, 고급 상담 모드 유료(최대 10,000원)'
+    },
+    consumerWarnings: [],
+    situationMatch: ['AI즉시결과', 'MZ감성', '연애특화'],
   },
 
   // ── 포털무료운세 (3) ───────────────────────────────────────────
@@ -672,6 +971,17 @@ const SERVICES = [
       lastUpdated: '2026-03-02',
       sources: []
     },
+    pricingDetail: {
+      costPerUnit: '무료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 0],
+      vatIncluded: true,
+      billingType: '무료',
+      realCostExample: '완전 무료 서비스'
+    },
+    consumerWarnings: [],
+    situationMatch: ['가벼운재미', '가성비최고'],
   },
   {
     id: 'nate-unse',
@@ -702,6 +1012,17 @@ const SERVICES = [
       lastUpdated: '2026-03-02',
       sources: []
     },
+    pricingDetail: {
+      costPerUnit: '무료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 0],
+      vatIncluded: true,
+      billingType: '무료',
+      realCostExample: '완전 무료 서비스'
+    },
+    consumerWarnings: [],
+    situationMatch: ['가벼운재미', '가성비최고'],
   },
   {
     id: 'fortuneaid',
@@ -732,6 +1053,17 @@ const SERVICES = [
       lastUpdated: '2026-03-02',
       sources: []
     },
+    pricingDetail: {
+      costPerUnit: '무료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 0],
+      vatIncluded: true,
+      billingType: '무료',
+      realCostExample: '완전 무료 서비스'
+    },
+    consumerWarnings: [],
+    situationMatch: ['가벼운재미', '가성비최고'],
   },
 
   // ── 기업제공무료 (3) ───────────────────────────────────────────
@@ -764,6 +1096,17 @@ const SERVICES = [
       lastUpdated: '2026-03-02',
       sources: []
     },
+    pricingDetail: {
+      costPerUnit: '무료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 0],
+      vatIncluded: true,
+      billingType: '무료',
+      realCostExample: '완전 무료 서비스'
+    },
+    consumerWarnings: [],
+    situationMatch: ['가성비최고'],
   },
   {
     id: 'nonghyup-unse',
@@ -794,6 +1137,17 @@ const SERVICES = [
       lastUpdated: '2026-03-02',
       sources: []
     },
+    pricingDetail: {
+      costPerUnit: '무료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 0],
+      vatIncluded: true,
+      billingType: '무료',
+      realCostExample: '완전 무료 서비스'
+    },
+    consumerWarnings: [],
+    situationMatch: ['가성비최고'],
   },
   {
     id: 'asiae-unse',
@@ -824,6 +1178,17 @@ const SERVICES = [
       lastUpdated: '2026-03-02',
       sources: []
     },
+    pricingDetail: {
+      costPerUnit: '무료',
+      avgCost15min: 0,
+      avgCost30min: 0,
+      costRange15min: [0, 0],
+      vatIncluded: true,
+      billingType: '무료',
+      realCostExample: '완전 무료 서비스'
+    },
+    consumerWarnings: [],
+    situationMatch: ['가성비최고', '전문분석'],
   },
 ];
 

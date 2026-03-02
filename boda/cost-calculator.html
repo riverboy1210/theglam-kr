@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
+  <title>숨은 비용 계산기 | 보다 BODA</title>
+  <meta name="description" content="30초당 X원이 실제로 얼마인지, 전화상담·앱·AI·포털 서비스별로 비교해보세요. 운세 서비스 숨은 비용을 한눈에 확인합니다.">
+  <link rel="canonical" href="https://unsetok.com/cost-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="숨은 비용 계산기 | 보다 BODA">
+  <meta property="og:description" content="30초당 X원이 실제로 얼마인지, 서비스별로 비교해보세요. 운세 서비스의 진짜 비용을 투명하게 공개합니다.">
+  <meta property="og:url" content="https://unsetok.com/cost-calculator.html">
+  <meta property="og:image" content="https://unsetok.com/images/logo.svg">
+  <meta property="og:site_name" content="보다 BODA">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"숨은 비용 계산기","description":"운세 서비스 숨은 비용 비교 계산기","url":"https://unsetok.com/cost-calculator.html","isPartOf":{"@type":"WebSite","name":"보다 BODA","url":"https://unsetok.com/"}}</script>
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    /* ── Hero ─────────────────────────────────── */
+    .hero-shell {
+      position: relative;
+      border-radius: 20px;
+      padding: 28px 16px 18px;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 48%),
+        radial-gradient(circle at 85% 78%, rgba(255,255,255,0.26) 0%, rgba(255,255,255,0) 40%),
+        linear-gradient(135deg, #FF6B9D 0%, #8B5CF6 100%);
+      box-shadow: 0 16px 30px rgba(139,92,246,0.24);
+      overflow: hidden;
+      margin-bottom: 14px;
+      animation: rise-up 0.62s var(--easing-soft);
+    }
+    .hero-shell::after {
+      content: '';
+      position: absolute;
+      right: -36px; top: -34px;
+      width: 132px; height: 132px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      filter: blur(1px);
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.22);
+      color: #fff;
+      font-size: 0.77rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      margin-bottom: 10px;
+      backdrop-filter: blur(4px);
+    }
+    .hero-title {
+      margin: 0;
+      color: #fff;
+      line-height: 1.36;
+      letter-spacing: -0.015em;
+      font-size: 1.58rem;
+      font-weight: 800;
+    }
+    .hero-sub {
+      margin: 10px 0 0;
+      color: rgba(255,255,255,0.94);
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    /* ── Calculator Panel ────────────────────── */
+    .calc-panel {
+      background: #fff;
+      border: 1px solid #f5d9ea;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(31,41,55,0.08);
+      padding: 18px 16px;
+      margin-bottom: 20px;
+      animation: rise-up 0.72s var(--easing-soft);
+    }
+    .calc-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .calc-select {
+      width: 100%;
+      height: 46px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.9rem;
+      padding: 0 12px;
+      outline: none;
+      margin-bottom: 16px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .calc-select:focus {
+      border-color: var(--primary-dark);
+      box-shadow: 0 0 0 3px rgba(232,86,138,0.16);
+    }
+    .duration-btns {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .dur-btn {
+      flex: 1;
+      min-width: 56px;
+      padding: 10px 6px;
+      border-radius: var(--radius-full);
+      border: 1.5px solid var(--border);
+      background: #fff;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.24s ease;
+    }
+    .dur-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+    .dur-btn:hover:not(.active) {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* ── Results Table ────────────────────────── */
+    .results-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 0 -16px;
+      padding: 0 16px;
+    }
+    .results-table {
+      width: 100%;
+      min-width: 520px;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 0.84rem;
+    }
+    .results-table thead th {
+      background: var(--bg-pink);
+      color: var(--text);
+      font-weight: 700;
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 2px solid #ffc4d9;
+      white-space: nowrap;
+      position: sticky;
+      top: 0;
+    }
+    .results-table thead th:first-child {
+      border-radius: 10px 0 0 0;
+    }
+    .results-table thead th:last-child {
+      border-radius: 0 10px 0 0;
+    }
+    .results-table tbody td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border-light);
+      vertical-align: middle;
+    }
+    .results-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .results-table tbody tr:hover {
+      background: #fff8fb;
+    }
+    .cost-bar-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-width: 120px;
+    }
+    .cost-bar {
+      height: 10px;
+      border-radius: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transition: width 0.5s var(--easing-soft);
+      min-width: 4px;
+    }
+    .cost-bar-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .cheapest-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 999px;
+      margin-left: 4px;
+    }
+    .expensive-badge {
+      display: inline-block;
+      background: #fee2e2;
+      color: #b91c1c;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 999px;
+      margin-left: 4px;
+    }
+
+    /* ── Section Styling ─────────────────────── */
+    .page-section {
+      margin-bottom: 28px;
+    }
+    .section-icon {
+      font-size: 1.3rem;
+      margin-right: 6px;
+    }
+
+    /* ── Comparison Card Grid ────────────────── */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .comp-row {
+      display: grid;
+      grid-template-columns: 1fr repeat(3, auto);
+      gap: 8px;
+      align-items: center;
+      padding: 12px 14px;
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      font-size: 0.85rem;
+    }
+    .comp-row.comp-header {
+      background: var(--bg-pink);
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border: none;
+    }
+    .comp-name {
+      font-weight: 700;
+    }
+    .comp-val {
+      text-align: right;
+      white-space: nowrap;
+    }
+    .comp-val.cheapest {
+      color: var(--success);
+      font-weight: 700;
+    }
+    .comp-val.expensive {
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+    /* ── Warning Cards ───────────────────────── */
+    .warning-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .warning-card {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 6px 16px rgba(17,24,39,0.05);
+      transition: transform 0.25s var(--easing-soft), box-shadow 0.25s ease;
+    }
+    .warning-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(17,24,39,0.1);
+    }
+    .warning-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: #fff3e0;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .warning-card h3 {
+      margin: 0 0 6px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .warning-card p {
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.52;
+    }
+
+    /* ── Price Structure Section ──────────────── */
+    .structure-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .structure-card {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 18px 16px;
+      box-shadow: 0 6px 16px rgba(17,24,39,0.05);
+    }
+    .structure-card .sc-type {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .sc-permin {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+    .sc-fixed {
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+    .sc-free {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .structure-card h3 {
+      margin: 0 0 6px;
+      font-size: 0.95rem;
+      font-weight: 800;
+    }
+    .structure-card p {
+      margin: 0 0 8px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.52;
+    }
+    .tip-box {
+      background: var(--bg-pink);
+      border-left: 3px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 12px;
+      font-size: 0.8rem;
+      color: #7d2046;
+      line-height: 1.5;
+    }
+
+    /* ── App Pricing Section ──────────────────── */
+    .app-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .app-card {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 6px 16px rgba(17,24,39,0.05);
+    }
+    .app-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .app-card h3 {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 800;
+    }
+    .app-model-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+    .model-freemium {
+      background: var(--secondary-light);
+      color: var(--secondary);
+    }
+    .model-paid {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+    .model-free {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .feature-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .feature-list li {
+      position: relative;
+      padding: 4px 0 4px 20px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .feature-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+    }
+    .feature-list .feat-free::before {
+      background: var(--success);
+    }
+    .feature-list .feat-paid::before {
+      background: var(--warning);
+    }
+    .feature-legend {
+      display: flex;
+      gap: 14px;
+      margin-top: 8px;
+      font-size: 0.72rem;
+      color: var(--text-light);
+    }
+    .legend-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+    .legend-free { background: var(--success); }
+    .legend-paid { background: var(--warning); }
+
+    /* ── CTA Banner ──────────────────────────── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      border-radius: 16px;
+      padding: 24px 18px;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .cta-banner h2 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+    .cta-banner p {
+      margin: 0 0 14px;
+      font-size: 0.88rem;
+      opacity: 0.92;
+    }
+    .cta-banner .cta-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      background: #fff;
+      color: var(--primary);
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: transform 0.25s var(--easing-soft);
+    }
+    .cta-banner .cta-link:hover {
+      transform: translateY(-1px);
+    }
+
+    /* ── Animations ───────────────────────────── */
+    @keyframes rise-up {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Responsive ───────────────────────────── */
+    @media (min-width: 480px) {
+      .warning-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .app-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 768px) {
+      .hero-shell {
+        padding: 40px 34px 26px;
+      }
+      .hero-title {
+        font-size: 2.1rem;
+      }
+      .hero-sub {
+        font-size: 1rem;
+      }
+      .calc-panel {
+        padding: 22px 20px;
+      }
+      .warning-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .structure-cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .app-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .comp-row {
+        grid-template-columns: 1.2fr repeat(3, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .warning-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .app-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* ── No-result note ──────────────────────── */
+    .calc-note {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.84rem;
+      padding: 20px 0;
+    }
+
+    .header-nav .nav-link.active {
+      color: var(--primary);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <span class="logo-ko">보다 BODA</span>
+      </a>
+      <nav class="header-nav">
+        <a href="/" class="nav-link">홈</a>
+        <a href="/services.html" class="nav-link">서비스찾기</a>
+        <a href="/reviews.html" class="nav-link">후기</a>
+        <a href="/compare.html" class="nav-link">비교</a>
+        <a href="/match.html" class="nav-link">매칭</a>
+        <a href="/cost-calculator.html" class="nav-link">비용계산</a>
+        <a href="/community.html" class="nav-link">커뮤니티</a>
+        <a href="/articles.html" class="nav-link">콘텐츠</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- ====== SECTION 1: Hero ====== -->
+      <section class="hero-shell">
+        <span class="hero-badge">KILLER FEATURE</span>
+        <h1 class="hero-title">숨은 비용 계산기</h1>
+        <p class="hero-sub">30초당 X원이 실제로 얼마인지, 서비스별로 비교해보세요</p>
+      </section>
+
+      <!-- ====== SECTION 2: Interactive Calculator ====== -->
+      <section class="page-section">
+        <div class="section-header">
+          <h2 class="section-title"><span class="section-icon">🧮</span>실시간 비용 계산</h2>
+        </div>
+        <div class="calc-panel">
+          <label>
+            <span class="calc-label">서비스 유형 선택</span>
+            <select id="calc-type" class="calc-select" aria-label="서비스 유형 선택">
+              <option value="phone">전화상담 (분당과금)</option>
+              <option value="app">앱 서비스 (자동풀이)</option>
+              <option value="ai">AI 운세</option>
+              <option value="portal">포털 무료운세</option>
+            </select>
+          </label>
+
+          <span class="calc-label">상담 시간 선택</span>
+          <div class="duration-btns" id="duration-btns">
+            <button type="button" class="dur-btn" data-min="5">5분</button>
+            <button type="button" class="dur-btn" data-min="10">10분</button>
+            <button type="button" class="dur-btn active" data-min="15">15분</button>
+            <button type="button" class="dur-btn" data-min="20">20분</button>
+            <button type="button" class="dur-btn" data-min="30">30분</button>
+          </div>
+
+          <div id="calc-results"></div>
+        </div>
+      </section>
+
+      <!-- ====== SECTION 3: 15분 기준 비교표 (Hardcoded) ====== -->
+      <section class="page-section">
+        <div class="section-header">
+          <h2 class="section-title"><span class="section-icon">📊</span>15분 기준 비용 비교표</h2>
+        </div>
+        <p class="text-sm text-muted" style="margin:-8px 0 14px;">전화상담 플랫폼 5곳의 15분 상담 비용 (VAT 포함)</p>
+
+        <div class="comparison-grid">
+          <div class="comp-row comp-header">
+            <span>서비스</span>
+            <span class="comp-val">최저</span>
+            <span class="comp-val">평균</span>
+            <span class="comp-val">최고</span>
+          </div>
+          <div class="comp-row">
+            <span class="comp-name">사주천궁</span>
+            <span class="comp-val">39,600원</span>
+            <span class="comp-val">46,200원</span>
+            <span class="comp-val expensive">56,100원</span>
+          </div>
+          <div class="comp-row">
+            <span class="comp-name">천명</span>
+            <span class="comp-val">35,000원</span>
+            <span class="comp-val">42,500원</span>
+            <span class="comp-val">50,000원</span>
+          </div>
+          <div class="comp-row">
+            <span class="comp-name">사주나루</span>
+            <span class="comp-val cheapest">26,400원</span>
+            <span class="comp-val">33,000원</span>
+            <span class="comp-val">49,500원</span>
+          </div>
+          <div class="comp-row">
+            <span class="comp-name">운세7</span>
+            <span class="comp-val cheapest">24,750원</span>
+            <span class="comp-val">33,000원</span>
+            <span class="comp-val">49,500원</span>
+          </div>
+          <div class="comp-row">
+            <span class="comp-name">운세담다</span>
+            <span class="comp-val">33,000원</span>
+            <span class="comp-val">33,000원</span>
+            <span class="comp-val">33,000원</span>
+          </div>
+        </div>
+
+        <div class="info-box" style="margin-top: 14px;">
+          운세7이 최저가(24,750원)이지만, 상담사에 따라 최고 49,500원까지 올라갑니다. 운세담다는 고정요금으로 예측이 쉽습니다.
+        </div>
+      </section>
+
+      <!-- ====== SECTION 4: Hidden Cost Warnings ====== -->
+      <section class="page-section">
+        <div class="section-header">
+          <h2 class="section-title"><span class="section-icon">⚠️</span>숨은 비용 주의보</h2>
+        </div>
+        <p class="text-sm text-muted" style="margin:-8px 0 14px;">마케팅에서 잘 드러나지 않는 추가 비용과 함정을 정리했습니다.</p>
+
+        <div class="warning-grid">
+          <div class="warning-card">
+            <div class="warning-icon">💳</div>
+            <h3>자동충전 트랩</h3>
+            <p>코인 잔액이 부족하면 자동으로 결제가 진행됩니다. 상담 중 코인이 떨어지면 본인도 모르게 추가 결제가 이루어질 수 있으니, 자동충전 설정을 반드시 확인하세요.</p>
+          </div>
+          <div class="warning-card">
+            <div class="warning-icon">⏰</div>
+            <h3>무료 코인 유효기간</h3>
+            <p>사주나루는 가입 시 제공하는 무료 코인의 유효기간이 단 3일입니다. 이후 자동 소멸되므로, 가입 직후 바로 사용하지 않으면 혜택을 놓칠 수 있습니다.</p>
+          </div>
+          <div class="warning-card">
+            <div class="warning-icon">📞</div>
+            <h3>060 이중 청구</h3>
+            <p>일부 060 전화상담은 정보이용료와 통신사 요금이 별도로 청구됩니다. 표시된 가격 외에 통화료가 추가될 수 있어 실제 비용이 더 높아질 수 있습니다.</p>
+          </div>
+          <div class="warning-card">
+            <div class="warning-icon">💬</div>
+            <h3>채팅 시간 소진</h3>
+            <p>채팅 상담 중 앱을 종료하거나 화면을 나가도 상담 시간이 계속 소진됩니다. 상담이 완전히 끝났는지 반드시 확인한 뒤 채팅방을 나가세요.</p>
+          </div>
+          <div class="warning-card">
+            <div class="warning-icon">🔥</div>
+            <h3>타임세일 긴박감</h3>
+            <p>카운트다운 타이머와 "지금만 할인" 문구로 긴박감을 조성해 충동결제를 유도합니다. 대부분의 타임세일은 주기적으로 반복되니, 서두르지 않아도 됩니다.</p>
+          </div>
+          <div class="warning-card">
+            <div class="warning-icon">🔄</div>
+            <h3>환불 수수료</h3>
+            <p>결제 후 7일이 초과되면 환불 시 10% 수수료가 부과되는 서비스가 있습니다. 환불 정책은 플랫폼마다 다르니, 결제 전 반드시 약관을 확인하세요.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== SECTION 5: 가격구조 비교 ====== -->
+      <section class="page-section">
+        <div class="section-header">
+          <h2 class="section-title"><span class="section-icon">💡</span>가격구조 비교</h2>
+        </div>
+        <p class="text-sm text-muted" style="margin:-8px 0 14px;">운세 서비스의 3가지 과금 방식을 이해하면, 내 예산에 맞는 서비스를 찾을 수 있습니다.</p>
+
+        <div class="structure-cards">
+          <div class="structure-card">
+            <span class="sc-type sc-permin">🕐 분당과금</span>
+            <h3>시간 = 돈, 관리가 핵심</h3>
+            <p>30초 단위로 과금되며, 상담이 길어질수록 비용이 급격히 증가합니다. 사주천궁·천명·사주나루·운세7·운세담다가 이 방식입니다.</p>
+            <div class="tip-box">
+              <strong>가성비 팁:</strong> 질문을 미리 정리하고, 타이머를 켜두세요. 15분을 넘기면 비용 효율이 급격히 떨어집니다.
+            </div>
+          </div>
+          <div class="structure-card">
+            <span class="sc-type sc-fixed">📦 건당정액</span>
+            <h3>예측 가능한 비용</h3>
+            <p>1건 상담 또는 콘텐츠 이용에 고정 금액을 지불합니다. 시간 압박 없이 여유롭게 상담받을 수 있어 가성비가 높습니다.</p>
+            <div class="tip-box">
+              <strong>가성비 팁:</strong> 천명의 건당정액 상담사는 시간 제한 없이 고정 가격이라 예산 관리에 유리합니다. 정통사주·인연궁합도 건당정액입니다.
+            </div>
+          </div>
+          <div class="structure-card">
+            <span class="sc-type sc-free">🎁 무료 / 부분유료</span>
+            <h3>무료로 시작, 필요하면 결제</h3>
+            <p>기본 운세는 무료로 제공하고, 상세 분석·프리미엄 콘텐츠만 유료입니다. 네이버 운세·점신·포스텔러 등이 이 방식입니다.</p>
+            <div class="tip-box">
+              <strong>가성비 팁:</strong> 가벼운 오늘의 운세는 무료 서비스로 충분합니다. 심층 분석이 필요할 때만 유료 전환을 고려하세요.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== SECTION 6: 앱 서비스 가격 비교 ====== -->
+      <section class="page-section">
+        <div class="section-header">
+          <h2 class="section-title"><span class="section-icon">📱</span>앱 서비스 가격 비교</h2>
+        </div>
+        <p class="text-sm text-muted" style="margin:-8px 0 14px;">앱 기반 운세 서비스의 무료 기능과 유료 기능을 비교합니다.</p>
+
+        <div class="feature-legend" style="margin-bottom: 12px;">
+          <span><span class="legend-dot legend-free"></span>무료 기능</span>
+          <span><span class="legend-dot legend-paid"></span>유료 기능</span>
+        </div>
+
+        <div class="app-grid">
+          <div class="app-card">
+            <div class="app-card-head">
+              <h3>점신</h3>
+              <span class="app-model-badge model-freemium">프리미엄</span>
+            </div>
+            <ul class="feature-list">
+              <li class="feat-free">오늘의 운세 (무료)</li>
+              <li class="feat-free">관상·심리테스트 (무료)</li>
+              <li class="feat-paid">정밀 사주 풀이 (3,900~9,900원)</li>
+              <li class="feat-paid">궁합 분석 (5,900원~)</li>
+              <li class="feat-paid">토정비결 상세 (4,900원~)</li>
+            </ul>
+          </div>
+          <div class="app-card">
+            <div class="app-card-head">
+              <h3>포스텔러</h3>
+              <span class="app-model-badge model-freemium">프리미엄</span>
+            </div>
+            <ul class="feature-list">
+              <li class="feat-free">간단 사주 요약 (무료)</li>
+              <li class="feat-free">별자리 운세 (무료)</li>
+              <li class="feat-paid">정밀 사주 (6,900~12,900원)</li>
+              <li class="feat-paid">타로 리딩 (3,900원~)</li>
+              <li class="feat-paid">점성술 차트 (9,900원~)</li>
+            </ul>
+          </div>
+          <div class="app-card">
+            <div class="app-card-head">
+              <h3>헬로우봇</h3>
+              <span class="app-model-badge model-freemium">프리미엄</span>
+            </div>
+            <ul class="feature-list">
+              <li class="feat-free">AI 챗봇 기본 상담 (무료)</li>
+              <li class="feat-free">일일 타로 1회 (무료)</li>
+              <li class="feat-paid">심층 타로 리딩 (보석 소모)</li>
+              <li class="feat-paid">사주·궁합 분석 (보석 소모)</li>
+              <li class="feat-paid">보석 구매 (1,100~33,000원)</li>
+            </ul>
+          </div>
+          <div class="app-card">
+            <div class="app-card-head">
+              <h3>우주고양이 보라</h3>
+              <span class="app-model-badge model-freemium">프리미엄</span>
+            </div>
+            <ul class="feature-list">
+              <li class="feat-free">오늘의 운세 (무료)</li>
+              <li class="feat-free">기본 궁합 (무료)</li>
+              <li class="feat-paid">정밀 사주 분석 (3,900원~)</li>
+              <li class="feat-paid">연애 타로 (2,900원~)</li>
+            </ul>
+          </div>
+          <div class="app-card">
+            <div class="app-card-head">
+              <h3>운세위키</h3>
+              <span class="app-model-badge model-paid">건당정액</span>
+            </div>
+            <ul class="feature-list">
+              <li class="feat-free">간단 운세 요약 (무료)</li>
+              <li class="feat-paid">AI 정밀 사주 (6,900원)</li>
+              <li class="feat-paid">종합운세 리포트 (9,900원)</li>
+              <li class="feat-paid">궁합 분석 (5,900원)</li>
+            </ul>
+          </div>
+          <div class="app-card">
+            <div class="app-card-head">
+              <h3>황제운세</h3>
+              <span class="app-model-badge model-free">무료</span>
+            </div>
+            <ul class="feature-list">
+              <li class="feat-free">사주팔자 (무료)</li>
+              <li class="feat-free">토정비결 (무료)</li>
+              <li class="feat-free">궁합 (무료)</li>
+              <li class="feat-free">꿈해몽 (무료)</li>
+              <li class="feat-paid">광고 제거 (인앱결제)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-box" style="margin-top: 14px;">
+          <strong>구독 vs 건당결제:</strong> 점신·포스텔러는 콘텐츠별 개별 결제 방식입니다. 헬로우봇은 '보석' 인앱 화폐를 사용하며, 황제운세는 기본 기능이 전부 무료입니다. 자주 이용한다면 건당결제 금액을 합산해 비교하세요.
+        </div>
+      </section>
+
+      <!-- ====== CTA Banner ====== -->
+      <section class="cta-banner">
+        <h2>나에게 맞는 서비스를 찾아보세요</h2>
+        <p>고민 유형, 상담 방식, 예산에 맞춰 서비스를 비교합니다.</p>
+        <a href="/" class="cta-link">서비스 비교하기 &rarr;</a>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>BODA &middot; 보다</strong>
+        <p style="margin: 4px 0 0;">운세 서비스 비교 플랫폼 | hello@unsetok.com</p>
+      </div>
+      <div class="footer-links">
+        <a href="/privacy.html">개인정보처리방침</a>
+        <a href="/terms.html">이용약관</a>
+      </div>
+      <p class="footer-disclaimer">BODA는 운세 서비스의 정보를 비교·제공하는 플랫폼이며, 특정 서비스의 효과나 정확성을 보증하지 않습니다. 서비스 이용에 따른 결과는 이용자 본인의 판단과 책임 하에 이루어집니다. 운세 상담은 참고용이며, 중요한 의사결정은 전문가(의료/법률/재무 등)와 상의하시기 바랍니다.</p>
+      <p style="margin-top: 12px; font-size: 0.75rem; color: var(--text-muted);">&copy; 2026 BODA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- BOTTOM NAV (모바일 전용) -->
+  <nav class="bottom-nav">
+    <a href="/" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="/services.html" class="bottom-nav-item">
+      <span class="nav-icon">🔍</span>
+      <span>서비스</span>
+    </a>
+    <a href="/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="/compare.html" class="bottom-nav-item active">
+      <span class="nav-icon">🆚</span>
+      <span>비교</span>
+    </a>
+    <a href="/articles.html" class="bottom-nav-item">
+      <span class="nav-icon">📰</span>
+      <span>콘텐츠</span>
+    </a>
+  </nav>
+
+  <script src="./shared-data.js"></script>
+  <script>
+    (function initCostCalculator() {
+      'use strict';
+
+      /* ── Pricing Data (30초당 원, VAT 포함) ────── */
+      var PHONE_SERVICES = [
+        { id: 'sajochungung', name: '사주천궁', min30s: 1320, avg30s: 1540, max30s: 1870 },
+        { id: 'chunmyung',    name: '천명',     min30s: 1167, avg30s: 1417, max30s: 1667 },
+        { id: 'ssintong',     name: '신통',     min30s: 1100, avg30s: 1375, max30s: 1650 },
+        { id: 'soultalk',     name: '소울톡',   min30s: 1100, avg30s: 1320, max30s: 1540 },
+        { id: 'sajoonaru',    name: '사주나루', min30s: 880,  avg30s: 1100, max30s: 1650 },
+        { id: 'unse7',        name: '운세7',    min30s: 825,  avg30s: 1100, max30s: 1650 },
+        { id: 'unsedamda',    name: '운세담다', min30s: 1100, avg30s: 1100, max30s: 1100 }
+      ];
+
+      var APP_SERVICES = [
+        { name: '점신',         model: '무료+부분유료', minCost: '무료', maxCost: '9,900원/건',  note: '기본 운세 무료, 정밀 분석 유료' },
+        { name: '포스텔러',     model: '무료+부분유료', minCost: '무료', maxCost: '12,900원/건', note: '간단 요약 무료, 상세 분석 유료' },
+        { name: '오즈의타로',   model: '무료+부분유료', minCost: '무료', maxCost: '6,900원/건',  note: '기본 타로 무료, 심층 리딩 유료' },
+        { name: '정통사주',     model: '건당정액',      minCost: '1,900원', maxCost: '9,900원/건', note: '콘텐츠별 고정 가격' },
+        { name: '헬로우봇',     model: '무료+부분유료', minCost: '무료', maxCost: '33,000원(보석)', note: '보석 인앱 화폐 방식' },
+        { name: '마이타로',     model: '무료+부분유료', minCost: '무료', maxCost: '6,900원/건',  note: 'AI 타로 기본 무료' },
+        { name: '우주고양이 보라', model: '무료+부분유료', minCost: '무료', maxCost: '5,900원/건', note: '기본 궁합 무료' },
+        { name: '황제운세',     model: '무료',          minCost: '무료', maxCost: '무료',         note: '전 기능 무료 (광고 포함)' }
+      ];
+
+      var AI_SERVICES = [
+        { name: '호리AI',   model: '무료',          minCost: '무료', maxCost: '무료',        note: '사주·타로·점성술 무료 베타' },
+        { name: '도사',     model: '무료+부분유료', minCost: '무료', maxCost: '9,900원/건',  note: '기본 AI 상담 무료' },
+        { name: '안녕타로', model: '무료+부분유료', minCost: '무료', maxCost: '6,900원/건',  note: 'AI 타로 기본 무료' },
+        { name: '운세위키', model: '건당정액',      minCost: '6,900원', maxCost: '9,900원/건', note: 'AI 정밀 사주 분석' },
+        { name: '젠디',     model: '무료+부분유료', minCost: '무료', maxCost: '5,900원/건',  note: 'AI 채팅 사주 기본 무료' }
+      ];
+
+      var PORTAL_SERVICES = [
+        { name: '네이버 운세',     model: '무료', minCost: '무료', maxCost: '무료', note: '접근성 최고, 간결한 해석' },
+        { name: '네이트 운세',     model: '무료+부분유료', minCost: '무료', maxCost: '5,000원~', note: '기본 무료, 프리미엄 유료' },
+        { name: '포춘에이드',      model: '무료+부분유료', minCost: '무료', maxCost: '4,900원~', note: '동서양 운세 종합' },
+        { name: '신한라이프 운세', model: '무료', minCost: '무료', maxCost: '무료', note: '평생운세 무료 제공' },
+        { name: '농협 운세',       model: '무료', minCost: '무료', maxCost: '무료', note: 'PC 전용, 100% 무료' },
+        { name: '아시아경제 운세', model: '무료', minCost: '무료', maxCost: '무료', note: '천기누설 브랜드' }
+      ];
+
+      /* ── DOM References ──────────────────────── */
+      var typeSelect = document.getElementById('calc-type');
+      var durationBtns = document.getElementById('duration-btns');
+      var resultsContainer = document.getElementById('calc-results');
+      var selectedMinutes = 15;
+
+      /* ── Helpers ─────────────────────────────── */
+      function formatWon(n) {
+        return n.toLocaleString('ko-KR') + '원';
+      }
+
+      function getIntervals(minutes) {
+        return minutes * 2; // 30-second intervals
+      }
+
+      /* ── Render: Phone Services (with bar chart) ── */
+      function renderPhoneResults(minutes) {
+        var intervals = getIntervals(minutes);
+        var maxCost = 0;
+
+        var rows = PHONE_SERVICES.map(function(svc) {
+          var lo = svc.min30s * intervals;
+          var hi = svc.max30s * intervals;
+          var avg = svc.avg30s * intervals;
+          if (hi > maxCost) { maxCost = hi; }
+          return { name: svc.name, rate: svc.min30s + '~' + svc.max30s, lo: lo, avg: avg, hi: hi };
+        });
+
+        // Find cheapest
+        var minLo = Math.min.apply(null, rows.map(function(r) { return r.lo; }));
+        var maxHi = Math.max.apply(null, rows.map(function(r) { return r.hi; }));
+
+        var html = '<div class="results-wrap"><table class="results-table">';
+        html += '<thead><tr>';
+        html += '<th>서비스명</th>';
+        html += '<th>30초당 요금</th>';
+        html += '<th>' + minutes + '분 비용 (VAT포함)</th>';
+        html += '<th>비교</th>';
+        html += '</tr></thead><tbody>';
+
+        rows.forEach(function(r) {
+          var barWidth = maxCost > 0 ? Math.round((r.avg / maxCost) * 100) : 0;
+          var badge = '';
+          if (r.lo === minLo) {
+            badge = '<span class="cheapest-badge">최저</span>';
+          }
+          if (r.hi === maxHi) {
+            badge = '<span class="expensive-badge">최고</span>';
+          }
+
+          html += '<tr>';
+          html += '<td><strong>' + r.name + '</strong>' + badge + '</td>';
+          html += '<td>' + r.rate + '원</td>';
+          html += '<td>' + formatWon(r.lo) + ' ~ ' + formatWon(r.hi) + '</td>';
+          html += '<td><div class="cost-bar-wrap">';
+          html += '<div class="cost-bar" style="width:' + barWidth + '%"></div>';
+          html += '<span class="cost-bar-label">' + formatWon(r.avg) + '</span>';
+          html += '</div></td>';
+          html += '</tr>';
+        });
+
+        html += '</tbody></table></div>';
+        html += '<p class="text-xs text-muted" style="margin-top:8px;text-align:right;">* 막대그래프는 평균 비용 기준</p>';
+        return html;
+      }
+
+      /* ── Render: Non-phone Services (table) ── */
+      function renderServiceTable(services, minutes) {
+        var html = '<div class="results-wrap"><table class="results-table">';
+        html += '<thead><tr>';
+        html += '<th>서비스명</th>';
+        html += '<th>과금 모델</th>';
+        html += '<th>최저 비용</th>';
+        html += '<th>최고 비용</th>';
+        html += '</tr></thead><tbody>';
+
+        services.forEach(function(svc) {
+          html += '<tr>';
+          html += '<td><strong>' + svc.name + '</strong></td>';
+          html += '<td>' + svc.model + '</td>';
+          html += '<td>' + svc.minCost + '</td>';
+          html += '<td>' + svc.maxCost + '</td>';
+          html += '</tr>';
+        });
+
+        html += '</tbody></table></div>';
+
+        if (services === APP_SERVICES || services === AI_SERVICES) {
+          html += '<p class="text-xs text-muted" style="margin-top:8px;">* 앱/AI 서비스는 건당 결제이므로 상담 시간과 무관하게 고정 가격입니다.</p>';
+        } else {
+          html += '<p class="text-xs text-muted" style="margin-top:8px;">* 포털 무료 서비스는 대부분 시간 제한 없이 무료로 이용 가능합니다.</p>';
+        }
+        return html;
+      }
+
+      /* ── Main Render ────────────────────────── */
+      function render() {
+        var type = typeSelect.value;
+        var html = '';
+
+        if (type === 'phone') {
+          html = renderPhoneResults(selectedMinutes);
+        } else if (type === 'app') {
+          html = renderServiceTable(APP_SERVICES, selectedMinutes);
+        } else if (type === 'ai') {
+          html = renderServiceTable(AI_SERVICES, selectedMinutes);
+        } else if (type === 'portal') {
+          html = renderServiceTable(PORTAL_SERVICES, selectedMinutes);
+        }
+
+        resultsContainer.innerHTML = html;
+      }
+
+      /* ── Duration Button Logic ─────────────── */
+      function updateDurationState() {
+        var type = typeSelect.value;
+        var btns = durationBtns.querySelectorAll('.dur-btn');
+        var isPhoneType = (type === 'phone');
+
+        btns.forEach(function(btn) {
+          if (isPhoneType) {
+            btn.style.opacity = '1';
+            btn.style.pointerEvents = 'auto';
+          } else {
+            btn.style.opacity = '0.5';
+            btn.style.pointerEvents = 'none';
+          }
+        });
+      }
+
+      /* ── Event Listeners ────────────────────── */
+      typeSelect.addEventListener('change', function() {
+        updateDurationState();
+        render();
+      });
+
+      durationBtns.addEventListener('click', function(e) {
+        var btn = e.target.closest('.dur-btn');
+        if (!btn) { return; }
+
+        selectedMinutes = parseInt(btn.getAttribute('data-min'), 10);
+
+        durationBtns.querySelectorAll('.dur-btn').forEach(function(b) {
+          b.classList.remove('active');
+        });
+        btn.classList.add('active');
+        render();
+      });
+
+      /* ── Init ────────────────────────────────── */
+      updateDurationState();
+      render();
+
+    }());
+  </script>
+</body>
+</html>
