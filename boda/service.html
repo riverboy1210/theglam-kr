@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="naver-site-verification" content="NAVER_VERIFICATION_CODE_HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
   <title>서비스 상세 | 보다 BODA</title>
@@ -12,6 +13,9 @@
   <meta property="og:description" content="선택한 운세 서비스의 핵심 정보와 AI 후기 요약을 확인하세요.">
   <meta property="og:url" content="https://unsetok.com/service.html">
   <meta property="og:image" content="https://unsetok.com/images/logo.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="서비스 상세 | 보다 BODA">
+  <meta name="twitter:description" content="선택한 운세 서비스의 핵심 정보와 AI 후기 요약을 확인하세요.">
   <link rel="stylesheet" href="./shared.css">
   <style>
     .detail-grid { display: grid; gap: 14px; }
@@ -139,6 +143,13 @@
       }
 
       document.title = `${service.name} | 보다 BODA`;
+
+      /* Update canonical URL to point to the static SEO page */
+      var canonicalLink = document.querySelector('link[rel="canonical"]');
+      if (canonicalLink) {
+        canonicalLink.href = `https://unsetok.com/services/${id}.html`;
+      }
+
       document.getElementById('service-name').textContent = service.name;
       document.getElementById('service-summary').textContent = textOrFallback(service.summary);
 

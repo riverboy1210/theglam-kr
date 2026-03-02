@@ -1,7 +1,13 @@
 User-agent: *
 Allow: /
+Allow: /shared-data.js
+Allow: /shared.css
 Disallow: /*?q=
 Disallow: /*?search=
+
+# Naver Yeti crawler
+User-agent: Yeti
+Allow: /
 
 Sitemap: https://unsetok.com/sitemap.xml
 
