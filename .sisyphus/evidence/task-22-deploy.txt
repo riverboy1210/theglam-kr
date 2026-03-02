@@ -1,0 +1,7 @@
+/:200
+/services.html:200
+/reviews.html:200
+/compare.html:200
+/articles.html:200
+/privacy.html:200
+/terms.html:200

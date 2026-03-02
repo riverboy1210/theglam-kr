@@ -1,0 +1,80 @@
+=== Task 3: SERVICES Data Verification ===
+Date: 2026-03-02T10:20:38.530Z
+
+TOTAL COUNT: 30
+
+--- By Type ---
+  전화상담플랫폼: 7
+  앱기반자동풀이: 12
+  AI운세: 4
+  포털무료운세: 3
+  기업제공무료: 4
+
+--- Service List ---
+1. [chunmyung] 천명 | type=전화상담플랫폼 | url=https://www.chunmyung.com
+2. [sajoonaru] 사주나루 | type=전화상담플랫폼 | url=https://www.sajoonaru.com
+3. [sajochungung] 사주천궁 | type=전화상담플랫폼 | url=https://www.sajochungung.com
+4. [unse7] 운세7 | type=전화상담플랫폼 | url=https://www.unse7.com
+5. [postellar-consulting] 포스텔러 상담소 | type=전화상담플랫폼 | url=null
+6. [unsedamda] 운세담다 | type=전화상담플랫폼 | url=null
+7. [withgodtalk] 위드갓톡 | type=전화상담플랫폼 | url=null
+8. [jeomsin] 점신 | type=앱기반자동풀이 | url=https://www.jeomsin.co.kr
+9. [postellar] 포스텔러 | type=앱기반자동풀이 | url=https://postellar.com
+10. [hellobot] 헬로우봇 | type=앱기반자동풀이 | url=https://hellobot.co.kr
+11. [unsudowon] 운수도원 투데이 | type=앱기반자동풀이 | url=null
+12. [ozstarot] 오즈의타로 | type=앱기반자동풀이 | url=null
+13. [inyeon] 인연궁합 | type=앱기반자동풀이 | url=null
+14. [unsebigul] 운세비결 | type=앱기반자동풀이 | url=null
+15. [mytarot] 마이타로 | type=앱기반자동풀이 | url=null
+16. [jeongtong-saju] 정통사주 | type=앱기반자동풀이 | url=null
+17. [hwangje-unse] 황제운세 | type=앱기반자동풀이 | url=null
+18. [sintonmanseryeok] 신통만세력 | type=앱기반자동풀이 | url=null
+19. [unsebichaek] 운세비책 | type=앱기반자동풀이 | url=null
+20. [hori-ai] 호리AI | type=AI운세 | url=https://hori.ai
+21. [ari-saju] 아리사주 | type=AI운세 | url=null
+22. [dosa-ai] 도사 | type=AI운세 | url=null
+23. [annyeong-tarot] 안녕타로 | type=AI운세 | url=null
+24. [naver-unse] 네이버 운세 | type=포털무료운세 | url=https://fortune.naver.com
+25. [nate-unse] 네이트 운세 | type=포털무료운세 | url=https://fortune.nate.com
+26. [fortuneaid] 포춘에이드 | type=포털무료운세 | url=null
+27. [nonghyup-unse] 농협 운세 | type=기업제공무료 | url=https://www.nonghyup.com
+28. [shinhan-unse] 신한라이프 운세 | type=기업제공무료 | url=null
+29. [okcashbag-unse] OK캐쉬백 운세 | type=기업제공무료 | url=null
+30. [incruit-unse] 인쿠르트 운세 | type=기업제공무료 | url=https://fortune.incruit.com
+
+--- Required Fields Check ---
+ALL 30 services have all required fields (including null-allowed ones)
+
+--- Category Minimums ---
+전화상담 >= 6: PASS (7)
+앱기반 >= 7: PASS (12)
+AI >= 2: PASS (4)
+포털/기업무료 >= 7: PASS (7)
+
+--- URLs (non-null) ---
+  chunmyung: https://www.chunmyung.com
+  sajoonaru: https://www.sajoonaru.com
+  sajochungung: https://www.sajochungung.com
+  unse7: https://www.unse7.com
+  jeomsin: https://www.jeomsin.co.kr
+  postellar: https://postellar.com
+  hellobot: https://hellobot.co.kr
+  hori-ai: https://hori.ai
+  naver-unse: https://fortune.naver.com
+  nate-unse: https://fortune.nate.com
+  nonghyup-unse: https://www.nonghyup.com
+  incruit-unse: https://fortune.incruit.com
+
+--- Data Sources ---
+22 services: BODA_기획서.md Section 4-2 (전화상담 6, 앱기반 7, AI 2, 포털/기업무료 7)
+8 additional: Web research (Google Play Store, App Store, OneStore verified apps)
+  - withgodtalk (위드갓톡): OneStore verified consultation platform
+  - mytarot (마이타로): Google Play 50k+ downloads, App Store 2.1k reviews
+  - jeongtong-saju (정통사주): Google Play 1M+ downloads
+  - hwangje-unse (황제운세): Google Play verified fortune app
+  - sintonmanseryeok (신통만세력): OneStore verified manseryeok app
+  - unsebichaek (운세비책): OneStore verified fortune app
+  - dosa-ai (도사): App Store verified AI saju platform
+  - annyeong-tarot (안녕타로): OneStore verified AI tarot app
+
+RESULT: PASS - 30 services with all required fields

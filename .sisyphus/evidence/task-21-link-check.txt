@@ -1,0 +1,14 @@
+/:200
+/index.html:200
+/services.html:200
+/service.html?id=chunmyung:200
+/reviews.html:200
+/compare.html:200
+/articles.html:200
+/article.html?slug=phone-taro-top5:200
+/privacy.html:200
+/terms.html:200
+/404.html:200
+/images/favicon.svg:200
+/sitemap.xml:200
+/robots.txt:200

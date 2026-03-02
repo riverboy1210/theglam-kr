@@ -1,0 +1,5 @@
+/:000
+/services.html:000
+/reviews.html:000
+/compare.html:000
+/articles.html:000

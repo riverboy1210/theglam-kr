@@ -1,0 +1,11 @@
+total 87
+drwxr-xr-x 1 USER 197121     0  3월  2 19:03 .
+drwxr-xr-x 1 USER 197121     0  3월  2 19:03 ..
+-rw-r--r-- 1 USER 197121   436  3월  2 19:03 _headers
+-rw-r--r-- 1 USER 197121   199  3월  2 19:03 _redirects
+-rw-r--r-- 1 USER 197121  5305  3월  2 19:03 404.html
+drwxr-xr-x 1 USER 197121     0  3월  2 19:03 articles
+-rw-r--r-- 1 USER 197121  3069  3월  2 19:03 boilerplate.html
+drwxr-xr-x 1 USER 197121     0  3월  2 19:03 images
+-rw-r--r-- 1 USER 197121   448  3월  2 19:03 robots.txt
+-rw-r--r-- 1 USER 197121 20049  3월  2 19:03 shared.css

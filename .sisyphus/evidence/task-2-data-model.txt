@@ -1,0 +1,20 @@
+Task: BODA data model design for boda/shared-data.js
+Date: 2026-03-02
+
+Validation commands:
+1) node -e "require('./boda/shared-data.js')"
+   - Result: PASS (no error output)
+
+2) node -e "const d=require('./boda/shared-data.js'); console.log('SERVICES:', d.SERVICES.length, 'TYPES:', d.SERVICE_TYPES.length, 'BRAND:', d.BRAND.name)"
+   - Output: SERVICES: 2 TYPES: 7 BRAND: 보다
+
+Checklist evidence:
+- SERVICES examples: 2 entries (structure-first)
+- CONSULTATION_TYPES: 6 entries
+- SERVICE_TYPES: 7 entries
+- METHODS: 5 entries
+- PRICE_RANGES: 5 entries
+- REVIEWS: 2 AI summary digest entries
+- ARTICLES: 1 example entry
+- BRAND: 보다 / BODA / unsetok.com
+- Export compatibility: Node module.exports + Browser window.BODA_DATA
