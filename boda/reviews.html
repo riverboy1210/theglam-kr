@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
+  <title>운세 서비스 후기 모아보기 — AI가 분석한 리얼 후기 | 보다 BODA</title>
+  <meta name="description" content="각 운세 서비스의 공개 후기를 AI가 분석해 요약한 후기 모음입니다.">
+  <link rel="canonical" href="https://unsetok.com/reviews.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="후기 모아보기 | 보다 BODA">
+  <meta property="og:description" content="공개 후기를 기반으로 생성한 AI 요약 후기와 출처를 확인하세요.">
+  <meta property="og:url" content="https://unsetok.com/reviews.html">
+  <meta property="og:image" content="https://unsetok.com/images/logo.svg">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .notice { background: #fff4fa; border: 1px solid #ffd3e4; color: #7d2046; border-radius: 12px; padding: 12px; font-size: 0.85rem; }
+    .toolbar { position: sticky; top: 56px; z-index: 10; background: rgba(255,255,255,0.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border-light); padding: 10px 0; margin: 12px 0; }
+    .toolbar-inner { display: grid; gap: 8px; grid-template-columns: 1fr; }
+    .select { border: 1px solid var(--border); border-radius: 999px; padding: 8px 12px; font-size: 0.83rem; font-family: inherit; }
+    .grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
+    .review-card { padding: 14px; }
+    .meta { color: var(--text-muted); font-size: 0.8rem; margin: 6px 0; }
+    .summary { margin: 8px 0; font-size: 0.9rem; line-height: 1.5; }
+    .row { display: flex; flex-wrap: wrap; gap: 6px; }
+    .empty { border: 1px dashed #f3c5db; border-radius: 12px; padding: 24px 12px; text-align: center; color: var(--text-muted); }
+    @media (min-width: 900px) { .toolbar-inner { grid-template-columns: repeat(3, minmax(0,1fr)); } .grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a href="/" class="logo"><span class="logo-ko">보다 BODA</span></a><nav class="header-nav"><a href="/" class="nav-link">홈</a><a href="/services.html" class="nav-link">서비스찾기</a><a href="/reviews.html" class="nav-link">후기</a><a href="/compare.html" class="nav-link">비교</a><a href="/community.html" class="nav-link">커뮤니티</a><a href="/articles.html" class="nav-link">콘텐츠</a></nav></div></header>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="section-header"><h1 class="section-title">운세 서비스 후기 모아보기</h1></div>
+      <p class="notice">아래 후기는 각 서비스의 공개 후기를 AI가 분석·요약한 내용입니다. 원본은 출처 링크에서 확인하세요.</p>
+
+      <section class="toolbar">
+        <div class="toolbar-inner">
+          <select id="service-filter" class="select" aria-label="서비스 필터"></select>
+          <select id="topic-filter" class="select" aria-label="상담 분야 필터"></select>
+          <select id="sentiment-filter" class="select" aria-label="감성 필터">
+            <option value="">감성 전체</option>
+            <option value="positive">긍정</option>
+            <option value="neutral">중립</option>
+            <option value="negative">부정</option>
+          </select>
+        </div>
+      </section>
+
+      <div id="reviews-grid" class="grid"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><strong>BODA · 보다</strong></div><p class="footer-disclaimer">AI 요약은 참고용이며 원문과 차이가 있을 수 있습니다.</p></div></footer>
+  <nav class="bottom-nav"><a href="/" class="bottom-nav-item"><span class="nav-icon">🏠</span><span>홈</span></a><a href="/services.html" class="bottom-nav-item"><span class="nav-icon">🔍</span><span>서비스</span></a><a href="/reviews.html" class="bottom-nav-item active"><span class="nav-icon">⭐</span><span>후기</span></a><a href="/compare.html" class="bottom-nav-item"><span class="nav-icon">🆚</span><span>비교</span></a><a href="/articles.html" class="bottom-nav-item"><span class="nav-icon">📰</span><span>콘텐츠</span></a></nav>
+
+  <script src="./shared-data.js"></script>
+  <script>
+    (function initReviews() {
+      const data = window.BODA_DATA || {};
+      const services = Array.isArray(data.SERVICES) ? data.SERVICES : [];
+      const reviews = Array.isArray(data.REVIEWS) ? data.REVIEWS : [];
+      const serviceMap = new Map(services.map((x) => [x.id, x]));
+      const grid = document.getElementById('reviews-grid');
+      const serviceFilter = document.getElementById('service-filter');
+      const topicFilter = document.getElementById('topic-filter');
+      const sentimentFilter = document.getElementById('sentiment-filter');
+
+      const topicSet = new Set();
+      services.forEach((service) => {
+        (service.specialty || []).forEach((item) => {
+          topicSet.add(item);
+        });
+      });
+
+      serviceFilter.innerHTML = ['<option value="">서비스 전체</option>']
+        .concat(services.map((x) => `<option value="${x.id}">${x.name}</option>`)).join('');
+      topicFilter.innerHTML = ['<option value="">상담 분야 전체</option>']
+        .concat(Array.from(topicSet).map((x) => `<option value="${x}">${x}</option>`)).join('');
+
+      function sentimentBadge(sentiment) {
+        if (sentiment === 'positive') return '<span class="badge badge-verified">긍정</span>';
+        if (sentiment === 'negative') return '<span class="badge" style="background:#fee2e2;color:#b91c1c;">부정</span>';
+        return '<span class="badge" style="background:#fef3c7;color:#92400e;">중립</span>';
+      }
+
+      function render() {
+        const selectedService = serviceFilter.value;
+        const selectedTopic = topicFilter.value;
+        const selectedSentiment = sentimentFilter.value;
+
+        const filtered = reviews.filter((review) => {
+          const service = serviceMap.get(review.serviceId);
+          if (selectedService && review.serviceId !== selectedService) return false;
+          if (selectedSentiment && review.sentiment !== selectedSentiment) return false;
+          if (selectedTopic && (!service || !(service.specialty || []).includes(selectedTopic))) return false;
+          return true;
+        });
+
+        if (!filtered.length) {
+          grid.innerHTML = '<div class="empty">조건에 맞는 요약 후기가 없습니다.</div>';
+          return;
+        }
+
+        grid.innerHTML = filtered.map((review) => {
+          const service = serviceMap.get(review.serviceId);
+          const sourceLinks = (review.sources || []).map((s) => `<a href="${s.url}" target="_blank" rel="noopener noreferrer">${s.name}</a>`).join(' · ');
+          const keywords = (review.keywords || []).length
+            ? review.keywords.map((k) => `<span class="tag">${k}</span>`).join('')
+            : '<span class="tag">키워드 미수집</span>';
+
+          return `<article class="card review-card"><div class="row">${sentimentBadge(review.sentiment)}<span class="badge badge-new">AI 요약</span></div><h3 style="margin:8px 0 0;">${service ? service.name : '서비스 미확인'}</h3><p class="summary">${review.aiSummary || '요약 데이터 수집 중입니다.'}</p><div class="row">${keywords}</div><p class="meta">출처: ${sourceLinks || '출처 수집 중'}</p><p class="meta">수집 기간: ${review.period || '미확인'} · 업데이트: ${review.lastUpdated || '미확인'}</p></article>`;
+        }).join('');
+      }
+
+      [serviceFilter, topicFilter, sentimentFilter].forEach((el) => {
+        el.addEventListener('change', render);
+      });
+      render();
+    })();
+  </script>
+</body>
+</html>

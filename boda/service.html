@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
+  <title>서비스 상세 | 보다 BODA</title>
+  <meta name="description" content="운세 서비스 상세 정보, 가격 구조, AI 후기 요약을 확인해보세요.">
+  <link rel="canonical" href="https://unsetok.com/service.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="서비스 상세 | 보다 BODA">
+  <meta property="og:description" content="선택한 운세 서비스의 핵심 정보와 AI 후기 요약을 확인하세요.">
+  <meta property="og:url" content="https://unsetok.com/service.html">
+  <meta property="og:image" content="https://unsetok.com/images/logo.svg">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .detail-grid { display: grid; gap: 14px; }
+    .panel { background: #fff; border: 1px solid var(--border-light); border-radius: 14px; box-shadow: 0 10px 24px rgba(17,24,39,0.06); padding: 16px; }
+    .service-hero { display: grid; gap: 8px; }
+    .service-title { margin: 0; font-size: 1.45rem; letter-spacing: -0.01em; }
+    .subtitle { margin: 0; color: var(--text-muted); }
+    .kv-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+    .kv-row { display: grid; grid-template-columns: 110px minmax(0,1fr); gap: 10px; font-size: 0.9rem; border-bottom: 1px solid var(--border-light); padding-bottom: 8px; }
+    .kv-row:last-child { border-bottom: none; }
+    .kv-key { color: var(--text-muted); font-weight: 700; }
+    .list { margin: 0; padding-left: 18px; }
+    .related-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+    .related-card { text-decoration: none; color: inherit; padding: 12px; border: 1px solid var(--border); border-radius: 12px; background: #fff; }
+    .empty { text-align: center; color: var(--text-muted); padding: 24px 10px; border: 1px dashed #f3c5db; border-radius: 12px; }
+    @media (min-width: 900px) {
+      .detail-grid { grid-template-columns: 1.4fr 1fr; }
+      .kv-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+      .related-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a href="/" class="logo"><span class="logo-ko">보다 BODA</span></a><nav class="header-nav"><a href="/" class="nav-link">홈</a><a href="/services.html" class="nav-link">서비스찾기</a><a href="/reviews.html" class="nav-link">후기</a><a href="/compare.html" class="nav-link">비교</a><a href="/community.html" class="nav-link">커뮤니티</a><a href="/articles.html" class="nav-link">콘텐츠</a></nav></div></header>
+
+  <main class="main-content">
+    <div class="container">
+      <div id="not-found" class="empty" style="display:none;">요청한 서비스를 찾지 못했습니다. <a href="./services.html">서비스 목록으로 이동</a></div>
+
+      <div id="detail-wrap" style="display:none;">
+        <section class="panel service-hero">
+          <div class="tag-row" id="hero-tags"></div>
+          <h1 class="service-title" id="service-name"></h1>
+          <p class="subtitle" id="service-summary"></p>
+          <div>
+            <a id="official-link" class="btn-outline" href="#" target="_blank" rel="noopener noreferrer">공식 사이트</a>
+            <a id="compare-link" class="btn-primary" href="#" style="margin-left:8px;">비교하기</a>
+          </div>
+        </section>
+
+        <div class="detail-grid" style="margin-top: 12px;">
+          <section class="panel">
+            <div class="section-header"><h2 class="section-title">핵심 정보</h2></div>
+            <div class="kv-grid" id="info-grid"></div>
+          </section>
+
+          <section class="panel">
+            <div class="section-header"><h2 class="section-title">AI 후기 요약</h2></div>
+            <p class="subtitle" id="ai-summary"></p>
+            <p class="text-sm text-muted" style="margin-top:10px;">AI가 외부 후기를 분석하여 요약한 내용입니다.</p>
+            <div class="tag-row" id="keyword-tags"></div>
+            <div style="margin-top:10px;">
+              <strong class="text-sm">장점</strong>
+              <ul class="list" id="pros-list"></ul>
+            </div>
+            <div style="margin-top:10px;">
+              <strong class="text-sm">단점</strong>
+              <ul class="list" id="cons-list"></ul>
+            </div>
+            <div style="margin-top:10px;">
+              <strong class="text-sm">출처</strong>
+              <ul class="list" id="source-list"></ul>
+            </div>
+          </section>
+        </div>
+
+        <section class="panel" style="margin-top: 12px;" id="community-section">
+          <div class="section-header" style="display:flex;align-items:center;justify-content:space-between;">
+            <h2 class="section-title">이 서비스의 경험담</h2>
+            <a id="community-more" href="#" style="font-size:0.82rem;color:var(--primary);text-decoration:none;">전체보기 &rarr;</a>
+          </div>
+          <p id="community-desc" style="color:var(--text-muted);font-size:0.88rem;margin:0 0 12px;">이 서비스를 이용한 사람들의 솔직한 경험담을 확인해보세요.</p>
+          <a id="community-write-link" href="#" class="btn-primary" style="font-size:0.85rem;padding:8px 18px;">경험담 쓰기</a>
+        </section>
+
+        <section class="panel" style="margin-top: 12px;">
+          <div class="section-header"><h2 class="section-title">유사 서비스</h2></div>
+          <div id="related-grid" class="related-grid"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><strong>BODA · 보다</strong></div><p class="footer-disclaimer">BODA는 운세 서비스의 정보를 비교·제공하는 플랫폼이며, 특정 서비스의 효과나 정확성을 보증하지 않습니다.</p></div></footer>
+  <nav class="bottom-nav"><a href="/" class="bottom-nav-item"><span class="nav-icon">🏠</span><span>홈</span></a><a href="/services.html" class="bottom-nav-item active"><span class="nav-icon">🔍</span><span>서비스</span></a><a href="/community.html" class="bottom-nav-item"><span class="nav-icon">💬</span><span>커뮤니티</span></a><a href="/compare.html" class="bottom-nav-item"><span class="nav-icon">🆚</span><span>비교</span></a><a href="/articles.html" class="bottom-nav-item"><span class="nav-icon">📰</span><span>콘텐츠</span></a></nav>
+
+  <script src="./shared-data.js"></script>
+  <script>
+    (function initServiceDetail() {
+      const data = window.BODA_DATA || {};
+      const services = Array.isArray(data.SERVICES) ? data.SERVICES : [];
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+      const service = services.find((item) => item.id === id);
+
+      const notFound = document.getElementById('not-found');
+      const wrap = document.getElementById('detail-wrap');
+
+      if (!service) {
+        notFound.style.display = 'block';
+        return;
+      }
+      wrap.style.display = 'block';
+
+      function textOrFallback(value) {
+        return value === null || value === undefined || value === '' ? '정보 미확인' : value;
+      }
+
+      document.title = `${service.name} | 보다 BODA`;
+      document.getElementById('service-name').textContent = service.name;
+      document.getElementById('service-summary').textContent = textOrFallback(service.summary);
+
+      const tags = document.getElementById('hero-tags');
+      tags.innerHTML = `<span class="badge badge-hot">${textOrFallback(service.type)}</span><span class="badge badge-new">${textOrFallback(service.priceRange)}</span>`;
+
+      const officialLink = document.getElementById('official-link');
+      if (service.officialUrl) {
+        officialLink.href = service.officialUrl;
+      } else {
+        officialLink.href = './services.html';
+        officialLink.textContent = '공식 사이트 미확인';
+        officialLink.removeAttribute('target');
+      }
+      document.getElementById('compare-link').href = `./compare.html?ids=${encodeURIComponent(service.id)}`;
+
+      const infoEntries = [
+        ['가격대', textOrFallback(service.priceRange)],
+        ['가격구조', textOrFallback(service.priceStructure)],
+        ['상담방식', Array.isArray(service.method) && service.method.length ? service.method.join(', ') : '정보 미확인'],
+        ['전문분야', Array.isArray(service.specialty) && service.specialty.length ? service.specialty.join(', ') : '정보 미확인'],
+        ['상담종류', Array.isArray(service.counselingType) && service.counselingType.length ? service.counselingType.join(', ') : '정보 미확인'],
+        ['플랫폼', Array.isArray(service.platform) && service.platform.length ? service.platform.join(', ') : '정보 미확인'],
+        ['무료체험', textOrFallback(service.freeTrial)],
+        ['상담사 수', textOrFallback(service.counselorCount)],
+        ['운영시간', textOrFallback(service.operatingHours)],
+        ['회원가입', service.signupRequired ? '필요' : '불필요'],
+        ['추가과금', service.extraCharges ? '있음' : '없음'],
+        ['후기 수', typeof service.reviewCount === 'number' ? service.reviewCount.toLocaleString() : '정보 미확인']
+      ];
+      document.getElementById('info-grid').innerHTML = infoEntries.map(([k, v]) => `<div class="kv-row"><span class="kv-key">${k}</span><span>${v}</span></div>`).join('');
+
+      const summary = service.reviewSummary || {};
+      document.getElementById('ai-summary').textContent = textOrFallback(summary.aiSummary);
+      document.getElementById('keyword-tags').innerHTML = (summary.keywords || []).length ? summary.keywords.map((x) => `<span class="tag">${x}</span>`).join('') : '<span class="tag">키워드 미수집</span>';
+
+      const pros = (summary.pros || []).length ? summary.pros : ['장점 데이터 수집 중'];
+      const cons = (summary.cons || []).length ? summary.cons : ['단점 데이터 수집 중'];
+      document.getElementById('pros-list').innerHTML = pros.map((x) => `<li>${x}</li>`).join('');
+      document.getElementById('cons-list').innerHTML = cons.map((x) => `<li>${x}</li>`).join('');
+
+      const sourceList = document.getElementById('source-list');
+      const sources = Array.isArray(summary.sources) ? summary.sources : [];
+      sourceList.innerHTML = sources.length
+        ? sources.map((x) => `<li><a href="${x.url}" target="_blank" rel="noopener noreferrer">${x.name}</a></li>`).join('')
+        : '<li>출처 수집 중</li>';
+
+      // Community experience link
+      document.getElementById('community-more').href = `./community.html?service=${encodeURIComponent(service.id)}`;
+      document.getElementById('community-write-link').href = `./community-write.html?service=${encodeURIComponent(service.id)}`;
+
+      const related = services
+        .filter((item) => item.id !== service.id)
+        .filter((item) => item.type === service.type || (item.specialty || []).some((s) => (service.specialty || []).includes(s)))
+        .slice(0, 3);
+      document.getElementById('related-grid').innerHTML = related.length
+        ? related.map((item) => `<a class="related-card" href="./service.html?id=${encodeURIComponent(item.id)}"><strong>${item.name}</strong><p class="service-meta">${item.summary || '요약 준비중'}</p><span class="tag">${item.type}</span></a>`).join('')
+        : '<div class="empty">유사 서비스 데이터가 아직 없습니다.</div>';
+    })();
+  </script>
+</body>
+</html>
