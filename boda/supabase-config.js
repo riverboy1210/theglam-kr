@@ -4,8 +4,8 @@
 (function () {
   'use strict';
 
-  const SUPABASE_URL = 'YOUR_SUPABASE_URL';
-  const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+  const SUPABASE_URL = 'https://mqxgtuxvrnuuusszqhpd.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_zsGI_jdJn9DEleZOHQ_LuA_-c0Uz7yU';
 
   if (typeof supabase === 'undefined') {
     console.error('[BODA] Supabase JS SDK not loaded. Add the CDN script before supabase-config.js');
