@@ -1,0 +1,21 @@
+{
+  "serviceId": "jeomsin",
+  "aiSummary": "점신의 공개 리뷰가 충분하지 않아 요약 데이터를 수집 중입니다.",
+  "sentiment": "neutral",
+  "keywords": [],
+  "pros": [
+    "장점 데이터 수집 중"
+  ],
+  "cons": [
+    "개선 의견 데이터 수집 중"
+  ],
+  "sourceCount": 1,
+  "lastUpdated": "2026-03-02",
+  "sources": [
+    {
+      "name": "Google Play Store",
+      "url": "https://play.google.com/store/apps/details?id=kr.co.techlabs.jeomsin",
+      "reviewCount": 0
+    }
+  ]
+}
