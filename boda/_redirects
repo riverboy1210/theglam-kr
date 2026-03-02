@@ -1,0 +1,5 @@
+# Apex to www redirect (handled by Cloudflare, but as fallback)
+# https://theglam.kr/* https://www.theglam.kr/:splat 301
+
+# Old Webflow blog URLs → new article URLs
+/blog/:slug /articles/:slug 301
