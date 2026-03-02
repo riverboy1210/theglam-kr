@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
+  <title>경험담 | 보다 BODA</title>
+  <meta name="description" content="운세 서비스 이용 경험담 상세">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .post-back { display:inline-block; color:var(--text-muted); font-size:0.85rem; text-decoration:none; margin-bottom:16px; }
+    .post-back:hover { color:var(--primary); }
+
+    .post-detail { max-width:740px; margin:0 auto; }
+    .post-detail-card { background:#fff; border:1px solid var(--border-light); border-radius:var(--radius); padding:28px 24px; margin-bottom:20px; }
+
+    .post-top-row { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+    .svc-badge { background:var(--primary-light); color:var(--primary-dark); padding:3px 10px; border-radius:var(--radius-full); font-size:0.78rem; font-weight:600; text-decoration:none; }
+    .svc-badge:hover { filter:brightness(0.95); }
+    .concern-badge { background:var(--secondary-light); color:var(--secondary); padding:3px 10px; border-radius:var(--radius-full); font-size:0.78rem; font-weight:500; }
+    .method-badge { background:var(--bg-gray); color:var(--text-muted); padding:3px 10px; border-radius:var(--radius-full); font-size:0.78rem; }
+
+    .post-stars-lg { color:#F59E0B; font-size:1.2rem; letter-spacing:-1px; margin-bottom:8px; }
+    .post-detail-card h1 { font-size:1.35rem; font-weight:800; margin:0 0 12px; line-height:1.4; }
+    .post-author { font-size:0.82rem; color:var(--text-muted); margin-bottom:20px; }
+
+    .post-body { font-size:0.95rem; line-height:1.75; white-space:pre-wrap; word-break:break-word; color:var(--text); margin-bottom:20px; }
+
+    .post-info-bar { display:flex; gap:8px; flex-wrap:wrap; padding:12px 0; border-top:1px solid var(--border-light); margin-bottom:16px; }
+    .info-chip { font-size:0.78rem; padding:4px 10px; background:var(--bg-gray); border-radius:var(--radius-full); color:var(--text-muted); }
+
+    .post-actions { display:flex; align-items:center; gap:16px; padding-top:12px; border-top:1px solid var(--border-light); }
+    .like-btn { background:none; border:1px solid var(--border); padding:6px 16px; border-radius:var(--radius-full); font-size:0.85rem; cursor:pointer; font-family:inherit; color:var(--text-muted); transition:all .2s; display:flex; align-items:center; gap:4px; }
+    .like-btn.liked { border-color:var(--primary); color:var(--primary); background:var(--primary-light); }
+    .like-btn:hover { border-color:var(--primary); }
+    .comment-count-display { font-size:0.85rem; color:var(--text-muted); }
+    .delete-btn { margin-left:auto; background:none; border:none; color:var(--text-light); font-size:0.8rem; cursor:pointer; font-family:inherit; }
+    .delete-btn:hover { color:var(--danger); }
+
+    /* Comments */
+    .comments-section { max-width:740px; margin:0 auto; }
+    .comments-heading { font-size:1.05rem; font-weight:700; margin:0 0 16px; }
+
+    .comment-item { padding:14px 0; border-bottom:1px solid var(--border-light); }
+    .comment-item:last-child { border-bottom:none; }
+    .comment-meta { display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; }
+    .comment-author { font-size:0.82rem; font-weight:600; }
+    .comment-time { font-size:0.75rem; color:var(--text-light); }
+    .comment-body { font-size:0.9rem; line-height:1.6; color:var(--text); }
+    .comment-delete { background:none; border:none; color:var(--text-light); font-size:0.75rem; cursor:pointer; font-family:inherit; margin-left:8px; }
+    .comment-delete:hover { color:var(--danger); }
+
+    .comment-form { margin-top:20px; }
+    .comment-form textarea { width:100%; padding:12px 14px; border:1px solid var(--border); border-radius:var(--radius-sm); font-size:0.88rem; font-family:inherit; resize:vertical; min-height:80px; }
+    .comment-form textarea:focus { outline:none; border-color:var(--primary); box-shadow:0 0 0 3px var(--primary-light); }
+    .comment-form-actions { display:flex; justify-content:flex-end; margin-top:8px; gap:8px; }
+    .btn-comment { background:var(--primary); color:#fff; border:none; padding:8px 20px; border-radius:var(--radius-sm); font-size:0.85rem; font-weight:600; cursor:pointer; font-family:inherit; }
+    .btn-comment:disabled { opacity:0.5; cursor:not-allowed; }
+
+    .comment-login { text-align:center; padding:20px; background:var(--bg-gray); border-radius:var(--radius-sm); }
+    .comment-login p { margin:0 0 12px; font-size:0.88rem; color:var(--text-muted); }
+    .comment-login .login-btns { display:flex; gap:8px; justify-content:center; }
+    .btn-kakao { background:#FEE500; color:#191919; border:none; padding:8px 16px; border-radius:var(--radius-sm); font-size:0.82rem; font-weight:600; cursor:pointer; }
+    .btn-google { background:#fff; color:var(--text); border:1px solid var(--border); padding:8px 16px; border-radius:var(--radius-sm); font-size:0.82rem; font-weight:600; cursor:pointer; }
+
+    .error-state { text-align:center; padding:60px 20px; color:var(--text-muted); }
+    .error-state h2 { font-size:1.2rem; margin:0 0 8px; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo"><span class="logo-ko">보다 BODA</span></a>
+      <nav class="header-nav">
+        <a href="/" class="nav-link">홈</a>
+        <a href="/services.html" class="nav-link">서비스찾기</a>
+        <a href="/reviews.html" class="nav-link">후기</a>
+        <a href="/compare.html" class="nav-link">비교</a>
+        <a href="/community.html" class="nav-link">커뮤니티</a>
+        <a href="/articles.html" class="nav-link">콘텐츠</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <a href="./community.html" class="post-back">&larr; 경험담 목록</a>
+
+      <div id="post-content" class="post-detail" style="display:none;">
+        <article class="post-detail-card">
+          <div class="post-top-row" id="post-badges"></div>
+          <div class="post-stars-lg" id="post-stars"></div>
+          <h1 id="post-title"></h1>
+          <p class="post-author" id="post-author"></p>
+          <div class="post-body" id="post-body"></div>
+          <div class="post-info-bar" id="post-info-bar"></div>
+          <div class="post-actions" id="post-actions"></div>
+        </article>
+
+        <section class="comments-section">
+          <h2 class="comments-heading" id="comments-heading">댓글</h2>
+          <div id="comments-list"></div>
+          <div id="comment-form-area"></div>
+        </section>
+      </div>
+
+      <div id="error-state" class="error-state" style="display:none;">
+        <h2>경험담을 찾을 수 없습니다</h2>
+        <p>삭제되었거나 잘못된 주소입니다.</p>
+        <a href="./community.html" style="color:var(--primary);">경험담 목록으로 돌아가기</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>BODA · 보다</strong>
+        <p style="margin:4px 0 0;">운세 서비스 비교 플랫폼 | hello@unsetok.com</p>
+      </div>
+      <div class="footer-links">
+        <a href="/privacy.html">개인정보처리방침</a>
+        <a href="/terms.html">이용약관</a>
+      </div>
+      <p class="footer-disclaimer">BODA는 운세 서비스의 정보를 비교·제공하는 플랫폼이며, 특정 서비스의 효과나 정확성을 보증하지 않습니다.</p>
+      <p style="margin-top:12px; font-size:0.75rem; color:var(--text-muted);">© 2026 BODA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav">
+    <a href="/" class="bottom-nav-item"><span class="nav-icon">&#x1F3E0;</span><span>홈</span></a>
+    <a href="/services.html" class="bottom-nav-item"><span class="nav-icon">&#x1F50D;</span><span>서비스</span></a>
+    <a href="/community.html" class="bottom-nav-item"><span class="nav-icon">&#x1F4AC;</span><span>커뮤니티</span></a>
+    <a href="/compare.html" class="bottom-nav-item"><span class="nav-icon">&#x1F19A;</span><span>비교</span></a>
+    <a href="/articles.html" class="bottom-nav-item"><span class="nav-icon">&#x1F4F0;</span><span>콘텐츠</span></a>
+  </nav>
+
+  <script src="./shared-data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./supabase-config.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var data = window.BODA_DATA || {};
+      var services = Array.isArray(data.SERVICES) ? data.SERVICES : [];
+      var serviceMap = {};
+      services.forEach(function (s) { serviceMap[s.id] = s; });
+
+      var params = new URLSearchParams(window.location.search);
+      var postId = params.get('id');
+      var currentUserId = null;
+      var currentPostData = null;
+      var isLiked = false;
+
+      if (!postId) { showError(); return; }
+
+      function timeAgo(dateStr) {
+        var diff = (Date.now() - new Date(dateStr).getTime()) / 1000;
+        if (diff < 60) return '방금 전';
+        if (diff < 3600) return Math.floor(diff / 60) + '분 전';
+        if (diff < 86400) return Math.floor(diff / 3600) + '시간 전';
+        if (diff < 2592000) return Math.floor(diff / 86400) + '일 전';
+        return Math.floor(diff / 2592000) + '달 전';
+      }
+
+      function starsHtml(n) {
+        var s = '';
+        for (var i = 1; i <= 5; i++) s += i <= n ? '\u2605' : '\u2606';
+        return s;
+      }
+
+      function escHtml(str) {
+        if (!str) return '';
+        var d = document.createElement('div');
+        d.textContent = str;
+        return d.innerHTML;
+      }
+
+      function showError() {
+        document.getElementById('error-state').style.display = 'block';
+        document.getElementById('post-content').style.display = 'none';
+      }
+
+      function renderPost(post) {
+        currentPostData = post;
+        var svc = serviceMap[post.service_id];
+        var svcName = svc ? svc.name : post.service_id;
+
+        document.title = escHtml(post.title) + ' | 보다 BODA';
+
+        document.getElementById('post-badges').innerHTML =
+          '<a href="./service.html?id=' + post.service_id + '" class="svc-badge">' + escHtml(svcName) + '</a>' +
+          '<span class="concern-badge">' + escHtml(post.concern_type) + '</span>' +
+          '<span class="method-badge">' + escHtml(post.method_used) + '</span>';
+
+        document.getElementById('post-stars').innerHTML = starsHtml(post.satisfaction);
+        document.getElementById('post-title').textContent = post.title;
+        document.getElementById('post-author').textContent =
+          (post.nickname || '익명') + ' · ' + timeAgo(post.created_at);
+        document.getElementById('post-body').textContent = post.body;
+
+        var infoHtml = '<span class="info-chip">' + escHtml(svcName) + '</span>' +
+          '<span class="info-chip">' + escHtml(post.method_used) + '</span>';
+        if (post.cost_spent) infoHtml += '<span class="info-chip">' + escHtml(post.cost_spent) + '</span>';
+        document.getElementById('post-info-bar').innerHTML = infoHtml;
+
+        renderActions(post);
+        document.getElementById('post-content').style.display = 'block';
+      }
+
+      function renderActions(post) {
+        var likeClass = isLiked ? ' liked' : '';
+        var html = '<button type="button" class="like-btn' + likeClass + '" id="like-btn">' +
+          '\u2764 <span id="like-count">' + (post.like_count || 0) + '</span></button>' +
+          '<span class="comment-count-display">\u{1F4AC} <span id="comment-count-top">' + (post.comment_count || 0) + '</span></span>';
+
+        if (currentUserId && currentUserId === post.user_id) {
+          html += '<button type="button" class="delete-btn" id="delete-post-btn">삭제</button>';
+        }
+        document.getElementById('post-actions').innerHTML = html;
+
+        document.getElementById('like-btn').addEventListener('click', handleLike);
+        var delBtn = document.getElementById('delete-post-btn');
+        if (delBtn) delBtn.addEventListener('click', handleDeletePost);
+      }
+
+      function handleLike() {
+        if (typeof BODA_DB === 'undefined') return;
+        if (!currentUserId) { alert('로그인이 필요합니다.'); return; }
+        BODA_DB.toggleLike(postId).then(function (res) {
+          if (res.error) { alert(res.error.message); return; }
+          isLiked = res.liked;
+          var countEl = document.getElementById('like-count');
+          var cur = parseInt(countEl.textContent) || 0;
+          countEl.textContent = isLiked ? cur + 1 : Math.max(0, cur - 1);
+          var btn = document.getElementById('like-btn');
+          btn.classList.toggle('liked', isLiked);
+        });
+      }
+
+      function handleDeletePost() {
+        if (!confirm('경험담을 삭제하시겠습니까?')) return;
+        BODA_DB.deletePost(postId).then(function () {
+          window.location.href = './community.html';
+        });
+      }
+
+      // ── Comments ──
+      function renderComments(comments) {
+        document.getElementById('comments-heading').textContent = '댓글 ' + comments.length + '개';
+        var list = document.getElementById('comments-list');
+        if (comments.length === 0) {
+          list.innerHTML = '<p style="color:var(--text-light);font-size:0.88rem;padding:12px 0;">아직 댓글이 없습니다.</p>';
+        } else {
+          list.innerHTML = comments.map(function (c) {
+            var delHtml = (currentUserId && currentUserId === c.user_id)
+              ? '<button type="button" class="comment-delete" data-cid="' + c.id + '">삭제</button>' : '';
+            return '<div class="comment-item">' +
+              '<div class="comment-meta">' +
+                '<span class="comment-author">' + escHtml(c.nickname || '익명') + '</span>' +
+                '<span><span class="comment-time">' + timeAgo(c.created_at) + '</span>' + delHtml + '</span>' +
+              '</div>' +
+              '<p class="comment-body">' + escHtml(c.body) + '</p>' +
+            '</div>';
+          }).join('');
+
+          list.querySelectorAll('.comment-delete').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              var cid = this.dataset.cid;
+              if (!confirm('댓글을 삭제하시겠습니까?')) return;
+              BODA_DB.deleteComment(cid).then(function () { loadComments(); });
+            });
+          });
+        }
+      }
+
+      function renderCommentForm() {
+        var area = document.getElementById('comment-form-area');
+        area.innerHTML = '<div class="comment-form">' +
+          '<div style="display:flex;gap:8px;margin-bottom:8px;">' +
+            '<input type="text" id="comment-nickname" placeholder="닉네임 (비워두면 익명)" maxlength="20" style="flex:0 0 140px;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:0.85rem;font-family:inherit;">' +
+          '</div>' +
+          '<textarea id="comment-input" placeholder="댓글을 남겨보세요"></textarea>' +
+          '<div class="comment-form-actions">' +
+            '<button type="button" class="btn-comment" id="btn-comment">댓글 달기</button>' +
+          '</div></div>';
+        document.getElementById('btn-comment').addEventListener('click', handleComment);
+      }
+
+      function handleComment() {
+        var input = document.getElementById('comment-input');
+        var nicknameInput = document.getElementById('comment-nickname');
+        var body = input.value.trim();
+        if (!body) return;
+        var nickname = nicknameInput ? nicknameInput.value.trim() : '';
+        var btn = document.getElementById('btn-comment');
+        btn.disabled = true;
+        BODA_DB.createComment(postId, body, nickname || '익명').then(function (res) {
+          if (res.error) { alert(res.error.message); btn.disabled = false; return; }
+          input.value = '';
+          if (nicknameInput) nicknameInput.value = '';
+          btn.disabled = false;
+          loadComments();
+          var cntEl = document.getElementById('comment-count-top');
+          if (cntEl) cntEl.textContent = parseInt(cntEl.textContent || '0') + 1;
+        });
+      }
+
+      function loadComments() {
+        if (typeof BODA_DB === 'undefined') return;
+        BODA_DB.fetchComments(postId).then(function (res) {
+          renderComments(res.data || []);
+        });
+      }
+
+      // ── Init ──
+      function init() {
+        if (typeof BODA_DB === 'undefined') { showError(); return; }
+
+        BODA_DB.getUser().then(function (user) {
+          currentUserId = user ? user.id : null;
+
+          return BODA_DB.fetchPost(postId);
+        }).then(function (res) {
+          if (!res || res.error || !res.data) { showError(); return; }
+
+          if (currentUserId) {
+            BODA_DB.getUserLikes([postId]).then(function (likedSet) {
+              isLiked = likedSet.has(postId);
+              renderPost(res.data);
+              renderCommentForm();
+            });
+          } else {
+            renderPost(res.data);
+            renderCommentForm();
+          }
+          loadComments();
+        });
+
+        BODA_DB.onAuthChange(function (event) {
+          if (event === 'SIGNED_IN' || event === 'SIGNED_OUT') {
+            location.reload();
+          }
+        });
+      }
+
+      init();
+    })();
+  </script>
+</body>
+</html>
