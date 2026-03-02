@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
+  <title>에디터 콘텐츠 — 운세 서비스 비교 & 가이드 | 보다 BODA</title>
+  <meta name="description" content="운세 서비스 비교분석, 초보자 가이드, 가격 가이드 콘텐츠를 확인하세요.">
+  <link rel="canonical" href="https://unsetok.com/articles.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="에디터 콘텐츠 | 보다 BODA">
+  <meta property="og:description" content="운세 서비스 비교분석과 가이드를 담은 에디터 콘텐츠 모음입니다.">
+  <meta property="og:url" content="https://unsetok.com/articles.html">
+  <meta property="og:image" content="https://unsetok.com/images/logo.svg">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .hero { border-radius: 14px; padding: 18px; background: linear-gradient(135deg, #ffe8f1 0%, #efe8ff 100%); margin-bottom: 12px; }
+    .toolbar { position: sticky; top: 56px; z-index: 10; background: rgba(255,255,255,0.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border-light); padding: 10px 0; margin-bottom: 12px; }
+    .cards { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .card-link { text-decoration: none; color: inherit; }
+    .card-body { padding: 14px; }
+    .meta { color: var(--text-muted); font-size: 0.8rem; margin-top: 8px; }
+    @media (min-width: 900px) { .cards { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a href="/" class="logo"><span class="logo-ko">보다 BODA</span></a><nav class="header-nav"><a href="/" class="nav-link">홈</a><a href="/services.html" class="nav-link">서비스찾기</a><a href="/reviews.html" class="nav-link">후기</a><a href="/compare.html" class="nav-link">비교</a><a href="/community.html" class="nav-link">커뮤니티</a><a href="/articles.html" class="nav-link">콘텐츠</a></nav></div></header>
+
+  <main class="main-content"><div class="container">
+    <section class="hero"><h1 style="margin:0;">에디터 콘텐츠 — 운세 서비스 비교 & 가이드</h1><p class="text-muted" style="margin:6px 0 0;">서비스 선택에 필요한 정보를 짧고 명확하게 정리했습니다.</p></section>
+
+    <section class="toolbar"><div class="filter-bar" id="category-tabs"><button type="button" class="filter-chip active" data-category="전체">전체</button><button type="button" class="filter-chip" data-category="비교분석">비교분석</button><button type="button" class="filter-chip" data-category="초보자가이드">초보자가이드</button><button type="button" class="filter-chip" data-category="가격가이드">가격가이드</button><button type="button" class="filter-chip" data-category="트렌드">트렌드</button><button type="button" class="filter-chip" data-category="체험리뷰">체험리뷰</button></div></section>
+
+    <section><div id="articles-grid" class="cards"></div></section>
+  </div></main>
+
+  <footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><strong>BODA · 보다</strong></div></div></footer>
+  <nav class="bottom-nav"><a href="/" class="bottom-nav-item"><span class="nav-icon">🏠</span><span>홈</span></a><a href="/services.html" class="bottom-nav-item"><span class="nav-icon">🔍</span><span>서비스</span></a><a href="/reviews.html" class="bottom-nav-item"><span class="nav-icon">⭐</span><span>후기</span></a><a href="/compare.html" class="bottom-nav-item"><span class="nav-icon">🆚</span><span>비교</span></a><a href="/articles.html" class="bottom-nav-item active"><span class="nav-icon">📰</span><span>콘텐츠</span></a></nav>
+
+  <script src="./shared-data.js"></script>
+  <script>
+    (function initArticles() {
+      const data = window.BODA_DATA || {};
+      const articles = Array.isArray(data.ARTICLES) ? data.ARTICLES : [];
+      const grid = document.getElementById('articles-grid');
+      const tabs = document.getElementById('category-tabs');
+      let active = '전체';
+
+      function mapCategory(raw) {
+        if (!raw) return '비교분석';
+        if (raw.includes('비교')) return '비교분석';
+        if (raw.includes('가이드') && raw.includes('초보')) return '초보자가이드';
+        if (raw.includes('가격')) return '가격가이드';
+        if (raw.includes('트렌드')) return '트렌드';
+        if (raw.includes('체험')) return '체험리뷰';
+        return raw;
+      }
+
+      function render() {
+        const filtered = active === '전체' ? articles : articles.filter((a) => mapCategory(a.category) === active);
+        if (!filtered.length) {
+          grid.innerHTML = '<div class="empty">해당 카테고리 콘텐츠를 준비 중입니다.</div>';
+          return;
+        }
+        grid.innerHTML = filtered.map((article) => {
+          const category = mapCategory(article.category);
+          return `<a class="card card-hover card-link" href="./article.html?slug=${encodeURIComponent(article.slug)}"><div class="article-card-img">콘텐츠 썸네일</div><div class="card-body"><span class="badge badge-new">${category}</span><h3 style="margin:8px 0 6px;">${article.title}</h3><p class="text-muted" style="margin:0;">${article.summary || '요약 준비중'}</p><p class="meta">${article.publishedAt || '발행일 미정'} · 읽기 4분</p></div></a>`;
+        }).join('');
+      }
+
+      tabs.addEventListener('click', (event) => {
+        const chip = event.target.closest('.filter-chip');
+        if (!chip) return;
+        active = chip.getAttribute('data-category');
+        tabs.querySelectorAll('.filter-chip').forEach((el) => {
+          el.classList.remove('active');
+        });
+        chip.classList.add('active');
+        render();
+      });
+
+      render();
+    })();
+  </script>
+</body>
+</html>

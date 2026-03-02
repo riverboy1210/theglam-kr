@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
+  <title>콘텐츠 상세 | 보다 BODA</title>
+  <meta name="description" content="운세 서비스 비교와 선택에 도움이 되는 에디터 콘텐츠입니다.">
+  <link rel="canonical" href="https://unsetok.com/article.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="콘텐츠 상세 | 보다 BODA">
+  <meta property="og:description" content="운세 서비스 선택에 도움이 되는 에디터 콘텐츠 상세 페이지입니다.">
+  <meta property="og:url" content="https://unsetok.com/article.html">
+  <meta property="og:image" content="https://unsetok.com/images/logo.svg">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .article-shell { max-width: 860px; margin: 0 auto; }
+    .article-panel { background: #fff; border: 1px solid var(--border-light); border-radius: 14px; box-shadow: 0 10px 24px rgba(17,24,39,0.06); padding: 18px; }
+    .meta { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 10px; }
+    .article-title { margin: 0; font-size: 1.6rem; line-height: 1.35; }
+    .article-body { margin-top: 16px; color: #2d3347; }
+    .article-body h2 { margin: 22px 0 8px; font-size: 1.15rem; }
+    .article-body p { margin: 0 0 12px; }
+    .nav-row { display: flex; justify-content: space-between; gap: 8px; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a href="/" class="logo"><span class="logo-ko">보다 BODA</span></a><nav class="header-nav"><a href="/" class="nav-link">홈</a><a href="/services.html" class="nav-link">서비스찾기</a><a href="/reviews.html" class="nav-link">후기</a><a href="/compare.html" class="nav-link">비교</a><a href="/community.html" class="nav-link">커뮤니티</a><a href="/articles.html" class="nav-link">콘텐츠</a></nav></div></header>
+  <main class="main-content"><div class="container article-shell"><article class="article-panel"><p class="meta" id="article-meta">에디터 · 발행일</p><h1 class="article-title" id="article-title">콘텐츠 로딩 중...</h1><div class="article-body" id="article-body"></div><div class="related-articles"><div class="related-articles-header"><strong>관련 서비스</strong></div><div id="related-services"></div></div><div class="nav-row"><a id="prev-link" class="btn-outline" href="./articles.html">목록으로</a><a id="next-link" class="btn-primary" href="./articles.html">다음 콘텐츠</a></div></article></div></main>
+  <footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><strong>BODA · 보다</strong></div></div></footer>
+  <nav class="bottom-nav"><a href="/" class="bottom-nav-item"><span class="nav-icon">🏠</span><span>홈</span></a><a href="/services.html" class="bottom-nav-item"><span class="nav-icon">🔍</span><span>서비스</span></a><a href="/reviews.html" class="bottom-nav-item"><span class="nav-icon">⭐</span><span>후기</span></a><a href="/compare.html" class="bottom-nav-item"><span class="nav-icon">🆚</span><span>비교</span></a><a href="/articles.html" class="bottom-nav-item active"><span class="nav-icon">📰</span><span>콘텐츠</span></a></nav>
+
+  <script src="./shared-data.js"></script>
+  <script>
+    (function initArticlePage() {
+      const data = window.BODA_DATA || {};
+      const articles = Array.isArray(data.ARTICLES) ? data.ARTICLES : [];
+      const services = Array.isArray(data.SERVICES) ? data.SERVICES : [];
+      const slug = new URLSearchParams(window.location.search).get('slug');
+      const index = articles.findIndex((a) => a.slug === slug);
+      const article = index >= 0 ? articles[index] : articles[0];
+
+      if (!article) {
+        document.getElementById('article-title').textContent = '콘텐츠를 찾을 수 없습니다.';
+        document.getElementById('article-body').innerHTML = '<p>요청하신 콘텐츠가 존재하지 않습니다. 목록으로 이동해 주세요.</p>';
+        return;
+      }
+
+      document.title = `${article.title} | 보다 BODA`;
+      document.getElementById('article-meta').textContent = `${article.category || '콘텐츠'} · ${article.publishedAt || '발행일 미정'}`;
+      document.getElementById('article-title').textContent = article.title;
+
+      const tags = Array.isArray(article.tags) ? article.tags : [];
+      const bodyHtml = [
+        `<p>${article.summary || '콘텐츠 요약을 준비 중입니다.'}</p>`,
+        '<h2>핵심 체크포인트</h2>',
+        '<p>운세 서비스는 상담 방식, 가격 구조, 후기 출처 투명성을 함께 확인해야 합니다.</p>',
+        '<h2>서비스 고르는 기준</h2>',
+        '<p>원하는 고민 분야와 상담 종류(사주/타로/신점)가 맞는지 먼저 확인하고, 운영시간과 추가과금 여부를 점검하세요.</p>',
+        `<p>관련 키워드: ${tags.length ? tags.join(', ') : '태그 준비중'}</p>`
+      ].join('');
+      document.getElementById('article-body').innerHTML = bodyHtml;
+
+      const related = services.slice(0, 3).map((service) => `<a class="article-card-horizontal" href="./service.html?id=${encodeURIComponent(service.id)}"><div class="article-thumb">서비스</div><div class="article-info"><div class="article-title">${service.name}</div><div class="article-meta"><span>${service.type || '유형 미확인'}</span></div></div></a>`).join('');
+      document.getElementById('related-services').innerHTML = related;
+
+      const prev = index > 0 ? articles[index - 1] : null;
+      const next = index >= 0 && index < articles.length - 1 ? articles[index + 1] : null;
+      const prevLink = document.getElementById('prev-link');
+      const nextLink = document.getElementById('next-link');
+      if (prev) {
+        prevLink.href = `./article.html?slug=${encodeURIComponent(prev.slug)}`;
+        prevLink.textContent = '이전 콘텐츠';
+      }
+      if (next) {
+        nextLink.href = `./article.html?slug=${encodeURIComponent(next.slug)}`;
+        nextLink.textContent = '다음 콘텐츠';
+      } else {
+        nextLink.href = './articles.html';
+        nextLink.textContent = '목록으로';
+      }
+    })();
+  </script>
+</body>
+</html>
