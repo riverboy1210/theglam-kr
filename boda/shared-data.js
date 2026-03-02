@@ -155,7 +155,16 @@ const SERVICES = [
     summary: '리얼후기 131만 건, 상담사 500여 명 규모의 국내 최대 전화상담 플랫폼',
     officialUrl: 'http://46saju.com',
     rating: null,
-    reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    reviewSummary: {
+      aiSummary: '리얼후기 131만 건, 상담사 500여 명 규모의 국내 최대 전화상담 플랫폼입니다. 상담사 선택 폭이 넓고 24시간 연결 가능하다는 장점이 있으나, 분당 과금 방식으로 장시간 상담 시 비용 부담이 있을 수 있습니다.',
+      sentiment: 'positive',
+      keywords: ['타로', '무료', '정확', '운세'],
+      pros: ['무료 재회 신점 완벽 가이드', '이별 후 1년간 각종 무료/유료 신점을 경험하고, 현재는 명리학을 공부하고 있는 30대 직장인입니다', '오늘은 제가 실제로 경험한 무료 재회 신점의 모든 것을 진솔하게 나누고자 합니다'],
+      cons: ['- 장점: 부담 없는 접근성', '- 단점: 비용 부담', '2) 사기 사이트 구별법'],
+      sourceCount: 2,
+      lastUpdated: '2026-03-02',
+      sources: [{ name: '블로그 후기 (티스토리)', url: 'https://caomeiyun3.tistory.com/197', reviewCount: 2 }]
+    },
     pricingDetail: {
       costPerUnit: '30초당 1,200~1,700코인',
       avgCost15min: 46200,
@@ -191,7 +200,16 @@ const SERVICES = [
     summary: '후기 40만 건 이상, 엄격한 입점 심사로 신뢰성을 강조하는 대표 전화상담 플랫폼',
     officialUrl: 'https://chunmyung.com',
     rating: null,
-    reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    reviewSummary: {
+      aiSummary: '건당 고정가(3.5~5만원) 방식으로 시간 걱정 없이 상담받을 수 있다는 점이 큰 장점입니다. 엄격한 상담사 입점 심사로 신뢰성을 강조하며, 후기 40만 건 이상을 보유한 대표 전화상담 플랫폼입니다.',
+      sentiment: 'positive',
+      keywords: ['타로', '사주', '정확', 'AI', '궁합'],
+      pros: ['이번에 후기를 남길 잠실 주리 선생님 사주 상담은 천명이라는 서비스를 이용하였습니다', '이번에 처음 써봤는데 생각보다 괜찮았습니다', '자세한 후기를 남기기 전에 결론부터 말씀드리자면 꽤나 만족스러운 사주 상담이었습니다'],
+      cons: ['가격이 꽤나 부담되죠', '리뷰 원탑이니 가격이 부담되어도 믿고 가는 것으로 결정', '꽤나 부담되는 가격, 30분에 55,000원이니까요'],
+      sourceCount: 8,
+      lastUpdated: '2026-03-02',
+      sources: [{ name: '블로그 후기 (티스토리)', url: 'https://trueteller.tistory.com/3', reviewCount: 8 }]
+    },
     pricingDetail: {
       costPerUnit: '건당 35,000~50,000원',
       avgCost15min: 42500,
@@ -227,7 +245,16 @@ const SERVICES = [
     summary: 'MZ세대 타깃 고화질 영상 상담 도입, 2025년 최대 신흥 전화상담 플랫폼',
     officialUrl: 'https://ssintong.com',
     rating: null,
-    reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    reviewSummary: {
+      aiSummary: 'MZ세대를 타깃으로 고화질 영상 상담을 도입한 신흥 전화상담 플랫폼입니다. 2025년 출시 이후 빠르게 성장하고 있으며, 사주·타로·신점 전문 상담사를 갖추고 있습니다.',
+      sentiment: 'positive',
+      keywords: ['사주', '정확', '무료'],
+      pros: ['그렇게 유니아 수녀는 과거 자신의 동료 수녀였으나 현재 무당인 \'효원\'(김국희 배우)에게 도움을 청해 희준을 구하기 위한 의식들을 시도해 보지만 이 방법 역시 신', '그러나 배우들의 연기가 전반적으로 좋았고 시각적 연출에 심혈을 기울인 듯하여 볼거리가 나름 많았던 부분은 긍정적으로 보였던 것 같아요', '함께 보면 좋은 글'],
+      cons: ['그 부분이 조금 아쉬웠어요', '한국의 역사기록은 앞서도 언급하였듯이 약소국의', '사기」와「삼국유사」뿐이다'],
+      sourceCount: 4,
+      lastUpdated: '2026-03-02',
+      sources: [{ name: '블로그 후기 (티스토리)', url: 'https://lucky-hee.tistory.com/251', reviewCount: 4 }]
+    },
     pricingDetail: {
       costPerUnit: '30초당 1,000~1,500원(추정)',
       avgCost15min: 37500,
@@ -291,7 +318,19 @@ const SERVICES = [
     summary: '코인 선불·후불 선택 가능, 30초당 1,100~1,500원 분당 과금 방식의 전화상담 플랫폼',
     officialUrl: 'https://sajunaru.com',
     rating: null,
-    reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    reviewSummary: {
+      aiSummary: '상담사의 직관력과 상황 파악 정확도에 대한 긍정 평가가 두드러집니다. 친근한 상담 분위기와 공감 능력을 장점으로 꼽는 후기가 많으며, 주요 상담 분야는 속마음·애정·재회 순입니다.',
+      sentiment: 'positive',
+      keywords: ['속마음', '애정', '재회', '금전/사업', '정확', '타로'],
+      pros: ['\'어떻게 해도 괜찮은 안전한 이야기\'', '타로가 주는 진정한 위로는 공감이 아닌, 확신으로부터 오는 통찰력이라는 걸 명심하세요', '소름 돋는 적중률과 전문성에 감동'],
+      cons: ['이 글을 보고 이거 광고후기 아니야', '라는 생각으로 후기를 찾아보고 있다면 후회하기 전에 마지막에 뭐라도 해보자 라는 생각을 하신다면 허니잼쌤이랑 상담 해보세요', '성격이 정말 정말 안 맞아서 연애 내내 싸웠다는 사람입니다'],
+      sourceCount: 45,
+      lastUpdated: '2026-03-02',
+      sources: [
+        { name: '블로그 후기 (티스토리)', url: 'https://ahddhuh.tistory.com/61', reviewCount: 2 },
+        { name: '사주나루 이용자 후기', url: 'https://sajunaru.com/review.html#comment-7634438', reviewCount: 43 }
+      ]
+    },
     pricingDetail: {
       costPerUnit: '30초당 800~1,500원',
       avgCost15min: 33000,
@@ -364,7 +403,16 @@ const SERVICES = [
     summary: '저렴한 비용을 강조하는 전화·채팅 상담 플랫폼',
     officialUrl: 'https://www.unsedamda.com',
     rating: null,
-    reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    reviewSummary: {
+      aiSummary: '균일가(1,000원/30초) 과금으로 가격 예측이 쉽고, 가입 시 적립금 10,000원을 제공하여 첫 상담 부담이 적습니다. 저렴한 비용을 강조하는 전화·채팅 상담 플랫폼입니다.',
+      sentiment: 'positive',
+      keywords: ['사주', '무료', '정확', '운세'],
+      pros: ['정확한 상담을 위해서는', '무료 사주풀이는 사실', '무료로 사주풀이를 해주는 곳이'],
+      cons: ['등 부담없이 이용이 가능합니다'],
+      sourceCount: 2,
+      lastUpdated: '2026-03-02',
+      sources: [{ name: '블로그 후기 (티스토리)', url: 'https://koocker1.tistory.com/541', reviewCount: 2 }]
+    },
     pricingDetail: {
       costPerUnit: '30초당 1,000원',
       avgCost15min: 33000,
@@ -401,7 +449,16 @@ const SERVICES = [
     summary: '누적 다운로드 1,700만, MAU 95만의 국내 1위 운세 앱. 관상·심리테스트 등 다양한 콘텐츠 제공',
     officialUrl: 'https://www.jeomsin.co.kr',
     rating: null,
-    reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    reviewSummary: {
+      aiSummary: '국내 1위 운세 앱답게 다양한 콘텐츠(사주, 관상, 타로, 토정비결)와 무료 기능에 대한 만족도가 높습니다. 다만 광고 빈도와 유료 전환 유도에 대한 아쉬움도 일부 존재합니다. 배우 박성훈(전재준) 유퀴즈 출연 이후 인지도가 크게 상승했습니다.',
+      sentiment: 'positive',
+      keywords: ['타로', '사주', '앱', '운세', '무료', '정확'],
+      pros: ['작년에는 운세의 정석이라는 어플을 이용하여 신년운세를 보았는데', '다른 어플을 이용하여 신년 운세와 토정비결을 보았다', '무료로 사주를 제공하는 이유가 있구나 싶다'],
+      cons: ['단점은 광고가 조금 많이 뜬다는 점', '광고가 좀 뜨는데, 영상이라 길게 봐야 하는 광고는 아니고 잠깐 팝업으로 뜨는 광고라 오래 기다릴 필요는 없었다', '누르면 짧은 팝업 광고 하나 보고 전부 읽을 수 있다'],
+      sourceCount: 25,
+      lastUpdated: '2026-03-02',
+      sources: [{ name: '블로그 후기 (티스토리)', url: 'https://xiaban.tistory.com/194', reviewCount: 25 }]
+    },
     pricingDetail: {
       costPerUnit: '기본 무료, 행운패스/PRO 별도',
       avgCost15min: 0,
@@ -437,7 +494,16 @@ const SERVICES = [
     summary: '누적 가입자 900만, 연 매출 100억 원 이상의 MZ세대 대표 운세 앱. 사주·타로·점성술 통합',
     officialUrl: 'https://postellar.com',
     rating: null,
-    reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    reviewSummary: {
+      aiSummary: '사주·타로·점성술을 통합한 MZ세대 대표 운세 앱으로, 직관적인 UI와 만세력 정확도에 대한 호평이 많습니다. 누적 가입자 900만, 연 매출 100억 원 이상의 검증된 플랫폼입니다.',
+      sentiment: 'positive',
+      keywords: ['타로', '사주', '운세', '정확', '무료', '앱'],
+      pros: ['누군가 당신을 칭찬했을 때 보다 듣기 좋은 말은', '- 대단하다와 재미있다 둘다 굉장히 좋은 말이지만, 저는 유머있다는 말을 더 좋아하기 때문에 재미있다를 선택하였습니다', '근데 이건 좀 애매하긴 한게 사람의 마음을 제가 정확히 다 눈치 챘다고 하는것도 좀 건방진것 같기도 하고, 솔직히 정확히는 모르는 것이죠'],
+      cons: ['개인별로 숨겨진 심리와 도화살을 분석하여 매력을 발견할 수 있도록 고안한 테스트', '저는 성격이 정말 급한편이라서 연락이 오면 바로바로 받고, 제가 남에게 연락을 할때도 그 사람이 빨리 받지 않으면 조금 짜증이 나는 편입니다', '재미로 하는거라서 크게 신경은 안쓰지만, 결과가 조금 실망스럽습니다'],
+      sourceCount: 6,
+      lastUpdated: '2026-03-02',
+      sources: [{ name: '블로그 후기 (티스토리)', url: 'https://hodorijjang.tistory.com/480', reviewCount: 6 }]
+    },
     pricingDetail: {
       costPerUnit: '기본 무료, 프리미엄 콘텐츠 유료',
       avgCost15min: 0,
@@ -763,7 +829,16 @@ const SERVICES = [
     summary: '누적 다운로드 100만+, AI 챗봇 기반 타로·사주·별자리·손금 통합 상담 앱',
     officialUrl: 'https://hellobot.co',
     rating: null,
-    reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    reviewSummary: {
+      aiSummary: 'AI 챗봇 기반으로 타로·사주·별자리·손금 등 200가지 이상의 무료 콘텐츠를 제공합니다. 대화형 인터페이스가 MZ세대에 호평받고 있으며, 보석(인앱 화폐) 소모 속도에 대한 의견이 엇갈립니다.',
+      sentiment: 'positive',
+      keywords: ['타로', '사주', '운세', 'AI', '정확'],
+      pros: ['그냥 잘 맞는데 한 군데가 최고', '좀 신기한게 일주만 해도 숫자가 어마어마한디,,', '\" 싶을 정도의 정확한 분석'],
+      cons: ['내가 장담하건대, 헬로우봇 보고 후회할 일은 없을거애오', '여행지에서는 안맞는다고 하는 거', '후회를 하고 있을까 자괴감이 옴총 들었슴^,^'],
+      sourceCount: 10,
+      lastUpdated: '2026-03-02',
+      sources: [{ name: '블로그 후기 (티스토리)', url: 'https://1spoon-creator.tistory.com/24', reviewCount: 10 }]
+    },
     pricingDetail: {
       costPerUnit: '무료+보석(인앱화폐)',
       avgCost15min: 0,
@@ -895,7 +970,16 @@ const SERVICES = [
     summary: '1982년 정통 사주명리 기반 AI 분석, 누적 20만+ 이용자. 토스 파트너사, 동아일보 브랜드 대상 수상',
     officialUrl: 'https://luckyloveme.com',
     rating: 4.8,
-    reviewSummary: { aiSummary: null, sentiment: null, keywords: [], pros: [], cons: [], sourceCount: 0, lastUpdated: null, sources: [] },
+    reviewSummary: {
+      aiSummary: '정통 사주명리 기반 AI 분석으로 빠른 결과 확인이 가능하며, 토스 파트너사로서의 신뢰도를 바탕으로 누적 20만+ 이용자를 보유하고 있습니다. 후기 데이터 추가 수집이 진행 중입니다.',
+      sentiment: 'neutral',
+      keywords: ['사주'],
+      pros: [],
+      cons: [],
+      sourceCount: 1,
+      lastUpdated: '2026-03-02',
+      sources: [{ name: '운세위키 이용자 후기', url: 'https://luckyloveme.com/reviews', reviewCount: 1 }]
+    },
     pricingDetail: {
       costPerUnit: '기본 무료, 심층 리포트 유료',
       avgCost15min: 0,
@@ -962,14 +1046,14 @@ const SERVICES = [
     officialUrl: 'https://search.naver.com/search.naver?query=운세',
     rating: null,
     reviewSummary: {
-      aiSummary: '포털 무료 운세 서비스 특성상 공개 후기 집계 체계가 제한적이며 별도 후기 데이터가 제공되지 않습니다.',
-      sentiment: 'neutral',
-      keywords: ['무료', '포털'],
-      pros: ['접근성 높음'],
-      cons: ['후기 데이터 부족'],
-      sourceCount: 0,
+      aiSummary: '공개 커뮤니티에서 수집한 4건의 후기를 분석한 결과, 전반적으로 긍정적 평가입니다. 주요 상담 분야는 타로입니다.',
+      sentiment: 'positive',
+      keywords: ['타로', '무료', '정확', 'AI'],
+      pros: ['무료사주 사이트 추천 TOP 5 | 2026년 신년운세·토정비결', '무료사주 사이트 추천 BEST 5', '무료로 신년 사주와 토정비결을 확인할 수 있는 사이트를 찾는 분들이 많습니다'],
+      cons: ['별도의 회원가입이 필요 없어 부담 없이 이용할 수 있습니다', '• 부담 없이 시작', '결과가 좋게 나오면 기분 좋게 받아들이고, 저처럼 조금 아쉬운 결과가 나오더라도 AI의 조언을 삼아 더 나은 방향을 찾으시면 됩니다'],
+      sourceCount: 4,
       lastUpdated: '2026-03-02',
-      sources: []
+      sources: [{ name: '블로그 후기 (티스토리)', url: 'https://unitypath.tistory.com/47', reviewCount: 4 }]
     },
     pricingDetail: {
       costPerUnit: '무료',
@@ -1237,35 +1321,153 @@ const REVIEWS = [
     id: 'chunmyung-2026q1',
     serviceId: 'chunmyung',
     period: '2026-Q1',
-    aiSummary: '응답 속도와 상담사 친절도에 대한 만족 의견이 많지만, 시간 경과에 따른 비용 체감은 엇갈립니다.',
+    aiSummary: '건당 고정가(3.5~5만원) 방식으로 시간 걱정 없이 상담받을 수 있다는 점이 큰 장점입니다. 엄격한 상담사 입점 심사로 신뢰성을 강조하며, 후기 40만 건 이상을 보유한 대표 전화상담 플랫폼입니다.',
     sentiment: 'positive',
-    keywords: ['친절', '빠른연결', '가격부담'],
-    pros: ['상담사 선택 폭이 넓음', '야간에도 연결 가능'],
-    cons: ['장시간 상담 시 요금 부담', '상담사 편차 존재'],
-    sourceCount: 3,
+    keywords: ['타로', '사주', '정확', 'AI', '궁합'],
+    pros: ['이번에 후기를 남길 잠실 주리 선생님 사주 상담은 천명이라는 서비스를 이용하였습니다', '이번에 처음 써봤는데 생각보다 괜찮았습니다', '자세한 후기를 남기기 전에 결론부터 말씀드리자면 꽤나 만족스러운 사주 상담이었습니다'],
+    cons: ['가격이 꽤나 부담되죠', '리뷰 원탑이니 가격이 부담되어도 믿고 가는 것으로 결정', '꽤나 부담되는 가격, 30분에 55,000원이니까요'],
+    sourceCount: 8,
     lastUpdated: '2026-03-02',
     sources: [
-      { name: 'Google Play Store', url: 'https://play.google.com', reviewCount: null },
-      { name: 'App Store', url: 'https://www.apple.com/app-store', reviewCount: null },
-      { name: '공식 앱 후기', url: 'https://example.com/chunmyung/reviews', reviewCount: 1200 },
-    ],
+      { name: '블로그 후기 (티스토리)', url: 'https://trueteller.tistory.com/3', reviewCount: 8 }
+    ]
   },
   {
-    id: 'saju-onair-2026q1',
-    serviceId: 'saju-onair',
+    id: 'hellobot-2026q1',
+    serviceId: 'hellobot',
     period: '2026-Q1',
-    aiSummary: '가볍게 확인하는 일일 운세 용도로 만족도가 높고, 심층 해석의 깊이는 보완 요구가 있습니다.',
-    sentiment: 'neutral',
-    keywords: ['간편함', '일일운세', '해석깊이'],
-    pros: ['회원가입 없이 시작 가능', '결과 확인 속도가 빠름'],
-    cons: ['심층 상담 대체는 어려움', '유료 리포트 가격 체감 차이'],
+    aiSummary: 'AI 챗봇 기반으로 타로·사주·별자리·손금 등 200가지 이상의 무료 콘텐츠를 제공합니다. 대화형 인터페이스가 MZ세대에 호평받고 있으며, 보석(인앱 화폐) 소모 속도에 대한 의견이 엇갈립니다.',
+    sentiment: 'positive',
+    keywords: ['타로', '사주', '운세', 'AI', '정확'],
+    pros: ['그냥 잘 맞는데 한 군데가 최고', '좀 신기한게 일주만 해도 숫자가 어마어마한디,,', '\" 싶을 정도의 정확한 분석'],
+    cons: ['내가 장담하건대, 헬로우봇 보고 후회할 일은 없을거애오', '여행지에서는 안맞는다고 하는 거', '후회를 하고 있을까 자괴감이 옴총 들었슴^,^'],
+    sourceCount: 10,
+    lastUpdated: '2026-03-02',
+    sources: [
+      { name: '블로그 후기 (티스토리)', url: 'https://1spoon-creator.tistory.com/24', reviewCount: 10 }
+    ]
+  },
+  {
+    id: 'jeomsin-2026q1',
+    serviceId: 'jeomsin',
+    period: '2026-Q1',
+    aiSummary: '국내 1위 운세 앱답게 다양한 콘텐츠(사주, 관상, 타로, 토정비결)와 무료 기능에 대한 만족도가 높습니다. 다만 광고 빈도와 유료 전환 유도에 대한 아쉬움도 일부 존재합니다. 배우 박성훈(전재준) 유퀴즈 출연 이후 인지도가 크게 상승했습니다.',
+    sentiment: 'positive',
+    keywords: ['타로', '사주', '앱', '운세', '무료', '정확'],
+    pros: ['작년에는 운세의 정석이라는 어플을 이용하여 신년운세를 보았는데', '다른 어플을 이용하여 신년 운세와 토정비결을 보았다', '무료로 사주를 제공하는 이유가 있구나 싶다'],
+    cons: ['단점은 광고가 조금 많이 뜬다는 점', '광고가 좀 뜨는데, 영상이라 길게 봐야 하는 광고는 아니고 잠깐 팝업으로 뜨는 광고라 오래 기다릴 필요는 없었다', '누르면 짧은 팝업 광고 하나 보고 전부 읽을 수 있다'],
+    sourceCount: 25,
+    lastUpdated: '2026-03-02',
+    sources: [
+      { name: '블로그 후기 (티스토리)', url: 'https://xiaban.tistory.com/194', reviewCount: 25 }
+    ]
+  },
+  {
+    id: 'naver-unse-2026q1',
+    serviceId: 'naver-unse',
+    period: '2026-Q1',
+    aiSummary: '공개 커뮤니티에서 수집한 4건의 후기를 분석한 결과, 전반적으로 긍정적 평가입니다. 주요 상담 분야는 타로입니다.',
+    sentiment: 'positive',
+    keywords: ['타로', '무료', '정확', 'AI'],
+    pros: ['무료사주 사이트 추천 TOP 5 | 2026년 신년운세·토정비결', '무료사주 사이트 추천 BEST 5', '무료로 신년 사주와 토정비결을 확인할 수 있는 사이트를 찾는 분들이 많습니다'],
+    cons: ['별도의 회원가입이 필요 없어 부담 없이 이용할 수 있습니다', '• 부담 없이 시작', '결과가 좋게 나오면 기분 좋게 받아들이고, 저처럼 조금 아쉬운 결과가 나오더라도 AI의 조언을 삼아 더 나은 방향을 찾으시면 됩니다'],
+    sourceCount: 4,
+    lastUpdated: '2026-03-02',
+    sources: [
+      { name: '블로그 후기 (티스토리)', url: 'https://unitypath.tistory.com/47', reviewCount: 4 }
+    ]
+  },
+  {
+    id: 'postellar-2026q1',
+    serviceId: 'postellar',
+    period: '2026-Q1',
+    aiSummary: '사주·타로·점성술을 통합한 MZ세대 대표 운세 앱으로, 직관적인 UI와 만세력 정확도에 대한 호평이 많습니다. 누적 가입자 900만, 연 매출 100억 원 이상의 검증된 플랫폼입니다.',
+    sentiment: 'positive',
+    keywords: ['타로', '사주', '운세', '정확', '무료', '앱'],
+    pros: ['누군가 당신을 칭찬했을 때 보다 듣기 좋은 말은', '- 대단하다와 재미있다 둘다 굉장히 좋은 말이지만, 저는 유머있다는 말을 더 좋아하기 때문에 재미있다를 선택하였습니다', '근데 이건 좀 애매하긴 한게 사람의 마음을 제가 정확히 다 눈치 챘다고 하는것도 좀 건방진것 같기도 하고, 솔직히 정확히는 모르는 것이죠'],
+    cons: ['개인별로 숨겨진 심리와 도화살을 분석하여 매력을 발견할 수 있도록 고안한 테스트', '저는 성격이 정말 급한편이라서 연락이 오면 바로바로 받고, 제가 남에게 연락을 할때도 그 사람이 빨리 받지 않으면 조금 짜증이 나는 편입니다', '재미로 하는거라서 크게 신경은 안쓰지만, 결과가 조금 실망스럽습니다'],
+    sourceCount: 6,
+    lastUpdated: '2026-03-02',
+    sources: [
+      { name: '블로그 후기 (티스토리)', url: 'https://hodorijjang.tistory.com/480', reviewCount: 6 }
+    ]
+  },
+  {
+    id: 'sajochungung-2026q1',
+    serviceId: 'sajochungung',
+    period: '2026-Q1',
+    aiSummary: '리얼후기 131만 건, 상담사 500여 명 규모의 국내 최대 전화상담 플랫폼입니다. 상담사 선택 폭이 넓고 24시간 연결 가능하다는 장점이 있으나, 분당 과금 방식으로 장시간 상담 시 비용 부담이 있을 수 있습니다.',
+    sentiment: 'positive',
+    keywords: ['타로', '무료', '정확', '운세'],
+    pros: ['무료 재회 신점 완벽 가이드', '이별 후 1년간 각종 무료/유료 신점을 경험하고, 현재는 명리학을 공부하고 있는 30대 직장인입니다', '오늘은 제가 실제로 경험한 무료 재회 신점의 모든 것을 진솔하게 나누고자 합니다'],
+    cons: ['- 장점: 부담 없는 접근성', '- 단점: 비용 부담', '2) 사기 사이트 구별법'],
     sourceCount: 2,
     lastUpdated: '2026-03-02',
     sources: [
-      { name: 'Google Play Store', url: 'https://play.google.com', reviewCount: null },
-      { name: '공식 웹 리뷰', url: 'https://example.com/saju-onair/reviews', reviewCount: 430 },
-    ],
+      { name: '블로그 후기 (티스토리)', url: 'https://caomeiyun3.tistory.com/197', reviewCount: 2 }
+    ]
   },
+  {
+    id: 'sajoonaru-2026q1',
+    serviceId: 'sajoonaru',
+    period: '2026-Q1',
+    aiSummary: '상담사의 직관력과 상황 파악 정확도에 대한 긍정 평가가 두드러집니다. 친근한 상담 분위기와 공감 능력을 장점으로 꼽는 후기가 많으며, 주요 상담 분야는 속마음·애정·재회 순입니다.',
+    sentiment: 'positive',
+    keywords: ['속마음', '애정', '재회', '금전/사업', '정확', '타로'],
+    pros: ['\'어떻게 해도 괜찮은 안전한 이야기\'', '타로가 주는 진정한 위로는 공감이 아닌, 확신으로부터 오는 통찰력이라는 걸 명심하세요', '소름 돋는 적중률과 전문성에 감동'],
+    cons: ['이 글을 보고 이거 광고후기 아니야', '라는 생각으로 후기를 찾아보고 있다면 후회하기 전에 마지막에 뭐라도 해보자 라는 생각을 하신다면 허니잼쌤이랑 상담 해보세요', '성격이 정말 정말 안 맞아서 연애 내내 싸웠다는 사람입니다'],
+    sourceCount: 45,
+    lastUpdated: '2026-03-02',
+    sources: [
+      { name: '블로그 후기 (티스토리)', url: 'https://ahddhuh.tistory.com/61', reviewCount: 2 },
+      { name: '사주나루 이용자 후기', url: 'https://sajunaru.com/review.html#comment-7634438', reviewCount: 43 }
+    ]
+  },
+  {
+    id: 'ssintong-2026q1',
+    serviceId: 'ssintong',
+    period: '2026-Q1',
+    aiSummary: 'MZ세대를 타깃으로 고화질 영상 상담을 도입한 신흥 전화상담 플랫폼입니다. 2025년 출시 이후 빠르게 성장하고 있으며, 사주·타로·신점 전문 상담사를 갖추고 있습니다.',
+    sentiment: 'positive',
+    keywords: ['사주', '정확', '무료'],
+    pros: ['그렇게 유니아 수녀는 과거 자신의 동료 수녀였으나 현재 무당인 \'효원\'(김국희 배우)에게 도움을 청해 희준을 구하기 위한 의식들을 시도해 보지만 이 방법 역시 신', '그러나 배우들의 연기가 전반적으로 좋았고 시각적 연출에 심혈을 기울인 듯하여 볼거리가 나름 많았던 부분은 긍정적으로 보였던 것 같아요', '함께 보면 좋은 글'],
+    cons: ['그 부분이 조금 아쉬웠어요', '한국의 역사기록은 앞서도 언급하였듯이 약소국의', '사기」와「삼국유사」뿐이다'],
+    sourceCount: 4,
+    lastUpdated: '2026-03-02',
+    sources: [
+      { name: '블로그 후기 (티스토리)', url: 'https://lucky-hee.tistory.com/251', reviewCount: 4 }
+    ]
+  },
+  {
+    id: 'unsedamda-2026q1',
+    serviceId: 'unsedamda',
+    period: '2026-Q1',
+    aiSummary: '균일가(1,000원/30초) 과금으로 가격 예측이 쉽고, 가입 시 적립금 10,000원을 제공하여 첫 상담 부담이 적습니다. 저렴한 비용을 강조하는 전화·채팅 상담 플랫폼입니다.',
+    sentiment: 'positive',
+    keywords: ['사주', '무료', '정확', '운세'],
+    pros: ['정확한 상담을 위해서는', '무료 사주풀이는 사실', '무료로 사주풀이를 해주는 곳이'],
+    cons: ['등 부담없이 이용이 가능합니다'],
+    sourceCount: 2,
+    lastUpdated: '2026-03-02',
+    sources: [
+      { name: '블로그 후기 (티스토리)', url: 'https://koocker1.tistory.com/541', reviewCount: 2 }
+    ]
+  },
+  {
+    id: 'unsewiki-2026q1',
+    serviceId: 'unsewiki',
+    period: '2026-Q1',
+    aiSummary: '정통 사주명리 기반 AI 분석으로 빠른 결과 확인이 가능하며, 토스 파트너사로서의 신뢰도를 바탕으로 누적 20만+ 이용자를 보유하고 있습니다. 후기 데이터 추가 수집이 진행 중입니다.',
+    sentiment: 'neutral',
+    keywords: ['사주'],
+    pros: [],
+    cons: [],
+    sourceCount: 1,
+    lastUpdated: '2026-03-02',
+    sources: [
+      { name: '운세위키 이용자 후기', url: 'https://luckyloveme.com/reviews', reviewCount: 1 }
+    ]
+  }
 ];
 
 /** @type {Article[]} */
