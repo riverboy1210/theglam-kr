@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BODA | 나에게 맞는 운세 서비스, 여기서 비교하세요</title>
+  <meta name="description" content="나에게 맞는 운세 서비스를 고민유형, 상담방식, 예산으로 빠르게 비교해보세요.">
+  <link rel="stylesheet" href="./shared.css">
+  <style>
+    .hero-shell {
+      position: relative;
+      border-radius: 20px;
+      padding: 28px 16px 18px;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 48%),
+        radial-gradient(circle at 85% 78%, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0) 40%),
+        linear-gradient(135deg, #FF6B9D 0%, #8B5CF6 100%);
+      box-shadow: 0 16px 30px rgba(139, 92, 246, 0.24);
+      overflow: hidden;
+      margin-bottom: 14px;
+      animation: rise-up 0.62s var(--easing-soft);
+    }
+
+    .hero-shell::after {
+      content: '';
+      position: absolute;
+      right: -36px;
+      top: -34px;
+      width: 132px;
+      height: 132px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
+      filter: blur(1px);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.22);
+      color: #fff;
+      font-size: 0.77rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      margin-bottom: 10px;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-title {
+      margin: 0;
+      color: #fff;
+      line-height: 1.36;
+      letter-spacing: -0.015em;
+      font-size: 1.58rem;
+      font-weight: 800;
+    }
+
+    .hero-sub {
+      margin: 10px 0 0;
+      color: rgba(255, 255, 255, 0.94);
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .quick-filter {
+      background: #fff;
+      border: 1px solid #f5d9ea;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(31, 41, 55, 0.08);
+      padding: 14px;
+      margin-bottom: 14px;
+      transform: translateY(-10px);
+      animation: rise-up 0.72s var(--easing-soft);
+    }
+
+    .filter-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .filter-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .filter-select {
+      width: 100%;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.9rem;
+      padding: 0 12px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .filter-select:focus {
+      border-color: #e8568a;
+      box-shadow: 0 0 0 3px rgba(232, 86, 138, 0.16);
+    }
+
+    .stats-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      border: 1px solid #f4d8e9;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #fff 0%, #fff4fa 100%);
+      color: #6f2f7f;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 8px 14px;
+      margin-bottom: 14px;
+    }
+
+    .stats-divider {
+      opacity: 0.58;
+    }
+
+    .category-tabs {
+      position: sticky;
+      top: 56px;
+      z-index: 15;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-light);
+      margin: 0 -16px 16px;
+      padding: 10px 16px;
+    }
+
+    .services-grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr;
+    }
+
+    .service-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      animation: rise-up 0.5s var(--easing-soft);
+    }
+
+    .service-body {
+      padding: 14px;
+    }
+
+    .service-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .service-name {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      font-weight: 800;
+    }
+
+    .service-summary {
+      margin: 0 0 10px;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.52;
+      min-height: 2.7em;
+    }
+
+    .meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .empty-state {
+      text-align: center;
+      background: #fff;
+      border: 1px dashed #f2bad4;
+      border-radius: 14px;
+      padding: 28px 14px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @keyframes rise-up {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero-shell {
+        padding: 40px 34px 26px;
+      }
+
+      .hero-title {
+        font-size: 2.1rem;
+      }
+
+      .hero-sub {
+        font-size: 1rem;
+      }
+
+      .quick-filter {
+        padding: 18px;
+      }
+
+      .filter-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+    }
+
+    @media (min-width: 1100px) {
+      .services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <span class="logo-ko">보다 BODA</span>
+      </a>
+      <nav class="header-nav">
+        <a href="/" class="nav-link">홈</a>
+        <a href="/services.html" class="nav-link">서비스찾기</a>
+        <a href="/reviews.html" class="nav-link">후기</a>
+        <a href="/compare.html" class="nav-link">비교</a>
+        <a href="/articles.html" class="nav-link">콘텐츠</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <div class="container">
+      <section class="hero-shell">
+        <span class="hero-badge">운세 비교 큐레이션</span>
+        <h1 class="hero-title">나에게 맞는 운세 서비스, 여기서 비교하세요</h1>
+        <p class="hero-sub">고민과 방식, 예산에 맞춰 서비스 후보를 빠르게 좁혀보세요.</p>
+      </section>
+
+      <section class="quick-filter card" aria-label="3단계 서비스 필터">
+        <div class="filter-grid">
+          <label>
+            <span class="filter-label">고민유형</span>
+            <select id="type-filter" class="filter-select" aria-label="고민유형 선택"></select>
+          </label>
+          <label>
+            <span class="filter-label">상담방식</span>
+            <select id="method-filter" class="filter-select" aria-label="상담방식 선택"></select>
+          </label>
+          <label>
+            <span class="filter-label">예산</span>
+            <select id="price-filter" class="filter-select" aria-label="예산 선택"></select>
+          </label>
+        </div>
+        <button type="button" class="btn-primary" id="find-services-btn" style="width: 100%;">서비스 찾기</button>
+      </section>
+
+      <div class="stats-bar" aria-label="플랫폼 통계">
+        <span>등록 서비스 30+</span>
+        <span class="stats-divider">|</span>
+        <span>수록 후기 1,000+</span>
+        <span class="stats-divider">|</span>
+        <span>비교 가능</span>
+      </div>
+
+      <div class="filter-bar category-tabs" id="category-tabs">
+        <button type="button" class="filter-chip active" data-category="전체">전체</button>
+        <button type="button" class="filter-chip" data-category="사주">사주</button>
+        <button type="button" class="filter-chip" data-category="타로">타로</button>
+        <button type="button" class="filter-chip" data-category="신점">신점</button>
+        <button type="button" class="filter-chip" data-category="궁합">궁합</button>
+        <button type="button" class="filter-chip" data-category="점성술">점성술</button>
+        <button type="button" class="filter-chip" data-category="AI운세">AI운세</button>
+      </div>
+
+      <section>
+        <div class="section-header">
+          <h2 class="section-title">인기 서비스</h2>
+          <a href="./services.html" class="section-more">전체 보기 ›</a>
+        </div>
+        <div id="services-grid" class="services-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>BODA · 보다</strong>
+        <p style="margin: 4px 0 0;">운세 서비스 비교 플랫폼 | hello@unsetok.com</p>
+      </div>
+      <div class="footer-links">
+        <a href="/privacy.html">개인정보처리방침</a>
+        <a href="/terms.html">이용약관</a>
+      </div>
+      <p class="footer-disclaimer">BODA는 운세 서비스의 정보를 비교·제공하는 플랫폼이며, 특정 서비스의 효과나 정확성을 보증하지 않습니다. 서비스 이용에 따른 결과는 이용자 본인의 판단과 책임 하에 이루어집니다. 운세 상담은 참고용이며, 중요한 의사결정은 전문가(의료/법률/재무 등)와 상의하시기 바랍니다.</p>
+      <p style="margin-top: 12px; font-size: 0.75rem; color: var(--text-muted);">© 2026 BODA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- BOTTOM NAV (모바일 전용) -->
+  <nav class="bottom-nav">
+    <a href="/" class="bottom-nav-item">
+      <span class="nav-icon">🏠</span>
+      <span>홈</span>
+    </a>
+    <a href="/services.html" class="bottom-nav-item">
+      <span class="nav-icon">🔍</span>
+      <span>서비스</span>
+    </a>
+    <a href="/reviews.html" class="bottom-nav-item">
+      <span class="nav-icon">⭐</span>
+      <span>후기</span>
+    </a>
+    <a href="/compare.html" class="bottom-nav-item">
+      <span class="nav-icon">🆚</span>
+      <span>비교</span>
+    </a>
+    <a href="/articles.html" class="bottom-nav-item">
+      <span class="nav-icon">📰</span>
+      <span>콘텐츠</span>
+    </a>
+  </nav>
+
+  <script src="./shared-data.js"></script>
+  <script>
+    (function initHomePage() {
+      const data = window.BODA_DATA || {};
+      const services = Array.isArray(data.SERVICES) ? data.SERVICES : [];
+      const consultationTypes = Array.isArray(data.CONSULTATION_TYPES) ? data.CONSULTATION_TYPES : [];
+      const methods = Array.isArray(data.METHODS) ? data.METHODS : [];
+      const priceRanges = Array.isArray(data.PRICE_RANGES) ? data.PRICE_RANGES : [];
+
+      const typeSelect = document.getElementById('type-filter');
+      const methodSelect = document.getElementById('method-filter');
+      const priceSelect = document.getElementById('price-filter');
+      const findButton = document.getElementById('find-services-btn');
+      const tabs = document.getElementById('category-tabs');
+      const grid = document.getElementById('services-grid');
+
+      const slugToTab = {
+        all: '전체',
+        saju: '사주',
+        tarot: '타로',
+        spirit: '신점',
+        chemistry: '궁합',
+        astrology: '점성술',
+        ai: 'AI운세'
+      };
+
+      let activeCategory = '전체';
+
+      function buildSelectOptions(selectEl, list, baseLabel) {
+        const options = [`<option value="">${baseLabel}</option>`];
+        list.forEach(function eachItem(item) {
+          if (!item || !item.id || !item.name) {
+            return;
+          }
+          options.push(`<option value="${item.id}">${item.name}</option>`);
+        });
+        selectEl.innerHTML = options.join('');
+      }
+
+      function serviceMatchesTab(service, category) {
+        if (category === '전체') {
+          return true;
+        }
+
+        const counseling = Array.isArray(service.counselingType) ? service.counselingType : [];
+        const specialty = Array.isArray(service.specialty) ? service.specialty : [];
+        const typeLabel = service.type || '';
+
+        if (category === 'AI운세') {
+          return typeLabel === 'AI운세' || counseling.includes('AI운세');
+        }
+
+        if (category === '궁합') {
+          return specialty.some(function includesMatch(tag) {
+            return String(tag).includes('궁합');
+          });
+        }
+
+        return counseling.includes(category) || specialty.includes(category) || typeLabel.includes(category);
+      }
+
+      function makeServiceCard(service) {
+        const methodsText = Array.isArray(service.method) && service.method.length
+          ? service.method.slice(0, 2).join(' · ')
+          : '상담 방식 확인';
+        const ratingText = typeof service.rating === 'number' ? `★ ${service.rating.toFixed(1)}` : '평점 준비중';
+        const reviewCountText = typeof service.reviewCount === 'number'
+          ? `후기 ${service.reviewCount.toLocaleString()}+`
+          : '후기 집계중';
+        const summaryText = service.summary || '서비스 요약 정보 준비중';
+        const link = `./service.html?id=${encodeURIComponent(service.id)}`;
+
+        return [
+          `<a class="service-link" href="${link}">`,
+          '  <article class="card card-hover">',
+          '    <div class="service-body">',
+          '      <div class="service-top">',
+          `        <span class="badge badge-hot">${service.counselingType?.[0] || '운세'}</span>`,
+          `        <span class="text-sm text-primary font-semibold">${service.priceRange || '가격 정보 확인'}</span>`,
+          '      </div>',
+          `      <h3 class="service-name">${service.name}</h3>`,
+          `      <p class="service-summary">${summaryText}</p>`,
+          '      <div class="service-tags">',
+          `        <span class="tag tag-category">${service.type || '서비스'}</span>`,
+          `        <span class="tag">${methodsText}</span>`,
+          '      </div>',
+          '      <div class="meta-row">',
+          `        <span class="rating">${ratingText}</span>`,
+          `        <span>${reviewCountText}</span>`,
+          '      </div>',
+          '    </div>',
+          '  </article>',
+          '</a>'
+        ].join('');
+      }
+
+      function renderServices() {
+        const selected = services
+          .filter(function byCategory(service) {
+            return serviceMatchesTab(service, activeCategory);
+          })
+          .slice(0, 6);
+
+        if (!selected.length) {
+          grid.innerHTML = '<div class="empty-state">조건에 맞는 서비스가 아직 없습니다. 다른 카테고리를 선택해보세요.</div>';
+          return;
+        }
+
+        grid.innerHTML = selected.map(makeServiceCard).join('');
+      }
+
+      function goToServices() {
+        const params = new URLSearchParams();
+        if (typeSelect.value) {
+          params.set('type', typeSelect.value);
+        }
+        if (methodSelect.value) {
+          params.set('method', methodSelect.value);
+        }
+        if (priceSelect.value) {
+          params.set('price', priceSelect.value);
+        }
+
+        const selectedTab = Object.keys(slugToTab).find(function findSlug(key) {
+          return slugToTab[key] === activeCategory;
+        });
+
+        if (selectedTab && selectedTab !== 'all') {
+          params.set('category', selectedTab);
+        }
+
+        const qs = params.toString();
+        window.location.href = `./services.html${qs ? `?${qs}` : ''}`;
+      }
+
+      buildSelectOptions(typeSelect, consultationTypes, '고민유형 선택');
+      buildSelectOptions(methodSelect, methods, '상담방식 선택');
+      buildSelectOptions(priceSelect, priceRanges, '예산 선택');
+      renderServices();
+
+      findButton.addEventListener('click', goToServices);
+
+      tabs.addEventListener('click', function onTabClick(event) {
+        const target = event.target.closest('.filter-chip');
+        if (!target) {
+          return;
+        }
+
+        const category = target.getAttribute('data-category');
+        if (!category) {
+          return;
+        }
+
+        activeCategory = category;
+
+        tabs.querySelectorAll('.filter-chip').forEach(function resetActive(button) {
+          button.classList.remove('active');
+        });
+        target.classList.add('active');
+        renderServices();
+      });
+    }());
+  </script>
+</body>
+</html>
