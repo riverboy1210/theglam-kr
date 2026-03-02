@@ -1,16 +1,10 @@
 User-agent: *
 Allow: /
-
-# Block admin/utility pages from indexing
-
-# Block search result pages
 Disallow: /*?q=
 Disallow: /*?search=
 
-# Sitemap
-Sitemap: https://www.theglam.kr/sitemap.xml
+Sitemap: https://unsetok.com/sitemap.xml
 
-# AI Bot Management
 User-agent: GPTBot
 Allow: /articles/
 Disallow: /terms.html
